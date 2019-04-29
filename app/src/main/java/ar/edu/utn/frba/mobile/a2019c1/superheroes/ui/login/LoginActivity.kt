@@ -29,7 +29,6 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         val username = findViewById<EditText>(R.id.username)
-        val password = findViewById<EditText>(R.id.password)
         val login = findViewById<Button>(R.id.login)
         val loading = findViewById<ProgressBar>(R.id.loading)
 
@@ -39,14 +38,11 @@ class LoginActivity : AppCompatActivity() {
         loginViewModel.loginFormState.observe(this@LoginActivity, Observer {
             val loginState = it ?: return@Observer
 
-            // disable login button unless both username / password is valid
+            // disable login button unless both username is valid
             login.isEnabled = loginState.isDataValid
 
             if (loginState.usernameError != null) {
                 username.error = getString(loginState.usernameError)
-            }
-            if (loginState.passwordError != null) {
-                password.error = getString(loginState.passwordError)
             }
         })
 
@@ -68,36 +64,13 @@ class LoginActivity : AppCompatActivity() {
 
         username.afterTextChanged {
             loginViewModel.loginDataChanged(
-                username.text.toString(),
-                password.text.toString()
+                username.text.toString()
             )
         }
 
-        password.apply {
-            afterTextChanged {
-                loginViewModel.loginDataChanged(
-                    username.text.toString(),
-                    password.text.toString()
-                )
-            }
-
-            setOnEditorActionListener { _, actionId, _ ->
-                when (actionId) {
-                    EditorInfo.IME_ACTION_DONE ->
-                        loginViewModel.login(
-                            username.text.toString(),
-                            password.text.toString()
-                        )
-                }
-                false
-            }
-
-            login.setOnClickListener {
-                //loading.visibility = View.VISIBLE
-                //loginViewModel.login(username.text.toString(), password.text.toString())
-                val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                startActivity(intent)
-            }
+        login.setOnClickListener {
+            val intent = Intent(this@LoginActivity, MainActivity::class.java)
+            startActivity(intent)
         }
     }
 
