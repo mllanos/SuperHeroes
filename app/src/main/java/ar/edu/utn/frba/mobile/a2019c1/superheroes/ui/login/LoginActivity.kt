@@ -68,6 +68,7 @@ class LoginActivity : AppCompatActivity() {
 
         login.setOnClickListener {
             val intent = Intent(this@LoginActivity, MainActivity::class.java)
+            intent.putExtra("username", username.text.toString());
             startActivity(intent)
         }
     }

@@ -4,6 +4,12 @@ import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.TextView
+import android.content.Intent
+import androidx.core.app.NotificationCompat.getExtras
+
+
+
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,5 +39,8 @@ class MainActivity : AppCompatActivity() {
 
         textMessage = findViewById(R.id.message)
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
+
+        val username = intent.extras?.getString("username")
+        this.title = "Welcome, $username!"
     }
 }
