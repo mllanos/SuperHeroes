@@ -1,0 +1,416 @@
+openapi: 3.0.0
+info:
+  title: superheroes-api
+  description: Marvel superhero fights
+  version: 0.1.0
+  
+servers: 
+  - url: '/superhero'
+  
+paths:
+
+  '/users':
+    post:
+      summary: create a new user.
+      description: create a new user from a nickname.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserRequest'
+      responses:
+        201:
+          description: user created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResponse'
+        400:
+          description: user already exists
+                
+  '/cards':
+    get:
+      parameters:
+        - in: query
+          name: quantity
+          schema:
+            type: integer
+          description: The number of cards to retrieve
+          required: true
+      summary: get a bundle of cards
+      description: get randomly three superhero cards.
+      responses:
+        200:
+          description: OK, cards gotten.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CardsResponse'
+        400:
+          description: bad request, missing quantity parameter.
+          
+  '/users/{id}/available_cards':
+    get:
+      parameters:
+        - name: id
+          in: path
+          description: user's id
+          required: true
+          schema:
+            type: string
+      summary: available cards.
+      description: all available cards of a user.
+      responses:
+        200:
+          description: OK, cards retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AvailableCardsResponse'
+        404:
+          description: user not found.
+          
+  '/users/{id}/team':
+    parameters:
+      - name: id
+        in: path
+        description: user's id
+        required: true
+        schema:
+          type: string
+    post:
+      summary: create a team
+      description: create a team of 4 superheroes
+      requestBody:
+        content:
+          application/json:
+           schema:
+              $ref: '#/components/schemas/TeamRequest'
+      responses:
+        201:
+          description: team created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserTeamResponse'
+        400:
+          description: bad request, missing body parameters
+  
+  '/users/{id}/fights':
+    get:
+      parameters:
+        - name: id
+          in: path
+          description: user's id
+          required: true
+          schema:
+            type: string
+      summary: fights' information.
+      description: retrieve information about user's fights and tournaments.
+      responses:
+        200:
+          description: OK, fights info retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserFightsResponse'
+        404:
+          description: user not found
+  
+  '/teams/{id}':
+    parameters:
+      - name: id
+        in: path
+        description: team's id
+        required: true
+        schema:
+          type: string
+    get:
+      summary: get a team
+      description: information about the team, its superheroes and power.
+      responses:
+        200:
+          description: OK, retrieve the team information.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamResponse'
+        404:
+          description: team not found
+  
+  '/fight':
+    post:
+      summary: start a fight
+      description: fight against an opponent
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FightRequest'
+      responses:
+        200:
+          description: OK, fight's information gotten.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FightResponse'
+        409:
+          description: conflict, cannot resolve the fight.
+  
+  '/fight/{id}':
+    get:
+      parameters:
+      - name: id
+        in: path
+        description: fight's id
+        required: true
+        schema:
+          type: string
+      summary: fight's information
+      description: retrieve information about a fight.
+      responses:
+        200:
+          description: OK, fight's information gotten.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FightSummaryResponse'
+        404:
+          description: fight not found.
+  
+components:
+  schemas:
+  
+    UserRequest:
+      allOf:
+        - properties:
+            nickname:
+              type: string
+      example:
+        nickname: 'vegeta'
+              
+    UserResponse:
+      properties:
+        id:
+          type: integer
+      example: 
+        id: 123456
+    
+    UserTeamResponse:
+      properties:
+        id:
+          type: integer
+      example: 
+        id: 45
+    
+    UserFightsResponse:
+      properties:
+        fights_ids:
+          type: array
+          items:
+            properties:
+              id:
+                type: integer
+        tournaments:
+              type: object
+              properties:
+                won:
+                  type: integer
+                lost:
+                  type: integer
+      example:
+        fights_ids:
+          - 1
+          - 23
+          - 45
+        tournaments:
+          won: 4
+          lost: 1
+    
+    CardsResponse:
+      properties:
+        cards:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              decription:
+                type: string
+              thumbnail:
+                type: string
+              power:
+                type: integer
+      example:
+        superheroes:
+          - id: 23123
+            name: 'Iron Man'
+            description: 'Wounded, captured and...'
+            thumbnail: 'http://i.annihil.us/.../527bb7b37ff55.jpg'
+            power: 76
+          - id: 123121
+            name: 'Hulk'
+            description: 'Caught in a gamma bomb...'
+            thumbnail: 'http://i.annihil.us/.../538615ca33ab0.jpg'
+            power: 12
+          - id: 342343
+            name: 'Captain America'
+            description: 'Vowing to serve his country...'
+            thumbnail: 'http://i.annihil.us/.../537ba56d31087.jpg'
+            power: 48
+    
+    AvailableCardsResponse:
+      properties:
+        cards:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              decription:
+                type: string
+              thumbnail:
+                type: string
+              power:
+                type: integer
+      example:
+        cards:
+          - id: 23123
+            name: 'Iron Man'
+            description: 'Wounded, captured and...'
+            thumbnail: 'http://i.annihil.us/.../527bb7b37ff55.jpg'
+            power: 76
+          - id: 123121
+            name: 'Hulk'
+            description: 'Caught in a gamma bomb...'
+            thumbnail: 'http://i.annihil.us/.../538615ca33ab0.jpg'
+            power: 12
+          - id: 342343
+            name: 'Captain America'
+            description: 'Vowing to serve his country...'
+            thumbnail: 'http://i.annihil.us/.../537ba56d31087.jpg'
+            power: 48
+             
+    TeamRequest:
+      allOf:
+        - properties:
+            superheroes:
+              type: array
+              items:
+                type: integer
+            quantity:
+              type: integer
+      example:
+        superheroes:
+          - 23123
+          - 123121
+          - 342343
+          - 56576
+        quantity: 4
+          
+    TeamResponse:
+      properties:
+        superheroes:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              decription:
+                type: string
+              thumbnail:
+                type: string
+              power:
+                type: integer
+        total_power:
+          type: integer
+      example:
+        superheroes: 
+          - id: 23123
+            name: 'Iron Man'
+            description: 'Wounded, captured and...'
+            thumbnail: 'http://i.annihil.us/.../527bb7b37ff55.jpg'
+            power: 76
+          - id: 123121
+            name: 'Hulk'
+            description: 'Caught in a gamma bomb...'
+            thumbnail: 'http://i.annihil.us/.../538615ca33ab0.jpg'
+            power: 12
+          - id: 342343
+            name: 'Captain America'
+            description: 'Vowing to serve his country...'
+            thumbnail: 'http://i.annihil.us/.../537ba56d31087.jpg'
+            power: 48
+        total_power: 136
+    
+    FightRequest:
+      allOf:
+        - properties:
+            user_id:
+              type: integer
+            geolocation:
+              type: object
+              properties:
+                latitude:
+                  type: integer
+                altitude:
+                  type: integer
+            timestamp:
+              type: integer
+          example:
+            user_id: 123456
+            geolocation:
+              latitude: 123.23232
+              altitude: 45.4545
+            timestamp: 153534534543534543
+    
+    FightResponse:
+      properties:
+        id:
+          type: integer
+        winner:
+          type: string
+        opponent:
+          type: object
+          properties:
+            user_id:
+              type: integer
+            nickname:
+              type: string
+            team_id:
+              type: integer
+      example:
+        id: 123
+        winner: 'vegeta'
+        opponent:
+          user_id: 789012
+          nickname: 'john'
+          team_id: 45
+    
+    FightSummaryResponse:
+      properties:
+        winner:
+          type: string
+        players:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+              nickname:
+                type: string
+              score:
+                type: integer
+      example:
+        winner: 'vegeta'
+        players:
+          - id: 123456
+            nickname: 'vegeta'
+            score: 342
+          - id: 654321
+            nickname: 'majin boo'
+            score: 100
