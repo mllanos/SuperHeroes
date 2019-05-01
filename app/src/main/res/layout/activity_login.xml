@@ -12,12 +12,21 @@
         android:paddingTop="@dimen/activity_vertical_margin"
         tools:context=".ui.login.LoginActivity">
 
+    <ImageView
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:src="@mipmap/ic_launcher_round"
+            android:layout_marginTop="105dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
     <EditText
             android:id="@+id/username"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="416dp"
+            android:layout_marginTop="305dp"
             android:layout_marginEnd="24dp"
             android:hint="@string/prompt_username"
             android:inputType="textEmailAddress"
@@ -32,11 +41,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
+            android:layout_marginTop="400dp"
             android:layout_marginStart="48dp"
             android:layout_marginEnd="48dp"
-            android:layout_marginBottom="60dp"
             android:text="@string/action_sign_in"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.497"/>
