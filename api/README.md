@@ -1,4 +1,4 @@
-#  Superheroes API
+# Superheroes API
 
 # Development
 
