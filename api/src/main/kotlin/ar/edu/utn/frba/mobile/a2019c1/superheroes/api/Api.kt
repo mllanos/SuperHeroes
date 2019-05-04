@@ -1,5 +1,6 @@
 package ar.edu.utn.frba.mobile.a2019c1.superheroes.api
 
+import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
 
 private const val MAX_CARDS_LIMIT = 8
@@ -9,6 +10,7 @@ private const val MAX_CARDS_LIMIT = 8
 class UsersController(private val usersService: UsersService) {
 
 	@PostMapping("/users")
+	@ResponseStatus(code = HttpStatus.CREATED)
 	fun createUser(@RequestBody userData: UserData): UserResponseResource {
 		return usersService
 				.createWith(userData)

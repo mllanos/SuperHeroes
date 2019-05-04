@@ -32,7 +32,7 @@ class UsersControllerTest(@Autowired val mockMvc: MockMvc) {
 		mockMvc.perform(post("/superheroes/users")
 				.content(body.toString())
 				.contentType(APPLICATION_JSON))
-				.andExpect(status().isOk)
+				.andExpect(status().isCreated)
 				.andExpect(content().contentType(APPLICATION_JSON_UTF8))
 				.andExpect(jsonPath("\$.id").value(id))
 	}
