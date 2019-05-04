@@ -243,7 +243,7 @@ components:
               power:
                 type: integer
       example:
-        superheroes:
+        cards:
           - id: 23123
             name: 'Iron Man'
             description: 'Wounded, captured and...'
