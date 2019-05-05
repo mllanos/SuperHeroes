@@ -37,6 +37,12 @@ paths:
             type: integer
           description: The number of cards to retrieve
           required: true
+        - in: query
+          name: user_id
+          schema:
+            type: integer
+          description: the user wanted
+          required: true          
       summary: get a bundle of cards
       description: get randomly three superhero cards.
       responses:

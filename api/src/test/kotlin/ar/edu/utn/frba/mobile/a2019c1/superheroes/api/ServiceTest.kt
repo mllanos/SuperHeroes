@@ -102,6 +102,24 @@ class UsersServiceTest {
 				}
 	}
 
+	@Test
+	fun testCreateTeam() {
+		val userService = UsersService(randomService, storageService)
+		val superheroes = listOf(1, 2, 3, 4)
+		val teamData = UserTeamData(123456, superheroes)
+		val user = User(123456, "vegeta")
+		whenever(randomService.generate(10000)).doReturn(45)
+		whenever(storageService.findUser(123456)).doReturn(user)
+		userService
+				.createTeam(teamData)
+				.also { teamCreated ->
+					assertThat(teamCreated.id).isEqualTo(45)
+					assertThat(teamCreated.superheroes).hasSameElementsAs(superheroes)
+					verify(storageService).findUser(123456)
+					verify(storageService).storeUserTeam(123456, teamCreated)
+				}
+	}
+
 }
 
 @ExtendWith(MockitoExtension::class)
@@ -179,6 +197,19 @@ class StorageServiceTest {
 						assertThat(it).containsAll(storedCards)
 						assertThat(it).containsAll(cards)
 					}
+				}
+	}
+
+	@Test
+	fun testStoreTeam() {
+		val storageService = StorageService(memcachedClient, gson)
+		val userId = 123456
+		val team = Team(45, listOf(1, 2, 3, 4))
+		storageService.storeUserTeam(userId, team)
+		memcachedClient.get("users:123456:team").let { it as String }
+				.let {
+					val userDto = gson.fromJson(it, Team::class.java)
+					assertThat(userDto).isEqualToComparingFieldByField(team)
 				}
 	}
 

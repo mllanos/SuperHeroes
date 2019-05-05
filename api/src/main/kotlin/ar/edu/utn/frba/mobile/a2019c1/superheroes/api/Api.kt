@@ -23,6 +23,16 @@ class UsersController(private val usersService: UsersService) {
 				.asResource()
 	}
 
+	@PostMapping("/users/{id}/team")
+	@ResponseStatus(code = HttpStatus.CREATED)
+	fun createTeam(@PathVariable id: String, @RequestBody teamData: UserTeamResource): UserTeamResourceResponse {
+		val userId = id.toInt()
+		val team = teamData.forUser(userId)
+		return usersService
+				.createTeam(team)
+				.asResource()
+	}
+
 }
 
 @RestController

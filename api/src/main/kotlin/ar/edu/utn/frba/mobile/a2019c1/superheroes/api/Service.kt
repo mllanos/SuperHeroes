@@ -4,6 +4,8 @@ import org.springframework.stereotype.Service
 
 private const val MAX_USER_ID_LENGTH = 1000000
 
+private const val MAX_TEAM_ID_LENGTH = 10000
+
 @Service
 class UsersService(private val randomService: RandomService, private val storageService: StorageService) {
 
@@ -21,6 +23,14 @@ class UsersService(private val randomService: RandomService, private val storage
 	fun getCardsOf(id: Int) = getUser(id)
 			.let {
 				storageService.getUserAvailableCards(id)
+			}
+
+	fun createTeam(teamData: UserTeamData) = getUser(teamData.userId)
+			.let {
+				val teamId = randomService.generate(MAX_TEAM_ID_LENGTH)
+				val team = Team(teamId, teamData.superheroes)
+				storageService.storeUserTeam(teamData.userId, team)
+				return@let team
 			}
 
 }
