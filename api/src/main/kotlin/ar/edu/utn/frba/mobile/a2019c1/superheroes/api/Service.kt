@@ -31,8 +31,8 @@ class CardsService(private val usersService: UsersService,
 				   private val storageService: StorageService) {
 
 	fun getBundle(cardsData: CardsData): List<Card> {
-		usersService.getUser(cardsData.userId).let {
-			val cards = marvelService.getCards(cardsData.quantity)
+		usersService.getUser(cardsData.userId!!).let {
+			val cards = marvelService.getCards(cardsData.quantity!!)
 			storageService.updateUserAvailableCards(cardsData.userId, cards)
 			return cards
 		}

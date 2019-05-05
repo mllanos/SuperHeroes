@@ -46,9 +46,9 @@ class StorageService(private val memcachedClient: MemcachedClient, private val g
 	fun getUserAvailableCards(userId: Int): List<Card> {
 		val key = "users:$userId:available_cards"
 		return memcachedClient.get(key)?.let { it as String }
-				.let {
+				?.let {
 					gson.fromJson(it, CardsDto::class.java).cards
-				}
+				} ?: emptyList()
 	}
 
 	data class CardsDto(val cards: List<Card>)

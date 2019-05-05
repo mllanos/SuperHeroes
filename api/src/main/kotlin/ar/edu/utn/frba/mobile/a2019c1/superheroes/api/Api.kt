@@ -3,8 +3,6 @@ package ar.edu.utn.frba.mobile.a2019c1.superheroes.api
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
 
-private const val MAX_CARDS_LIMIT = 8
-
 @RestController
 @RequestMapping("/superheroes")
 class UsersController(private val usersService: UsersService) {
@@ -32,8 +30,8 @@ class UsersController(private val usersService: UsersService) {
 class CardsController(private val cardsService: CardsService) {
 
 	@GetMapping("/cards")
-	fun getCards(@RequestParam user_id: Int, @RequestParam quantity: Int): CardsResponseResource {
-		val cardsData = CardsData(user_id, minOf(quantity, MAX_CARDS_LIMIT))
+	fun getCards(@RequestParam user_id: Int?, @RequestParam quantity: Int?): CardsResponseResource {
+		val cardsData = CardsData(user_id, quantity)
 		return cardsService
 				.getBundle(cardsData)
 				.asResource()

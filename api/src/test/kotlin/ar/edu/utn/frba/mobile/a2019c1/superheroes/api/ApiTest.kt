@@ -103,4 +103,28 @@ class CardsControllerTest(@Autowired val mockMvc: MockMvc) {
 				.andExpect(jsonPath("\$.cards[1].power").value(45))
 	}
 
+	@Test
+	fun testMissingParameters() {
+		mockMvc.perform(get("/superheroes/cards?quantity=3")
+				.contentType(APPLICATION_JSON))
+				.andExpect(status().isBadRequest)
+				.andExpect(jsonPath("\$.message").value("missing user_id parameter"))
+		mockMvc.perform(get("/superheroes/cards?user_id=&quantity=3")
+				.contentType(APPLICATION_JSON))
+				.andExpect(status().isBadRequest)
+				.andExpect(jsonPath("\$.message").value("missing user_id parameter"))
+		mockMvc.perform(get("/superheroes/cards?user_id=123456")
+				.contentType(APPLICATION_JSON))
+				.andExpect(status().isBadRequest)
+				.andExpect(jsonPath("\$.message").value("missing quantity parameter"))
+		mockMvc.perform(get("/superheroes/cards?user_id=123456&quantity=")
+				.contentType(APPLICATION_JSON))
+				.andExpect(status().isBadRequest)
+				.andExpect(jsonPath("\$.message").value("missing quantity parameter"))
+		mockMvc.perform(get("/superheroes/cards?user_id=123456&quantity=0")
+				.contentType(APPLICATION_JSON))
+				.andExpect(status().isBadRequest)
+				.andExpect(jsonPath("\$.message").value("provide a value greater than 0 for quantity parameter"))
+	}
+
 }
