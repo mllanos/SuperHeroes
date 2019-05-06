@@ -15,6 +15,8 @@ class MarvelService(private val superheroesRepository: List<Superhero>, private 
 		return selectedSuperheroes.stream().map { it.asCard() }.toList()
 	}
 
+	fun getCardOf(superheroId: Int) = superheroesRepository.find { it.id == superheroId }!!.asCard()
+
 	private fun Superhero.asCard() = Card(
 			id = id,
 			name = name,

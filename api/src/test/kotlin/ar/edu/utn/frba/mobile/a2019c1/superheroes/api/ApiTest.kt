@@ -175,5 +175,47 @@ class CardsControllerTest(@Autowired val mockMvc: MockMvc) {
 				.andExpect(status().isBadRequest)
 				.andExpect(jsonPath("\$.message").value("provide a value greater than 0 for quantity parameter"))
 	}
+}
+
+@ExtendWith(SpringExtension::class)
+@WebMvcTest(controllers = [TeamsController::class])
+class TeamsControllerTest(@Autowired val mockMvc: MockMvc) {
+
+	@MockBean
+	private lateinit var teamsService: TeamsService
+
+	@Test
+	fun testGetTeam() {
+		val id = 45
+		val cards = listOf(
+				Card(1, "hulk", "big", "hulk.jpg", 23),
+				Card(2, "iron man", "metal", "iron_man.jpg", 45))
+		whenever(teamsService.getTeam(id)).thenReturn(cards)
+		mockMvc.perform(get("/superheroes/teams/45")
+				.contentType(APPLICATION_JSON))
+				.andExpect(status().isOk)
+				.andExpect(jsonPath("\$.superheroes[0].id").value(1))
+				.andExpect(jsonPath("\$.superheroes[0].name").value("hulk"))
+				.andExpect(jsonPath("\$.superheroes[0].description").value("big"))
+				.andExpect(jsonPath("\$.superheroes[0].thumbnail").value("hulk.jpg"))
+				.andExpect(jsonPath("\$.superheroes[0].power").value(23))
+				.andExpect(jsonPath("\$.superheroes[1].id").value(2))
+				.andExpect(jsonPath("\$.superheroes[1].name").value("iron man"))
+				.andExpect(jsonPath("\$.superheroes[1].description").value("metal"))
+				.andExpect(jsonPath("\$.superheroes[1].thumbnail").value("iron_man.jpg"))
+				.andExpect(jsonPath("\$.superheroes[1].power").value(45))
+				.andExpect(jsonPath("\$.totalPower").value(68)) // FIXME
+		verify(teamsService).getTeam(id)
+	}
+
+	@Test
+	fun testTeamNotFound() {
+		whenever(teamsService.getTeam(45)).thenThrow(TeamNotFoundException("team 45 not found"))
+		mockMvc.perform(get("/superheroes/teams/45")
+				.contentType(APPLICATION_JSON))
+				.andExpect(status().isNotFound)
+				.andExpect(jsonPath("\$.message").value("team 45 not found"))
+		verify(teamsService).getTeam(45)
+	}
 
 }

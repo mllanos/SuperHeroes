@@ -48,3 +48,17 @@ class CardsController(private val cardsService: CardsService) {
 	}
 
 }
+
+@RestController
+@RequestMapping("/superheroes")
+class TeamsController(private val teamsService: TeamsService) {
+
+	@GetMapping("/teams/{id}")
+	fun getTeam(@PathVariable id: String): TeamResponseResource {
+		val teamId = id.toInt()
+		return teamsService
+				.getTeam(teamId)
+				.asCardsResource()
+	}
+
+}

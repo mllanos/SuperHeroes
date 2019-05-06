@@ -1,6 +1,7 @@
 package ar.edu.utn.frba.mobile.a2019c1.superheroes.api
 
 import org.springframework.stereotype.Service
+import kotlin.streams.toList
 
 private const val MAX_USER_ID_LENGTH = 1000000
 
@@ -47,5 +48,15 @@ class CardsService(private val usersService: UsersService,
 			return cards
 		}
 	}
+
+}
+
+@Service
+class TeamsService(private val marvelService: MarvelService, private val storageService: StorageService) {
+
+	fun getTeam(teamId: Int) = storageService.findTeam(teamId)
+			?.let { team ->
+				team.superheroes.stream().map { marvelService.getCardOf(it) }.toList()
+			} ?: throw TeamNotFoundException("team $teamId not found")
 
 }

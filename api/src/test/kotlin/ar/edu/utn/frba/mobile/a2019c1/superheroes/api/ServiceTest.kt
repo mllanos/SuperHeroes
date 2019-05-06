@@ -1,19 +1,14 @@
 package ar.edu.utn.frba.mobile.a2019c1.superheroes.api
 
-import ar.edu.utn.frba.mobile.a2019c1.superheroes.api.StorageService.CardsDto
-import com.google.gson.FieldNamingPolicy
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
-import com.nhaarman.mockitokotlin2.doReturn
-import com.nhaarman.mockitokotlin2.verify
-import com.nhaarman.mockitokotlin2.whenever
-import net.spy.memcached.MemcachedClient
+import com.nhaarman.mockitokotlin2.*
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.*
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
 import org.junit.jupiter.api.extension.ExtendWith
 import org.mockito.Mock
 import org.mockito.junit.jupiter.MockitoExtension
-import java.net.InetSocketAddress
+import org.mockito.junit.jupiter.MockitoSettings
+import org.mockito.quality.Strictness
 
 @ExtendWith(MockitoExtension::class)
 class UsersServiceTest {
@@ -123,93 +118,50 @@ class UsersServiceTest {
 }
 
 @ExtendWith(MockitoExtension::class)
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
-class StorageServiceTest {
+@MockitoSettings(strictness = Strictness.LENIENT)
+class TeamsServiceTest {
 
-	private val memcachedClient = MemcachedClient(InetSocketAddress("127.0.0.1", 11211))
+	@Mock
+	private lateinit var marvelService: MarvelService
 
-	private lateinit var gson: Gson
-
-	@BeforeAll
-	fun setUp() {
-		gson = GsonBuilder()
-				.serializeNulls()
-				.setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
-				.create()!!
-	}
-
-	@AfterEach
-	fun afterEach() {
-		memcachedClient.flush()
-	}
-
-	@AfterAll
-	fun afterAll() {
-		memcachedClient.shutdown()
-	}
+	@Mock
+	private lateinit var storageService: StorageService
 
 	@Test
-	fun testStoreUser() {
-		val storageService = StorageService(memcachedClient, gson)
-		val user = User(123456, "vegeta")
-		storageService.storeUser(user)
-		memcachedClient
-				.get("users:123456")
-				.let { it as String }
-				.also { jsonString ->
-					val userDto = gson.fromJson(jsonString, User::class.java)
-					assertThat(userDto).isEqualToComparingFieldByField(user)
+	fun testGetTeam() {
+		val teamsService = TeamsService(marvelService, storageService)
+		val teamId = 45
+		val team = Team(teamId, listOf(1, 2, 3, 4))
+		val hulk = Card(1, "hulk", "big", "hulk.jpg", 23)
+		val ironMan = Card(2, "iron man", "metal", "iron_man.jpg", 45)
+		val captainAmerica = Card(3, "captain america", "shield", "captain_america.jpg", 80)
+		val spiderMan = Card(4, "spider man", "web", "spider_man.jpg", 67)
+		whenever(storageService.findTeam(45)).doReturn(team)
+		whenever(marvelService.getCardOf(1)).doReturn(hulk)
+		whenever(marvelService.getCardOf(2)).doReturn(ironMan)
+		whenever(marvelService.getCardOf(3)).doReturn(captainAmerica)
+		whenever(marvelService.getCardOf(4)).doReturn(spiderMan)
+		teamsService
+				.getTeam(45)
+				.also { cards ->
+					assertThat(cards).contains(hulk).contains(ironMan).contains(captainAmerica).contains(spiderMan)
+					verify(storageService).findTeam(45)
+					verify(marvelService).getCardOf(1)
+					verify(marvelService).getCardOf(2)
+					verify(marvelService).getCardOf(3)
+					verify(marvelService).getCardOf(4)
 				}
 	}
 
 	@Test
-	fun testFindCards() {
-		val storageService = StorageService(memcachedClient, gson)
-		val key = "users:123456:available_cards"
-		val cards = listOf(
-				Card(1, "hulk", "big", "hulk.jpg", 23),
-				Card(2, "iron man", "metal", "iron_man.jpg", 45))
-		val data = CardsDto(cards)
-		memcachedClient.set(key, 10, gson.toJson(data))
-		storageService
-				.getUserAvailableCards(123456)
-				.also { found ->
-					assertThat(found).hasSameElementsAs(cards)
-				}
-	}
-
-	@Test
-	fun testUpdateUserCards() {
-		val storageService = StorageService(memcachedClient, gson)
-		val key = "users:123456:available_cards"
-		val storedCards = listOf(
-				Card(1, "captain america", "shield", "captain_america.jpg", 77),
-				Card(2, "spider man", "web", "spider_man.jpg", 64))
-		val cards = listOf(
-				Card(1, "hulk", "big", "hulk.jpg", 23),
-				Card(2, "iron man", "metal", "iron_man.jpg", 45))
-		val data = CardsDto(storedCards)
-		memcachedClient.set(key, 10, gson.toJson(data))
-		storageService
-				.updateUserAvailableCards(123456, cards)
-				.also {
-					storageService.getUserAvailableCards(123456).also {
-						assertThat(it).containsAll(storedCards)
-						assertThat(it).containsAll(cards)
-					}
-				}
-	}
-
-	@Test
-	fun testStoreTeam() {
-		val storageService = StorageService(memcachedClient, gson)
-		val userId = 123456
-		val team = Team(45, listOf(1, 2, 3, 4))
-		storageService.storeUserTeam(userId, team)
-		memcachedClient.get("users:123456:team").let { it as String }
-				.let {
-					val userDto = gson.fromJson(it, Team::class.java)
-					assertThat(userDto).isEqualToComparingFieldByField(team)
+	fun testTeamNotFound() {
+		val teamsService = TeamsService(marvelService, storageService)
+		whenever(storageService.findTeam(45)).doReturn(null)
+		assertThrows<TeamNotFoundException> { teamsService.getTeam(45) }
+				.also { exception ->
+					assertThat(exception.message).isEqualTo("team 45 not found")
+					verify(storageService).findTeam(45)
+					verify(marvelService, never()).getCardOf(any())
 				}
 	}
 

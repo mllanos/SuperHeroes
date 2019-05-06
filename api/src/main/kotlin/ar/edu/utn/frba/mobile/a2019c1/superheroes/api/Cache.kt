@@ -8,6 +8,7 @@ import java.text.MessageFormat.format
 private const val USER_KEY = "users:{0}"
 private const val USER_CARDS_KEY = "users:{0}:available_cards"
 private const val USER_TEAM_KEY = "users:{0}:team"
+private const val TEAM_KEY = "users:{0}:team"
 
 @Service
 class StorageService(private val memcachedClient: MemcachedClient, private val gson: Gson) {
@@ -59,12 +60,22 @@ class StorageService(private val memcachedClient: MemcachedClient, private val g
 	}
 
 	fun storeUserTeam(userId: Int, team: Team) {
-		val key = format(USER_TEAM_KEY, userId.toString())
+		val userTeamKey = format(USER_TEAM_KEY, userId.toString())
+		val teamKey = format(TEAM_KEY, userId.toString())
 		val json = gson.toJson(team)
-		val result = memcachedClient.set(key, 0, json).get()
-		if (!result) {
+		val userTeamResult = memcachedClient.set(userTeamKey, 0, json).get()
+		val teamResult = memcachedClient.set(teamKey, 0, json).get()
+		if (!userTeamResult || !teamResult) {
 			throw RuntimeException("failed to store team for user: $userId")
 		}
+	}
+
+	fun findTeam(teamId: Int): Team? {
+		val key = format(TEAM_KEY, teamId.toString())
+		return memcachedClient.get(key)?.let { it as String }
+				?.let {
+					gson.fromJson(it, Team::class.java)
+				}
 	}
 
 	data class CardsDto(val cards: List<Card>)
