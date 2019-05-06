@@ -11,4 +11,7 @@
     <string name="title_home">Mi equipo y mis cartas</string>
     <string name="title_dashboard">Abrir el sobreee</string>
     <string name="title_notifications">PELEA PELEA PELEAA</string>
+    <string name="cards">Cartas</string>
+    <string name="open_deck">Abrir Sobre</string>
+    <string name="fight">Pelea</string>
 </resources>
