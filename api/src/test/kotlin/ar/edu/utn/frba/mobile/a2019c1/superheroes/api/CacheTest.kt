@@ -4,7 +4,7 @@ import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import net.spy.memcached.MemcachedClient
-import org.assertj.core.api.Assertions
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.*
 import org.junit.jupiter.api.extension.ExtendWith
 import org.mockito.junit.jupiter.MockitoExtension
@@ -46,7 +46,7 @@ class StorageServiceTest {
 				.let { it as String }
 				.also { jsonString ->
 					val userDto = gson.fromJson(jsonString, User::class.java)
-					Assertions.assertThat(userDto).isEqualToComparingFieldByField(user)
+					assertThat(userDto).isEqualToComparingFieldByField(user)
 				}
 	}
 
@@ -62,7 +62,7 @@ class StorageServiceTest {
 		storageService
 				.getUserAvailableCards(123456)
 				.also { found ->
-					Assertions.assertThat(found).hasSameElementsAs(cards)
+					assertThat(found).hasSameElementsAs(cards)
 				}
 	}
 
@@ -82,8 +82,8 @@ class StorageServiceTest {
 				.updateUserAvailableCards(123456, cards)
 				.also {
 					storageService.getUserAvailableCards(123456).also {
-						Assertions.assertThat(it).containsAll(storedCards)
-						Assertions.assertThat(it).containsAll(cards)
+						assertThat(it).containsAll(storedCards)
+						assertThat(it).containsAll(cards)
 					}
 				}
 	}
@@ -97,7 +97,32 @@ class StorageServiceTest {
 		memcachedClient.get("users:123456:team").let { it as String }
 				.let {
 					val userDto = gson.fromJson(it, Team::class.java)
-					Assertions.assertThat(userDto).isEqualToComparingFieldByField(team)
+					assertThat(userDto).isEqualToComparingFieldByField(team)
+				}
+	}
+
+	@Test
+	fun testFindAnExistentOpponent() {
+		val storageService = StorageService(memcachedClient, gson)
+		val userId = 123456
+		val opponentId = 100000
+		val fightDto = StorageService.FightDto(listOf(opponentId))
+		val json = gson.toJson(fightDto)
+		memcachedClient.set("fights:users", 15, json).get()
+		storageService
+				.findAnOpponentFor(userId)
+				.also { found ->
+					assertThat(found).isEqualTo(opponentId)
+				}
+	}
+
+	@Test
+	fun testCannotFindAnOpponent() {
+		val storageService = StorageService(memcachedClient, gson)
+		val userId = 123456
+		storageService.findAnOpponentFor(userId)
+				.also { result ->
+					assertThat(result).isNull()
 				}
 	}
 

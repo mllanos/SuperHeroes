@@ -1,5 +1,7 @@
 package ar.edu.utn.frba.mobile.a2019c1.superheroes.api
 
+import ar.edu.utn.frba.mobile.a2019c1.superheroes.api.FightData.Geolocation
+import ar.edu.utn.frba.mobile.a2019c1.superheroes.api.FightResult.Player
 import com.nhaarman.mockitokotlin2.*
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
@@ -162,6 +164,79 @@ class TeamsServiceTest {
 					assertThat(exception.message).isEqualTo("team 45 not found")
 					verify(storageService).findTeam(45)
 					verify(marvelService, never()).getCardOf(any())
+				}
+	}
+
+}
+
+@ExtendWith(MockitoExtension::class)
+@MockitoSettings(strictness = Strictness.LENIENT)
+class FightServiceTest {
+
+	@Mock
+	private lateinit var usersService: UsersService
+
+	@Mock
+	private lateinit var storageService: StorageService
+
+	@Mock
+	private lateinit var randomService: RandomService
+
+	@Mock
+	private lateinit var marvelService: MarvelService
+
+	@Test
+	fun testFight() {
+		val fightService = FightService(marvelService, usersService, storageService, randomService)
+		val geolocation = Geolocation(latitude = 1231231, amplitude = 53234)
+		val userId = 123456
+		val opponentId = 100000
+		val data = FightData(user_id = userId, geolocation = geolocation, timestamp = 1500000034)
+		val userTeam = Team(23, listOf(1, 2, 3, 4))
+		val opponentTeam = Team(45, listOf(5, 6, 7, 8))
+		val hulk = Card(1, "hulk", "big", "hulk.jpg", 23)
+		val ironMan = Card(2, "iron man", "metal", "iron_man.jpg", 45)
+		val captainAmerica = Card(3, "captain america", "shield", "captain_america.jpg", 80)
+		val spiderMan = Card(4, "spider man", "web", "spider_man.jpg", 67)
+		val thor = Card(5, "thor", "hammer", "thor.jpg", 89)
+		val drStrange = Card(6, "dr strange", "time", "dr_strange.jpg", 81)
+		val antMan = Card(7, "ant man", "ants", "ant_man.jpg", 55)
+		val falcon = Card(8, "falcon", "wings", "falcon.jpg", 32)
+		whenever(usersService.getUser(userId)).doReturn(User(userId, "vegeta"))
+		whenever(usersService.getUser(opponentId)).doReturn(User(opponentId, "goku"))
+		whenever(storageService.findAnOpponentFor(userId)).doReturn(opponentId)
+		whenever(storageService.findUserTeam(userId)).doReturn(userTeam)
+		whenever(storageService.findUserTeam(opponentId)).doReturn(opponentTeam)
+		whenever(marvelService.getCardOf(1)).doReturn(hulk)
+		whenever(marvelService.getCardOf(2)).doReturn(ironMan)
+		whenever(marvelService.getCardOf(3)).doReturn(captainAmerica)
+		whenever(marvelService.getCardOf(4)).doReturn(spiderMan)
+		whenever(marvelService.getCardOf(5)).doReturn(thor)
+		whenever(marvelService.getCardOf(6)).doReturn(drStrange)
+		whenever(marvelService.getCardOf(7)).doReturn(antMan)
+		whenever(marvelService.getCardOf(8)).doReturn(falcon)
+		whenever(randomService.generate(10000)).doReturn(1)
+		fightService
+				.fight(data)
+				.also { fightResult ->
+					assertThat(fightResult.id).isEqualTo(1)
+					assertThat(fightResult.winner).isEqualTo("goku")
+					assertThat(fightResult.players[0]).isEqualTo(Player(userId, "vegeta", 23, 215))
+					assertThat(fightResult.players[1]).isEqualTo(Player(opponentId, "goku", 45, 257))
+					verify(usersService).getUser(userId)
+					verify(usersService).getUser(opponentId)
+					verify(storageService).findAnOpponentFor(userId)
+					verify(storageService).findUserTeam(userId)
+					verify(storageService).findUserTeam(opponentId)
+					verify(marvelService).getCardOf(1)
+					verify(marvelService).getCardOf(2)
+					verify(marvelService).getCardOf(3)
+					verify(marvelService).getCardOf(4)
+					verify(marvelService).getCardOf(5)
+					verify(marvelService).getCardOf(6)
+					verify(marvelService).getCardOf(7)
+					verify(marvelService).getCardOf(8)
+					verify(randomService).generate(10000)
 				}
 	}
 

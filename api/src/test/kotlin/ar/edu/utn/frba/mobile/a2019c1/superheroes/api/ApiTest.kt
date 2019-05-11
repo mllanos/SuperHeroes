@@ -1,5 +1,6 @@
 package ar.edu.utn.frba.mobile.a2019c1.superheroes.api
 
+import ar.edu.utn.frba.mobile.a2019c1.superheroes.api.FightData.Geolocation
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
 import org.json.JSONArray
@@ -216,6 +217,47 @@ class TeamsControllerTest(@Autowired val mockMvc: MockMvc) {
 				.andExpect(status().isNotFound)
 				.andExpect(jsonPath("\$.message").value("team 45 not found"))
 		verify(teamsService).getTeam(45)
+	}
+
+}
+
+@ExtendWith(SpringExtension::class)
+@WebMvcTest(controllers = [FightController::class])
+class FightController(@Autowired val mockMvc: MockMvc) {
+
+	@MockBean
+	private lateinit var fightService: FightService
+
+	@Test
+	fun testFight() {
+		val id = 123456
+		val geolocation = Geolocation(amplitude = 222222, latitude = 333333)
+		val timestamp = 15000000123
+		val fightData = FightData(id, geolocation, timestamp)
+		val body = JSONObject()
+				.put("user_id", id)
+				.put("geolocation", JSONObject()
+						.put("amplitude", geolocation.amplitude)
+						.put("latitude", geolocation.latitude))
+				.put("timestamp", timestamp)
+		val fightResult = FightResult(
+				id = 123,
+				winner = "goku",
+				players = listOf(
+						FightResult.Player(1, "goku", 301, 500),
+						FightResult.Player(2, "vegeta", 405, 498)))
+		whenever(fightService.fight(fightData)).thenReturn(fightResult)
+		mockMvc.perform(post("/superheroes/fight")
+				.content(body.toString())
+				.contentType(APPLICATION_JSON))
+				.andExpect(status().isOk)
+				.andExpect(content().contentType(APPLICATION_JSON_UTF8))
+				.andExpect(jsonPath("\$.id").value(id))
+				.andExpect(jsonPath("\$.winner").value("goku"))
+				.andExpect(jsonPath("\$.opponent.id").value(2))
+				.andExpect(jsonPath("\$.opponent.nickname").value("vegeta"))
+				.andExpect(jsonPath("\$.opponent.team_id").value(405))
+		verify(fightService).fight(fightData)
 	}
 
 }
