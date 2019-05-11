@@ -24,6 +24,7 @@ dependencies {
     implementation 'com.amazonaws:elasticache-java-cluster-client:1.1.1'
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.google.guava:guava:23.4-jre'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.2.1'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'com.nhaarman.mockitokotlin2:mockito-kotlin:2.1.0'
     testImplementation 'org.junit.jupiter:junit-jupiter-api'

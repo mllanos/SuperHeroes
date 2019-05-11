@@ -8,6 +8,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 class UserNotFoundException(message: String?) : RuntimeException(message)
 class TeamNotFoundException(message: String?) : RuntimeException(message)
+class OpponentNotFoundException(message: String?) : RuntimeException(message)
 
 @ControllerAdvice
 class ApiExceptionHandler : ResponseEntityExceptionHandler() {
@@ -20,6 +21,9 @@ class ApiExceptionHandler : ResponseEntityExceptionHandler() {
 
 	@ExceptionHandler(value = [TeamNotFoundException::class])
 	fun handleTeams(e: RuntimeException) = notFoundEntity(e)
+
+	@ExceptionHandler(value = [OpponentNotFoundException::class])
+	fun handleFights(e: RuntimeException) = notFoundEntity(e)
 
 	private fun badRequestEntity(e: RuntimeException) = ResponseEntity(
 			ErrorMessage(

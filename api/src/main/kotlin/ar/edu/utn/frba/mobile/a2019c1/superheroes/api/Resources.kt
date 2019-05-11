@@ -1,5 +1,7 @@
 package ar.edu.utn.frba.mobile.a2019c1.superheroes.api
 
+import ar.edu.utn.frba.mobile.a2019c1.superheroes.api.FightResponseResource.Opponent
+
 private const val MAX_CARDS_LIMIT = 8
 
 private const val TEAM_SIZE = 4
@@ -19,7 +21,15 @@ data class CardsData(val userId: Int? = null, var quantity: Int? = null) {
 
 data class UserTeamData(val userId: Int, val superheroes: List<Int>)
 
+data class FightData(val user_id: Int, val geolocation: Geolocation, val timestamp: Long) {
+	data class Geolocation(val latitude: Int, val amplitude: Int)
+}
+
 data class UserTeamResource(val superheroes: List<Int>? = null)
+
+data class FightResponseResource(val id: Int, val winner: String, val opponent: Opponent) {
+	data class Opponent(val id: Int, val nickname: String, val team_id: Int)
+}
 
 data class UserResponseResource(val id: Int)
 
@@ -44,3 +54,9 @@ fun List<Card>.asResource() = CardsResponseResource(cards = this)
 fun Team.asResource() = UserTeamResourceResponse(id)
 
 fun List<Card>.asCardsResource() = TeamResponseResource(superheroes = this, totalPower = this.sumBy { it.power })
+
+fun FightResult.asResource(): FightResponseResource {
+	val player = players.first { p -> p.nickname != winner }
+	val opponent = Opponent(player.id, player.nickname, player.teamId)
+	return FightResponseResource(id, winner, opponent)
+}

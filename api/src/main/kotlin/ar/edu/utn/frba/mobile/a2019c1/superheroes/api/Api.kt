@@ -62,3 +62,16 @@ class TeamsController(private val teamsService: TeamsService) {
 	}
 
 }
+
+@RestController
+@RequestMapping("/superheroes")
+class FightController(private val fightService: FightService) {
+
+	@PostMapping("/fight")
+	fun startFight(@RequestBody fightData: FightData): FightResponseResource {
+		return fightService
+				.fight(fightData)
+				.asResource()
+	}
+
+}
