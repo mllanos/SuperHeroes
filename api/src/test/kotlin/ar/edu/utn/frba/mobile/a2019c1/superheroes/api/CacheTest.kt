@@ -1,5 +1,7 @@
 package ar.edu.utn.frba.mobile.a2019c1.superheroes.api
 
+import ar.edu.utn.frba.mobile.a2019c1.superheroes.api.StorageService.CardsDto
+import ar.edu.utn.frba.mobile.a2019c1.superheroes.api.StorageService.OpponentsDto
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -57,7 +59,7 @@ class StorageServiceTest {
 		val cards = listOf(
 				Card(1, "hulk", "big", "hulk.jpg", 23),
 				Card(2, "iron man", "metal", "iron_man.jpg", 45))
-		val data = StorageService.CardsDto(cards)
+		val data = CardsDto(cards)
 		memcachedClient.set(key, 10, gson.toJson(data))
 		storageService
 				.getUserAvailableCards(123456)
@@ -76,7 +78,7 @@ class StorageServiceTest {
 		val cards = listOf(
 				Card(1, "hulk", "big", "hulk.jpg", 23),
 				Card(2, "iron man", "metal", "iron_man.jpg", 45))
-		val data = StorageService.CardsDto(storedCards)
+		val data = CardsDto(storedCards)
 		memcachedClient.set(key, 10, gson.toJson(data))
 		storageService
 				.updateUserAvailableCards(123456, cards)
@@ -106,7 +108,7 @@ class StorageServiceTest {
 		val storageService = StorageService(memcachedClient, gson)
 		val userId = 123456
 		val opponentId = 100000
-		val fightDto = StorageService.FightDto(listOf(opponentId))
+		val fightDto = OpponentsDto(listOf(opponentId))
 		val json = gson.toJson(fightDto)
 		memcachedClient.set("fights:users", 15, json).get()
 		storageService

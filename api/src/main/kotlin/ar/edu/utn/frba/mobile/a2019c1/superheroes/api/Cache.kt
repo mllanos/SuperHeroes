@@ -13,6 +13,7 @@ private const val USER_CARDS_KEY = "users:{0}:available_cards"
 private const val USER_TEAM_KEY = "users:{0}:team"
 private const val TEAM_KEY = "users:{0}:team"
 private const val FIGHT_AVAILABLE_PLAYERS_KEY = "fights:users"
+private const val FIGHTS_KEY = "fights"
 private const val FIGHT_TIMEOUT = 10000L
 
 @Service
@@ -94,8 +95,8 @@ class StorageService(private val memcachedClient: MemcachedClient, private val g
 	fun findAnOpponentFor(userId: Int): Int? {
 		memcachedClient.get(FIGHT_AVAILABLE_PLAYERS_KEY)?.let { it as String }
 				?.let {
-					val fightDto = gson.fromJson(it, FightDto::class.java)
-					addOpponent(userId, fightDto.opponents)
+					val opponentsDto = gson.fromJson(it, OpponentsDto::class.java)
+					addOpponent(userId, opponentsDto.opponents)
 				} ?: saveOpponent(userId)
 		var opponent: Int? = null
 		runBlocking {
@@ -103,8 +104,8 @@ class StorageService(private val memcachedClient: MemcachedClient, private val g
 				while (opponent == null && isActive) {
 					memcachedClient.get(FIGHT_AVAILABLE_PLAYERS_KEY).let { it as String }
 							.let {
-								val fightDto = gson.fromJson(it, FightDto::class.java)
-								opponent = fightDto.opponents
+								val opponentsDto = gson.fromJson(it, OpponentsDto::class.java)
+								opponent = opponentsDto.opponents
 										.stream()
 										.filter { opponentId -> opponentId != userId }
 										.findFirst()
@@ -118,12 +119,34 @@ class StorageService(private val memcachedClient: MemcachedClient, private val g
 	}
 
 	fun storeFight(fightResult: FightResult) {
+		memcachedClient.get(FIGHTS_KEY)?.let { it as String }
+				?.let { jsonString ->
+					val fights = gson.fromJson(jsonString, FightDto::class.java).fights.toMutableList()
+					updateFights(fights, fightResult)
+				} ?: addNewFight(fightResult)
+	}
 
+	private fun updateFights(fights: MutableList<FightResult>, fightResult: FightResult) {
+		fights.add(fightResult)
+		val fightDto = FightDto(fights)
+		val result = memcachedClient.set(FIGHTS_KEY, 0, gson.toJson(fightDto)).get()
+		if (!result) {
+			throw RuntimeException("failed to store fight ${fightResult.id}")
+		}
+	}
+
+	private fun addNewFight(fightResult: FightResult) {
+		val fightDto = FightDto(listOf(fightResult))
+		val json = gson.toJson(fightDto)
+		val result = memcachedClient.set(FIGHTS_KEY, 0, json).get()
+		if (!result) {
+			throw RuntimeException("failed to store fight ${fightResult.id}")
+		}
 	}
 
 	private fun saveOpponent(userId: Int) {
-		val fightDto = FightDto(listOf(userId))
-		val json = gson.toJson(fightDto)
+		val opponentsDto = OpponentsDto(listOf(userId))
+		val json = gson.toJson(opponentsDto)
 		val result = memcachedClient.set(FIGHT_AVAILABLE_PLAYERS_KEY, 0, json).get()
 		if (!result) {
 			throw RuntimeException("failed to store opponent: $userId")
@@ -133,7 +156,7 @@ class StorageService(private val memcachedClient: MemcachedClient, private val g
 	private fun addOpponent(userId: Int, opponents: List<Int>) {
 		val newOpponents = opponents.toMutableList()
 		newOpponents.add(userId)
-		val fightDto = FightDto(newOpponents)
+		val fightDto = OpponentsDto(newOpponents)
 		val json = gson.toJson(fightDto)
 		val result = memcachedClient.set(FIGHT_AVAILABLE_PLAYERS_KEY, 0, json).get()
 		if (!result) {
@@ -141,7 +164,9 @@ class StorageService(private val memcachedClient: MemcachedClient, private val g
 		}
 	}
 
-	data class FightDto(val opponents: List<Int>)
+	data class FightDto(val fights: List<FightResult>)
+
+	data class OpponentsDto(val opponents: List<Int>)
 
 	data class CardsDto(val cards: List<Card>)
 
