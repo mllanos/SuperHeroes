@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
@@ -23,6 +24,7 @@ import com.android.volley.DefaultRetryPolicy
 import org.json.JSONObject
 
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.R
+import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
 
@@ -72,6 +74,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         login.setOnClickListener {
+			val progressbar = this.progressBar3
 			val user = username.text.toString()
 			val queue = Volley.newRequestQueue(this)
 			val url = "http://localhost:8080/superheroes/users"
@@ -89,11 +92,18 @@ class LoginActivity : AppCompatActivity() {
 					intent.putExtra("username", user)
 					intent.putExtra("id", id)
 					startActivity(intent)
+					progressbar.visibility = View.GONE
+					window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
 				}, Response.ErrorListener{ error ->
-					Toast.makeText(this, error.message, Toast.LENGTH_LONG).show()
+					Toast.makeText(this, "Error fetching resource: $error", Toast.LENGTH_LONG).show()
+					progressbar.visibility = View.INVISIBLE
+					window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
 				})
 
-			
+			progressbar.visibility = View.VISIBLE
+			window.setFlags(
+				WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+				WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
 			queue.add(request)
 
 			// Volley request policy, only one time request to avoid duplicate transaction
