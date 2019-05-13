@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_envelope -> {
-				toolbar.title="Sobre"
+				toolbar.title="Abrir Sobre"
 				val envelopeFragment = EnvelopeFragment.newInstance()
 				openFragment(envelopeFragment)
                 return@OnNavigationItemSelectedListener true
