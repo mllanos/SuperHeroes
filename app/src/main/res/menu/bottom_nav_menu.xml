@@ -2,18 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-            android:id="@+id/navigation_home"
-            android:title="@string/cards"
-            android:icon="@drawable/ic_content_copy_black_24dp"/>
+
+            android:id="@+id/navigation_cards"
+            android:icon="@drawable/ic_content_copy_black_24dp"
+            android:title="@string/title_cards"/>
 
     <item
-            android:id="@+id/navigation_dashboard"
-            android:title="@string/open_deck"
-            android:icon="@drawable/ic_email_black_24dp"/>
+            android:id="@+id/navigation_envelope"
+            android:icon="@drawable/ic_email_black_24dp"
+            android:title="@string/title_envelope"/>
 
     <item
-            android:id="@+id/navigation_notifications"
-            android:title="@string/fight"
-            android:icon="@drawable/ic_war_black_24dp"/>
+            android:id="@+id/navigation_fight"
+            android:icon="@drawable/ic_war_black_24dp"
+            android:title="@string/title_fight"/>
 
 </menu>

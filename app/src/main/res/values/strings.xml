@@ -8,10 +8,7 @@
     <string name="invalid_username">Username must be 5 characters or greater</string>
     <string name="login_failed">"Login failed"</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="title_home">Mi equipo y mis cartas</string>
-    <string name="title_dashboard">Abrir el sobreee</string>
-    <string name="title_notifications">PELEA PELEA PELEAA</string>
-    <string name="cards">Cartas</string>
-    <string name="open_deck">Abrir Sobre</string>
-    <string name="fight">Pelea</string>
+    <string name="title_cards">Mis cartas</string>
+    <string name="title_envelope">Abrir sobre</string>
+    <string name="title_fight">Luchar</string>
 </resources>
