@@ -10,12 +10,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
-import android.view.inputmethod.EditorInfo
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.MainActivity
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.Volley
+import com.android.volley.DefaultRetryPolicy
+import org.json.JSONObject
 
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.R
 
@@ -67,10 +72,39 @@ class LoginActivity : AppCompatActivity() {
         }
 
         login.setOnClickListener {
-            val intent = Intent(this@LoginActivity, MainActivity::class.java)
-            intent.putExtra("username", username.text.toString());
-            startActivity(intent)
-        }
+			val user = username.text.toString()
+			val queue = Volley.newRequestQueue(this)
+			val url = "http://localhost:8080/superheroes/users"
+			val params = HashMap<String,String>()
+			params["nickname"] = user
+			val jsonObject = JSONObject(params)
+
+			val request = JsonObjectRequest(Request.Method.POST, url, jsonObject,
+				Response.Listener { response ->
+					val strResp = response.toString()
+					val jsonObj = JSONObject(strResp)
+					val id = jsonObj.get("id").toString()
+					val intent = Intent(this@LoginActivity, MainActivity::class.java)
+					Toast.makeText(this, "Logged in successfully. User: $user, id: $id.", Toast.LENGTH_LONG).show()
+					intent.putExtra("username", user)
+					intent.putExtra("id", id)
+					startActivity(intent)
+				}, Response.ErrorListener{ error ->
+					Toast.makeText(this, error.message, Toast.LENGTH_LONG).show()
+				})
+
+			
+			queue.add(request)
+
+			// Volley request policy, only one time request to avoid duplicate transaction
+			request.retryPolicy = DefaultRetryPolicy(
+				DefaultRetryPolicy.DEFAULT_TIMEOUT_MS,
+				// 0 means no retry
+				0, // DefaultRetryPolicy.DEFAULT_MAX_RETRIES = 2
+				1f // DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+			)
+
+		}
     }
 
     private fun updateUiWithUser(model: LoggedInUserView) {
