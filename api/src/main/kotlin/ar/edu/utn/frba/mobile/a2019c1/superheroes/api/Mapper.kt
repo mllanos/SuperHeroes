@@ -8,7 +8,7 @@ import java.nio.charset.StandardCharsets
 import kotlin.reflect.KClass
 
 data class Superheroes(val superheroes: List<Superhero>)
-data class Superhero(val id: Int, val name: String, val description: String, val thumbnail: String)
+data class Superhero(val id: Int, val name: String, val description: String, val thumbnail: String, val power: Int)
 
 object SuperheroesRepository {
 	fun get() = JSONMapper.map("superheroes.json", Superheroes::class).superheroes
