@@ -24,13 +24,21 @@
 
 
         <ImageView
+                android:id="@+id/blank_card"
                 android:scaleType="fitCenter"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:layout_below="@+id/message"
                 android:src="@mipmap/blank_card_foreground"/>
-
-    </RelativeLayout>
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView"
+                android:layout_below="@+id/blank_card"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true">
+        </ImageView>
+             </RelativeLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/nav_view"
