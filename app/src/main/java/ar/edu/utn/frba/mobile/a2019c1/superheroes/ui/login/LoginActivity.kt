@@ -28,57 +28,57 @@ import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
 
-    private lateinit var loginViewModel: LoginViewModel
+	private lateinit var loginViewModel: LoginViewModel
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+	override fun onCreate(savedInstanceState: Bundle?) {
+		super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_login)
+		setContentView(R.layout.activity_login)
 
-        val username = findViewById<EditText>(R.id.username)
-        val login = findViewById<Button>(R.id.login)
+		val username = findViewById<EditText>(R.id.username)
+		val login = findViewById<Button>(R.id.login)
 
-        loginViewModel = ViewModelProviders.of(this, LoginViewModelFactory())
-            .get(LoginViewModel::class.java)
+		loginViewModel = ViewModelProviders.of(this, LoginViewModelFactory())
+			.get(LoginViewModel::class.java)
 
-        loginViewModel.loginFormState.observe(this@LoginActivity, Observer {
-            val loginState = it ?: return@Observer
+		loginViewModel.loginFormState.observe(this@LoginActivity, Observer {
+			val loginState = it ?: return@Observer
 
-            // disable login button unless both username is valid
-            login.isEnabled = loginState.isDataValid
+			// disable login button unless both username is valid
+			login.isEnabled = loginState.isDataValid
 
-            if (loginState.usernameError != null) {
-                username.error = getString(loginState.usernameError)
-            }
-        })
+			if (loginState.usernameError != null) {
+				username.error = getString(loginState.usernameError)
+			}
+		})
 
-        loginViewModel.loginResult.observe(this@LoginActivity, Observer {
-            val loginResult = it ?: return@Observer
+		loginViewModel.loginResult.observe(this@LoginActivity, Observer {
+			val loginResult = it ?: return@Observer
 
-            if (loginResult.error != null) {
-                showLoginFailed(loginResult.error)
-            }
-            if (loginResult.success != null) {
-                updateUiWithUser(loginResult.success)
-            }
-            setResult(Activity.RESULT_OK)
+			if (loginResult.error != null) {
+				showLoginFailed(loginResult.error)
+			}
+			if (loginResult.success != null) {
+				updateUiWithUser(loginResult.success)
+			}
+			setResult(Activity.RESULT_OK)
 
-            //Complete and destroy login activity once successful
-            finish()
-        })
+			//Complete and destroy login activity once successful
+			finish()
+		})
 
-        username.afterTextChanged {
-            loginViewModel.loginDataChanged(
-                username.text.toString()
-            )
-        }
+		username.afterTextChanged {
+			loginViewModel.loginDataChanged(
+				username.text.toString()
+			)
+		}
 
-        login.setOnClickListener {
+		login.setOnClickListener {
 			val progressbar = this.progressBar3
 			val user = username.text.toString()
 			val queue = Volley.newRequestQueue(this)
-			val url = "http://localhost:8080/superheroes/users"
-			val params = HashMap<String,String>()
+			val url = "https://superheroes-mobile-api.herokuapp.com/superheroes/users"
+			val params = HashMap<String, String>()
 			params["nickname"] = user
 			val jsonObject = JSONObject(params)
 
@@ -94,7 +94,7 @@ class LoginActivity : AppCompatActivity() {
 					startActivity(intent)
 					progressbar.visibility = View.GONE
 					window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-				}, Response.ErrorListener{ error ->
+				}, Response.ErrorListener { error ->
 					Toast.makeText(this, "Error fetching resource: $error", Toast.LENGTH_LONG).show()
 					progressbar.visibility = View.INVISIBLE
 					window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
@@ -103,7 +103,8 @@ class LoginActivity : AppCompatActivity() {
 			progressbar.visibility = View.VISIBLE
 			window.setFlags(
 				WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
-				WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+				WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE
+			)
 			queue.add(request)
 
 			// Volley request policy, only one time request to avoid duplicate transaction
@@ -115,35 +116,35 @@ class LoginActivity : AppCompatActivity() {
 			)
 
 		}
-    }
+	}
 
-    private fun updateUiWithUser(model: LoggedInUserView) {
-        val welcome = getString(R.string.welcome)
-        val displayName = model.displayName
-        // TODO : initiate successful logged in experience
-        Toast.makeText(
-            applicationContext,
-            "$welcome $displayName",
-            Toast.LENGTH_LONG
-        ).show()
-    }
+	private fun updateUiWithUser(model: LoggedInUserView) {
+		val welcome = getString(R.string.welcome)
+		val displayName = model.displayName
+		// TODO : initiate successful logged in experience
+		Toast.makeText(
+			applicationContext,
+			"$welcome $displayName",
+			Toast.LENGTH_LONG
+		).show()
+	}
 
-    private fun showLoginFailed(@StringRes errorString: Int) {
-        Toast.makeText(applicationContext, errorString, Toast.LENGTH_SHORT).show()
-    }
+	private fun showLoginFailed(@StringRes errorString: Int) {
+		Toast.makeText(applicationContext, errorString, Toast.LENGTH_SHORT).show()
+	}
 }
 
 /**
  * Extension function to simplify setting an afterTextChanged action to EditText components.
  */
 fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
-    this.addTextChangedListener(object : TextWatcher {
-        override fun afterTextChanged(editable: Editable?) {
-            afterTextChanged.invoke(editable.toString())
-        }
+	this.addTextChangedListener(object : TextWatcher {
+		override fun afterTextChanged(editable: Editable?) {
+			afterTextChanged.invoke(editable.toString())
+		}
 
-        override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+		override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
 
-        override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
-    })
+		override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+	})
 }
