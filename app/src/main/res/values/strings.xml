@@ -9,6 +9,6 @@
     <string name="login_failed">"Login failed"</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_cards">Mis cartas</string>
-    <string name="title_envelope">Sobre</string>
+    <string name="title_envelope">Abrir Sobre</string>
     <string name="title_fight">Luchar</string>
 </resources>
