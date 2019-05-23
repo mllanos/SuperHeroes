@@ -16,6 +16,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.MainActivity
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.R
+import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.User
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.ApiService
 import kotlinx.android.synthetic.main.activity_registration.*
 import org.json.JSONObject
@@ -64,14 +65,16 @@ class RegistrationActivity : AppCompatActivity() {
 				WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
 				WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE
 			)
+			lateinit var user: User
 			val nickname = nicknameText.text.toString()
 			apiService.createUser(nickname,
 				{ response ->
 					val json = JSONObject(response.toString())
-					val id = json.get("id").toString()
-					val intent = Intent(this@RegistrationActivity, MainActivity::class.java)
-					intent.putExtra("username", nickname)
-					intent.putExtra("id", id)
+					val id = json.get("id").toString().toInt()
+					user = User(id, nickname)
+					val intent = Intent(this@RegistrationActivity, MainActivity::class.java).apply {
+						putExtra("user", user)
+					}
 					startActivity(intent)
 					progressbar.visibility = View.GONE
 					window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
