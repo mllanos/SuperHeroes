@@ -1,12 +1,9 @@
 <resources>
     <string name="app_name">Superheroes</string>
-    <!-- Strings related to login -->
-    <string name="prompt_username">Username</string>
-    <string name="action_sign_in">Sign in</string>
-    <string name="action_sign_in_short">Sign in</string>
+    <string name="prompt_nickname">Choose a nickname</string>
+    <string name="action_create_user">Create user</string>
     <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Username must be 5 characters or greater</string>
-    <string name="login_failed">"Login failed"</string>
+    <string name="invalid_nickname">Nickname must be 5 characters or greater</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_cards">Mis cartas</string>
     <string name="title_envelope">Abrir Sobre</string>
