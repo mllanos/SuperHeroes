@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
 		navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
 
 		val user = intent.extras?.getSerializable("user") as User
-		this.title = "Welcome, ${user.nickname}, ${user.id}!"
+		this.title = "Welcome, ${user.nickname}!"
 	}
 
 }

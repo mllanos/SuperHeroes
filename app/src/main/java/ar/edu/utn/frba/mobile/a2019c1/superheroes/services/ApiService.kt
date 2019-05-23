@@ -1,6 +1,7 @@
 package ar.edu.utn.frba.mobile.a2019c1.superheroes.services
 
 import android.content.Context
+import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.User
 import com.android.volley.Request.Method.POST
 import com.android.volley.Response
 import com.android.volley.VolleyError
@@ -13,11 +14,18 @@ class ApiService(private val context: Context) {
 
 	fun createUser(
 		nickname: String,
-		responseHandler: (JSONObject) -> Unit,
+		responseHandler: (User) -> Unit,
 		errorHandler: (VolleyError) -> Unit
 	) {
 		val json = JSONObject().put("nickname", nickname)
-		post("/users", json, responseHandler, errorHandler)
+		post(
+			"/users", json, { response ->
+				val id = response.getInt("id")
+				val user = User(id, nickname)
+				responseHandler(user)
+			},
+			errorHandler
+		)
 	}
 
 	private fun post(

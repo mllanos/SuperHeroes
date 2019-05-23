@@ -19,7 +19,6 @@ import ar.edu.utn.frba.mobile.a2019c1.superheroes.R
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.User
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.ApiService
 import kotlinx.android.synthetic.main.activity_registration.*
-import org.json.JSONObject
 
 class RegistrationActivity : AppCompatActivity() {
 
@@ -68,10 +67,8 @@ class RegistrationActivity : AppCompatActivity() {
 			lateinit var user: User
 			val nickname = nicknameText.text.toString()
 			apiService.createUser(nickname,
-				{ response ->
-					val json = JSONObject(response.toString())
-					val id = json.get("id").toString().toInt()
-					user = User(id, nickname)
+				{ userCreated ->
+					user = userCreated
 					val intent = Intent(this@RegistrationActivity, MainActivity::class.java).apply {
 						putExtra("user", user)
 					}
