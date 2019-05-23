@@ -52,9 +52,6 @@ class RegistrationActivity : AppCompatActivity() {
 			if (registrationResult.error != null) {
 				showRegistrationFailed(registrationResult.error)
 			}
-			if (registrationResult.displayNickname != null) {
-				updateUiWithUser(registrationResult.displayNickname)
-			}
 			setResult(Activity.RESULT_OK)
 			finish()
 		})
@@ -78,16 +75,15 @@ class RegistrationActivity : AppCompatActivity() {
 					startActivity(intent)
 					progressbar.visibility = View.GONE
 					window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+					registrationViewModel.successfulRegistration(nickname)
 				}, { error ->
 					println("Failed to create user - error: ${error.message}")
 					progressbar.visibility = View.INVISIBLE
 					window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+					registrationViewModel.failedRegistration()
 				})
 		}
 	}
-
-	private fun updateUiWithUser(nickname: String) =
-		Toast.makeText(applicationContext, "${getString(R.string.welcome)} $nickname", Toast.LENGTH_LONG).show()
 
 	private fun showRegistrationFailed(@StringRes errorString: Int) =
 		Toast.makeText(applicationContext, errorString, Toast.LENGTH_SHORT).show()

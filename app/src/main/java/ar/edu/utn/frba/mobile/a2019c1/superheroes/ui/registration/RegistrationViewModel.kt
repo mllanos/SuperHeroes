@@ -13,6 +13,14 @@ class RegistrationViewModel : ViewModel() {
 	private val _registrationResult = MutableLiveData<RegistrationResult>()
 	val registrationResult: LiveData<RegistrationResult> = _registrationResult
 
+	fun successfulRegistration(nickname: String) {
+		_registrationResult.value = RegistrationResult(displayNickname = nickname)
+	}
+
+	fun failedRegistration() {
+		_registrationResult.value = RegistrationResult(error = R.string.registration_failed)
+	}
+
 	fun registrationDataChanged(username: String) {
 		if (!isNicknameValid(username)) {
 			_registrationForm.value = RegistrationFormState(nicknameError = R.string.invalid_nickname)
