@@ -3,15 +3,15 @@ package ar.edu.utn.frba.mobile.a2019c1.superheroes
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
-import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.User
+import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.SessionsService
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.cards.CardsFragment
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.envelope.EnvelopeFragment
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.fight.FightFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
+
+	private val sessionService by lazy { SessionsService(this) }
 
 	private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
 		when (item.itemId) {
@@ -31,16 +31,16 @@ class MainActivity : AppCompatActivity() {
 				return@OnNavigationItemSelectedListener true
 			}
 		}
-		false
+		return@OnNavigationItemSelectedListener false
 	}
 
-	fun setDefaultFragment(destFragment: Fragment) {
+	private fun setDefaultFragment(destFragment: Fragment) {
 		this.replaceFragment(destFragment)
 	}
 
-	fun replaceFragment(destFragment: Fragment) {
-		var fragmentManager: FragmentManager = this.supportFragmentManager
-		var fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+	private fun replaceFragment(destFragment: Fragment) {
+		val fragmentManager = this.supportFragmentManager
+		val fragmentTransaction = fragmentManager.beginTransaction()
 		fragmentTransaction.replace(R.id.fragment_container, destFragment)
 		fragmentTransaction.commit()
 	}
@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
 
 		navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
 
-		val user = intent.extras?.getSerializable("user") as User
+		val user = sessionService.getLoggedUser()!!
 		this.title = "Welcome, ${user.nickname}!"
 	}
 
