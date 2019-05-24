@@ -31,6 +31,21 @@ class RegistrationActivity : AppCompatActivity() {
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_registration)
+	}
+
+	override fun onResume() {
+		super.onResume()
+		createUser()
+	}
+
+	private fun createUser() {
+		if (sessionService.isUserLoggedIn()) {
+			val intent = Intent(this@RegistrationActivity, MainActivity::class.java)
+			startActivity(intent)
+			setResult(Activity.RESULT_OK)
+			finish()
+		}
+
 		val nicknameText = findViewById<EditText>(R.id.nickname)
 		val registrationButton = findViewById<Button>(R.id.registration)
 
