@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         val username = intent.extras?.getString("username")
         this.title = "Welcome, $username!"
 
-		1
+
 		val myImageView: ImageView = findViewById(R.id.imageView)
 
 

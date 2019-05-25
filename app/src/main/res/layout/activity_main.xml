@@ -26,15 +26,18 @@
         <ImageView
                 android:id="@+id/blank_card"
                 android:scaleType="fitCenter"
-                android:layout_width="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_width="250dp"
                 android:layout_height="250dp"
                 android:layout_below="@+id/message"
                 android:src="@mipmap/blank_card_foreground"/>
         <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitCenter"
+                android:layout_marginTop="85dp"
                 android:id="@+id/imageView"
-                android:layout_below="@+id/blank_card"
+                android:layout_below="@+id/message"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true">
         </ImageView>
