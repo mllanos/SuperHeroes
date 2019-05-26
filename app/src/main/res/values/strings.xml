@@ -1,12 +1,18 @@
 <resources>
     <string name="app_name">Superheroes</string>
+    <!--registration-->
     <string name="prompt_nickname">Choose a nickname</string>
     <string name="action_create_user">Create user</string>
-    <string name="welcome">"Welcome !"</string>
     <string name="invalid_nickname">Nickname must be 5 characters or greater</string>
     <string name="registration_failed">"Registration failed"</string>
+    <!--main-->
+    <string name="welcome">"Welcome !"</string>
     <string name="title_activity_main">MainActivity</string>
+    <!--cards-->
     <string name="title_cards">Mis cartas</string>
+    <string name="text_card_power">Power: %1$d</string>
+    <!--bundle-->
     <string name="title_envelope">Abrir Sobre</string>
+    <!--fight-->
     <string name="title_fight">Luchar</string>
 </resources>
