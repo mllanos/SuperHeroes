@@ -6,11 +6,20 @@
              android:background="#C0C0C0"
              tools:context=".ui.envelope.EnvelopeFragment">
 
-    <TextView
+    <Button
+            android:id="@+id/btn_get_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Click Me"/>
+
+    <GridView
+            android:id="@+id/cards_grid_view_2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:text="@string/title_envelope"
-    />
+            android:layout_height="648dp"
+            android:gravity="center|clip_vertical"
+            android:columnWidth="100dp"
+            android:verticalSpacing="24dp"
+            android:horizontalSpacing="10dp"
+            android:visibility="invisible" android:translationY="80dp"/>
 
 </FrameLayout>

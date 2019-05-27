@@ -11,22 +11,22 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
+	val fragmentCards = CardsFragment.newInstance()
+	val fragmentEnvelope = EnvelopeFragment.newInstance()
+	val fragmentFight = FightFragment.newInstance()
 	private val sessionService by lazy { SessionsService(this) }
 
 	private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
 		return@OnNavigationItemSelectedListener when (item.itemId) {
 			R.id.navigation_cards -> {
-				val fragmentCards = CardsFragment.newInstance()
 				this.replaceFragment(fragmentCards)
 				true
 			}
 			R.id.navigation_envelope -> {
-				val fragmentEnvelope = EnvelopeFragment.newInstance()
 				this.replaceFragment(fragmentEnvelope)
 				true
 			}
 			R.id.navigation_fight -> {
-				val fragmentFight = FightFragment.newInstance()
 				this.replaceFragment(fragmentFight)
 				true
 			}
