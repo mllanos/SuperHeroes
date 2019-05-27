@@ -14,24 +14,24 @@ class MainActivity : AppCompatActivity() {
 	private val sessionService by lazy { SessionsService(this) }
 
 	private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
-		when (item.itemId) {
+		return@OnNavigationItemSelectedListener when (item.itemId) {
 			R.id.navigation_cards -> {
 				val fragmentCards = CardsFragment.newInstance()
 				this.replaceFragment(fragmentCards)
-				return@OnNavigationItemSelectedListener true
+				true
 			}
 			R.id.navigation_envelope -> {
 				val fragmentEnvelope = EnvelopeFragment.newInstance()
 				this.replaceFragment(fragmentEnvelope)
-				return@OnNavigationItemSelectedListener true
+				true
 			}
 			R.id.navigation_fight -> {
 				val fragmentFight = FightFragment.newInstance()
 				this.replaceFragment(fragmentFight)
-				return@OnNavigationItemSelectedListener true
+				true
 			}
+			else -> false
 		}
-		return@OnNavigationItemSelectedListener false
 	}
 
 	private fun setDefaultFragment(destFragment: Fragment) {
@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
 		navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
 
 		val user = sessionService.getLoggedUser()!!
-		this.title = "Welcome, ${user.nickname}!"
+		this.title = this.getString(R.string.welcome, user.nickname)
 	}
 
 }

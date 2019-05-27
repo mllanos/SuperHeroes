@@ -4,15 +4,15 @@
     <string name="prompt_nickname">Choose a nickname</string>
     <string name="action_create_user">Create user</string>
     <string name="invalid_nickname">Nickname must be 5 characters or greater</string>
-    <string name="registration_failed">"Registration failed"</string>
+    <string name="registration_failed">Registration failed</string>
     <!--main-->
-    <string name="welcome">"Welcome !"</string>
+    <string name="welcome">Welcome, %1$s!</string>
     <string name="title_activity_main">MainActivity</string>
     <!--cards-->
-    <string name="title_cards">Mis cartas</string>
+    <string name="title_cards">My Cards</string>
     <string name="text_card_power">Power: %1$d</string>
     <!--bundle-->
-    <string name="title_envelope">Abrir Sobre</string>
+    <string name="title_envelope">Open Envelope</string>
     <!--fight-->
-    <string name="title_fight">Luchar</string>
+    <string name="title_fight">Fight</string>
 </resources>
