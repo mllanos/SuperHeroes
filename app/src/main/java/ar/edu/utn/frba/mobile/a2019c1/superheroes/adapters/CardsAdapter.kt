@@ -14,11 +14,18 @@ import com.squareup.picasso.Picasso
 
 class CardsAdapter(private val cards: List<Card>, private val context: Context) : BaseAdapter() {
 
-	override fun getItem(position: Int) = UnsupportedOperationException("method not implemented")
+	override fun getItem(position: Int): Any {
+		return cards[position]
+	}
 
-	override fun getItemId(position: Int) = throw UnsupportedOperationException("method not implemented")
+	override fun getItemId(position: Int): Long {
+		return position.toLong()
+	}
 
-	override fun getCount() = throw UnsupportedOperationException("method not implemented")
+	override fun getCount(): Int {
+		return cards.size
+	}
+
 
 	override fun getView(position: Int, _convertView: View?, parent: ViewGroup?): View {
 		val card = cards[position]
