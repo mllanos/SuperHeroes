@@ -11,9 +11,10 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
-	val fragmentCards = CardsFragment.newInstance()
-	val fragmentEnvelope = EnvelopeFragment.newInstance()
-	val fragmentFight = FightFragment.newInstance()
+	private val fragmentCards = CardsFragment.newInstance()
+	private val fragmentEnvelope = EnvelopeFragment.newInstance()
+	private val fragmentFight = FightFragment.newInstance()
+
 	private val sessionService by lazy { SessionsService(this) }
 
 	private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
@@ -50,8 +51,7 @@ class MainActivity : AppCompatActivity() {
 		setContentView(R.layout.activity_main)
 		val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
-		val fragmentDefault = CardsFragment.newInstance()
-		this.setDefaultFragment(fragmentDefault)
+		this.setDefaultFragment(fragmentCards)
 
 		navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
 
