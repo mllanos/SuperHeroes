@@ -1,4 +1,4 @@
-package ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.cards
+package ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.bundle
 
 
 import android.app.Activity
@@ -6,48 +6,46 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.GONE
-import android.view.View.INVISIBLE
 import android.view.ViewGroup
 import android.widget.GridView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.R
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.adapters.CardsAdapter
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.ApiService
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.SessionsService
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.registration.RegistrationActivity
-import kotlinx.android.synthetic.main.fragment_cards.*
+import kotlinx.android.synthetic.main.fragment_bundle.view.*
 
-class CardsFragment : Fragment() {
+class BundleFragment : Fragment() {
 
 	private val apiService by lazy { ApiService(context!!) }
 	private val sessionService by lazy { SessionsService(context!!) }
 
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
-		inflater.inflate(R.layout.fragment_cards, container, false)
+		inflater.inflate(R.layout.fragment_bundle, container, false)
 
 	override fun onResume() {
 		super.onResume()
-		getUserAvailableCards()
+		view!!.btn_get_card.setOnClickListener {
+			this.getCards()
+		}
 	}
 
-	private fun getUserAvailableCards() {
-		val spinner = cards_spinner.apply { visibility = View.VISIBLE }
+	private fun getCards() {
 		sessionService.getLoggedUser()?.let { loggedUser ->
-			apiService.getUserAvailableCards(loggedUser, { cards ->
-				val gridView = view!!.findViewById(R.id.cards_grid_view) as GridView
-				val cardsAdapter = CardsAdapter(cards, context!!)
-				gridView.adapter = cardsAdapter
-				spinner.visibility = GONE
+			apiService.openBundle(loggedUser, { cards ->
+				val gridView = view!!.findViewById(R.id.bundle_grid_view) as GridView
+				gridView.adapter = CardsAdapter(cards, context!!)
+				gridView.visibility = View.VISIBLE
 			}, { error ->
-				println("Failed to get user cards - error: $error")
-				spinner.visibility = INVISIBLE
+				Toast.makeText(context!!, error.toString(), Toast.LENGTH_SHORT).show()
 			})
 		} ?: handleUserNotLogged()
 	}
 
 	private fun handleUserNotLogged() {
-		println("Failed to get logged user in cards fragment")
+		println("Failed to get logged user in bundle fragment")
 		val intent = Intent(activity, RegistrationActivity::class.java)
 		startActivity(intent)
 		activity!!.setResult(Activity.RESULT_OK)
@@ -56,7 +54,7 @@ class CardsFragment : Fragment() {
 
 	companion object {
 		@JvmStatic
-		fun newInstance() = CardsFragment()
+		fun newInstance() = BundleFragment()
 	}
 
 }

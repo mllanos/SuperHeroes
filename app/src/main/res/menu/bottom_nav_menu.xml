@@ -8,9 +8,9 @@
             android:title="@string/title_cards"/>
 
     <item
-            android:id="@+id/navigation_envelope"
+            android:id="@+id/navigation_bundle"
             android:icon="@drawable/ic_email_black_24dp"
-            android:title="@string/title_envelope"/>
+            android:title="@string/title_bundle"/>
 
     <item
             android:id="@+id/navigation_fight"

@@ -5,7 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.View
+import android.view.View.*
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
@@ -76,7 +76,7 @@ class RegistrationActivity : AppCompatActivity() {
 		nicknameText.afterTextChanged { registrationViewModel.registrationDataChanged(nicknameText.text.toString()) }
 
 		registrationButton.setOnClickListener {
-			val progressbar = this.progressBar3.apply { visibility = View.VISIBLE }
+			val spinner = this.registration_spinner.apply { visibility = VISIBLE }
 			window.setFlags(
 				WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
 				WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE
@@ -87,12 +87,12 @@ class RegistrationActivity : AppCompatActivity() {
 					val intent = Intent(this@RegistrationActivity, MainActivity::class.java)
 					sessionService.createSession(userCreated)
 					startActivity(intent)
-					progressbar.visibility = View.GONE
+					spinner.visibility = GONE
 					window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
 					registrationViewModel.successfulRegistration(nickname)
 				}, { error ->
 					println("Failed to create user - error: ${error.message}")
-					progressbar.visibility = View.INVISIBLE
+					spinner.visibility = INVISIBLE
 					window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
 					registrationViewModel.failedRegistration()
 				})

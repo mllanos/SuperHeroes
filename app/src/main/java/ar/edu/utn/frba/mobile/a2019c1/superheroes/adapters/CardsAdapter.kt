@@ -11,21 +11,13 @@ import ar.edu.utn.frba.mobile.a2019c1.superheroes.R
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.Card
 import com.squareup.picasso.Picasso
 
-
 class CardsAdapter(private val cards: List<Card>, private val context: Context) : BaseAdapter() {
 
-	override fun getItem(position: Int): Any {
-		return cards[position]
-	}
+	override fun getItem(position: Int) = cards[position]
 
-	override fun getItemId(position: Int): Long {
-		return position.toLong()
-	}
+	override fun getItemId(position: Int) = position.toLong()
 
-	override fun getCount(): Int {
-		return cards.size
-	}
-
+	override fun getCount() = cards.size
 
 	override fun getView(position: Int, _convertView: View?, parent: ViewGroup?): View {
 		val card = cards[position]

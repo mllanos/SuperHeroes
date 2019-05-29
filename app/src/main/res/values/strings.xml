@@ -12,7 +12,7 @@
     <string name="title_cards">My Cards</string>
     <string name="text_card_power">Power: %1$d</string>
     <!--bundle-->
-    <string name="title_envelope">Open Envelope</string>
+    <string name="title_bundle">Open Bundle</string>
     <!--fight-->
     <string name="title_fight">Fight</string>
 </resources>

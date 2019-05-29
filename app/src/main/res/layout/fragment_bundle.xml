@@ -4,7 +4,7 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:background="#C0C0C0"
-             tools:context=".ui.envelope.EnvelopeFragment">
+             tools:context=".ui.bundle.BundleFragment">
 
     <Button
             android:id="@+id/btn_get_card"
@@ -13,7 +13,7 @@
             android:text="Click Me"/>
 
     <GridView
-            android:id="@+id/cards_grid_view_2"
+            android:id="@+id/bundle_grid_view"
             android:layout_width="match_parent"
             android:layout_height="648dp"
             android:gravity="center|clip_vertical"

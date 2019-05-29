@@ -1,18 +1,21 @@
 package ar.edu.utn.frba.mobile.a2019c1.superheroes
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.SessionsService
+import ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.bundle.BundleFragment
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.cards.CardsFragment
-import ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.envelope.EnvelopeFragment
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.fight.FightFragment
+import ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.registration.RegistrationActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
 	private val fragmentCards = CardsFragment.newInstance()
-	private val fragmentEnvelope = EnvelopeFragment.newInstance()
+	private val fragmentBundle = BundleFragment.newInstance()
 	private val fragmentFight = FightFragment.newInstance()
 
 	private val sessionService by lazy { SessionsService(this) }
@@ -23,8 +26,8 @@ class MainActivity : AppCompatActivity() {
 				this.replaceFragment(fragmentCards)
 				true
 			}
-			R.id.navigation_envelope -> {
-				this.replaceFragment(fragmentEnvelope)
+			R.id.navigation_bundle -> {
+				this.replaceFragment(fragmentBundle)
 				true
 			}
 			R.id.navigation_fight -> {
@@ -55,8 +58,17 @@ class MainActivity : AppCompatActivity() {
 
 		navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
 
-		val user = sessionService.getLoggedUser()!!
-		this.title = this.getString(R.string.welcome, user.nickname)
+		sessionService.getLoggedUser()?.let { user ->
+			this.title = this.getString(R.string.welcome, user.nickname)
+		} ?: handleUserNotLogged()
+	}
+
+	private fun handleUserNotLogged() {
+		println("Failed to get logged user in main activity")
+		val intent = Intent(this@MainActivity, RegistrationActivity::class.java)
+		startActivity(intent)
+		setResult(Activity.RESULT_OK)
+		finish()
 	}
 
 }
