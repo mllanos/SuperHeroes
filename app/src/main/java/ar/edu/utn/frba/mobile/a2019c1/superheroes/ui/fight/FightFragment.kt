@@ -11,6 +11,8 @@ import ar.edu.utn.frba.mobile.a2019c1.superheroes.R
 class FightFragment : Fragment(), ShakeEventManager.ShakeListener {
 
 	private val shakeEventManager = ShakeEventManager()
+	private var falsePositiveShake = true
+	private var shakeCount = 0
 
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 		shakeEventManager.setListener(this)
@@ -19,7 +21,15 @@ class FightFragment : Fragment(), ShakeEventManager.ShakeListener {
 	}
 
 	override fun onShake() {
-		Toast.makeText(activity, "Device Shaked", Toast.LENGTH_LONG).show()
+
+		if(falsePositiveShake) //the first two shakes are false positive
+		{
+			shakeCount++
+			if(shakeCount==2)
+				falsePositiveShake = false
+		}
+		else
+			Toast.makeText(activity, "Device Shaked", Toast.LENGTH_LONG).show()
 	}
 
 	override fun onResume() {
