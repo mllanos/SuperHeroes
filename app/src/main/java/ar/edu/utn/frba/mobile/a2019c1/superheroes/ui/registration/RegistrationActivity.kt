@@ -46,8 +46,8 @@ class RegistrationActivity : AppCompatActivity() {
 			finish()
 		}
 
-		val nicknameText = findViewById<EditText>(R.id.nickname)
-		val registrationButton = findViewById<Button>(R.id.registration)
+		val nicknameText = findViewById<EditText>(R.id.et_nickname)
+		val registrationButton = findViewById<Button>(R.id.b_registration)
 
 		registrationViewModel = ViewModelProviders
 			.of(this)

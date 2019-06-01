@@ -5,35 +5,83 @@
              android:layout_height="match_parent"
              tools:context=".ui.cards.CardsFragment">
 
-    <GridView
-            android:id="@+id/team_grid_view"
+    <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:columnWidth="100dp"
-            android:numColumns="auto_fit"
-            android:verticalSpacing="24dp"
-            android:horizontalSpacing="10dp"
-            android:stretchMode="spacingWidthUniform"
-    />
-
-    <GridView
-            android:id="@+id/cards_grid_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:columnWidth="100dp"
-            android:numColumns="auto_fit"
-            android:verticalSpacing="24dp"
-            android:horizontalSpacing="10dp"
-            android:stretchMode="spacingWidthUniform"
-    />
+            android:orientation="vertical"
+            android:baselineAligned="false">
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+            <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center">
+                <TableRow
+                        android:paddingTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+                    <TextView
+                            android:layout_weight=".25"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="superhero 1"
+                            android:gravity="center"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:background="#c5c5c5"/>
+                    <TextView
+                            android:layout_weight=".25"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="superhero 2"
+                            android:layout_marginRight="4dp"
+                            android:background="#c5c5c5"/>
+                    <TextView
+                            android:layout_weight=".25"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="superhero 3"
+                            android:layout_marginRight="4dp"
+                            android:background="#c5c5c5"/>
+                    <TextView
+                            android:layout_weight=".25"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="superhero 4"
+                            android:layout_marginRight="4dp"
+                            android:background="#c5c5c5"/>
+                </TableRow>
+            </TableLayout>
+        </RelativeLayout>
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="3">
+            <GridView
+                    android:id="@+id/cards_grid_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:columnWidth="100dp"
+                    android:numColumns="auto_fit"
+                    android:verticalSpacing="24dp"
+                    android:horizontalSpacing="10dp"
+                    android:stretchMode="spacingWidthUniform"/>
+        </RelativeLayout>
+    </LinearLayout>
 
     <ProgressBar
             style="?android:attr/progressBarStyle"
             android:id="@+id/cards_spinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:visibility="invisible"/>
 
 </FrameLayout>
