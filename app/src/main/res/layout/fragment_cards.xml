@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              tools:context=".ui.cards.CardsFragment">
 
+    <ProgressBar
+            style="?android:attr/progressBarStyle"
+            android:id="@+id/cards_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"/>
+    <TextView
+            android:text="@string/text_team"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/textTeam"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" android:background="#DD4056D8"
+            android:textColor="#FFFFFF" android:textAlignment="center"/>
     <GridView
+            android:layout_weight="2"
             android:id="@+id/team_grid_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -15,9 +29,22 @@
             android:verticalSpacing="24dp"
             android:horizontalSpacing="10dp"
             android:stretchMode="spacingWidthUniform"
-    />
+            android:background="#6D4056D8">
+    </GridView>
 
+    <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="?android:attr/listDivider"
+    />
+    <TextView
+            android:text="@string/text_others"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/textOthers"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" android:textAlignment="center"/>
     <GridView
+            android:layout_weight="1"
             android:id="@+id/cards_grid_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -27,13 +54,7 @@
             android:verticalSpacing="24dp"
             android:horizontalSpacing="10dp"
             android:stretchMode="spacingWidthUniform"
-    />
+    >
+    </GridView>
 
-    <ProgressBar
-            style="?android:attr/progressBarStyle"
-            android:id="@+id/cards_spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="invisible"/>
-
-</FrameLayout>
+</LinearLayout>
