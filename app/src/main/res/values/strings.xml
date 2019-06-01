@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Superheroes</string>
+    <string name="app_name">Superheros</string>
     <!--registration-->
     <string name="prompt_nickname">Choose a nickname</string>
     <string name="action_create_user">Create user</string>
@@ -7,7 +7,7 @@
     <string name="empty_nickname">Nickname must not be empty</string>
     <string name="registration_failed">Registration failed</string>
     <!--main-->
-    <string name="welcome">Welcome, %1$s!</string>
+    <string name="welcome">%1$s!</string>
     <string name="title_activity_main">MainActivity</string>
     <!--cards-->
     <string name="title_cards">My Cards</string>
