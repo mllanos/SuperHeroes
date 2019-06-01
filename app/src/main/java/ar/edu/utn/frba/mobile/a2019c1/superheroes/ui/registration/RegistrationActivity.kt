@@ -3,9 +3,8 @@ package ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.registration
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
-import android.view.View.*
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
@@ -55,10 +54,6 @@ class RegistrationActivity : AppCompatActivity() {
 
 		registrationViewModel.registrationFormState.observe(this@RegistrationActivity, Observer {
 			val registrationState = it ?: return@Observer
-
-			// disable registration button unless both username is valid
-			registrationButton.isEnabled = registrationState.isDataValid
-
 			if (registrationState.nicknameError != null) {
 				nicknameText.error = getString(registrationState.nicknameError)
 			}
@@ -73,48 +68,33 @@ class RegistrationActivity : AppCompatActivity() {
 			finish()
 		})
 
-		nicknameText.afterTextChanged { registrationViewModel.registrationDataChanged(nicknameText.text.toString()) }
-
 		registrationButton.setOnClickListener {
-			val spinner = this.registration_spinner.apply { visibility = VISIBLE }
-			window.setFlags(
-				WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
-				WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE
-			)
-			val nickname = nicknameText.text.toString()
-			apiService.createUser(nickname,
-				{ userCreated ->
-					val intent = Intent(this@RegistrationActivity, MainActivity::class.java)
-					sessionService.createSession(userCreated)
-					startActivity(intent)
-					spinner.visibility = GONE
-					window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-					registrationViewModel.successfulRegistration(nickname)
-				}, { error ->
-					println("Failed to create user - error: ${error.message}")
-					spinner.visibility = INVISIBLE
-					window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-					registrationViewModel.failedRegistration()
-				})
+			if (registrationViewModel.validateForm(nicknameText.text.toString())) {
+				val spinner = this.registration_spinner.apply { visibility = VISIBLE }
+				window.setFlags(
+					WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+					WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE
+				)
+				val nickname = nicknameText.text.toString()
+				apiService.createUser(nickname,
+					{ userCreated ->
+						val intent = Intent(this@RegistrationActivity, MainActivity::class.java)
+						sessionService.createSession(userCreated)
+						startActivity(intent)
+						spinner.visibility = GONE
+						window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+						registrationViewModel.successfulRegistration(nickname)
+					}, { error ->
+						println("Failed to create user - error: ${error.message}")
+						spinner.visibility = GONE
+						window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+						registrationViewModel.failedRegistration()
+					})
+			}
 		}
 	}
 
 	private fun showRegistrationFailed(@StringRes errorString: Int) =
 		Toast.makeText(applicationContext, errorString, Toast.LENGTH_SHORT).show()
 
-}
-
-/**
- * Extension function to simplify setting an afterTextChanged action to EditText components.
- */
-fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
-	this.addTextChangedListener(object : TextWatcher {
-		override fun afterTextChanged(editable: Editable?) {
-			afterTextChanged.invoke(editable.toString())
-		}
-
-		override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
-
-		override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
-	})
 }

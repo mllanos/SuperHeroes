@@ -21,15 +21,17 @@ class RegistrationViewModel : ViewModel() {
 		_registrationResult.value = RegistrationResult(error = R.string.registration_failed)
 	}
 
-	fun registrationDataChanged(username: String) {
-		if (!isNicknameValid(username)) {
-			_registrationForm.value = RegistrationFormState(nicknameError = R.string.invalid_nickname)
-		} else {
-			_registrationForm.value = RegistrationFormState(isDataValid = true)
+	fun validateForm(username: String) = when (username.length) {
+		0 -> {
+			_registrationForm.value = RegistrationFormState(nicknameError = R.string.empty_nickname)
+			false
 		}
+		in 1..4 -> {
+			_registrationForm.value = RegistrationFormState(nicknameError = R.string.invalid_nickname)
+			false
+		}
+		else -> true
 	}
-
-	private fun isNicknameValid(nickname: String) = nickname.length >= 5
 
 }
 
