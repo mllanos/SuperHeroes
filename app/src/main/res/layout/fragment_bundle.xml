@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:background="#C0C0C0"
@@ -22,4 +23,4 @@
             android:horizontalSpacing="10dp"
             android:visibility="invisible" android:translationY="80dp"/>
 
-</FrameLayout>
+</LinearLayout>

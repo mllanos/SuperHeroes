@@ -10,6 +10,17 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:baselineAligned="false">
+
+        <TextView
+                android:id="@+id/textTeam"
+                android:text="@string/text_team"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:background="#DD4056D8"
+                android:textColor="#FFFFFF"
+                android:textAlignment="center"/>
+
         <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
@@ -17,12 +28,14 @@
             <TableLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_gravity="center">
+                    android:layout_gravity="center"
+                    android:background="#6D4056D8">
                 <TableRow
                         android:paddingTop="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1">
+
                     <TextView
                             android:layout_weight=".25"
                             android:layout_width="0dp"
@@ -59,6 +72,21 @@
                 </TableRow>
             </TableLayout>
         </RelativeLayout>
+
+        <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:background="?android:attr/listDivider"/>
+
+        <TextView
+                android:id="@+id/textOthers"
+                android:text="@string/text_others"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textAlignment="center"/>
+
         <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
