@@ -12,8 +12,8 @@
     <!--cards-->
     <string name="title_cards">My Cards</string>
     <string name="text_card_power">Power: %1$d</string>
-    <string name="text_team">Mi Equipo</string>
-    <string name="text_others">Otras Cartas</string>
+    <string name="text_team">My Team</string>
+    <string name="text_others">My Cards</string>
     <!--bundle-->
     <string name="title_bundle">Open Bundle</string>
     <!--fight-->
