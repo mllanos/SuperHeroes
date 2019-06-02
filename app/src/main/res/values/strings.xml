@@ -16,4 +16,6 @@
     <string name="title_bundle">Open Bundle</string>
     <!--fight-->
     <string name="title_fight">Fight</string>
+    <!--logout-->
+    <string name="title_logout">Logout</string>
 </resources>

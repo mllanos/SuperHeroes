@@ -13,4 +13,6 @@ class SessionsService(context: Context) {
 
 	fun createSession(user: User) = storageService.storeUser(user)
 
+	fun logout() = storageService.deleteUser()
+
 }
