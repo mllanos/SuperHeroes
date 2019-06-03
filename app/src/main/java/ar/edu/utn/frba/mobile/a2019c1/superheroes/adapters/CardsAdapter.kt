@@ -21,13 +21,10 @@ class CardsAdapter(private val cards: List<Card>, private val context: Context) 
 
 	override fun getView(position: Int, _convertView: View?, parent: ViewGroup?): View {
 		val card = cards[position]
-		var convertView = _convertView
-		if (convertView == null) {
-			convertView = LayoutInflater
-				.from(context)
-				.inflate(ar.edu.utn.frba.mobile.a2019c1.superheroes.R.layout.linearlayout_card, null)
-		}
-		val imageView = convertView!!.findViewById<ImageView>(R.id.imageview_card)
+		val convertView = _convertView ?: LayoutInflater
+			.from(context)
+			.inflate(R.layout.linearlayout_card, null)
+		val imageView = convertView.findViewById<ImageView>(R.id.imageview_card)
 		val nameTextView = convertView.findViewById<TextView>(R.id.textview_card_name)
 		val powerTextView = convertView.findViewById<TextView>(R.id.textview_card_power)
 		Picasso.get()

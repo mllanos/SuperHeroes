@@ -4,11 +4,8 @@ package ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.cards
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
 import android.view.View.GONE
 import android.view.View.INVISIBLE
-import android.view.ViewGroup
 import android.widget.GridView
 import androidx.fragment.app.Fragment
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.R
@@ -17,6 +14,8 @@ import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.ApiService
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.SessionsService
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.registration.RegistrationActivity
 import kotlinx.android.synthetic.main.fragment_cards.*
+import android.view.*
+
 
 class CardsFragment : Fragment() {
 
