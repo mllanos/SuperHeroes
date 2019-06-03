@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
 		navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
 
 		sessionService.getLoggedUser()?.let { user ->
-			this.title = this.getString(R.string.welcome, user.nickname)
+			this.title = getString(R.string.welcome, user.nickname)
 		} ?: handleUserNotLogged()
 	}
 

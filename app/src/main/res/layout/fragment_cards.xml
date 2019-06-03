@@ -64,6 +64,17 @@
                     android:horizontalSpacing="10dp"
                     android:stretchMode="spacingWidthUniform"/>
         </RelativeLayout>
+
+        <Button
+                android:id="@+id/btn_create_team"
+                android:width="170dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:text="@string/btn_create_team"
+                android:textColor="#FFFFFF"
+                android:background="#7f0000"/>
     </LinearLayout>
 
     <ProgressBar
