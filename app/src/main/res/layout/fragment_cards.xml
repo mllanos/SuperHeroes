@@ -1,60 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              tools:context=".ui.cards.CardsFragment">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:baselineAligned="false">
+
+        <TextView
+                android:id="@+id/textTeam"
+                android:text="@string/text_team"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:background="#DD4056D8"
+                android:textColor="#FFFFFF"
+                android:textAlignment="center"/>
+
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+            <TableLayout
+                    android:id="@+id/table_user_team"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="#6D4056D8">
+            </TableLayout>
+        </RelativeLayout>
+
+        <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:background="?android:attr/listDivider"/>
+
+        <TextView
+                android:id="@+id/textOthers"
+                android:text="@string/text_others"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textAlignment="center"
+                android:paddingBottom="10dp"/>
+
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="3">
+            <GridView
+                    android:id="@+id/cards_grid_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:columnWidth="100dp"
+                    android:numColumns="auto_fit"
+                    android:verticalSpacing="24dp"
+                    android:horizontalSpacing="10dp"
+                    android:stretchMode="spacingWidthUniform"/>
+        </RelativeLayout>
+
+        <Button
+                android:id="@+id/btn_create_team"
+                android:width="170dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:text="@string/btn_create_team"
+                android:textColor="#FFFFFF"
+                android:background="#7f0000"/>
+    </LinearLayout>
 
     <ProgressBar
             style="?android:attr/progressBarStyle"
             android:id="@+id/cards_spinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:visibility="invisible"/>
-    <TextView
-            android:text="@string/text_team"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/textTeam"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" android:background="#DD4056D8"
-            android:textColor="#FFFFFF" android:textAlignment="center"/>
-    <GridView
-            android:layout_weight="2"
-            android:id="@+id/team_grid_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:columnWidth="100dp"
-            android:numColumns="auto_fit"
-            android:verticalSpacing="24dp"
-            android:horizontalSpacing="10dp"
-            android:stretchMode="spacingWidthUniform"
-            android:background="#6D4056D8">
-    </GridView>
 
-    <View
-            android:id="@+id/divider"
-            android:layout_width="match_parent"
-            android:layout_height="4dp"
-            android:background="?android:attr/listDivider"
-    />
-    <TextView
-            android:text="@string/text_others"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/textOthers"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" android:textAlignment="center"/>
-    <GridView
-            android:layout_weight="1"
-            android:id="@+id/cards_grid_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:columnWidth="100dp"
-            android:numColumns="auto_fit"
-            android:verticalSpacing="24dp"
-            android:horizontalSpacing="10dp"
-            android:stretchMode="spacingWidthUniform"
-    >
-    </GridView>
-
-</LinearLayout>
+</FrameLayout>

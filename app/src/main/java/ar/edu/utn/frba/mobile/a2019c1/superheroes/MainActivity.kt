@@ -3,6 +3,8 @@ package ar.edu.utn.frba.mobile.a2019c1.superheroes
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.adapters.PagerAdapter
@@ -61,12 +63,32 @@ class MainActivity : AppCompatActivity() {
 		pager.currentItem = 1
 
 		sessionService.getLoggedUser()?.let { user ->
-			this.title = this.getString(R.string.welcome, user.nickname)
+			this.title = getString(R.string.welcome, user.nickname)
 		} ?: handleUserNotLogged()
+	}
+
+	override fun onCreateOptionsMenu(menu: Menu): Boolean {
+		menuInflater.inflate(R.menu.top_nav_menu, menu)
+		return true
+	}
+
+	override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+		R.id.logout -> {
+			sessionService.logout()
+			startRegistrationActivity()
+			true
+		}
+		else -> {
+			super.onOptionsItemSelected(item)
+		}
 	}
 
 	private fun handleUserNotLogged() {
 		println("Failed to get logged user in main activity")
+		startRegistrationActivity()
+	}
+
+	private fun startRegistrationActivity() {
 		val intent = Intent(this@MainActivity, RegistrationActivity::class.java)
 		startActivity(intent)
 		setResult(Activity.RESULT_OK)

@@ -1,5 +1,6 @@
 package ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.fight
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -28,8 +29,12 @@ class FightFragment : Fragment(), ShakeEventManager.ShakeListener {
 			if(shakeCount==2)
 				falsePositiveShake = false
 		}
-		else
-			Toast.makeText(activity, "Device Shaked", Toast.LENGTH_LONG).show()
+		else{
+			//Toast.makeText(activity, "Device Shaked", Toast.LENGTH_LONG).show()
+			val intent = Intent(activity, FightSearchActivity::class.java)
+			activity?.startActivity(intent)
+		}
+
 	}
 
 	override fun onResume() {

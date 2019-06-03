@@ -1,20 +1,25 @@
 <resources>
-    <string name="app_name">Superheroes</string>
+    <string name="app_name">Superheros</string>
     <!--registration-->
     <string name="prompt_nickname">Choose a nickname</string>
     <string name="action_create_user">Create user</string>
     <string name="invalid_nickname">Nickname must be 5 characters or greater</string>
+    <string name="empty_nickname">Nickname must not be empty</string>
     <string name="registration_failed">Registration failed</string>
     <!--main-->
-    <string name="welcome">Welcome, %1$s!</string>
+    <string name="welcome">%1$s!</string>
     <string name="title_activity_main">MainActivity</string>
     <!--cards-->
     <string name="title_cards">My Cards</string>
     <string name="text_card_power">Power: %1$d</string>
-    <string name="text_team">Mi Equipo</string>
-    <string name="text_others">Otras Cartas</string>
+    <string name="text_team">My Team</string>
+    <string name="text_others">My Cards</string>
+    <string name="btn_create_team">Create Team</string>
+    <string name="btn_create_team_counter">Create Team (%1$d)</string>
     <!--bundle-->
     <string name="title_bundle">Open Bundle</string>
     <!--fight-->
     <string name="title_fight">Fight</string>
+    <!--logout-->
+    <string name="title_logout">Logout</string>
 </resources>

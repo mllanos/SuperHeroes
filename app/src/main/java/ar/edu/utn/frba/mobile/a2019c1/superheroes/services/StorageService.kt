@@ -17,6 +17,8 @@ class StorageService(context: Context) {
 
 	fun getUser(): User? = getPreference(LOGGED_USER, User::class.java)
 
+	fun deleteUser() = removePreference(LOGGED_USER)
+
 	private fun storePreference(key: String, preference: Any) = sharedPreferences
 		.edit()
 		.putString(key, gson.toJson(preference))
