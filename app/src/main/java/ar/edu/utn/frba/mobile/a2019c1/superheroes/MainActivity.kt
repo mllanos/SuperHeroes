@@ -6,8 +6,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.viewpager.widget.ViewPager
-import ar.edu.utn.frba.mobile.a2019c1.superheroes.adapters.PagerAdapter
+import androidx.fragment.app.Fragment
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.SessionsService
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.bundle.BundleFragment
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.cards.CardsFragment
@@ -23,44 +22,41 @@ class MainActivity : AppCompatActivity() {
 
 	private val sessionService by lazy { SessionsService(this) }
 
+	private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+		return@OnNavigationItemSelectedListener when (item.itemId) {
+			R.id.navigation_cards -> {
+				this.replaceFragment(fragmentCards)
+				true
+			}
+			R.id.navigation_bundle -> {
+				this.replaceFragment(fragmentBundle)
+				true
+			}
+			R.id.navigation_fight -> {
+				this.replaceFragment(fragmentFight)
+				true
+			}
+			else -> false
+		}
+	}
+
+	private fun setDefaultFragment() = this.replaceFragment(fragmentCards)
+
+	private fun replaceFragment(destFragment: Fragment) {
+		val fragmentManager = this.supportFragmentManager
+		val fragmentTransaction = fragmentManager.beginTransaction()
+		fragmentTransaction.replace(R.id.fragment_container, destFragment)
+		fragmentTransaction.commit()
+	}
+
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_main)
 		val navView = findViewById<BottomNavigationView>(R.id.nav_view)
-		val pager = findViewById<ViewPager>(R.id.fragment_container)
-		val adapter = PagerAdapter(supportFragmentManager)
-		adapter.navigator = navView
 
-		pager.adapter = adapter
-			.addFragment(fragmentCards)
-			.addFragment(fragmentBundle)
-			.addFragment(fragmentFight)
+		navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
 
-		navView.setOnNavigationItemSelectedListener(BottomNavigationView.OnNavigationItemSelectedListener { item ->
-			when (item.itemId) {
-				R.id.navigation_cards -> pager.currentItem = 0
-				R.id.navigation_bundle -> pager.currentItem = 1
-				R.id.navigation_fight -> pager.currentItem = 2
-			}
-			return@OnNavigationItemSelectedListener true
-		})
-
-		pager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
-
-			override fun onPageScrollStateChanged(state: Int) {}
-
-			override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {}
-
-			override fun onPageSelected(position: Int) {
-				navView.selectedItemId = when(position) {
-					0 -> R.id.navigation_cards
-					1 -> R.id.navigation_bundle
-					else -> R.id.navigation_fight
-				}
-			}
-		})
-
-		pager.currentItem = 1
+		this.setDefaultFragment()
 
 		sessionService.getLoggedUser()?.let { user ->
 			this.title = getString(R.string.welcome, user.nickname)
