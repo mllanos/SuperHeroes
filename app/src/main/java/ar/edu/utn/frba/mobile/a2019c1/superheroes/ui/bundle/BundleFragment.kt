@@ -16,20 +16,60 @@ import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.ApiService
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.SessionsService
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.registration.RegistrationActivity
 import kotlinx.android.synthetic.main.fragment_bundle.view.*
+import android.os.CountDownTimer
+import java.util.*
+
 
 class BundleFragment : Fragment() {
 
 	private val apiService by lazy { ApiService(context!!) }
 	private val sessionService by lazy { SessionsService(context!!) }
 
-	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
-		inflater.inflate(R.layout.fragment_bundle, container, false)
+	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+		val view = inflater.inflate(R.layout.fragment_bundle, container, false)
+		val button = view.btn_get_card
+		button.setOnClickListener {
+			sessionService.getLoggedUser()?.let { loggedUser ->
+				loggedUser.nextBundle = Date().time + 30000
+				sessionService.createSession(loggedUser)
+				this.getCards()
+				button.isEnabled = false
+				object : CountDownTimer(30000, 1000) {
+					override fun onTick(millisUntilFinished: Long) {
+						button.text = "seconds remaining: " + millisUntilFinished / 1000
+					}
+
+					override fun onFinish() {
+						button.isEnabled = true
+						button.text = "CLICK ME"
+					}
+				}.start()
+			} ?: handleUserNotLogged()
+		}
+		return view
+	}
 
 	override fun onResume() {
 		super.onResume()
-		view!!.btn_get_card.setOnClickListener {
-			this.getCards()
-		}
+		sessionService.getLoggedUser()?.let { loggedUser ->
+			val button = view!!.btn_get_card
+			val currTime = Date().time
+			val remainingTime = loggedUser.nextBundle - currTime
+			Toast.makeText(context!!, "Current time: ${Date(currTime)}, next bundle: ${Date(loggedUser.nextBundle)}", Toast.LENGTH_SHORT).show()
+			if (remainingTime > 0) {
+				button.isEnabled = false
+				object : CountDownTimer(remainingTime, 1000) {
+					override fun onTick(millisUntilFinished: Long) {
+						button.text = "seconds remaining: " + (millisUntilFinished / 1000)
+					}
+
+					override fun onFinish() {
+						button.isEnabled = true
+						button.text = "CLICK ME"
+					}
+				}.start()
+			}
+		} ?: handleUserNotLogged()
 	}
 
 	private fun getCards() {
