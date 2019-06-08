@@ -18,6 +18,7 @@ import ar.edu.utn.frba.mobile.a2019c1.superheroes.R
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.ApiService
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.SessionsService
 import kotlinx.android.synthetic.main.activity_registration.*
+import java.util.*
 
 class RegistrationActivity : AppCompatActivity() {
 
@@ -80,6 +81,7 @@ class RegistrationActivity : AppCompatActivity() {
 					{ userCreated ->
 						val intent = Intent(this@RegistrationActivity, MainActivity::class.java)
 						sessionService.createSession(userCreated)
+						sessionService.storeTimer(Date().time)
 						startActivity(intent)
 						spinner.visibility = GONE
 						window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)

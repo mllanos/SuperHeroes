@@ -23,7 +23,7 @@ class ApiService(private val context: Context) {
 		post(
 			"/users", json, { response ->
 				val id = response.getInt("id")
-				val user = User(id, nickname, Date().time)
+				val user = User(id, nickname)
 				responseHandler(user)
 			},
 			errorHandler

@@ -11,6 +11,10 @@ class SessionsService(context: Context) {
 
 	fun getLoggedUser() = storageService.getUser()
 
+	fun getCurrentTimer() = storageService.getTimer()
+
+	fun storeTimer(timer: Long) = storageService.storeTimer(timer)
+
 	fun createSession(user: User) = storageService.storeUser(user)
 
 	fun logout() = storageService.deleteUser()
