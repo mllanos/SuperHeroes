@@ -20,6 +20,9 @@ import android.os.CountDownTimer
 import java.util.*
 
 
+private const val TIMER_LENGTH = 30000L
+private const val COUNTDOWN_INTERVAL = 1000L
+
 class BundleFragment : Fragment() {
 
 	private val apiService by lazy { ApiService(context!!) }
@@ -29,17 +32,18 @@ class BundleFragment : Fragment() {
 		val view = inflater.inflate(R.layout.fragment_bundle, container, false)
 		val button = view.btn_get_card
 		button.setOnClickListener {
-			sessionService.storeTimer(Date().time + 30000)
+			sessionService.storeTimer(Date().time + TIMER_LENGTH)
+			//button.visibility = View.INVISIBLE
 			this.getCards()
 			button.isEnabled = false
-			object : CountDownTimer(30000, 1000) {
+			object : CountDownTimer(TIMER_LENGTH, COUNTDOWN_INTERVAL) {
 				override fun onTick(millisUntilFinished: Long) {
-					button.text = "seconds remaining: " + millisUntilFinished / 1000
+					button.text = "${millisUntilFinished / COUNTDOWN_INTERVAL}"
 				}
 
 				override fun onFinish() {
 					button.isEnabled = true
-					button.text = "CLICK ME"
+					button.text = context!!.getString(R.string.get_card)
 				}
 			}.start()
 		}
@@ -52,16 +56,19 @@ class BundleFragment : Fragment() {
 		val now = Date().time
 		val currTimer = sessionService.getCurrentTimer()
 		val remainingTime = currTimer - now
+		//val gridView = view!!.findViewById(R.id.bundle_grid_view) as GridView
+		//gridView.visibility = View.INVISIBLE
 		if (remainingTime > 0) {
 			button.isEnabled = false
-			object : CountDownTimer(remainingTime, 1000) {
+			object : CountDownTimer(remainingTime, COUNTDOWN_INTERVAL) {
 				override fun onTick(millisUntilFinished: Long) {
-					button.text = "seconds remaining: " + (millisUntilFinished / 1000)
+					button.text = "${millisUntilFinished / COUNTDOWN_INTERVAL}"
 				}
 
 				override fun onFinish() {
 					button.isEnabled = true
-					button.text = "CLICK ME"
+					button.text = context!!.getString(R.string.get_card)
+					//button.visibility = View.VISIBLE
 				}
 			}.start()
 		}

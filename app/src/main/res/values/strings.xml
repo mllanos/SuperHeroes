@@ -22,4 +22,5 @@
     <string name="title_fight">Fight</string>
     <!--logout-->
     <string name="title_logout">Logout</string>
+    <string name="get_card">GO</string>
 </resources>
