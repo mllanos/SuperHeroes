@@ -75,7 +75,7 @@ class RegistrationActivity : AppCompatActivity() {
 					WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
 					WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE
 				)
-				val nickname = nicknameText.text.toString()
+				val nickname = nicknameText.text.toString().trim()
 				apiService.createUser(nickname,
 					{ userCreated ->
 						val intent = Intent(this@RegistrationActivity, MainActivity::class.java)
