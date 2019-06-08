@@ -10,6 +10,7 @@ import com.android.volley.VolleyError
 import com.android.volley.toolbox.JsonObjectRequest
 import com.google.gson.Gson
 import org.json.JSONObject
+import java.util.Date
 
 private const val API_BASE_URL = "https://superheroes-mobile-api.herokuapp.com/superheroes"
 
@@ -22,7 +23,7 @@ class ApiService(private val context: Context) {
 		post(
 			"/users", json, { response ->
 				val id = response.getInt("id")
-				val user = User(id, nickname)
+				val user = User(id, nickname, Date().time)
 				responseHandler(user)
 			},
 			errorHandler
