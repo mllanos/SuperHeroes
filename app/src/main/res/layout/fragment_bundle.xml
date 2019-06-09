@@ -16,15 +16,4 @@
             android:layout_centerHorizontal="true" android:layout_alignParentBottom="true"
             android:layout_marginBottom="45dp"/>
 
-    <GridView
-            android:id="@+id/bundle_grid_view"
-            android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:gravity="center|clip_vertical"
-            android:columnWidth="100dp"
-            android:verticalSpacing="24dp"
-            android:horizontalSpacing="10dp"
-            android:visibility="invisible" android:translationY="80dp" android:layout_alignParentStart="true"
-            android:layout_marginTop="0dp" android:layout_marginStart="0dp" android:layout_alignParentTop="true"/>
-
 </RelativeLayout>

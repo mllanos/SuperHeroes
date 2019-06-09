@@ -26,22 +26,8 @@ private const val COUNTDOWN_INTERVAL = 1000L
 
 class BundleFragment : Fragment() {
 
-	private val apiService by lazy { ApiService(context!!) }
+
 	private val sessionService by lazy { SessionsService(context!!) }
-
-	private fun startCountdown(length: Long, button: Button, onFinishText: String) {
-		button.isEnabled = false
-		object: CountDownTimer(length, COUNTDOWN_INTERVAL) {
-			override fun onTick(millisUntilFinished: Long) {
-				button.text = "${millisUntilFinished / COUNTDOWN_INTERVAL}"
-			}
-
-			override fun onFinish() {
-				button.isEnabled = true
-				button.text = onFinishText
-			}
-		}.start()
-	}
 
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 		val view = inflater.inflate(R.layout.fragment_bundle, container, false)
@@ -70,24 +56,23 @@ class BundleFragment : Fragment() {
 
 	}
 
-	private fun getCards() {
-		sessionService.getLoggedUser()?.let { loggedUser ->
-			apiService.openBundle(loggedUser, { cards ->
-				val gridView = view!!.findViewById(R.id.bundle_grid_view) as GridView
-				gridView.adapter = CardsAdapter(cards, context!!)
-				gridView.visibility = View.VISIBLE
-			}, { error ->
-				Toast.makeText(context!!, error.toString(), Toast.LENGTH_SHORT).show()
-			})
-		} ?: handleUserNotLogged()
+	private fun startCountdown(length: Long, button: Button, onFinishText: String) {
+		button.isEnabled = false
+		object: CountDownTimer(length, COUNTDOWN_INTERVAL) {
+			override fun onTick(millisUntilFinished: Long) {
+				button.text = "${millisUntilFinished / COUNTDOWN_INTERVAL}"
+			}
+
+			override fun onFinish() {
+				button.isEnabled = true
+				button.text = onFinishText
+			}
+		}.start()
 	}
 
-	private fun handleUserNotLogged() {
-		println("Failed to get logged user in bundle fragment")
-		val intent = Intent(activity, RegistrationActivity::class.java)
+	private fun getCards() {
+		val intent = Intent(context!!, ShowCards::class.java)
 		startActivity(intent)
-		activity!!.setResult(Activity.RESULT_OK)
-		activity!!.finish()
 	}
 
 	companion object {
