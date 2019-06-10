@@ -8,7 +8,7 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-    <fragment
+    <RelativeLayout
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_above="@+id/nav_view"

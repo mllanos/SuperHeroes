@@ -1,24 +1,23 @@
 package ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.cards
 
-
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
-import android.view.View.INVISIBLE
 import android.view.ViewGroup
-import android.widget.*
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TableLayout
+import android.widget.TableRow
 import android.widget.TableRow.LayoutParams
 import android.widget.TableRow.LayoutParams.MATCH_PARENT
 import android.widget.TableRow.LayoutParams.WRAP_CONTENT
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.R
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.adapters.CardsAdapter
-import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.Card
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.ApiService
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.SessionsService
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.registration.RegistrationActivity
@@ -31,44 +30,33 @@ class CardsFragment : Fragment() {
 	private val apiService by lazy { ApiService(context!!) }
 	private val sessionService by lazy { SessionsService(context!!) }
 	private var cardsSelectedCounter = 0
+	private lateinit var cardsAdapter: CardsAdapter
 
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
 		inflater.inflate(R.layout.fragment_cards, container, false)
 
-	override fun onResume() {
-		super.onResume()
-		val rvCards = view!!.findViewById<RecyclerView>(R.id.cards_recycler_view)
-		getUserAvailableCards(rvCards)
-		getUserTeam()
-		//onCardClick(rvCards)
-		onCreateTeamButtonClick()
-	}
 	override fun onActivityCreated(savedInstanceState: Bundle?) {
 		super.onActivityCreated(savedInstanceState)
-		val rvCards = view!!.findViewById<RecyclerView>(R.id.cards_recycler_view)
-		rvCards.adapter= CardsAdapter(listOf(),context!!)
-		rvCards.layoutManager = GridLayoutManager(context,3)
-
-		getUserAvailableCards(rvCards)
+		getUserAvailableCards()
 		getUserTeam()
-		//onCardClick(rvCards)
+		onCardClick()
 		onCreateTeamButtonClick()
-
 	}
 
-
-	private fun getUserAvailableCards(rvCards: RecyclerView) {
+	private fun getUserAvailableCards() {
+		cardsAdapter = CardsAdapter()
+		rvCards.layoutManager = GridLayoutManager(context, 3)
+		rvCards.adapter = cardsAdapter
+		cardsAdapter.clear()
 		val spinner = cards_spinner.apply { visibility = View.VISIBLE }
 		sessionService.getLoggedUser()?.let { loggedUser ->
 			apiService.getUserAvailableCards(loggedUser, { cards ->
-				val cardsAdapter = CardsAdapter(cards, context!!)
-				rvCards.layoutManager = GridLayoutManager(context,3)
-
+				cardsAdapter.replaceItems(cards)
 				rvCards.adapter = cardsAdapter
 				spinner.visibility = GONE
 			}, { error ->
 				println("Failed to get user cards - error: $error")
-				spinner.visibility = INVISIBLE
+				spinner.visibility = GONE
 			})
 		} ?: handleUserNotLogged()
 	}
@@ -87,16 +75,9 @@ class CardsFragment : Fragment() {
 		table.addView(row, 0)
 	}
 
-	/*
-	private fun onCardClick(rvCards: RecyclerView) {
-		rvCards.onItemClickListener = OnItemClickListener { parent, _view, position, id ->
-			cardsSelectedCounter++.takeIf { it <= 3 }?.let {
-				val btnCreateTeam = view!!.findViewById<Button>(R.id.btn_create_team)
-				btnCreateTeam.text = getString(R.string.btn_create_team_counter, cardsSelectedCounter)
-			}
-		}
+	private fun onCardClick() {
+
 	}
-	*/
 
 	private fun onCreateTeamButtonClick() {
 		view!!.findViewById<Button>(R.id.btn_create_team).let { button ->
