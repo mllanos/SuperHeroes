@@ -10,7 +10,7 @@
     <GridView
             android:id="@+id/bundle_grid_view"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_height="match_parent"
             android:gravity="center|clip_vertical"
             android:columnWidth="100dp"
             android:verticalSpacing="24dp"
