@@ -12,6 +12,7 @@ import ar.edu.utn.frba.mobile.a2019c1.superheroes.R
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.SessionsService
 import kotlinx.android.synthetic.main.fragment_bundle.view.*
 import java.util.*
+import android.graphics.LightingColorFilter
 
 private const val TIMER_LENGTH = 30000L
 private const val COUNTDOWN_INTERVAL = 1000L
@@ -19,6 +20,8 @@ private const val COUNTDOWN_INTERVAL = 1000L
 class BundleFragment : Fragment() {
 
 	private val sessionService by lazy { SessionsService(context!!) }
+	private val greenColorFilter = LightingColorFilter(-0x000, 0x0000FF00)
+	private val redColorFilter = LightingColorFilter(-0x000, 0x00FF0000)
 
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 		val view = inflater.inflate(R.layout.fragment_bundle, container, false)
@@ -37,6 +40,9 @@ class BundleFragment : Fragment() {
 		if (remainingTime > 0) {
 			button.isEnabled = false
 			startCountdown(remainingTime, button, buttonText)
+			button.background.colorFilter = redColorFilter
+		} else {
+			button.background.colorFilter = greenColorFilter
 		}
 
 		return view
@@ -44,6 +50,7 @@ class BundleFragment : Fragment() {
 
 	private fun startCountdown(length: Long, button: Button, onFinishText: String) {
 		button.isEnabled = false
+		button.background.colorFilter = redColorFilter
 		object : CountDownTimer(length, COUNTDOWN_INTERVAL) {
 			override fun onTick(millisUntilFinished: Long) {
 				button.text = "${millisUntilFinished / COUNTDOWN_INTERVAL}"
@@ -52,6 +59,7 @@ class BundleFragment : Fragment() {
 			override fun onFinish() {
 				button.isEnabled = true
 				button.text = onFinishText
+				button.background.colorFilter = greenColorFilter
 			}
 		}.start()
 	}
