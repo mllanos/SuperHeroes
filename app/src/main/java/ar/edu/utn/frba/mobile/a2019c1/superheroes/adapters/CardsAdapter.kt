@@ -50,11 +50,6 @@ class CardsAdapter : RecyclerView.Adapter<CardsAdapter.ViewHolder>() {
 		notifyDataSetChanged()
 	}
 
-	fun clear() {
-		cards = emptyList()
-		notifyDataSetChanged()
-	}
-
 	inner class ViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView), LayoutContainer
 
 }

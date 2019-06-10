@@ -13,7 +13,6 @@
             android:layout_centerHorizontal="true"
             android:layout_above="@+id/nav_view"
             android:id="@+id/fragment_container"
-            android:name="ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.cards.CardsFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 

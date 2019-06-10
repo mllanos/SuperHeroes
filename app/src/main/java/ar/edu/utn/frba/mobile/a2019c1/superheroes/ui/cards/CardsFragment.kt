@@ -47,7 +47,6 @@ class CardsFragment : Fragment() {
 		cardsAdapter = CardsAdapter()
 		rvCards.layoutManager = GridLayoutManager(context, 3)
 		rvCards.adapter = cardsAdapter
-		cardsAdapter.clear()
 		val spinner = cards_spinner.apply { visibility = View.VISIBLE }
 		sessionService.getLoggedUser()?.let { loggedUser ->
 			apiService.getUserAvailableCards(loggedUser, { cards ->
