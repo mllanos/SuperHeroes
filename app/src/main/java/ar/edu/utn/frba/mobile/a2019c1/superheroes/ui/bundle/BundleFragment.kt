@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.GridView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.R
@@ -18,6 +17,8 @@ import ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.registration.RegistrationAc
 import kotlinx.android.synthetic.main.fragment_bundle.view.*
 import android.os.CountDownTimer
 import android.widget.Button
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import java.util.*
 
 
@@ -56,6 +57,11 @@ class BundleFragment : Fragment() {
 			this.getCards()
 			startCountdown(TIMER_LENGTH, button, buttonText)
 		}
+		val recyclerView = view!!.findViewById(R.id.bundle_recycler_view) as RecyclerView
+		recyclerView.adapter= CardsAdapter(listOf(),context!!)
+		recyclerView.layoutManager = GridLayoutManager(context,3)
+
+
 
 		if (remainingTime > 0) {
 			button.isEnabled = false
@@ -73,9 +79,11 @@ class BundleFragment : Fragment() {
 	private fun getCards() {
 		sessionService.getLoggedUser()?.let { loggedUser ->
 			apiService.openBundle(loggedUser, { cards ->
-				val gridView = view!!.findViewById(R.id.bundle_grid_view) as GridView
-				gridView.adapter = CardsAdapter(cards, context!!)
-				gridView.visibility = View.VISIBLE
+				val recyclerView = view!!.findViewById(R.id.bundle_recycler_view) as RecyclerView
+				recyclerView.layoutManager = GridLayoutManager(context,3)
+
+				recyclerView.adapter = CardsAdapter(cards, context!!)
+				recyclerView.visibility = View.VISIBLE
 			}, { error ->
 				Toast.makeText(context!!, error.toString(), Toast.LENGTH_SHORT).show()
 			})
