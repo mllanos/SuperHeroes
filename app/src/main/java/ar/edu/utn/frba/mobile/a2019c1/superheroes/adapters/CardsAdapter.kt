@@ -12,6 +12,7 @@ import ar.edu.utn.frba.mobile.a2019c1.superheroes.R.id
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.Card
 import com.squareup.picasso.Picasso
 import kotlinx.android.extensions.LayoutContainer
+import kotlinx.android.synthetic.main.linearlayout_card.view.*
 
 class CardsAdapter : RecyclerView.Adapter<CardsAdapter.ViewHolder>() {
 
@@ -25,9 +26,9 @@ class CardsAdapter : RecyclerView.Adapter<CardsAdapter.ViewHolder>() {
 
 	override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 		val card = cards[position]
-		val imageView = holder.containerView.findViewById<ImageView>(id.imageview_card)
-		val nameTextView = holder.containerView.findViewById<TextView>(id.textview_card_name)
-		val powerTextView = holder.containerView.findViewById<TextView>(id.textview_card_power)
+		val imageView = holder.containerView.imageview_card
+		val nameTextView = holder.containerView.textview_card_name
+		val powerTextView = holder.containerView.textview_card_power
 		Picasso.get()
 			.load(card.thumbnail)
 			.resize(200, 200)

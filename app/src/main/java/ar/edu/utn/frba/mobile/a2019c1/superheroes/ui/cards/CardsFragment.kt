@@ -61,7 +61,6 @@ class CardsFragment : Fragment() {
 	}
 
 	private fun getUserTeam() {
-		val table = view!!.findViewById<TableLayout>(R.id.table_user_team)
 		val row = TableRow(context)
 		val rowLayoutParams = LayoutParams(MATCH_PARENT, 0, 1f)
 		row.layoutParams = rowLayoutParams
@@ -71,7 +70,7 @@ class CardsFragment : Fragment() {
 			ivSuperhero.setImageResource(R.drawable.ic_launcher_foreground)
 			row.addView(ivSuperhero)
 		}
-		table.addView(row, 0)
+		table_user_team.addView(row, 0)
 	}
 
 	private fun onCardClick() {
@@ -79,7 +78,7 @@ class CardsFragment : Fragment() {
 	}
 
 	private fun onCreateTeamButtonClick() {
-		view!!.findViewById<Button>(R.id.btn_create_team).let { button ->
+		btn_create_team.let { button ->
 			button.setOnClickListener {
 				cardsSelectedCounter = 0
 				button.text = getString(R.string.btn_create_team)

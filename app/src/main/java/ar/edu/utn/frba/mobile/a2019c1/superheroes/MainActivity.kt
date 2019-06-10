@@ -13,6 +13,7 @@ import ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.cards.CardsFragment
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.fight.FightFragment
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.registration.RegistrationActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -42,19 +43,16 @@ class MainActivity : AppCompatActivity() {
 
 	private fun setDefaultFragment() = this.replaceFragment(fragmentCards)
 
-	private fun replaceFragment(destFragment: Fragment) {
-		val fragmentManager = this.supportFragmentManager
-		val fragmentTransaction = fragmentManager.beginTransaction()
-		fragmentTransaction.replace(R.id.fragment_container, destFragment)
-		fragmentTransaction.commit()
-	}
+	private fun replaceFragment(destFragment: Fragment) = this.supportFragmentManager
+		.beginTransaction()
+		.replace(R.id.fragment_container, destFragment)
+		.commit()
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_main)
-		val navView = findViewById<BottomNavigationView>(R.id.nav_view)
 
-		navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
+		nav_view.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
 
 		this.setDefaultFragment()
 

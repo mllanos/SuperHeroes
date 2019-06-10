@@ -18,9 +18,8 @@ class FightSearchActivity : AppCompatActivity(){
 		super.onResume()
 		val openDialog = Dialog(this)
 		openDialog.setContentView(R.layout.activity_fight_search)
-		val button: Button =  openDialog.findViewById(R.id.btn_go_back)
 		openDialog.setCancelable(false)
-		button.setOnClickListener{
+		btn_go_back.setOnClickListener{
 			this.goBack()
 		}
 	}

@@ -46,9 +46,6 @@ class RegistrationActivity : AppCompatActivity() {
 			finish()
 		}
 
-		val nicknameText = findViewById<EditText>(R.id.et_nickname)
-		val registrationButton = findViewById<Button>(R.id.b_registration)
-
 		registrationViewModel = ViewModelProviders
 			.of(this)
 			.get(RegistrationViewModel::class.java)
@@ -56,7 +53,7 @@ class RegistrationActivity : AppCompatActivity() {
 		registrationViewModel.registrationFormState.observe(this@RegistrationActivity, Observer {
 			val registrationState = it ?: return@Observer
 			if (registrationState.nicknameError != null) {
-				nicknameText.error = getString(registrationState.nicknameError)
+				et_nickname.error = getString(registrationState.nicknameError)
 			}
 		})
 
@@ -69,14 +66,14 @@ class RegistrationActivity : AppCompatActivity() {
 			finish()
 		})
 
-		registrationButton.setOnClickListener {
-			if (registrationViewModel.validateForm(nicknameText.text.toString())) {
+		b_registration.setOnClickListener {
+			if (registrationViewModel.validateForm(et_nickname.text.toString())) {
 				val spinner = this.registration_spinner.apply { visibility = VISIBLE }
 				window.setFlags(
 					WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
 					WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE
 				)
-				val nickname = nicknameText.text.toString().trim()
+				val nickname = et_nickname.text.toString().trim()
 				apiService.createUser(nickname,
 					{ userCreated ->
 						val intent = Intent(this@RegistrationActivity, MainActivity::class.java)

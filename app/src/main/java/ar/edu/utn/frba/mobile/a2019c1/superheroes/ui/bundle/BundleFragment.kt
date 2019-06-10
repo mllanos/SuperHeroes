@@ -42,10 +42,6 @@ class BundleFragment : Fragment() {
 		return view
 	}
 
-	override fun onResume() {
-		super.onResume()
-	}
-
 	private fun startCountdown(length: Long, button: Button, onFinishText: String) {
 		button.isEnabled = false
 		object : CountDownTimer(length, COUNTDOWN_INTERVAL) {
