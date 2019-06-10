@@ -29,8 +29,7 @@ class ShowCards : AppCompatActivity() {
 	}
 
 	private fun buttonClose() {
-		val buttonClose = findViewById<Button>(R.id.btn_close_show_cards)
-		buttonClose.setOnClickListener{
+		btn_close_show_cards.setOnClickListener{
 			finish()
 		}
 	}
