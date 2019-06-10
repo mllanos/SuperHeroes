@@ -12,7 +12,9 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
-        <activity android:name=".ui.bundle.ShowCards">
+        <activity
+                android:name=".ui.bundle.ShowCards"
+                android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         </activity>
         <activity
                 android:name=".MainActivity"

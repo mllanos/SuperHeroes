@@ -33,12 +33,12 @@ class ShakeEventManager : SensorEventListener {
 
 	override fun onSensorChanged(sensorEvent: SensorEvent) {
 		val maxAcc = calcMaxAcceleration(sensorEvent)
-		Log.d("SwA", "Max Acc [$maxAcc]")
+		//Log.d("SwA", "Max Acc [$maxAcc]")
 		if (maxAcc >= MOV_THRESHOLD) {
 			if (counter == 0) {
 				counter++
 				firstMovTime = System.currentTimeMillis()
-				Log.d("SwA", "First mov..")
+				//Log.d("SwA", "First mov..")
 			} else {
 				val now = System.currentTimeMillis()
 				if (now - firstMovTime < SHAKE_WINDOW_TIME_INTERVAL)
@@ -48,8 +48,7 @@ class ShakeEventManager : SensorEventListener {
 					counter++
 					return
 				}
-				Log.d("SwA", "Mov counter [$counter]")
-
+				//Log.d("SwA", "Mov counter [$counter]")
 				if (counter >= MOV_COUNTS)
 					if (listener != null)
 						listener!!.onShake()
@@ -83,7 +82,7 @@ class ShakeEventManager : SensorEventListener {
 	}
 
 	private fun resetAllData() {
-		Log.d("SwA", "Reset all data")
+		//Log.d("SwA", "Reset all data")
 		counter = 0
 		firstMovTime = System.currentTimeMillis()
 	}
