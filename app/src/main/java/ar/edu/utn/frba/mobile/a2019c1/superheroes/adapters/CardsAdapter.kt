@@ -3,18 +3,18 @@ package ar.edu.utn.frba.mobile.a2019c1.superheroes.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.R
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.R.drawable
-import ar.edu.utn.frba.mobile.a2019c1.superheroes.R.id
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.Card
 import com.squareup.picasso.Picasso
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.linearlayout_card.view.*
 
-class CardsAdapter : RecyclerView.Adapter<CardsAdapter.ViewHolder>() {
+class CardsAdapter(
+	private val clickListener: ((Card) -> Unit)? = null,
+	private val longClickListener: ((Card) -> Boolean)? = null
+) : RecyclerView.Adapter<CardsAdapter.ViewHolder>() {
 
 	private var cards = emptyList<Card>()
 
@@ -38,6 +38,12 @@ class CardsAdapter : RecyclerView.Adapter<CardsAdapter.ViewHolder>() {
 			.into(imageView)
 		nameTextView.text = card.name
 		powerTextView.text = holder.containerView.context.getString(R.string.text_card_power, card.power)
+		if (longClickListener != null) {
+			holder.bindLongClick(card, longClickListener)
+		}
+		if (clickListener != null) {
+			holder.bindClick(card, clickListener)
+		}
 	}
 
 	override fun getItemId(position: Int) = position.toLong()
@@ -51,6 +57,15 @@ class CardsAdapter : RecyclerView.Adapter<CardsAdapter.ViewHolder>() {
 		notifyDataSetChanged()
 	}
 
-	inner class ViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView), LayoutContainer
+	inner class ViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView), LayoutContainer {
+
+		fun bindLongClick(card: Card, longClickListener: (Card) -> Boolean) {
+			containerView.setOnLongClickListener { longClickListener(card) }
+		}
+
+		fun bindClick(card: Card, clickListener: (Card) -> Unit) {
+			containerView.setOnClickListener { clickListener(card) }
+		}
+	}
 
 }

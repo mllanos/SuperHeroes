@@ -7,17 +7,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
-import android.widget.TableLayout
 import android.widget.TableRow
 import android.widget.TableRow.LayoutParams
 import android.widget.TableRow.LayoutParams.MATCH_PARENT
 import android.widget.TableRow.LayoutParams.WRAP_CONTENT
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.R
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.adapters.CardsAdapter
+import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.Card
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.ApiService
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.SessionsService
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.registration.RegistrationActivity
@@ -39,19 +39,18 @@ class CardsFragment : Fragment() {
 		super.onActivityCreated(savedInstanceState)
 		getUserAvailableCards()
 		getUserTeam()
-		onCardClick()
 		onCreateTeamButtonClick()
 	}
 
 	private fun getUserAvailableCards() {
-		cardsAdapter = CardsAdapter()
-		rvCards.layoutManager = GridLayoutManager(context, 3)
-		rvCards.adapter = cardsAdapter
-		val spinner = cards_spinner.apply { visibility = View.VISIBLE }
+		cardsAdapter = CardsAdapter({ card -> onCardClick(card) }, { card -> onLongCardClick(card) })
+		recyclerview_cards_available.layoutManager = GridLayoutManager(context, 3)
+		recyclerview_cards_available.adapter = cardsAdapter
+		val spinner = progressbar_cards_spinner.apply { visibility = View.VISIBLE }
 		sessionService.getLoggedUser()?.let { loggedUser ->
 			apiService.getUserAvailableCards(loggedUser, { cards ->
 				cardsAdapter.replaceItems(cards)
-				rvCards.adapter = cardsAdapter
+				recyclerview_cards_available.adapter = cardsAdapter
 				spinner.visibility = GONE
 			}, { error ->
 				println("Failed to get user cards - error: $error")
@@ -70,15 +69,20 @@ class CardsFragment : Fragment() {
 			ivSuperhero.setImageResource(R.drawable.ic_launcher_foreground)
 			row.addView(ivSuperhero)
 		}
-		table_user_team.addView(row, 0)
+		tablelayout_cards_userteam.addView(row, 0)
 	}
 
-	private fun onCardClick() {
+	private fun onLongCardClick(card: Card): Boolean {
+		Toast.makeText(context, "Long clicked: ${card.name}", Toast.LENGTH_LONG).show()
+		return true
+	}
 
+	private fun onCardClick(card: Card) {
+		Toast.makeText(context, "Clicked: ${card.name}", Toast.LENGTH_LONG).show()
 	}
 
 	private fun onCreateTeamButtonClick() {
-		btn_create_team.let { button ->
+		btn_cards_createteam.let { button ->
 			button.setOnClickListener {
 				cardsSelectedCounter = 0
 				button.text = getString(R.string.btn_create_team)
