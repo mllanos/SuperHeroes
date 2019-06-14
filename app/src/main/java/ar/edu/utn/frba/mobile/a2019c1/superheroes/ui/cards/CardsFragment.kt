@@ -78,7 +78,14 @@ class CardsFragment : Fragment() {
 	}
 
 	private fun onCardClick(card: Card) {
-		Toast.makeText(context, "Clicked: ${card.name}", Toast.LENGTH_LONG).show()
+		val intent = Intent(context!!, ShowSingleCard::class.java).apply {
+			putExtra("name", card.name)
+			putExtra("description", card.description)
+			putExtra("id", card.id)
+			putExtra("power", card.power.toString())
+			putExtra("thumbnail", card.thumbnail)
+		}
+		startActivity(intent)
 	}
 
 	private fun onCreateTeamButtonClick() {

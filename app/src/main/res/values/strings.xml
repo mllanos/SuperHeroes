@@ -16,6 +16,7 @@
     <string name="text_others">My Cards</string>
     <string name="btn_create_team">Create Team</string>
     <string name="btn_create_team_counter">Create Team (%1$d)</string>
+    <string name="btn_show_single_card_back">Listo</string>
     <!--bundle-->
     <string name="title_bundle">Open Bundle</string>
     <!--fight-->
