@@ -17,21 +17,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:background="#DD4056D8"
-                android:textColor="#FFFFFF"
                 android:textAlignment="center"/>
 
         <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
-                android:layout_weight="1">
-            <TableLayout
-                    android:id="@+id/tablelayout_cards_userteam"
+                android:layout_weight="1"
+                android:layout_marginTop="5dp">
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerview_cards_userteam"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:background="#6D4056D8">
-            </TableLayout>
+                    tools:context=".ui.cards.CardsFragment"
+                    tools:listitem="@layout/linearlayout_teamcard">
+            </androidx.recyclerview.widget.RecyclerView>
         </RelativeLayout>
 
         <View
@@ -58,6 +57,7 @@
                     android:id="@+id/recyclerview_cards_available"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:overScrollMode="never"
                     tools:context=".ui.cards.CardsFragment"
                     tools:listitem="@layout/linearlayout_card"/>
         </RelativeLayout>

@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.linearlayout_card.view.*
 
 class CardsAdapter(
 	private val clickListener: ((Card) -> Unit)? = null,
-	private val longClickListener: ((Card) -> Boolean)? = null
+	private val longClickListener: ((Card, View) -> Boolean)? = null
 ) : RecyclerView.Adapter<CardsAdapter.ViewHolder>() {
 
 	private var cards = emptyList<Card>()
@@ -59,8 +59,8 @@ class CardsAdapter(
 
 	inner class ViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView), LayoutContainer {
 
-		fun bindLongClick(card: Card, longClickListener: (Card) -> Boolean) {
-			containerView.setOnLongClickListener { longClickListener(card) }
+		fun bindLongClick(card: Card, longClickListener: (Card, View) -> Boolean) {
+			containerView.setOnLongClickListener { longClickListener(card, containerView) }
 		}
 
 		fun bindClick(card: Card, clickListener: (Card) -> Unit) {

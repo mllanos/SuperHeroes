@@ -2,35 +2,37 @@ package ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.cards
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TableRow
-import android.widget.TableRow.LayoutParams
-import android.widget.TableRow.LayoutParams.MATCH_PARENT
-import android.widget.TableRow.LayoutParams.WRAP_CONTENT
+import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.R
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.adapters.CardsAdapter
+import ar.edu.utn.frba.mobile.a2019c1.superheroes.adapters.UserTeamAdapter
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.Card
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.ApiService
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.SessionsService
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.registration.RegistrationActivity
 import kotlinx.android.synthetic.main.fragment_cards.*
-import androidx.recyclerview.widget.LinearLayoutManager as LinearLayoutManager1
+import kotlinx.android.synthetic.main.linearlayout_card.view.*
 
 
 class CardsFragment : Fragment() {
 
 	private val apiService by lazy { ApiService(context!!) }
 	private val sessionService by lazy { SessionsService(context!!) }
-	private var cardsSelectedCounter = 0
-	private lateinit var cardsAdapter: CardsAdapter
+	private var cardsAdapter = CardsAdapter(
+		{ card -> onCardClick(card) },
+		{ card, view -> onLongCardClick(card, view) })
+	private var userTeamAdapter = UserTeamAdapter()
+	private var selectedCards = mutableListOf<Card>()
 
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
 		inflater.inflate(R.layout.fragment_cards, container, false)
@@ -43,14 +45,12 @@ class CardsFragment : Fragment() {
 	}
 
 	private fun getUserAvailableCards() {
-		cardsAdapter = CardsAdapter({ card -> onCardClick(card) }, { card -> onLongCardClick(card) })
 		recyclerview_cards_available.layoutManager = GridLayoutManager(context, 3)
 		recyclerview_cards_available.adapter = cardsAdapter
 		val spinner = progressbar_cards_spinner.apply { visibility = View.VISIBLE }
 		sessionService.getLoggedUser()?.let { loggedUser ->
 			apiService.getUserAvailableCards(loggedUser, { cards ->
 				cardsAdapter.replaceItems(cards)
-				recyclerview_cards_available.adapter = cardsAdapter
 				spinner.visibility = GONE
 			}, { error ->
 				println("Failed to get user cards - error: $error")
@@ -60,20 +60,29 @@ class CardsFragment : Fragment() {
 	}
 
 	private fun getUserTeam() {
-		val row = TableRow(context)
-		val rowLayoutParams = LayoutParams(MATCH_PARENT, 0, 1f)
-		row.layoutParams = rowLayoutParams
-		for (i in 0..3) {
-			val ivSuperhero = ImageView(context)
-			ivSuperhero.layoutParams = LayoutParams(0, WRAP_CONTENT, 0.25f)
-			ivSuperhero.setImageResource(R.drawable.ic_launcher_foreground)
-			row.addView(ivSuperhero)
+		recyclerview_cards_userteam.layoutManager =
+			object : GridLayoutManager(context, 4, RecyclerView.VERTICAL, false) {
+				override fun canScrollVertically() = false
+			}
+		if (recyclerview_cards_userteam.adapter == null) {
+			recyclerview_cards_userteam.adapter = userTeamAdapter
+			userTeamAdapter.setPlaceHolders()
 		}
-		tablelayout_cards_userteam.addView(row, 0)
 	}
 
-	private fun onLongCardClick(card: Card): Boolean {
-		Toast.makeText(context, "Long clicked: ${card.name}", Toast.LENGTH_LONG).show()
+	private fun onLongCardClick(card: Card, view: View): Boolean {
+		selectedCards.find { it.id == card.id }?.also {
+			selectedCards.remove(card)
+			view.linearlayout_card.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
+		} ?: run {
+			if (selectedCards.size < 4) {
+				selectedCards.add(card)
+				view.linearlayout_card.setBackgroundColor(Color.parseColor("#D81B60"))
+			}
+		}
+		if (selectedCards.size <= 4) {
+			btn_cards_createteam.text = getString(R.string.btn_create_team_counter, selectedCards.size)
+		}
 		return true
 	}
 
@@ -89,12 +98,24 @@ class CardsFragment : Fragment() {
 	}
 
 	private fun onCreateTeamButtonClick() {
-		btn_cards_createteam.let { button ->
-			button.setOnClickListener {
-				cardsSelectedCounter = 0
-				button.text = getString(R.string.btn_create_team)
+		btn_cards_createteam.setOnClickListener {
+			if (selectedCards.size == 4) {
+				userTeamAdapter.addTeamCards(selectedCards.toList())
+				resetTeamCreationButton(btn_cards_createteam)
+			} else {
+				Toast.makeText(context, "You must select 4 cards", Toast.LENGTH_LONG).show()
 			}
 		}
+	}
+
+	private fun resetTeamCreationButton(button: Button) {
+		for (i in 0 until recyclerview_cards_available.childCount) {
+			val holder = recyclerview_cards_available
+				.getChildViewHolder(recyclerview_cards_available.getChildAt(i))
+			holder.itemView.linearlayout_card.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
+		}
+		selectedCards.clear()
+		button.text = getString(R.string.btn_create_team)
 	}
 
 	private fun handleUserNotLogged() {
