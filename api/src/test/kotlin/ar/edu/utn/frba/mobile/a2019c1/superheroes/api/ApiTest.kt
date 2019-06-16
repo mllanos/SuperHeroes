@@ -205,7 +205,7 @@ class TeamsControllerTest(@Autowired val mockMvc: MockMvc) {
 				.andExpect(jsonPath("\$.superheroes[1].description").value("metal"))
 				.andExpect(jsonPath("\$.superheroes[1].thumbnail").value("iron_man.jpg"))
 				.andExpect(jsonPath("\$.superheroes[1].power").value(45))
-				.andExpect(jsonPath("\$.totalPower").value(68)) // FIXME
+				.andExpect(jsonPath("\$.total_power").value(68))
 		verify(teamsService).getTeam(id)
 	}
 

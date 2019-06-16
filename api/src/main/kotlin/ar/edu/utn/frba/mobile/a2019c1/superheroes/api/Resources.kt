@@ -37,7 +37,7 @@ data class CardsResponseResource(val cards: List<Card>)
 
 data class UserTeamResourceResponse(val id: Int)
 
-data class TeamResponseResource(val superheroes: List<Card>, val totalPower: Int)
+data class TeamResponseResource(val superheroes: List<Card>, val total_power: Int)
 
 fun UserTeamResource.forUser(userId: Int): UserTeamData {
 	requireNotNull(superheroes) { "missing superheroes" }
@@ -53,7 +53,7 @@ fun List<Card>.asResource() = CardsResponseResource(cards = this)
 
 fun Team.asResource() = UserTeamResourceResponse(id)
 
-fun List<Card>.asCardsResource() = TeamResponseResource(superheroes = this, totalPower = this.sumBy { it.power })
+fun List<Card>.asCardsResource() = TeamResponseResource(superheroes = this, total_power = this.sumBy { it.power })
 
 fun FightResult.asResource(): FightResponseResource {
 	val player = players.first { p -> p.nickname != winner }
