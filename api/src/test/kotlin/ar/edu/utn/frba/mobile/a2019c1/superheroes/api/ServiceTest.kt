@@ -105,7 +105,7 @@ class UsersServiceTest {
 		val superheroes = listOf(1, 2, 3, 4)
 		val teamData = UserTeamData(123456, superheroes)
 		val user = User(123456, "vegeta")
-		whenever(randomService.generate(10000)).doReturn(45)
+		whenever(randomService.generate(1000000)).doReturn(45)
 		whenever(storageService.findUser(123456)).doReturn(user)
 		userService
 				.createTeam(teamData)

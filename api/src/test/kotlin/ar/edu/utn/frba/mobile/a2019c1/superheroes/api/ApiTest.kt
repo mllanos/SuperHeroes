@@ -223,14 +223,14 @@ class TeamsControllerTest(@Autowired val mockMvc: MockMvc) {
 
 @ExtendWith(SpringExtension::class)
 @WebMvcTest(controllers = [FightController::class])
-class FightController(@Autowired val mockMvc: MockMvc) {
+class FightControllerTest(@Autowired val mockMvc: MockMvc) {
 
 	@MockBean
 	private lateinit var fightService: FightService
 
 	@Test
 	fun testFight() {
-		val id = 123456
+		val id = 123
 		val geolocation = Geolocation(amplitude = 222222, latitude = 333333)
 		val timestamp = 15000000123
 		val fightData = FightData(id, geolocation, timestamp)

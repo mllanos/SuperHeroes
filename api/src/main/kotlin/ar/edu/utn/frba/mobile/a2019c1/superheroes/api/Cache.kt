@@ -11,7 +11,7 @@ import java.text.MessageFormat.format
 private const val USER_KEY = "users:{0}"
 private const val USER_CARDS_KEY = "users:{0}:available_cards"
 private const val USER_TEAM_KEY = "users:{0}:team"
-private const val TEAM_KEY = "users:{0}:team"
+private const val TEAM_KEY = "teams:{0}"
 private const val FIGHT_AVAILABLE_PLAYERS_KEY = "fights:users"
 private const val FIGHTS_KEY = "fights"
 private const val FIGHT_TIMEOUT = 10000L
@@ -67,7 +67,7 @@ class StorageService(private val memcachedClient: MemcachedClient, private val g
 
 	fun storeUserTeam(userId: Int, team: Team) {
 		val userTeamKey = format(USER_TEAM_KEY, userId.toString())
-		val teamKey = format(TEAM_KEY, userId.toString())
+		val teamKey = format(TEAM_KEY, team.id.toString())
 		val json = gson.toJson(team)
 		val userTeamResult = memcachedClient.set(userTeamKey, 0, json).get()
 		val teamResult = memcachedClient.set(teamKey, 0, json).get()
@@ -147,7 +147,7 @@ class StorageService(private val memcachedClient: MemcachedClient, private val g
 	private fun saveOpponent(userId: Int) {
 		val opponentsDto = OpponentsDto(listOf(userId))
 		val json = gson.toJson(opponentsDto)
-		val result = memcachedClient.set(FIGHT_AVAILABLE_PLAYERS_KEY, 0, json).get()
+		val result = memcachedClient.set(FIGHT_AVAILABLE_PLAYERS_KEY, 15, json).get()
 		if (!result) {
 			throw RuntimeException("failed to store opponent: $userId")
 		}
@@ -158,7 +158,7 @@ class StorageService(private val memcachedClient: MemcachedClient, private val g
 		newOpponents.add(userId)
 		val fightDto = OpponentsDto(newOpponents)
 		val json = gson.toJson(fightDto)
-		val result = memcachedClient.set(FIGHT_AVAILABLE_PLAYERS_KEY, 0, json).get()
+		val result = memcachedClient.set(FIGHT_AVAILABLE_PLAYERS_KEY, 15, json).get()
 		if (!result) {
 			throw RuntimeException("failed to store opponent: $userId")
 		}

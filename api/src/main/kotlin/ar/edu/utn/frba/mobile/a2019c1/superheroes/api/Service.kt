@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service
 import kotlin.streams.toList
 
 private const val MAX_USER_ID_LENGTH = 1000000
-private const val MAX_TEAM_ID_LENGTH = 10000
+private const val MAX_TEAM_ID_LENGTH = 1000000
 private const val MAX_FIGHT_ID_LENGTH = 10000
 
 @Service

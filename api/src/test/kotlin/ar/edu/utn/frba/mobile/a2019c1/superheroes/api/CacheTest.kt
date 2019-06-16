@@ -101,6 +101,11 @@ class StorageServiceTest {
 					val userDto = gson.fromJson(it, Team::class.java)
 					assertThat(userDto).isEqualToComparingFieldByField(team)
 				}
+		memcachedClient.get("teams:45").let { it as String }
+				.let {
+					val userDto = gson.fromJson(it, Team::class.java)
+					assertThat(userDto).isEqualToComparingFieldByField(team)
+				}
 	}
 
 	@Test
