@@ -17,12 +17,7 @@ class MarvelService(private val superheroesRepository: List<Superhero>, private 
 
 	fun getCardOf(superheroId: Int) = superheroesRepository.find { it.id == superheroId }!!.asCard()
 
-	private fun Superhero.asCard() = Card(
-			id = id,
-			name = name,
-			description = description,
-			thumbnail = thumbnail,
-			power = randomService.generate(100) + 1)
+	private fun Superhero.asCard() = Card(id, name, description, thumbnail, power)
 
 }
 
