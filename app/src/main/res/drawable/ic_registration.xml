@@ -5,5 +5,5 @@
             <solid android:color="@color/ic_launcher_background"/>
         </shape>
     </item>
-    <item android:drawable="@drawable/ic_launcher_foreground"/>
+    <item android:drawable="@drawable/ic_superhero"/>
 </layer-list>

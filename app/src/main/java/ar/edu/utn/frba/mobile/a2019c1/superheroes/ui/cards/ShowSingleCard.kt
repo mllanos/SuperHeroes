@@ -6,7 +6,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.R
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.activity_show_cards.*
 import kotlinx.android.synthetic.main.activity_show_single_card.*
 
 class ShowSingleCard : AppCompatActivity() {
@@ -23,7 +22,7 @@ class ShowSingleCard : AppCompatActivity() {
 
 
 	private fun initializeViews() {
-		val id = intent.getStringExtra("id")
+		//val id = intent.getStringExtra("id")
 		val name = intent.getStringExtra("name")
 		val description = intent.getStringExtra("description")
 		val power = intent.getStringExtra("power")
@@ -46,8 +45,8 @@ class ShowSingleCard : AppCompatActivity() {
 			.load(thumbnail)
 			.resize(200, 200)
 			.centerCrop()
-			.placeholder(R.drawable.ic_launcher_foreground)
-			.error(R.drawable.ic_launcher_foreground)
+			.placeholder(R.drawable.ic_superhero)
+			.error(R.drawable.ic_superhero_notfound)
 			.into(imageViewPhoto)
 	}
 

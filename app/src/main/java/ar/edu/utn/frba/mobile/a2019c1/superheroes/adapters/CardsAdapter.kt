@@ -33,8 +33,8 @@ class CardsAdapter(
 			.load(card.thumbnail)
 			.resize(200, 200)
 			.centerCrop()
-			.placeholder(drawable.ic_launcher_foreground)
-			.error(drawable.ic_launcher_foreground)
+			.placeholder(drawable.ic_superhero)
+			.error(drawable.ic_superhero_notfound)
 			.into(imageView)
 		nameTextView.text = card.name
 		powerTextView.text = holder.containerView.context.getString(R.string.text_card_power, card.power)

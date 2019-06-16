@@ -28,8 +28,8 @@ class UserTeamAdapter : RecyclerView.Adapter<UserTeamAdapter.ViewHolder>() {
 			.load(card.thumbnail)
 			.resize(200, 200)
 			.centerCrop()
-			.placeholder(R.drawable.ic_launcher_foreground)
-			.error(R.drawable.ic_launcher_foreground)
+			.placeholder(R.drawable.ic_superhero)
+			.error(R.drawable.ic_superhero_notfound)
 			.into(imageView)
 	}
 
