@@ -2,6 +2,7 @@ package ar.edu.utn.frba.mobile.a2019c1.superheroes.services
 
 import android.content.Context
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.Card
+import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.Team
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.User
 import com.android.volley.Request.Method.GET
 import com.android.volley.Request.Method.POST
@@ -9,8 +10,8 @@ import com.android.volley.Response
 import com.android.volley.VolleyError
 import com.android.volley.toolbox.JsonObjectRequest
 import com.google.gson.Gson
+import org.json.JSONArray
 import org.json.JSONObject
-import java.util.Date
 
 private const val API_BASE_URL = "https://superheroes-mobile-api.herokuapp.com/superheroes"
 
@@ -50,6 +51,32 @@ class ApiService(private val context: Context) {
 		)
 	}
 
+	fun createTeam(
+		user: User,
+		cards: List<Card>,
+		responseHandler: (Int) -> Unit,
+		errorHandler: (VolleyError) -> Unit
+	) {
+		val json = JSONObject().put("superheroes", JSONArray(cards.map { it.id }.toList()))
+		post(
+			"/users/${user.id}/team", json, { response ->
+				val id = response.getInt("id")
+				responseHandler(id)
+			},
+			errorHandler
+		)
+	}
+
+	fun getTeam(id: Int, responseHandler: (Team) -> Unit, errorHandler: (VolleyError) -> Unit) {
+		get(
+			"/teams/$id", { response ->
+				val resource = gson.fromJson(response.toString(), TeamResponseResource::class.java)
+				val team = Team(id, resource.superheroes, resource.total_power)
+				responseHandler(team)
+			}, errorHandler
+		)
+	}
+
 	private fun post(
 		uri: String,
 		body: JSONObject,
@@ -71,5 +98,7 @@ class ApiService(private val context: Context) {
 	}
 
 	data class CardsResponseResource(val cards: List<Card>)
+
+	data class TeamResponseResource(val superheroes: List<Card>, val total_power: Int)
 
 }

@@ -19,4 +19,8 @@ class SessionsService(context: Context) {
 
 	fun logout() = storageService.deleteUser()
 
+	fun storeLoggedUserTeamId(teamId: Int) = storageService.storeTeamId(teamId)
+
+	fun getLoggedUserTeamId() = storageService.getTeamId()
+
 }

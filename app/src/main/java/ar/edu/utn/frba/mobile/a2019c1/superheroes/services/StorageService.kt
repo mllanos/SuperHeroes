@@ -8,6 +8,7 @@ import com.google.gson.Gson
 private const val SHARED_PREFERENCES_KEY = "STORAGE_SERVICE"
 private const val LOGGED_USER = "USER_LOGGED"
 private const val TIMER = "TIMER"
+private const val USER_TEAM_ID = "USER_TEAM_ID"
 
 class StorageService(context: Context) {
 
@@ -18,9 +19,13 @@ class StorageService(context: Context) {
 
 	fun storeTimer(timer: Long) = storePreference(TIMER, timer)
 
+	fun storeTeamId(teamId: Int) = storePreference(USER_TEAM_ID, teamId)
+
 	fun getUser(): User? = getPreference(LOGGED_USER, User::class.java)
 
 	fun getTimer(): Long = getPreference(TIMER, Long::class.java)
+
+	fun getTeamId(): Int? = getPreference(USER_TEAM_ID, Int::class.java)
 
 	fun deleteUser() = removePreference(LOGGED_USER)
 

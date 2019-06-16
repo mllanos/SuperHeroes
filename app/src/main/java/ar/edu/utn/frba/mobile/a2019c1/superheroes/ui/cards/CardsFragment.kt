@@ -20,8 +20,10 @@ import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.Card
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.ApiService
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.SessionsService
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.registration.RegistrationActivity
+import com.android.volley.VolleyError
 import kotlinx.android.synthetic.main.fragment_cards.*
 import kotlinx.android.synthetic.main.linearlayout_card.view.*
+import kotlin.text.Charsets.UTF_8
 
 
 class CardsFragment : Fragment() {
@@ -53,7 +55,7 @@ class CardsFragment : Fragment() {
 				cardsAdapter.replaceItems(cards)
 				spinner.visibility = GONE
 			}, { error ->
-				println("Failed to get user cards - error: $error")
+				gerErrorMessage("Failed to get user cards", error)
 				spinner.visibility = GONE
 			})
 		} ?: handleUserNotLogged()
@@ -64,10 +66,17 @@ class CardsFragment : Fragment() {
 			object : GridLayoutManager(context, 4, RecyclerView.VERTICAL, false) {
 				override fun canScrollVertically() = false
 			}
-		if (recyclerview_cards_userteam.adapter == null) {
-			recyclerview_cards_userteam.adapter = userTeamAdapter
-			userTeamAdapter.setPlaceHolders()
-		}
+		recyclerview_cards_userteam.adapter = userTeamAdapter
+		sessionService.getLoggedUserTeamId()?.also { id ->
+			val spinner = progressbar_cards_spinner.apply { visibility = View.VISIBLE }
+			apiService.getTeam(id, { team ->
+				userTeamAdapter.addTeamCards(team.superheroes)
+				spinner.visibility = GONE
+			}, { error ->
+				gerErrorMessage("Failed to get user team", error)
+				spinner.visibility = GONE
+			})
+		} ?: userTeamAdapter.setPlaceHolders()
 	}
 
 	private fun onLongCardClick(card: Card, view: View): Boolean {
@@ -100,8 +109,17 @@ class CardsFragment : Fragment() {
 	private fun onCreateTeamButtonClick() {
 		btn_cards_createteam.setOnClickListener {
 			if (selectedCards.size == 4) {
-				userTeamAdapter.addTeamCards(selectedCards.toList())
-				resetTeamCreationButton(btn_cards_createteam)
+				val spinner = progressbar_cards_spinner.apply { visibility = View.VISIBLE }
+				val user = sessionService.getLoggedUser()!!
+				apiService.createTeam(user, selectedCards, { teamId ->
+					sessionService.storeLoggedUserTeamId(teamId)
+					userTeamAdapter.addTeamCards(selectedCards.toList())
+					resetTeamCreationButton(btn_cards_createteam)
+					spinner.visibility = GONE
+				}, { error ->
+					gerErrorMessage("Failed to create team", error)
+					spinner.visibility = GONE
+				})
 			} else {
 				Toast.makeText(context, "You must select 4 cards", Toast.LENGTH_LONG).show()
 			}
@@ -124,6 +142,12 @@ class CardsFragment : Fragment() {
 		startActivity(intent)
 		activity!!.setResult(Activity.RESULT_OK)
 		activity!!.finish()
+	}
+
+	private fun gerErrorMessage(message: String, error: VolleyError) {
+		val statusCode = error.networkResponse.statusCode
+		val data = String(error.networkResponse.data, UTF_8)
+		println("$message - statusCode: $statusCode - data: $data")
 	}
 
 	companion object {
