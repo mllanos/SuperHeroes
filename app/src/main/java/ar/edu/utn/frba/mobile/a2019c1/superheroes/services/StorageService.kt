@@ -29,6 +29,8 @@ class StorageService(context: Context) {
 
 	fun deleteUser() = removePreference(LOGGED_USER)
 
+	fun deleteTeam() = removePreference(USER_TEAM_ID)
+
 	private fun storePreference(key: String, preference: Any) = sharedPreferences
 		.edit()
 		.putString(key, gson.toJson(preference))
