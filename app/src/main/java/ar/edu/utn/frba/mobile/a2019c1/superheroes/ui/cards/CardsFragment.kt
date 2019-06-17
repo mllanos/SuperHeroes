@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
@@ -44,6 +45,15 @@ class CardsFragment : Fragment() {
 		getUserAvailableCards()
 		getUserTeam()
 		onCreateTeamButtonClick()
+		handleElementsVisibility()
+	}
+
+	private fun handleElementsVisibility() {
+		if (!cardsAdapter.hasCards()) {
+			linearlayout_cards_nocards.visibility = VISIBLE
+		} else {
+			btn_cards_createteam.visibility = VISIBLE
+		}
 	}
 
 	private fun getUserAvailableCards() {
@@ -54,6 +64,10 @@ class CardsFragment : Fragment() {
 			apiService.getUserAvailableCards(loggedUser, { cards ->
 				cardsAdapter.replaceItems(cards)
 				spinner.visibility = GONE
+				if (cardsAdapter.hasCards()) {
+					linearlayout_cards_nocards.visibility = GONE
+					btn_cards_createteam.visibility = VISIBLE
+				}
 			}, { error ->
 				gerErrorMessage("Failed to get user cards", error)
 				spinner.visibility = GONE
@@ -121,7 +135,7 @@ class CardsFragment : Fragment() {
 					spinner.visibility = GONE
 				})
 			} else {
-				Toast.makeText(context, "You must select 4 cards", Toast.LENGTH_LONG).show()
+				Toast.makeText(context, "You must select 4 cards", Toast.LENGTH_SHORT).show()
 			}
 		}
 	}

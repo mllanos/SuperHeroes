@@ -71,7 +71,8 @@
                 android:layout_marginBottom="10dp"
                 android:text="@string/btn_create_team"
                 android:textColor="#FFFFFF"
-                android:background="#7f0000"/>
+                android:background="#7f0000"
+                android:visibility="invisible"/>
     </LinearLayout>
 
     <ProgressBar
@@ -81,5 +82,31 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:visibility="invisible"/>
+
+    <LinearLayout
+            android:id="@+id/linearlayout_cards_nocards"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+        <TextView
+                android:id="@+id/textview_cards_nocards_firstline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:textAlignment="center"
+                android:text="@string/text_nocards_firstline"/>
+
+        <TextView
+                android:id="@+id/textview_cards_nocards_secondline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:textAlignment="center"
+                android:text="@string/text_nocards_secondline"/>
+    </LinearLayout>
+
 
 </FrameLayout>

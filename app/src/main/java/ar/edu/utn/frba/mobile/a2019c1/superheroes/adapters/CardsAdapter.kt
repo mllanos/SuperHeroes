@@ -57,6 +57,8 @@ class CardsAdapter(
 		notifyDataSetChanged()
 	}
 
+	fun hasCards() = cards.isNotEmpty()
+
 	inner class ViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView), LayoutContainer {
 
 		fun bindLongClick(card: Card, longClickListener: (Card, View) -> Boolean) {

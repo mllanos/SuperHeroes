@@ -14,6 +14,8 @@
     <string name="text_card_power">Power: %1$d</string>
     <string name="text_team">My Team</string>
     <string name="text_others">My Cards</string>
+    <string name="text_nocards_firstline">You don\'t have cards yet.</string>
+    <string name="text_nocards_secondline">Let\'s start opening a bundle!</string>
     <string name="btn_create_team">Create Team</string>
     <string name="btn_show_single_card_back">Listo</string>
     <string name="btn_create_team_counter">Create Team (%1$d/4)</string>
