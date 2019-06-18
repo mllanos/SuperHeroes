@@ -22,25 +22,11 @@
       "power": 29
     },
     {
-      "id": 1010699,
-      "name": "Aaron Stack",
-      "description": "",
-      "thumbnail": "/",
-      "power": 14
-    },
-    {
       "id": 1009146,
       "name": "Abomination (Emil Blonsky)",
       "description": "Formerly known as Emil Blonsky, a spy of Soviet Yugoslavian origin working for the KGB, the Abomination gained his powers after receiving a dose of gamma radiation similar to that which transformed Bruce Banner into the incredible Hulk.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/9/50/4ce18691cbf04.jpg",
       "power": 85
-    },
-    {
-      "id": 1016823,
-      "name": "Abomination (Ultimate)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 3
     },
     {
       "id": 1009148,
@@ -64,13 +50,6 @@
       "power": 84
     },
     {
-      "id": 1011266,
-      "name": "Adam Destine",
-      "description": "",
-      "thumbnail": "/",
-      "power": 43
-    },
-    {
       "id": 1010354,
       "name": "Adam Warlock",
       "description": "Adam Warlock is an artificially created human who was born in a cocoon at a scientific complex called The Beehive.",
@@ -92,13 +71,6 @@
       "power": 31
     },
     {
-      "id": 1011031,
-      "name": "Agent X (Nijo)",
-      "description": "Originally a partner of the mind-altering assassin Black Swan, Nijo spied on Deadpool as part of the Swan's plan to exact revenge for Deadpool falsely taking credit for the Swan's assassination of the Four Winds crime family, which included Nijo's brother.",
-      "thumbnail": "/",
-      "power": 56
-    },
-    {
       "id": 1009150,
       "name": "Agent Zero",
       "description": "",
@@ -111,20 +83,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/9/a0/4ce18a834b7f5.jpg",
       "power": 93
-    },
-    {
-      "id": 1011175,
-      "name": "Aginar",
-      "description": "",
-      "thumbnail": "/",
-      "power": 53
-    },
-    {
-      "id": 1011136,
-      "name": "Air-Walker (Gabriel Lan)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 14
     },
     {
       "id": 1011176,
@@ -141,34 +99,6 @@
       "power": 80
     },
     {
-      "id": 1011194,
-      "name": "Akemi",
-      "description": "",
-      "thumbnail": "/",
-      "power": 24
-    },
-    {
-      "id": 1011170,
-      "name": "Alain",
-      "description": "",
-      "thumbnail": "/",
-      "power": 25
-    },
-    {
-      "id": 1009240,
-      "name": "Albert Cleary",
-      "description": "",
-      "thumbnail": "/",
-      "power": 52
-    },
-    {
-      "id": 1011120,
-      "name": "Albion",
-      "description": "",
-      "thumbnail": "/",
-      "power": 89
-    },
-    {
       "id": 1010836,
       "name": "Alex Power",
       "description": "",
@@ -181,20 +111,6 @@
       "description": "Despite being the only one of the Runaways without any superhuman abilities or tech, Alex Wilder became the de facto leader of the group due to his natural leadership skills and intellect, as well as prodigy-level logic and strategy.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/2/c0/4c00377144d5a.jpg",
       "power": 94
-    },
-    {
-      "id": 1011214,
-      "name": "Alexa Mendez",
-      "description": "",
-      "thumbnail": "/",
-      "power": 27
-    },
-    {
-      "id": 1009497,
-      "name": "Alexander Pierce",
-      "description": "",
-      "thumbnail": "/",
-      "power": 49
     },
     {
       "id": 1014990,
@@ -218,39 +134,11 @@
       "power": 41
     },
     {
-      "id": 1011324,
-      "name": "Alpha Flight (Ultimate)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 58
-    },
-    {
-      "id": 1011164,
-      "name": "Alvin Maker",
-      "description": "",
-      "thumbnail": "/",
-      "power": 76
-    },
-    {
       "id": 1011227,
       "name": "Amadeus Cho",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/3/80/520288b9cb581.jpg",
       "power": 48
-    },
-    {
-      "id": 1009567,
-      "name": "Amanda Sefton",
-      "description": "",
-      "thumbnail": "/",
-      "power": 5
-    },
-    {
-      "id": 1011382,
-      "name": "Amazoness",
-      "description": "",
-      "thumbnail": "/",
-      "power": 62
     },
     {
       "id": 1011361,
@@ -260,46 +148,11 @@
       "power": 13
     },
     {
-      "id": 1009151,
-      "name": "Amiko",
-      "description": "",
-      "thumbnail": "/",
-      "power": 54
-    },
-    {
-      "id": 1010672,
-      "name": "Amora",
-      "description": "",
-      "thumbnail": "/",
-      "power": 58
-    },
-    {
-      "id": 1010673,
-      "name": "Amphibian (Earth-712)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 43
-    },
-    {
-      "id": 1010905,
-      "name": "Amun",
-      "description": "Amun is a ruthless teenage assassin, employed by the Sisterhood of the Wasp to serve under the mage Vincent after Araña interrupted the ritual to initiate the Wasp's new chosen one.",
-      "thumbnail": "/",
-      "power": 15
-    },
-    {
       "id": 1009152,
       "name": "Ancient One",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/b/b0/4ce59ea2103ac.jpg",
       "power": 79
-    },
-    {
-      "id": 1016824,
-      "name": "Ancient One (Ultimate)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 19
     },
     {
       "id": 1011396,
@@ -316,13 +169,6 @@
       "power": 79
     },
     {
-      "id": 1009153,
-      "name": "Angel (Warren Worthington III)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 95
-    },
-    {
       "id": 1017574,
       "name": "Angela (Aldrif Odinsdottir)",
       "description": "",
@@ -335,13 +181,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/2/a0/4c0038fa14452.jpg",
       "power": 76
-    },
-    {
-      "id": 1009346,
-      "name": "Anne Marie Hoag",
-      "description": "",
-      "thumbnail": "/",
-      "power": 80
     },
     {
       "id": 1009154,
@@ -372,25 +211,11 @@
       "power": 14
     },
     {
-      "id": 1011208,
-      "name": "Anthem",
-      "description": "",
-      "thumbnail": "/",
-      "power": 36
-    },
-    {
       "id": 1009156,
       "name": "Apocalypse",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/f/e0/526166076a1d0.jpg",
       "power": 58
-    },
-    {
-      "id": 1011253,
-      "name": "Apocalypse (Ultimate)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 89
     },
     {
       "id": 1010866,
@@ -407,25 +232,11 @@
       "power": 94
     },
     {
-      "id": 1017438,
-      "name": "Araña",
-      "description": "",
-      "thumbnail": "/",
-      "power": 23
-    },
-    {
       "id": 1009158,
       "name": "Arcade",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/2/a0/4c0042091ab69.jpg",
       "power": 96
-    },
-    {
-      "id": 1010686,
-      "name": "Arcana",
-      "description": "",
-      "thumbnail": "/",
-      "power": 88
     },
     {
       "id": 1009159,
@@ -449,13 +260,6 @@
       "power": 68
     },
     {
-      "id": 1011275,
-      "name": "Argent",
-      "description": "",
-      "thumbnail": "/",
-      "power": 86
-    },
-    {
       "id": 1011012,
       "name": "Armadillo",
       "description": "",
@@ -470,13 +274,6 @@
       "power": 31
     },
     {
-      "id": 1010827,
-      "name": "Armory",
-      "description": "",
-      "thumbnail": "/",
-      "power": 77
-    },
-    {
       "id": 1009740,
       "name": "Arnim Zola",
       "description": "The frail, dwarfish Arnim Zola was born in 1930s Switzerland where he became the world's leading biochemist and genetic engineer.",
@@ -489,41 +286,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/8/c0/4c00359a2be7b.jpg",
       "power": 86
-    },
-    {
-      "id": 1009161,
-      "name": "Artiee",
-      "description": "",
-      "thumbnail": "/",
-      "power": 73
-    },
-    {
-      "id": 1010718,
-      "name": "Asgardian",
-      "description": "",
-      "thumbnail": "/",
-      "power": 44
-    },
-    {
-      "id": 1009162,
-      "name": "Askew-Tronics",
-      "description": "",
-      "thumbnail": "/",
-      "power": 23
-    },
-    {
-      "id": 1010835,
-      "name": "Asylum",
-      "description": "",
-      "thumbnail": "/",
-      "power": 51
-    },
-    {
-      "id": 1010336,
-      "name": "Atlas (Team)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 88
     },
     {
       "id": 1009163,
@@ -545,20 +307,6 @@
       "description": "Earth's Mightiest Heroes joined forces to take on threats that were too big for any one hero to tackle. With a roster that has included Captain America, Iron Man, Ant-Man, Hulk, Thor, Wasp and dozens more over the years, the Avengers have come to be regarded as Earth's No. 1 team.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/9/20/5102c774ebae7.jpg",
       "power": 88
-    },
-    {
-      "id": 1015239,
-      "name": "Avengers (Ultimate)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 88
-    },
-    {
-      "id": 1011766,
-      "name": "Azazel (Mutant)",
-      "description": "A mutant from biblical times, Azazel is the ruler of the Neyaphem and claims that the Earth and everything on it belongs to him.",
-      "thumbnail": "/",
-      "power": 24
     },
     {
       "id": 1009168,
@@ -594,27 +342,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/5/a0/4c0035890fb0a.jpg",
       "power": 84
-    },
-    {
-      "id": 1011137,
-      "name": "Baroness S'Bak",
-      "description": "",
-      "thumbnail": "/",
-      "power": 68
-    },
-    {
-      "id": 1011354,
-      "name": "Barracuda",
-      "description": "",
-      "thumbnail": "/",
-      "power": 93
-    },
-    {
-      "id": 1009550,
-      "name": "Bart Rozum",
-      "description": "",
-      "thumbnail": "/",
-      "power": 39
     },
     {
       "id": 1009171,
@@ -666,39 +393,11 @@
       "power": 39
     },
     {
-      "id": 1009176,
-      "name": "Becatron",
-      "description": "",
-      "thumbnail": "/",
-      "power": 23
-    },
-    {
-      "id": 1009177,
-      "name": "Bedlam",
-      "description": "",
-      "thumbnail": "/",
-      "power": 43
-    },
-    {
       "id": 1009178,
       "name": "Beef",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/f/60/4c002e0305708.gif",
       "power": 58
-    },
-    {
-      "id": 1009179,
-      "name": "Beetle (Abner Jenkins)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 45
-    },
-    {
-      "id": 1009329,
-      "name": "Ben Grimm",
-      "description": "",
-      "thumbnail": "/",
-      "power": 81
     },
     {
       "id": 1009489,
@@ -757,13 +456,6 @@
       "power": 45
     },
     {
-      "id": 1011296,
-      "name": "Bi-Beast",
-      "description": "",
-      "thumbnail": "/",
-      "power": 95
-    },
-    {
       "id": 1010843,
       "name": "Big Bertha",
       "description": "",
@@ -778,32 +470,11 @@
       "power": 53
     },
     {
-      "id": 1011262,
-      "name": "Bill Hollister",
-      "description": "",
-      "thumbnail": "/",
-      "power": 51
-    },
-    {
       "id": 1009182,
       "name": "Bishop",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/3/70/52602f4b42d98.jpg",
       "power": 46
-    },
-    {
-      "id": 1011224,
-      "name": "Bishop (Ultimate)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 43
-    },
-    {
-      "id": 1009183,
-      "name": "Black Bird",
-      "description": "",
-      "thumbnail": "/",
-      "power": 96
     },
     {
       "id": 1009184,
@@ -834,13 +505,6 @@
       "power": 17
     },
     {
-      "id": 1010859,
-      "name": "Black Crow",
-      "description": "",
-      "thumbnail": "/",
-      "power": 92
-    },
-    {
       "id": 1009186,
       "name": "Black Knight (Sir Percy of Scandia)",
       "description": "",
@@ -860,13 +524,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/6/20/53176a7b3a4e4.jpg",
       "power": 46
-    },
-    {
-      "id": 1010356,
-      "name": "Black Queen",
-      "description": "",
-      "thumbnail": "/",
-      "power": 14
     },
     {
       "id": 1010687,
@@ -918,13 +575,6 @@
       "power": 41
     },
     {
-      "id": 1010881,
-      "name": "Blacklash",
-      "description": "",
-      "thumbnail": "/",
-      "power": 83
-    },
-    {
       "id": 1011349,
       "name": "Blackout",
       "description": "",
@@ -967,13 +617,6 @@
       "power": 75
     },
     {
-      "id": 1009198,
-      "name": "Blizzard",
-      "description": "",
-      "thumbnail": "/",
-      "power": 3
-    },
-    {
       "id": 1009199,
       "name": "Blob",
       "description": "",
@@ -995,13 +638,6 @@
       "power": 27
     },
     {
-      "id": 1009201,
-      "name": "Blok",
-      "description": "",
-      "thumbnail": "/",
-      "power": 84
-    },
-    {
       "id": 1009202,
       "name": "Bloke",
       "description": "",
@@ -1016,13 +652,6 @@
       "power": 22
     },
     {
-      "id": 1011073,
-      "name": "Bloodaxe",
-      "description": "",
-      "thumbnail": "/",
-      "power": 40
-    },
-    {
       "id": 1009203,
       "name": "Bloodscream",
       "description": "",
@@ -1030,46 +659,11 @@
       "power": 56
     },
     {
-      "id": 1009204,
-      "name": "Bloodstorm",
-      "description": "",
-      "thumbnail": "/",
-      "power": 7
-    },
-    {
-      "id": 1010850,
-      "name": "Bloodstrike",
-      "description": "",
-      "thumbnail": "/",
-      "power": 38
-    },
-    {
       "id": 1011113,
       "name": "Blue Blade",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/b/e0/4ce5a4b76d1c0.jpg",
       "power": 22
-    },
-    {
-      "id": 1011339,
-      "name": "Blue Marvel",
-      "description": "",
-      "thumbnail": "/",
-      "power": 60
-    },
-    {
-      "id": 1011264,
-      "name": "Blue Shield",
-      "description": "",
-      "thumbnail": "/",
-      "power": 88
-    },
-    {
-      "id": 1010688,
-      "name": "Blur",
-      "description": "",
-      "thumbnail": "/",
-      "power": 49
     },
     {
       "id": 1011119,
@@ -1084,13 +678,6 @@
       "description": "When Tabitha Smith's mutant nature manifested at age 13, she ran away from her abusive home and eventually hooked up with the New Mutants and, subsequently, X-Force.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/6/00/4ce5a25d34245.jpg",
       "power": 53
-    },
-    {
-      "id": 1009205,
-      "name": "Boomer",
-      "description": "",
-      "thumbnail": "/",
-      "power": 80
     },
     {
       "id": 1010371,
@@ -1128,39 +715,11 @@
       "power": 59
     },
     {
-      "id": 1011090,
-      "name": "Brother Voodoo",
-      "description": "",
-      "thumbnail": "/",
-      "power": 65
-    },
-    {
       "id": 1009209,
       "name": "Brotherhood of Evil Mutants",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/3/30/539f01b910d91.jpg",
       "power": 77
-    },
-    {
-      "id": 1014973,
-      "name": "Brotherhood of Mutants (Ultimate)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 42
-    },
-    {
-      "id": 1009167,
-      "name": "Bruce Banner",
-      "description": "",
-      "thumbnail": "/",
-      "power": 44
-    },
-    {
-      "id": 1009210,
-      "name": "Brute",
-      "description": "",
-      "thumbnail": "/",
-      "power": 68
     },
     {
       "id": 1009211,
@@ -1177,25 +736,11 @@
       "power": 24
     },
     {
-      "id": 1010887,
-      "name": "Bulldozer",
-      "description": "",
-      "thumbnail": "/",
-      "power": 27
-    },
-    {
       "id": 1009212,
       "name": "Bullseye",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/6/30/539a08f322fd1.jpg",
       "power": 90
-    },
-    {
-      "id": 1009213,
-      "name": "Bushwacker",
-      "description": "",
-      "thumbnail": "/",
-      "power": 14
     },
     {
       "id": 1011101,
@@ -1237,13 +782,6 @@
       "name": "Cable (X-Men: Battle of the Atom)",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/9/b0/52d729bb9b84b.jpg",
-      "power": 7
-    },
-    {
-      "id": 1011209,
-      "name": "Calamity",
-      "description": "",
-      "thumbnail": "/",
       "power": 7
     },
     {
@@ -1359,32 +897,11 @@
       "power": 94
     },
     {
-      "id": 1011190,
-      "name": "Captain Cross",
-      "description": "",
-      "thumbnail": "/",
-      "power": 79
-    },
-    {
-      "id": 1011196,
-      "name": "Captain Flint",
-      "description": "",
-      "thumbnail": "/",
-      "power": 81
-    },
-    {
       "id": 1010338,
       "name": "Captain Marvel (Carol Danvers)",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/6/80/5269608c1be7a.jpg",
       "power": 6
-    },
-    {
-      "id": 1011096,
-      "name": "Captain Marvel (Genis-Vell)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 78
     },
     {
       "id": 1009224,
@@ -1408,13 +925,6 @@
       "power": 98
     },
     {
-      "id": 1011355,
-      "name": "Captain Midlands",
-      "description": "",
-      "thumbnail": "/",
-      "power": 35
-    },
-    {
       "id": 1009225,
       "name": "Captain Stacy",
       "description": "NYPD Captain George Stacy was the father of one-time Peter Parker girlfriend Gwen Stacy.",
@@ -1436,32 +946,11 @@
       "power": 64
     },
     {
-      "id": 1010143,
-      "name": "Caretaker",
-      "description": "",
-      "thumbnail": "/",
-      "power": 94
-    },
-    {
       "id": 1009226,
       "name": "Cargill",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/f/50/4c0040744c205.jpg",
       "power": 75
-    },
-    {
-      "id": 1011258,
-      "name": "Carlie Cooper",
-      "description": "",
-      "thumbnail": "/",
-      "power": 6
-    },
-    {
-      "id": 1009688,
-      "name": "Carmella Unuscione",
-      "description": "Carmella Unuscione was one of the first members of the Magneto's Acolytes.",
-      "thumbnail": "/",
-      "power": 56
     },
     {
       "id": 1009227,
@@ -1478,20 +967,6 @@
       "power": 35
     },
     {
-      "id": 1009261,
-      "name": "Carol Danvers",
-      "description": "",
-      "thumbnail": "/",
-      "power": 23
-    },
-    {
-      "id": 1009344,
-      "name": "Carol Hines",
-      "description": "",
-      "thumbnail": "/",
-      "power": 59
-    },
-    {
       "id": 1009478,
       "name": "Cassandra Nova",
       "description": "",
@@ -1504,13 +979,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/f/60/4c002e0305708.gif",
       "power": 55
-    },
-    {
-      "id": 1009536,
-      "name": "Cecilia Reyes",
-      "description": "",
-      "thumbnail": "/",
-      "power": 10
     },
     {
       "id": 1010813,
@@ -1538,13 +1006,6 @@
       "name": "Cerebro",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/f/60/4c002e0305708.gif",
-      "power": 87
-    },
-    {
-      "id": 1011141,
-      "name": "Cerise",
-      "description": "",
-      "thumbnail": "/",
       "power": 87
     },
     {
@@ -1583,20 +1044,6 @@
       "power": 7
     },
     {
-      "id": 1009733,
-      "name": "Charles Xavier",
-      "description": "",
-      "thumbnail": "/",
-      "power": 22
-    },
-    {
-      "id": 1011331,
-      "name": "Charlie Campion",
-      "description": "",
-      "thumbnail": "/",
-      "power": 9
-    },
-    {
       "id": 1010754,
       "name": "Chase Stein",
       "description": "Chase Stein is the son of mad scientists Victor and Janet Stein and is the tech genius of the Runaways.",
@@ -1611,32 +1058,11 @@
       "power": 23
     },
     {
-      "id": 1009237,
-      "name": "Chimera",
-      "description": "",
-      "thumbnail": "/",
-      "power": 37
-    },
-    {
       "id": 1011411,
       "name": "Chores MacGillicudy",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/5/80/4c002e1c622c8.jpg",
       "power": 1
-    },
-    {
-      "id": 1011187,
-      "name": "Christian Walker",
-      "description": "",
-      "thumbnail": "/",
-      "power": 53
-    },
-    {
-      "id": 1009238,
-      "name": "Chronomancer",
-      "description": "",
-      "thumbnail": "/",
-      "power": 98
     },
     {
       "id": 1011270,
@@ -1653,20 +1079,6 @@
       "power": 55
     },
     {
-      "id": 1014999,
-      "name": "Clea (Ultimate)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 8
-    },
-    {
-      "id": 1010809,
-      "name": "Clint Barton",
-      "description": "",
-      "thumbnail": "/",
-      "power": 5
-    },
-    {
       "id": 1009241,
       "name": "Cloak",
       "description": "",
@@ -1681,13 +1093,6 @@
       "power": 8
     },
     {
-      "id": 1011286,
-      "name": "Cobalt Man",
-      "description": "",
-      "thumbnail": "/",
-      "power": 58
-    },
-    {
       "id": 1010676,
       "name": "Colleen Wing",
       "description": "Colleen Wing was raised in Japan by her grandfather Kanji Ozawa, who taught her the ways of a samurai, in which she became highly skilled, after which she teamed up with Misty Knight at the behest of Tony Stark as a new Heroes for Hire tasked with capturing superhumans who have not registered.",
@@ -1695,25 +1100,11 @@
       "power": 13
     },
     {
-      "id": 1010798,
-      "name": "Colonel America",
-      "description": "",
-      "thumbnail": "/",
-      "power": 48
-    },
-    {
       "id": 1009243,
       "name": "Colossus",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/6/e0/51127cf4b996f.jpg",
       "power": 44
-    },
-    {
-      "id": 1010917,
-      "name": "Colossus (Ultimate)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 15
     },
     {
       "id": 1011410,
@@ -1744,13 +1135,6 @@
       "power": 75
     },
     {
-      "id": 1009246,
-      "name": "Cornelius",
-      "description": "",
-      "thumbnail": "/",
-      "power": 43
-    },
-    {
       "id": 1009247,
       "name": "Corsair",
       "description": "",
@@ -1758,32 +1142,11 @@
       "power": 4
     },
     {
-      "id": 1011353,
-      "name": "Cosmo (dog)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 38
-    },
-    {
-      "id": 1011362,
-      "name": "Cottonmouth",
-      "description": "",
-      "thumbnail": "/",
-      "power": 62
-    },
-    {
       "id": 1009249,
       "name": "Count Nefaria",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/f/a0/4c00405d04674.jpg",
       "power": 41
-    },
-    {
-      "id": 1009250,
-      "name": "Countess",
-      "description": "",
-      "thumbnail": "/",
-      "power": 64
     },
     {
       "id": 1011272,
@@ -1807,25 +1170,11 @@
       "power": 92
     },
     {
-      "id": 1011169,
-      "name": "Crimson King",
-      "description": "",
-      "thumbnail": "/",
-      "power": 93
-    },
-    {
       "id": 1009252,
       "name": "Crossbones",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/1/c0/4c00405a403c0.jpg",
       "power": 34
-    },
-    {
-      "id": 1009253,
-      "name": "Crule",
-      "description": "",
-      "thumbnail": "/",
-      "power": 36
     },
     {
       "id": 1009254,
@@ -1835,38 +1184,10 @@
       "power": 95
     },
     {
-      "id": 1014991,
-      "name": "Crusher Hogan (Ultimate)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 84
-    },
-    {
       "id": 1009255,
       "name": "Crystal",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/6/c0/52695564bcf1e.jpg",
-      "power": 69
-    },
-    {
-      "id": 1011268,
-      "name": "Cuckoo",
-      "description": "",
-      "thumbnail": "/",
-      "power": 80
-    },
-    {
-      "id": 1009244,
-      "name": "Curt Conners",
-      "description": "",
-      "thumbnail": "/",
-      "power": 4
-    },
-    {
-      "id": 1011174,
-      "name": "Cuthbert",
-      "description": "",
-      "thumbnail": "/",
       "power": 69
     },
     {
@@ -1903,13 +1224,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/2/10/4ce5a70abf6fb.jpg",
       "power": 67
-    },
-    {
-      "id": 1011050,
-      "name": "D'Ken Neramani",
-      "description": "",
-      "thumbnail": "/",
-      "power": 32
     },
     {
       "id": 1009258,
@@ -1973,13 +1287,6 @@
       "description": "Abandoned by his mother, Matt Murdock was raised by his father, boxer \"Battling Jack\" Murdock, in Hell's Kitchen. Realizing that rules were needed to prevent people from behaving badly, young Matt decided to study law; however, when he saved a man from an oncoming truck, it spilled a radioactive cargo that rendered Matt blind while enhancing his remaining senses. Under the harsh tutelage of blind martial arts master Stick, Matt mastered his heightened senses and became a formidable fighter.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/d/50/50febb79985ee.jpg",
       "power": 82
-    },
-    {
-      "id": 1017292,
-      "name": "Daredevil (LEGO Marvel Super Heroes)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 28
     },
     {
       "id": 1017312,
@@ -2066,13 +1373,6 @@
       "power": 30
     },
     {
-      "id": 1010341,
-      "name": "Deacon Frost",
-      "description": "",
-      "thumbnail": "/",
-      "power": 67
-    },
-    {
       "id": 1011087,
       "name": "Dead Girl",
       "description": "",
@@ -2136,32 +1436,11 @@
       "power": 60
     },
     {
-      "id": 1014997,
-      "name": "Deathstrike (Ultimate)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 14
-    },
-    {
-      "id": 1009713,
-      "name": "Debra Whitman",
-      "description": "",
-      "thumbnail": "/",
-      "power": 100
-    },
-    {
       "id": 1010717,
       "name": "Debrii",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/5/a0/4c0038c02e75a.jpg",
       "power": 72
-    },
-    {
-      "id": 1011188,
-      "name": "Deena Pilgrim",
-      "description": "",
-      "thumbnail": "/",
-      "power": 53
     },
     {
       "id": 1011023,
@@ -2176,20 +1455,6 @@
       "description": "Jason Macendale, the newest Hobgoblin was down on his luck and offered the demon N'astirh his soul in exchange for power during the  Inferno crisis, turning him into the Demogoblin.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/c/80/535fedd611db9.jpg",
       "power": 33
-    },
-    {
-      "id": 1009271,
-      "name": "Destiny",
-      "description": "",
-      "thumbnail": "/",
-      "power": 12
-    },
-    {
-      "id": 1009272,
-      "name": "Detective Soap",
-      "description": "",
-      "thumbnail": "/",
-      "power": 67
     },
     {
       "id": 1011107,
@@ -2239,20 +1504,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/6/f0/526955c158ece.jpg",
       "power": 56
-    },
-    {
-      "id": 1011040,
-      "name": "Dinah Soar",
-      "description": "",
-      "thumbnail": "/",
-      "power": 97
-    },
-    {
-      "id": 1010997,
-      "name": "Dirk Anger",
-      "description": "",
-      "thumbnail": "/",
-      "power": 66
     },
     {
       "id": 1009275,
@@ -2339,13 +1590,6 @@
       "power": 77
     },
     {
-      "id": 1009278,
-      "name": "Doomsday Man",
-      "description": "",
-      "thumbnail": "/",
-      "power": 11
-    },
-    {
       "id": 1009279,
       "name": "Doop",
       "description": "",
@@ -2360,25 +1604,11 @@
       "power": 53
     },
     {
-      "id": 1011195,
-      "name": "Dorian Gray",
-      "description": "",
-      "thumbnail": "/",
-      "power": 62
-    },
-    {
       "id": 1009280,
       "name": "Dormammu",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/b/70/4c003f1ddc0e5.jpg",
       "power": 15
-    },
-    {
-      "id": 1014992,
-      "name": "Dormammu (Ultimate)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 60
     },
     {
       "id": 1017300,
@@ -2395,13 +1625,6 @@
       "power": 4
     },
     {
-      "id": 1011247,
-      "name": "Dragon Lord",
-      "description": "",
-      "thumbnail": "/",
-      "power": 66
-    },
-    {
       "id": 1009283,
       "name": "Dragon Man",
       "description": "",
@@ -2414,27 +1637,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/e/d0/526032deabbff.jpg",
       "power": 69
-    },
-    {
-      "id": 1010368,
-      "name": "Dreadnoughts",
-      "description": "",
-      "thumbnail": "/",
-      "power": 81
-    },
-    {
-      "id": 1015007,
-      "name": "Dreaming Celestial",
-      "description": "",
-      "thumbnail": "/",
-      "power": 88
-    },
-    {
-      "id": 1011322,
-      "name": "Druig",
-      "description": "",
-      "thumbnail": "/",
-      "power": 1
     },
     {
       "id": 1009284,
@@ -2470,20 +1672,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/9/80/4de932f1a298a.jpg",
       "power": 31
-    },
-    {
-      "id": 1009396,
-      "name": "Eddie Lau",
-      "description": "",
-      "thumbnail": "/",
-      "power": 45
-    },
-    {
-      "id": 1010999,
-      "name": "Edward \"Ted\" Forrester",
-      "description": "",
-      "thumbnail": "/",
-      "power": 10
     },
     {
       "id": 1011072,
@@ -2526,20 +1714,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/5/03/53176bc813157.jpg",
       "power": 45
-    },
-    {
-      "id": 1010355,
-      "name": "Elements of Doom",
-      "description": "",
-      "thumbnail": "/",
-      "power": 11
-    },
-    {
-      "id": 1009290,
-      "name": "Elite",
-      "description": "",
-      "thumbnail": "/",
-      "power": 29
     },
     {
       "id": 1011082,
@@ -2591,13 +1765,6 @@
       "power": 91
     },
     {
-      "id": 1011432,
-      "name": "Enchantress (Sylvie Lushton)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 75
-    },
-    {
       "id": 1011313,
       "name": "Ender Wiggin",
       "description": "",
@@ -2605,25 +1772,11 @@
       "power": 26
     },
     {
-      "id": 1010445,
-      "name": "Energizer",
-      "description": "",
-      "thumbnail": "/",
-      "power": 56
-    },
-    {
       "id": 1011065,
       "name": "Epoch",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/5/50/4c0030f453da3.jpg",
       "power": 77
-    },
-    {
-      "id": 1009293,
-      "name": "Erik the Red",
-      "description": "",
-      "thumbnail": "/",
-      "power": 63
     },
     {
       "id": 1010807,
@@ -2661,13 +1814,6 @@
       "power": 65
     },
     {
-      "id": 1009296,
-      "name": "Expediter",
-      "description": "",
-      "thumbnail": "/",
-      "power": 36
-    },
-    {
       "id": 1011199,
       "name": "Ezekiel",
       "description": "",
@@ -2701,20 +1847,6 @@
       "description": "Recruited from S.H.I.E.L.D. by his hero and mentor Tony Stark, Falcon is the Avengers' newest and youngest recruit. Like Tony, Sam is a genius with machines and technology. What he lacks in experience, Sam makes up in enthusiasm and determination. Falcon's suit of armor comes fully stocked with holographic wings, explosive flechettes, and retractable talons.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/3/10/523219c347dd1.jpg",
       "power": 22
-    },
-    {
-      "id": 1011143,
-      "name": "Fallen One",
-      "description": "",
-      "thumbnail": "/",
-      "power": 25
-    },
-    {
-      "id": 1009298,
-      "name": "Famine",
-      "description": "",
-      "thumbnail": "/",
-      "power": 78
     },
     {
       "id": 1009299,
@@ -2752,27 +1884,6 @@
       "power": 79
     },
     {
-      "id": 1009335,
-      "name": "Felicia Hardy",
-      "description": "",
-      "thumbnail": "/",
-      "power": 35
-    },
-    {
-      "id": 1009302,
-      "name": "Fenris",
-      "description": "",
-      "thumbnail": "/",
-      "power": 51
-    },
-    {
-      "id": 1011213,
-      "name": "Feral",
-      "description": "",
-      "thumbnail": "/",
-      "power": 16
-    },
-    {
       "id": 1009303,
       "name": "Fin Fang Foom",
       "description": "",
@@ -2785,13 +1896,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/8/30/4c0035b0a7de0.jpg",
       "power": 45
-    },
-    {
-      "id": 1009304,
-      "name": "Firebrand",
-      "description": "",
-      "thumbnail": "/",
-      "power": 98
     },
     {
       "id": 1014987,
@@ -2822,27 +1926,6 @@
       "power": 70
     },
     {
-      "id": 1010880,
-      "name": "Fixer (Paul Norbert Ebersol)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 56
-    },
-    {
-      "id": 1010863,
-      "name": "Flatman",
-      "description": "",
-      "thumbnail": "/",
-      "power": 10
-    },
-    {
-      "id": 1010333,
-      "name": "Flying Dutchman",
-      "description": "",
-      "thumbnail": "/",
-      "power": 79
-    },
-    {
       "id": 1009470,
       "name": "Foggy Nelson",
       "description": "",
@@ -2857,13 +1940,6 @@
       "power": 38
     },
     {
-      "id": 1009308,
-      "name": "Forearm",
-      "description": "",
-      "thumbnail": "/",
-      "power": 52
-    },
-    {
       "id": 1009309,
       "name": "Forge",
       "description": "",
@@ -2871,25 +1947,11 @@
       "power": 33
     },
     {
-      "id": 1014993,
-      "name": "Forge (Ultimate)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 55
-    },
-    {
       "id": 1011177,
       "name": "Forgotten One",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/8/70/4c002f332fb1f.jpg",
       "power": 79
-    },
-    {
-      "id": 1009229,
-      "name": "Frank Castle",
-      "description": "",
-      "thumbnail": "/",
-      "power": 82
     },
     {
       "id": 1011356,
@@ -2955,25 +2017,11 @@
       "power": 78
     },
     {
-      "id": 1011384,
-      "name": "Galia",
-      "description": "",
-      "thumbnail": "/",
-      "power": 52
-    },
-    {
       "id": 1009313,
       "name": "Gambit",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/a/40/52696aa8aee99.jpg",
       "power": 10
-    },
-    {
-      "id": 1011201,
-      "name": "Gamma Corps",
-      "description": "",
-      "thumbnail": "/",
-      "power": 19
     },
     {
       "id": 1010763,
@@ -2988,27 +2036,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/9/e0/5239bfe911e8e.jpg",
       "power": 67
-    },
-    {
-      "id": 1010832,
-      "name": "Gargoyle",
-      "description": "",
-      "thumbnail": "/",
-      "power": 32
-    },
-    {
-      "id": 1012513,
-      "name": "Gargoyle (Yuri Topolov)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 75
-    },
-    {
-      "id": 1011380,
-      "name": "Garia",
-      "description": "",
-      "thumbnail": "/",
-      "power": 29
     },
     {
       "id": 1009383,
@@ -3039,39 +2066,11 @@
       "power": 91
     },
     {
-      "id": 1009556,
-      "name": "Gene Sailors",
-      "description": "",
-      "thumbnail": "/",
-      "power": 9
-    },
-    {
-      "id": 1011285,
-      "name": "Generation X",
-      "description": "",
-      "thumbnail": "/",
-      "power": 67
-    },
-    {
       "id": 1009317,
       "name": "Genesis",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/f/30/4c003eeedf93c.jpg",
       "power": 88
-    },
-    {
-      "id": 1011098,
-      "name": "Genis-Vell",
-      "description": "",
-      "thumbnail": "/",
-      "power": 76
-    },
-    {
-      "id": 1014974,
-      "name": "George Stacy (Ultimate)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 58
     },
     {
       "id": 1010749,
@@ -3102,25 +2101,11 @@
       "power": 42
     },
     {
-      "id": 1011221,
-      "name": "Giant Girl",
-      "description": "",
-      "thumbnail": "/",
-      "power": 96
-    },
-    {
       "id": 1009320,
       "name": "Giant Man",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/3/e0/4ce43388b9255.jpg",
       "power": 85
-    },
-    {
-      "id": 1010720,
-      "name": "Giant-dok",
-      "description": "",
-      "thumbnail": "/",
-      "power": 32
     },
     {
       "id": 1010926,
@@ -3158,13 +2143,6 @@
       "power": 62
     },
     {
-      "id": 1009645,
-      "name": "Glenn Talbot",
-      "description": "Major Glenn Talbot was member of United States Air Force, United States Army and Hulkbusters.",
-      "thumbnail": "/",
-      "power": 18
-    },
-    {
       "id": 1011144,
       "name": "Glorian",
       "description": "",
@@ -3177,13 +2155,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/6/b0/52bc8219eb973.jpg",
       "power": 7
-    },
-    {
-      "id": 1011374,
-      "name": "Golden Guardian",
-      "description": "",
-      "thumbnail": "/",
-      "power": 58
     },
     {
       "id": 1010927,
@@ -3235,13 +2206,6 @@
       "power": 20
     },
     {
-      "id": 1010928,
-      "name": "Green Goblin (Harry Osborn)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 65
-    },
-    {
       "id": 1010929,
       "name": "Green Goblin (Ultimate)",
       "description": "",
@@ -3249,25 +2213,11 @@
       "power": 53
     },
     {
-      "id": 1009326,
-      "name": "Gressill",
-      "description": "",
-      "thumbnail": "/",
-      "power": 42
-    },
-    {
       "id": 1011420,
       "name": "Grey Gargoyle",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/9/03/528d319931e60.jpg",
       "power": 3
-    },
-    {
-      "id": 1011292,
-      "name": "Greymalkin",
-      "description": "",
-      "thumbnail": "/",
-      "power": 90
     },
     {
       "id": 1009328,
@@ -3298,39 +2248,11 @@
       "power": 81
     },
     {
-      "id": 1009331,
-      "name": "Guardsmen",
-      "description": "",
-      "thumbnail": "/",
-      "power": 28
-    },
-    {
-      "id": 1010709,
-      "name": "Gunslinger",
-      "description": "",
-      "thumbnail": "/",
-      "power": 57
-    },
-    {
-      "id": 1009207,
-      "name": "GW Bridge",
-      "description": "",
-      "thumbnail": "/",
-      "power": 94
-    },
-    {
       "id": 1009619,
       "name": "Gwen Stacy",
       "description": "Peter Parker's first true love, Gwen Stacy was killed during a rescue attempt by Spider-Man, the guilt from which Peter has never overcome.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/8/40/4c003ad20ab78.jpg",
       "power": 68
-    },
-    {
-      "id": 1014994,
-      "name": "Gwen Stacy (Ultimate)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 17
     },
     {
       "id": 1011400,
@@ -3347,13 +2269,6 @@
       "power": 59
     },
     {
-      "id": 1011391,
-      "name": "Hairball",
-      "description": "",
-      "thumbnail": "/",
-      "power": 55
-    },
-    {
       "id": 1009333,
       "name": "Half-Life (Tony Masterson)",
       "description": "",
@@ -3368,25 +2283,11 @@
       "power": 96
     },
     {
-      "id": 1014995,
-      "name": "Hammerhead (Ultimate)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 95
-    },
-    {
       "id": 1011490,
       "name": "Hank Pym",
       "description": " ",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/2/b0/5205305343bfd.jpg",
       "power": 58
-    },
-    {
-      "id": 1011091,
-      "name": "Hannibal King",
-      "description": "",
-      "thumbnail": "/",
-      "power": 81
     },
     {
       "id": 1009348,
@@ -3403,20 +2304,6 @@
       "power": 50
     },
     {
-      "id": 1011185,
-      "name": "Harley Davidson Cooper",
-      "description": "",
-      "thumbnail": "/",
-      "power": 87
-    },
-    {
-      "id": 1009336,
-      "name": "Harpoon",
-      "description": "",
-      "thumbnail": "/",
-      "power": 36
-    },
-    {
       "id": 1011069,
       "name": "Harrier",
       "description": "",
@@ -3424,25 +2311,11 @@
       "power": 4
     },
     {
-      "id": 1009339,
-      "name": "Harry Heck",
-      "description": "",
-      "thumbnail": "/",
-      "power": 17
-    },
-    {
       "id": 1009486,
       "name": "Harry Osborn",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/8/e0/4ce5a0b3181d8.jpg",
       "power": 61
-    },
-    {
-      "id": 1011218,
-      "name": "Harry Osborn (Ultimate)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 90
     },
     {
       "id": 1010816,
@@ -3494,13 +2367,6 @@
       "power": 30
     },
     {
-      "id": 1011046,
-      "name": "Hedge Knight",
-      "description": "",
-      "thumbnail": "/",
-      "power": 39
-    },
-    {
       "id": 1010351,
       "name": "Hellcat (Patsy Walker)",
       "description": "",
@@ -3515,13 +2381,6 @@
       "power": 89
     },
     {
-      "id": 1014996,
-      "name": "Hellfire Club (Ultimate)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 64
-    },
-    {
       "id": 1010678,
       "name": "Hellion",
       "description": "",
@@ -3534,13 +2393,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/5/10/4c00323303deb.jpg",
       "power": 92
-    },
-    {
-      "id": 1009341,
-      "name": "Hemingway",
-      "description": "",
-      "thumbnail": "/",
-      "power": 82
     },
     {
       "id": 1011371,
@@ -3599,27 +2451,6 @@
       "power": 51
     },
     {
-      "id": 1009345,
-      "name": "Hitman",
-      "description": "",
-      "thumbnail": "/",
-      "power": 17
-    },
-    {
-      "id": 1011383,
-      "name": "Hitomi Sakuma",
-      "description": "",
-      "thumbnail": "/",
-      "power": 28
-    },
-    {
-      "id": 1010930,
-      "name": "Hobgoblin (Jason Macendale)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 75
-    },
-    {
       "id": 1010931,
       "name": "Hobgoblin (Robin Borne)",
       "description": "",
@@ -3634,32 +2465,11 @@
       "power": 70
     },
     {
-      "id": 1009349,
-      "name": "Holocaust (Age of Apocalypse)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 59
-    },
-    {
-      "id": 1009350,
-      "name": "Holy",
-      "description": "",
-      "thumbnail": "/",
-      "power": 2
-    },
-    {
       "id": 1011428,
       "name": "Hope Summers",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/f/90/511155f5015e0.jpg",
       "power": 87
-    },
-    {
-      "id": 1009557,
-      "name": "Howard Saint",
-      "description": "",
-      "thumbnail": "/",
-      "power": 33
     },
     {
       "id": 1010373,
@@ -3711,13 +2521,6 @@
       "power": 54
     },
     {
-      "id": 1010721,
-      "name": "Hulk-dok",
-      "description": "",
-      "thumbnail": "/",
-      "power": 87
-    },
-    {
       "id": 1017107,
       "name": "Hulk/Bruce Banner (MAA)",
       "description": "Scientist Bruce Banner was transformed into the Hulk as a result to gamma radiation exposure. Over 8 feet tall and weighing 1,040 pounds, it's Hulk's strength that makes him the strongest hero in the Marvel Universe! Hulk smashes all threats that dare disturb the peace and friendship he has found in the Avengers. ",
@@ -3730,20 +2533,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/8/20/4c003ed070fa0.jpg",
       "power": 11
-    },
-    {
-      "id": 1010343,
-      "name": "Human Cannonball",
-      "description": "",
-      "thumbnail": "/",
-      "power": 41
-    },
-    {
-      "id": 1011415,
-      "name": "Human Fly (Richard Deacon)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 22
     },
     {
       "id": 1010722,
@@ -3809,13 +2598,6 @@
       "power": 18
     },
     {
-      "id": 1009361,
-      "name": "Hyperion (Earth-712)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 100
-    },
-    {
       "id": 1011246,
       "name": "Hypno-Hustler",
       "description": "",
@@ -3858,25 +2640,11 @@
       "power": 18
     },
     {
-      "id": 1009529,
-      "name": "Ilyana Rasputin",
-      "description": "",
-      "thumbnail": "/",
-      "power": 63
-    },
-    {
       "id": 1011273,
       "name": "Imp",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/9/30/4c002eee45d85.jpg",
       "power": 55
-    },
-    {
-      "id": 1011089,
-      "name": "Imperfects",
-      "description": "",
-      "thumbnail": "/",
-      "power": 95
     },
     {
       "id": 1009363,
@@ -3921,13 +2689,6 @@
       "power": 17
     },
     {
-      "id": 1011293,
-      "name": "Ink",
-      "description": "",
-      "thumbnail": "/",
-      "power": 55
-    },
-    {
       "id": 1011024,
       "name": "Invaders",
       "description": "",
@@ -3954,13 +2715,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/5/b0/4c00342d26fc5.jpg",
       "power": 24
-    },
-    {
-      "id": 1011379,
-      "name": "Iron Cross Army",
-      "description": "",
-      "thumbnail": "/",
-      "power": 80
     },
     {
       "id": 1011318,
@@ -4061,20 +2815,6 @@
       "power": 49
     },
     {
-      "id": 1009371,
-      "name": "Iron Monger",
-      "description": "",
-      "thumbnail": "/",
-      "power": 1
-    },
-    {
-      "id": 1009487,
-      "name": "Iron Patriot",
-      "description": "",
-      "thumbnail": "/",
-      "power": 43
-    },
-    {
       "id": 1009538,
       "name": "Iron Patriot (James Rhodes)",
       "description": "U.S. Air Force pilot and Tony Stark's friend who has his own suit of Iron Man armor, nicknamed, \"War Machine.\"",
@@ -4103,46 +2843,11 @@
       "power": 19
     },
     {
-      "id": 1010786,
-      "name": "Jack Murdock",
-      "description": "",
-      "thumbnail": "/",
-      "power": 27
-    },
-    {
-      "id": 1010766,
-      "name": "Jack O' Lantern",
-      "description": "",
-      "thumbnail": "/",
-      "power": 80
-    },
-    {
-      "id": 1011251,
-      "name": "Jack Power",
-      "description": "",
-      "thumbnail": "/",
-      "power": 60
-    },
-    {
       "id": 1011288,
       "name": "Jackal",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/f/e0/4c002e7012876.jpg",
       "power": 87
-    },
-    {
-      "id": 1011259,
-      "name": "Jackpot",
-      "description": "",
-      "thumbnail": "/",
-      "power": 96
-    },
-    {
-      "id": 1010775,
-      "name": "James Buchanan Barnes",
-      "description": "",
-      "thumbnail": "/",
-      "power": 28
     },
     {
       "id": 1010777,
@@ -4152,32 +2857,11 @@
       "power": 34
     },
     {
-      "id": 1011343,
-      "name": "Jamie Braddock",
-      "description": "",
-      "thumbnail": "/",
-      "power": 67
-    },
-    {
       "id": 1010329,
       "name": "Jane Foster",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/b/90/4ce5a22b0d5f1.jpg",
       "power": 44
-    },
-    {
-      "id": 1010878,
-      "name": "Janus, the Nega-Man",
-      "description": "",
-      "thumbnail": "/",
-      "power": 25
-    },
-    {
-      "id": 1009597,
-      "name": "Jasper Sitwell",
-      "description": "",
-      "thumbnail": "/",
-      "power": 87
     },
     {
       "id": 1011344,
@@ -4208,39 +2892,11 @@
       "power": 37
     },
     {
-      "id": 1009604,
-      "name": "Jennifer Smith",
-      "description": "",
-      "thumbnail": "/",
-      "power": 12
-    },
-    {
-      "id": 1011404,
-      "name": "Jeryn Hogarth",
-      "description": "",
-      "thumbnail": "/",
-      "power": 9
-    },
-    {
-      "id": 1010667,
-      "name": "Jessica Drew",
-      "description": "",
-      "thumbnail": "/",
-      "power": 92
-    },
-    {
       "id": 1009378,
       "name": "Jessica Jones",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/d/00/5390e41260345.jpg",
       "power": 79
-    },
-    {
-      "id": 1009373,
-      "name": "Jetstream",
-      "description": "",
-      "thumbnail": "/",
-      "power": 68
     },
     {
       "id": 1009374,
@@ -4257,25 +2913,11 @@
       "power": 77
     },
     {
-      "id": 1009375,
-      "name": "Joan the Mouse",
-      "description": "",
-      "thumbnail": "/",
-      "power": 12
-    },
-    {
       "id": 1009376,
       "name": "Jocasta",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/8/a0/4c003eac7419a.jpg",
       "power": 82
-    },
-    {
-      "id": 1011171,
-      "name": "John Farson",
-      "description": "",
-      "thumbnail": "/",
-      "power": 44
     },
     {
       "id": 1010812,
@@ -4285,32 +2927,11 @@
       "power": 68
     },
     {
-      "id": 1009500,
-      "name": "John Porter",
-      "description": "",
-      "thumbnail": "/",
-      "power": 77
-    },
-    {
-      "id": 1009721,
-      "name": "John Wraith",
-      "description": "A mutant with teleportation powers, Wraith served with Wolverine, Sabretooth, Maverick and Silver Fox in Team X, a covert operations unit formed by Weapon X.",
-      "thumbnail": "/",
-      "power": 11
-    },
-    {
       "id": 1009196,
       "name": "Johnny Blaze",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/5/50/4c003442a3ea6.jpg",
       "power": 74
-    },
-    {
-      "id": 1009630,
-      "name": "Johnny Storm",
-      "description": "",
-      "thumbnail": "/",
-      "power": 17
     },
     {
       "id": 1009380,
@@ -4325,13 +2946,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/5/70/4c003423be2c7.jpg",
       "power": 23
-    },
-    {
-      "id": 1010937,
-      "name": "Josiah X",
-      "description": "",
-      "thumbnail": "/",
-      "power": 100
     },
     {
       "id": 1011033,
@@ -4362,20 +2976,6 @@
       "power": 2
     },
     {
-      "id": 1010772,
-      "name": "Jule Carpenter",
-      "description": "",
-      "thumbnail": "/",
-      "power": 52
-    },
-    {
-      "id": 1010679,
-      "name": "Julian Keller",
-      "description": "",
-      "thumbnail": "/",
-      "power": 14
-    },
-    {
       "id": 1011314,
       "name": "Junta",
       "description": "",
@@ -4404,13 +3004,6 @@
       "power": 41
     },
     {
-      "id": 1011193,
-      "name": "Kabuki",
-      "description": "",
-      "thumbnail": "/",
-      "power": 56
-    },
-    {
       "id": 1009384,
       "name": "Kang",
       "description": "",
@@ -4422,13 +3015,6 @@
       "name": "Karen O'Malley",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/9/b0/4cd05c8be4587.jpg",
-      "power": 45
-    },
-    {
-      "id": 1011357,
-      "name": "Karen Page",
-      "description": "",
-      "thumbnail": "/",
       "power": 45
     },
     {
@@ -4453,13 +3039,6 @@
       "power": 96
     },
     {
-      "id": 1010783,
-      "name": "Kat Farrell",
-      "description": "",
-      "thumbnail": "/",
-      "power": 24
-    },
-    {
       "id": 1010810,
       "name": "Kate Bishop",
       "description": "",
@@ -4481,67 +3060,11 @@
       "power": 12
     },
     {
-      "id": 1009386,
-      "name": "Khan",
-      "description": "",
-      "thumbnail": "/",
-      "power": 41
-    },
-    {
-      "id": 1010893,
-      "name": "Kid Colt",
-      "description": "",
-      "thumbnail": "/",
-      "power": 43
-    },
-    {
-      "id": 1011397,
-      "name": "Killer Shrike",
-      "description": "",
-      "thumbnail": "/",
-      "power": 56
-    },
-    {
-      "id": 1011289,
-      "name": "Killmonger",
-      "description": "",
-      "thumbnail": "/",
-      "power": 83
-    },
-    {
-      "id": 1011116,
-      "name": "Killraven",
-      "description": "",
-      "thumbnail": "/",
-      "power": 24
-    },
-    {
-      "id": 1009388,
-      "name": "King Bedlam",
-      "description": "",
-      "thumbnail": "/",
-      "power": 17
-    },
-    {
-      "id": 1010842,
-      "name": "King Cobra",
-      "description": "",
-      "thumbnail": "/",
-      "power": 35
-    },
-    {
       "id": 1009389,
       "name": "Kingpin",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/9/60/526034fb5aff7.jpg",
       "power": 66
-    },
-    {
-      "id": 1011308,
-      "name": "Kinsey Walden",
-      "description": "",
-      "thumbnail": "/",
-      "power": 16
     },
     {
       "id": 1009508,
@@ -4607,25 +3130,11 @@
       "power": 71
     },
     {
-      "id": 1015017,
-      "name": "Krista Starr",
-      "description": "",
-      "thumbnail": "/",
-      "power": 68
-    },
-    {
       "id": 1011178,
       "name": "Kronos",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/9/90/4c7c623c74db8.jpg",
       "power": 61
-    },
-    {
-      "id": 1011029,
-      "name": "Kulan Gath",
-      "description": "",
-      "thumbnail": "/",
-      "power": 4
     },
     {
       "id": 1011058,
@@ -4677,27 +3186,6 @@
       "power": 98
     },
     {
-      "id": 1009394,
-      "name": "Lake",
-      "description": "",
-      "thumbnail": "/",
-      "power": 72
-    },
-    {
-      "id": 1009395,
-      "name": "Landau",
-      "description": "",
-      "thumbnail": "/",
-      "power": 2
-    },
-    {
-      "id": 1009397,
-      "name": "Lava-Man",
-      "description": "",
-      "thumbnail": "/",
-      "power": 57
-    },
-    {
       "id": 1011100,
       "name": "Layla Miller",
       "description": "",
@@ -4712,53 +3200,11 @@
       "power": 36
     },
     {
-      "id": 1011092,
-      "name": "Leech",
-      "description": "",
-      "thumbnail": "/",
-      "power": 26
-    },
-    {
       "id": 1009399,
       "name": "Legion",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/3/30/526547cc31b36.jpg",
       "power": 81
-    },
-    {
-      "id": 1011403,
-      "name": "Lei Kung, The Thunderer",
-      "description": "",
-      "thumbnail": "/",
-      "power": 62
-    },
-    {
-      "id": 1009166,
-      "name": "Lenny Balinger",
-      "description": "",
-      "thumbnail": "/",
-      "power": 9
-    },
-    {
-      "id": 1011186,
-      "name": "Leo (Zodiac)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 50
-    },
-    {
-      "id": 1010340,
-      "name": "Leopardon",
-      "description": "",
-      "thumbnail": "/",
-      "power": 53
-    },
-    {
-      "id": 1011375,
-      "name": "Leper Queen",
-      "description": "",
-      "thumbnail": "/",
-      "power": 41
     },
     {
       "id": 1014988,
@@ -4782,13 +3228,6 @@
       "power": 82
     },
     {
-      "id": 1009401,
-      "name": "Lifeguard",
-      "description": "",
-      "thumbnail": "/",
-      "power": 6
-    },
-    {
       "id": 1011408,
       "name": "Lightning Lords of Nepal",
       "description": "",
@@ -4801,13 +3240,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/6/a0/4c7c643921b8e.jpg",
       "power": 42
-    },
-    {
-      "id": 1009236,
-      "name": "Lila Cheney",
-      "description": "",
-      "thumbnail": "/",
-      "power": 25
     },
     {
       "id": 1009402,
@@ -4824,20 +3256,6 @@
       "power": 89
     },
     {
-      "id": 1011257,
-      "name": "Lily Hollister",
-      "description": "",
-      "thumbnail": "/",
-      "power": 6
-    },
-    {
-      "id": 1010337,
-      "name": "Lionheart",
-      "description": "",
-      "thumbnail": "/",
-      "power": 12
-    },
-    {
       "id": 1010854,
       "name": "Living Lightning",
       "description": "",
@@ -4845,25 +3263,11 @@
       "power": 48
     },
     {
-      "id": 1011036,
-      "name": "Living Mummy",
-      "description": "",
-      "thumbnail": "/",
-      "power": 31
-    },
-    {
       "id": 1011059,
       "name": "Living Tribunal",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/2/a0/4c0031062f91f.jpg",
       "power": 92
-    },
-    {
-      "id": 1009403,
-      "name": "Liz Osborn",
-      "description": "",
-      "thumbnail": "/",
-      "power": 25
     },
     {
       "id": 1009404,
@@ -4899,13 +3303,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/6/20/4c003d64a5a99.jpg",
       "power": 51
-    },
-    {
-      "id": 1010363,
-      "name": "Logan",
-      "description": "",
-      "thumbnail": "/",
-      "power": 82
     },
     {
       "id": 1009407,
@@ -4957,27 +3354,6 @@
       "power": 76
     },
     {
-      "id": 1011283,
-      "name": "Lords of Avalon",
-      "description": "",
-      "thumbnail": "/",
-      "power": 36
-    },
-    {
-      "id": 1009260,
-      "name": "Lorna Dane",
-      "description": "",
-      "thumbnail": "/",
-      "power": 73
-    },
-    {
-      "id": 1009409,
-      "name": "Luckman",
-      "description": "",
-      "thumbnail": "/",
-      "power": 29
-    },
-    {
       "id": 1011405,
       "name": "Lucky Pierre",
       "description": "",
@@ -5020,20 +3396,6 @@
       "power": 8
     },
     {
-      "id": 1011004,
-      "name": "M.O.D.A.M.",
-      "description": "",
-      "thumbnail": "/",
-      "power": 46
-    },
-    {
-      "id": 1011320,
-      "name": "M.O.D.O.G.",
-      "description": "",
-      "thumbnail": "/",
-      "power": 36
-    },
-    {
       "id": 1010726,
       "name": "M.O.D.O.K.",
       "description": "",
@@ -5046,27 +3408,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/c/00/5239c14fcddc0.jpg",
       "power": 95
-    },
-    {
-      "id": 1009418,
-      "name": "Ma Gnuci",
-      "description": "",
-      "thumbnail": "/",
-      "power": 12
-    },
-    {
-      "id": 1009314,
-      "name": "Mac Gargan",
-      "description": "",
-      "thumbnail": "/",
-      "power": 70
-    },
-    {
-      "id": 1010851,
-      "name": "Mach IV",
-      "description": "",
-      "thumbnail": "/",
-      "power": 2
     },
     {
       "id": 1010805,
@@ -5104,13 +3445,6 @@
       "power": 4
     },
     {
-      "id": 1010724,
-      "name": "Maddog",
-      "description": "",
-      "thumbnail": "/",
-      "power": 69
-    },
-    {
       "id": 1009509,
       "name": "Madelyne Pryor",
       "description": "",
@@ -5146,20 +3480,6 @@
       "power": 96
     },
     {
-      "id": 1010867,
-      "name": "Magdalene",
-      "description": "",
-      "thumbnail": "/",
-      "power": 41
-    },
-    {
-      "id": 1009414,
-      "name": "Maggott",
-      "description": "",
-      "thumbnail": "/",
-      "power": 72
-    },
-    {
       "id": 1010942,
       "name": "Magik (Amanda Sefton)",
       "description": "",
@@ -5172,13 +3492,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/6/b0/52695ca8391cc.jpg",
       "power": 21
-    },
-    {
-      "id": 1011135,
-      "name": "Maginty",
-      "description": "",
-      "thumbnail": "/",
-      "power": 28
     },
     {
       "id": 1009416,
@@ -5230,41 +3543,6 @@
       "power": 37
     },
     {
-      "id": 1011364,
-      "name": "Magus (Technarch)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 82
-    },
-    {
-      "id": 1011085,
-      "name": "Major Mapleleaf",
-      "description": "",
-      "thumbnail": "/",
-      "power": 55
-    },
-    {
-      "id": 1010725,
-      "name": "Makkari",
-      "description": "",
-      "thumbnail": "/",
-      "power": 47
-    },
-    {
-      "id": 1009242,
-      "name": "Malcolm Colcord",
-      "description": "",
-      "thumbnail": "/",
-      "power": 18
-    },
-    {
-      "id": 1011229,
-      "name": "Malice (Earth-161)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 10
-    },
-    {
       "id": 1009420,
       "name": "Man-Thing",
       "description": "",
@@ -5293,13 +3571,6 @@
       "power": 31
     },
     {
-      "id": 1009422,
-      "name": "Mandroid",
-      "description": "",
-      "thumbnail": "/",
-      "power": 89
-    },
-    {
       "id": 1009423,
       "name": "Manta",
       "description": "",
@@ -5319,13 +3590,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/e/70/52b0d48aaecb1.jpg",
       "power": 61
-    },
-    {
-      "id": 1015018,
-      "name": "Marcus Van Sciver",
-      "description": "",
-      "thumbnail": "/",
-      "power": 77
     },
     {
       "id": 1011335,
@@ -5349,27 +3613,6 @@
       "power": 56
     },
     {
-      "id": 1011173,
-      "name": "Marten Broadcloak",
-      "description": "",
-      "thumbnail": "/",
-      "power": 53
-    },
-    {
-      "id": 1011263,
-      "name": "Martin Li",
-      "description": "",
-      "thumbnail": "/",
-      "power": 99
-    },
-    {
-      "id": 1011350,
-      "name": "Marvel Apes",
-      "description": "",
-      "thumbnail": "/",
-      "power": 89
-    },
-    {
       "id": 1009427,
       "name": "Marvel Boy",
       "description": "",
@@ -5382,13 +3625,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/c/40/4ce5a430d93fd.jpg",
       "power": 22
-    },
-    {
-      "id": 1011417,
-      "name": "Marvex",
-      "description": "",
-      "thumbnail": "/",
-      "power": 46
     },
     {
       "id": 1009708,
@@ -5412,32 +3648,11 @@
       "power": 34
     },
     {
-      "id": 1010869,
-      "name": "Masked Marvel (Unrevealed)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 44
-    },
-    {
-      "id": 1010367,
-      "name": "Masque",
-      "description": "",
-      "thumbnail": "/",
-      "power": 53
-    },
-    {
       "id": 1010732,
       "name": "Master Chief",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/c/30/4ce5a2b669c3a.jpg",
       "power": 70
-    },
-    {
-      "id": 1009433,
-      "name": "Master Mold",
-      "description": "",
-      "thumbnail": "/",
-      "power": 28
     },
     {
       "id": 1009434,
@@ -5454,13 +3669,6 @@
       "power": 15
     },
     {
-      "id": 1010877,
-      "name": "Mathemanic",
-      "description": "",
-      "thumbnail": "/",
-      "power": 25
-    },
-    {
       "id": 1009677,
       "name": "Matsu'o Tsurayaba",
       "description": "Tsurayaba became leader of a faction of the ninja clan the Hand, finding himself at odds with his lover Kwannon who was an assassin for rival crimelord Nyoirin.",
@@ -5468,39 +3676,11 @@
       "power": 73
     },
     {
-      "id": 1009463,
-      "name": "Matthew Murdock",
-      "description": "",
-      "thumbnail": "/",
-      "power": 64
-    },
-    {
-      "id": 1010793,
-      "name": "Mattie Franklin",
-      "description": "",
-      "thumbnail": "/",
-      "power": 73
-    },
-    {
-      "id": 1009436,
-      "name": "Mauler",
-      "description": "",
-      "thumbnail": "/",
-      "power": 87
-    },
-    {
       "id": 1010947,
       "name": "Maverick (Chris Bradley)",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/6/60/4c7c63f89c100.jpg",
       "power": 33
-    },
-    {
-      "id": 1009437,
-      "name": "Maverick (Christoph Nord)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 47
     },
     {
       "id": 1011305,
@@ -5531,13 +3711,6 @@
       "power": 76
     },
     {
-      "id": 1009439,
-      "name": "Meltdown",
-      "description": "When Tabitha Smith's mutant nature manifested at age 13, she ran away from her abusive home before eventually hooking up with the New Mutants and, subsequently, X-Force.",
-      "thumbnail": "/",
-      "power": 41
-    },
-    {
       "id": 1011241,
       "name": "Menace",
       "description": "",
@@ -5552,32 +3725,11 @@
       "power": 51
     },
     {
-      "id": 1011184,
-      "name": "Mentor",
-      "description": "",
-      "thumbnail": "/",
-      "power": 44
-    },
-    {
       "id": 1009440,
       "name": "Mephisto",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/6/40/526034d178ddc.jpg",
       "power": 20
-    },
-    {
-      "id": 1009441,
-      "name": "Mephistopheles",
-      "description": "",
-      "thumbnail": "/",
-      "power": 14
-    },
-    {
-      "id": 1010681,
-      "name": "Mercury",
-      "description": "",
-      "thumbnail": "/",
-      "power": 29
     },
     {
       "id": 1009442,
@@ -5587,32 +3739,11 @@
       "power": 99
     },
     {
-      "id": 1009443,
-      "name": "Metal Master",
-      "description": "",
-      "thumbnail": "/",
-      "power": 76
-    },
-    {
-      "id": 1010361,
-      "name": "Meteorite",
-      "description": "",
-      "thumbnail": "/",
-      "power": 78
-    },
-    {
       "id": 1011340,
       "name": "MI: 13",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/c/c0/4ce5a69fe70f2.jpg",
       "power": 96
-    },
-    {
-      "id": 1009444,
-      "name": "Micro/Macro",
-      "description": "",
-      "thumbnail": "/",
-      "power": 77
     },
     {
       "id": 1010690,
@@ -5622,25 +3753,11 @@
       "power": 91
     },
     {
-      "id": 1011134,
-      "name": "Microchip",
-      "description": "",
-      "thumbnail": "/",
-      "power": 25
-    },
-    {
       "id": 1010871,
       "name": "Micromax",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/5/a0/4c0035aac6564.jpg",
       "power": 27
-    },
-    {
-      "id": 1010891,
-      "name": "Midnight (Earth-811)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 22
     },
     {
       "id": 1010924,
@@ -5650,32 +3767,11 @@
       "power": 26
     },
     {
-      "id": 1009530,
-      "name": "Mikhail Rasputin",
-      "description": "",
-      "thumbnail": "/",
-      "power": 37
-    },
-    {
-      "id": 1011192,
-      "name": "Millenium Guard",
-      "description": "",
-      "thumbnail": "/",
-      "power": 57
-    },
-    {
       "id": 1010894,
       "name": "Millie the Model",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/9/00/4c003597aefd0.jpg",
       "power": 45
-    },
-    {
-      "id": 1009445,
-      "name": "Mimic",
-      "description": "",
-      "thumbnail": "/",
-      "power": 70
     },
     {
       "id": 1011204,
@@ -5690,20 +3786,6 @@
       "description": "Michael Moran has a superhuman alter ego. By saying the trigger word \"Kimota!\" Michael turns into Miracleman! But is the good of being Miracleman enough to outweigh the cost?",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/5/90/545a820a2dc50.jpg",
       "power": 5
-    },
-    {
-      "id": 1011424,
-      "name": "Miss America",
-      "description": "",
-      "thumbnail": "/",
-      "power": 41
-    },
-    {
-      "id": 1009446,
-      "name": "Mister Fear",
-      "description": "",
-      "thumbnail": "/",
-      "power": 96
     },
     {
       "id": 1009447,
@@ -5725,13 +3807,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/f/00/4c00340427a12.jpg",
       "power": 60
-    },
-    {
-      "id": 1011254,
-      "name": "Mister Sinister (Ultimate)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 26
     },
     {
       "id": 1010682,
@@ -5790,13 +3865,6 @@
       "power": 63
     },
     {
-      "id": 1009541,
-      "name": "Molly Von Richtofen",
-      "description": "",
-      "thumbnail": "/",
-      "power": 40
-    },
-    {
       "id": 1011370,
       "name": "Molten Man",
       "description": "",
@@ -5811,39 +3879,11 @@
       "power": 45
     },
     {
-      "id": 1009450,
-      "name": "Mongu (Unrevealed)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 2
-    },
-    {
-      "id": 1010331,
-      "name": "Monster Badoon",
-      "description": "",
-      "thumbnail": "/",
-      "power": 82
-    },
-    {
       "id": 1009452,
       "name": "Moon Knight",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/3/30/52028af90e516.jpg",
       "power": 10
-    },
-    {
-      "id": 1010949,
-      "name": "Moon Knight (House of M)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 23
-    },
-    {
-      "id": 1014998,
-      "name": "Moon Knight (Ultimate)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 55
     },
     {
       "id": 1009451,
@@ -5867,27 +3907,6 @@
       "power": 27
     },
     {
-      "id": 1010902,
-      "name": "Mordo",
-      "description": "",
-      "thumbnail": "/",
-      "power": 78
-    },
-    {
-      "id": 1009455,
-      "name": "Morg",
-      "description": "",
-      "thumbnail": "/",
-      "power": 67
-    },
-    {
-      "id": 1009623,
-      "name": "Morgan Stark",
-      "description": "",
-      "thumbnail": "/",
-      "power": 60
-    },
-    {
       "id": 1011008,
       "name": "Morlocks",
       "description": "",
@@ -5909,20 +3928,6 @@
       "power": 82
     },
     {
-      "id": 1009457,
-      "name": "Mother Askani",
-      "description": "",
-      "thumbnail": "/",
-      "power": 99
-    },
-    {
-      "id": 1009458,
-      "name": "Mr. Bumpo",
-      "description": "",
-      "thumbnail": "/",
-      "power": 11
-    },
-    {
       "id": 1009459,
       "name": "Mr. Fantastic",
       "description": "",
@@ -5935,20 +3940,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/3/d0/53176fc75a448.jpg",
       "power": 38
-    },
-    {
-      "id": 1010900,
-      "name": "Mr. Fish",
-      "description": "",
-      "thumbnail": "/",
-      "power": 62
-    },
-    {
-      "id": 1009460,
-      "name": "Mr. Fixit",
-      "description": "",
-      "thumbnail": "/",
-      "power": 51
     },
     {
       "id": 1010347,
@@ -5979,13 +3970,6 @@
       "power": 68
     },
     {
-      "id": 1009461,
-      "name": "Mr. Payback",
-      "description": "",
-      "thumbnail": "/",
-      "power": 57
-    },
-    {
       "id": 1009462,
       "name": "Mr. X",
       "description": "",
@@ -5998,20 +3982,6 @@
       "description": "A Muslim-American teenager growing up in Jersey City, Kamala Khan gained shape-shifting powers when Inhumanity spread over the Earth. A fan of super heroes, in particular Carol Danvers, Kamala took up Captain Marvel's former identity, becoming the new Ms. Marvel. This up and coming hero works to protect her community and understand her place in the world.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/5/b0/548730dac2a40.jpg",
       "power": 38
-    },
-    {
-      "id": 1011372,
-      "name": "MS2",
-      "description": "",
-      "thumbnail": "/",
-      "power": 68
-    },
-    {
-      "id": 1011210,
-      "name": "Mulholland Black",
-      "description": "",
-      "thumbnail": "/",
-      "power": 14
     },
     {
       "id": 1011056,
@@ -6035,20 +4005,6 @@
       "power": 18
     },
     {
-      "id": 1010951,
-      "name": "Mysterio (Daniel Berkhart)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 56
-    },
-    {
-      "id": 1010952,
-      "name": "Mysterio (Francis Klum)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 40
-    },
-    {
       "id": 1009465,
       "name": "Mystique",
       "description": "",
@@ -6068,20 +4024,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/b/70/4c0033fbbdb54.jpg",
       "power": 4
-    },
-    {
-      "id": 1011129,
-      "name": "Mystique (Ultimate)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 89
-    },
-    {
-      "id": 1013483,
-      "name": "Nakia (Nakia)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 53
     },
     {
       "id": 1009466,
@@ -6112,13 +4054,6 @@
       "power": 61
     },
     {
-      "id": 1009547,
-      "name": "Natasha Romanoff",
-      "description": "",
-      "thumbnail": "/",
-      "power": 54
-    },
-    {
       "id": 1010365,
       "name": "Nebula",
       "description": "",
@@ -6126,39 +4061,11 @@
       "power": 1
     },
     {
-      "id": 1011302,
-      "name": "Nehzno",
-      "description": "",
-      "thumbnail": "/",
-      "power": 73
-    },
-    {
       "id": 1011422,
       "name": "Nekra",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/4/c0/4c002e11323ba.jpg",
       "power": 34
-    },
-    {
-      "id": 1011086,
-      "name": "Nemesis",
-      "description": "",
-      "thumbnail": "/",
-      "power": 75
-    },
-    {
-      "id": 1010831,
-      "name": "Network",
-      "description": "",
-      "thumbnail": "/",
-      "power": 31
-    },
-    {
-      "id": 1010815,
-      "name": "New Goblin",
-      "description": "",
-      "thumbnail": "/",
-      "power": 74
     },
     {
       "id": 1011336,
@@ -6182,20 +4089,6 @@
       "power": 91
     },
     {
-      "id": 1011269,
-      "name": "Newton Destine",
-      "description": "",
-      "thumbnail": "/",
-      "power": 72
-    },
-    {
-      "id": 1011303,
-      "name": "Next Avengers",
-      "description": "",
-      "thumbnail": "/",
-      "power": 24
-    },
-    {
       "id": 1010685,
       "name": "Nextwave",
       "description": "",
@@ -6210,13 +4103,6 @@
       "power": 40
     },
     {
-      "id": 1017298,
-      "name": "Nick Fury (LEGO Marvel Super Heroes)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 11
-    },
-    {
       "id": 1011007,
       "name": "Nick Fury (Ultimate)",
       "description": "",
@@ -6229,13 +4115,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/2/b0/4c00377e2a541.jpg",
       "power": 7
-    },
-    {
-      "id": 1010706,
-      "name": "Nicolaos",
-      "description": "",
-      "thumbnail": "/",
-      "power": 1
     },
     {
       "id": 1011282,
@@ -6287,13 +4166,6 @@
       "power": 52
     },
     {
-      "id": 1011124,
-      "name": "Nightshade",
-      "description": "",
-      "thumbnail": "/",
-      "power": 18
-    },
-    {
       "id": 1011409,
       "name": "Nine-Fold Daughters of Xao",
       "description": "",
@@ -6308,13 +4180,6 @@
       "power": 43
     },
     {
-      "id": 1009474,
-      "name": "Nocturne",
-      "description": "",
-      "thumbnail": "/",
-      "power": 99
-    },
-    {
       "id": 1009475,
       "name": "Nomad",
       "description": "",
@@ -6327,13 +4192,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/9/50/4ce5a79501bd6.jpg",
       "power": 21
-    },
-    {
-      "id": 1010955,
-      "name": "Nomad (Steve Rogers)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 36
     },
     {
       "id": 1009325,
@@ -6413,25 +4271,11 @@
       "power": 12
     },
     {
-      "id": 1017840,
-      "name": "Okoye",
-      "description": "",
-      "thumbnail": "/",
-      "power": 98
-    },
-    {
       "id": 1010882,
       "name": "Old Lace",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/8/c0/4c00359a2be7b.jpg",
       "power": 82
-    },
-    {
-      "id": 1010757,
-      "name": "Omega Flight",
-      "description": "",
-      "thumbnail": "/",
-      "power": 32
     },
     {
       "id": 1009482,
@@ -6462,13 +4306,6 @@
       "power": 45
     },
     {
-      "id": 1011255,
-      "name": "Onslaught (Ultimate)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 31
-    },
-    {
       "id": 1009484,
       "name": "Oracle",
       "description": "",
@@ -6483,13 +4320,6 @@
       "power": 12
     },
     {
-      "id": 1009485,
-      "name": "Orphan",
-      "description": "",
-      "thumbnail": "/",
-      "power": 41
-    },
-    {
       "id": 1010957,
       "name": "Orphan-Maker",
       "description": "",
@@ -6497,39 +4327,11 @@
       "power": 82
     },
     {
-      "id": 1009479,
-      "name": "Otto Octavius",
-      "description": "",
-      "thumbnail": "/",
-      "power": 72
-    },
-    {
-      "id": 1011228,
-      "name": "Outlaw Kid",
-      "description": "",
-      "thumbnail": "/",
-      "power": 58
-    },
-    {
-      "id": 1010332,
-      "name": "Overlord",
-      "description": "",
-      "thumbnail": "/",
-      "power": 85
-    },
-    {
       "id": 1011028,
       "name": "Owl",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/9/40/4ce5a45d60e63.jpg",
       "power": 68
-    },
-    {
-      "id": 1009488,
-      "name": "Ozymandias",
-      "description": "",
-      "thumbnail": "/",
-      "power": 95
     },
     {
       "id": 1011150,
@@ -6546,13 +4348,6 @@
       "power": 79
     },
     {
-      "id": 1010708,
-      "name": "Pandemic",
-      "description": "",
-      "thumbnail": "/",
-      "power": 51
-    },
-    {
       "id": 1011321,
       "name": "Paper Doll",
       "description": "",
@@ -6560,25 +4355,11 @@
       "power": 18
     },
     {
-      "id": 1010357,
-      "name": "Patch",
-      "description": "",
-      "thumbnail": "/",
-      "power": 27
-    },
-    {
       "id": 1009492,
       "name": "Patriot",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/8/b0/4c003cfda4644.jpg",
       "power": 61
-    },
-    {
-      "id": 1011351,
-      "name": "Payback",
-      "description": "",
-      "thumbnail": "/",
-      "power": 43
     },
     {
       "id": 1009493,
@@ -6595,13 +4376,6 @@
       "power": 91
     },
     {
-      "id": 1009495,
-      "name": "Pestilence",
-      "description": "",
-      "thumbnail": "/",
-      "power": 63
-    },
-    {
       "id": 1011388,
       "name": "Pet Avengers",
       "description": "",
@@ -6614,20 +4388,6 @@
       "description": "Pete Wisdom is a former agent of the British intelligence agency Black Air, which was charged with the observation of, and interaction with, extranormal activity, and he was the agency's liaison with the British superhero group Excalibur, whom he eventually aided in exposing Black Air's subversive criminal activities.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/f/b0/4c003740c9027.png",
       "power": 66
-    },
-    {
-      "id": 1009491,
-      "name": "Peter Parker",
-      "description": "",
-      "thumbnail": "/",
-      "power": 69
-    },
-    {
-      "id": 1010734,
-      "name": "Peter Quill",
-      "description": "",
-      "thumbnail": "/",
-      "power": 42
     },
     {
       "id": 1011021,
@@ -6644,32 +4404,11 @@
       "power": 88
     },
     {
-      "id": 1017839,
-      "name": "Phil Coulson (Phil Coulson)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 87
-    },
-    {
       "id": 1011369,
       "name": "Phil Sheldon",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/9/80/4ce5a6f45075d.jpg",
       "power": 90
-    },
-    {
-      "id": 1011045,
-      "name": "Photon",
-      "description": "",
-      "thumbnail": "/",
-      "power": 65
-    },
-    {
-      "id": 1010741,
-      "name": "Phyla-Vell",
-      "description": "",
-      "thumbnail": "/",
-      "power": 89
     },
     {
       "id": 1010886,
@@ -6693,25 +4432,11 @@
       "power": 92
     },
     {
-      "id": 1009498,
-      "name": "Plazm",
-      "description": "",
-      "thumbnail": "/",
-      "power": 99
-    },
-    {
       "id": 1009499,
       "name": "Polaris",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/c/c0/5274122562b05.jpg",
       "power": 40
-    },
-    {
-      "id": 1009501,
-      "name": "Post",
-      "description": "",
-      "thumbnail": "/",
-      "power": 73
     },
     {
       "id": 1016840,
@@ -6763,24 +4488,10 @@
       "power": 6
     },
     {
-      "id": 1011234,
-      "name": "Prince of Orphans",
-      "description": "",
-      "thumbnail": "/",
-      "power": 4
-    },
-    {
       "id": 1010750,
       "name": "Princess Powerful",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/3/60/4c0037783e8b3.jpg",
-      "power": 32
-    },
-    {
-      "id": 1009503,
-      "name": "Prism",
-      "description": "",
-      "thumbnail": "/",
       "power": 32
     },
     {
@@ -6796,13 +4507,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/2/f0/4c002f51c9436.jpg",
       "power": 82
-    },
-    {
-      "id": 1011378,
-      "name": "Professor Monster",
-      "description": "",
-      "thumbnail": "/",
-      "power": 100
     },
     {
       "id": 1009504,
@@ -6826,13 +4530,6 @@
       "power": 52
     },
     {
-      "id": 1010960,
-      "name": "Proteus (House of M)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 72
-    },
-    {
       "id": 1010959,
       "name": "Proteus (Ultimate)",
       "description": "",
@@ -6840,25 +4537,11 @@
       "power": 38
     },
     {
-      "id": 1009506,
-      "name": "Proudstar",
-      "description": "",
-      "thumbnail": "/",
-      "power": 13
-    },
-    {
       "id": 1009507,
       "name": "Prowler",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/8/50/4c003c8acc314.jpg",
       "power": 13
-    },
-    {
-      "id": 1010961,
-      "name": "Prowler (Rick Lawson)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 77
     },
     {
       "id": 1009511,
@@ -6873,13 +4556,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/1/50/526961ce86539.jpg",
       "power": 76
-    },
-    {
-      "id": 1009510,
-      "name": "PsyNapse",
-      "description": "",
-      "thumbnail": "/",
-      "power": 45
     },
     {
       "id": 1009513,
@@ -6901,13 +4577,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/4/c0/4c0035b602a0a.jpg",
       "power": 23
-    },
-    {
-      "id": 1011165,
-      "name": "pug",
-      "description": "",
-      "thumbnail": "/",
-      "power": 13
     },
     {
       "id": 1009514,
@@ -6994,13 +4663,6 @@
       "power": 50
     },
     {
-      "id": 1011191,
-      "name": "Queen Noir",
-      "description": "",
-      "thumbnail": "/",
-      "power": 63
-    },
-    {
       "id": 1009387,
       "name": "Quentin Quire",
       "description": "",
@@ -7043,32 +4705,11 @@
       "power": 8
     },
     {
-      "id": 1011280,
-      "name": "Rafael Vega",
-      "description": "",
-      "thumbnail": "/",
-      "power": 65
-    },
-    {
       "id": 1010817,
       "name": "Rage",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/6/20/4c0035e72e3d8.jpg",
       "power": 75
-    },
-    {
-      "id": 1009527,
-      "name": "Raider",
-      "description": "",
-      "thumbnail": "/",
-      "power": 93
-    },
-    {
-      "id": 1009528,
-      "name": "Randall",
-      "description": "",
-      "thumbnail": "/",
-      "power": 32
     },
     {
       "id": 1011326,
@@ -7085,20 +4726,6 @@
       "power": 26
     },
     {
-      "id": 1010838,
-      "name": "Rattler",
-      "description": "",
-      "thumbnail": "/",
-      "power": 52
-    },
-    {
-      "id": 1011154,
-      "name": "Ravenous",
-      "description": "",
-      "thumbnail": "/",
-      "power": 84
-    },
-    {
       "id": 1010892,
       "name": "Rawhide Kid",
       "description": "",
@@ -7113,13 +4740,6 @@
       "power": 59
     },
     {
-      "id": 1009532,
-      "name": "Reaper",
-      "description": "",
-      "thumbnail": "/",
-      "power": 81
-    },
-    {
       "id": 1009533,
       "name": "Reavers",
       "description": "",
@@ -7127,31 +4747,10 @@
       "power": 9
     },
     {
-      "id": 1015000,
-      "name": "Reavers (Ultimate)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 54
-    },
-    {
-      "id": 1011249,
-      "name": "Red 9",
-      "description": "",
-      "thumbnail": "/",
-      "power": 77
-    },
-    {
       "id": 1009534,
       "name": "Red Ghost",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/7/10/535ff3cd59285.jpg",
-      "power": 87
-    },
-    {
-      "id": 1011238,
-      "name": "Red Ghost (Ultimate)",
-      "description": "",
-      "thumbnail": "/",
       "power": 87
     },
     {
@@ -7176,32 +4775,11 @@
       "power": 16
     },
     {
-      "id": 1011155,
-      "name": "Red Shift",
-      "description": "",
-      "thumbnail": "/",
-      "power": 14
-    },
-    {
       "id": 1009535,
       "name": "Red Skull",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/2/03/526036550cd37.jpg",
       "power": 19
-    },
-    {
-      "id": 1010965,
-      "name": "Red Skull (Albert Malik)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 33
-    },
-    {
-      "id": 1010837,
-      "name": "Red Wolf",
-      "description": "",
-      "thumbnail": "/",
-      "power": 80
     },
     {
       "id": 1011390,
@@ -7218,13 +4796,6 @@
       "power": 56
     },
     {
-      "id": 1011189,
-      "name": "Retro Girl",
-      "description": "",
-      "thumbnail": "/",
-      "power": 100
-    },
-    {
       "id": 1011330,
       "name": "Revanche",
       "description": "",
@@ -7239,20 +4810,6 @@
       "power": 93
     },
     {
-      "id": 1009702,
-      "name": "Rhodey",
-      "description": "",
-      "thumbnail": "/",
-      "power": 34
-    },
-    {
-      "id": 1011401,
-      "name": "Richard Fisk",
-      "description": "",
-      "thumbnail": "/",
-      "power": 75
-    },
-    {
       "id": 1009379,
       "name": "Rick Jones",
       "description": "",
@@ -7260,32 +4817,11 @@
       "power": 52
     },
     {
-      "id": 1015006,
-      "name": "Rick Jones (Ultimate)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 45
-    },
-    {
-      "id": 1011348,
-      "name": "Ricochet",
-      "description": "",
-      "thumbnail": "/",
-      "power": 17
-    },
-    {
       "id": 1009542,
       "name": "Rictor",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/3/03/527414130f76d.jpg",
       "power": 99
-    },
-    {
-      "id": 1009543,
-      "name": "Riptide",
-      "description": "",
-      "thumbnail": "/",
-      "power": 35
     },
     {
       "id": 1009544,
@@ -7300,20 +4836,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/5/a0/4c003c50a94b7.jpg",
       "power": 86
-    },
-    {
-      "id": 1010792,
-      "name": "Robert Baldwin ",
-      "description": "",
-      "thumbnail": "/",
-      "power": 76
-    },
-    {
-      "id": 1009235,
-      "name": "Robin Chapel",
-      "description": "",
-      "thumbnail": "/",
-      "power": 26
     },
     {
       "id": 1010744,
@@ -7335,13 +4857,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/2/e0/4c0037551d8c2.jpg",
       "power": 3
-    },
-    {
-      "id": 1010692,
-      "name": "Rockslide",
-      "description": "",
-      "thumbnail": "/",
-      "power": 38
     },
     {
       "id": 1009546,
@@ -7379,13 +4894,6 @@
       "power": 23
     },
     {
-      "id": 1010781,
-      "name": "Roland Deschain",
-      "description": "",
-      "thumbnail": "/",
-      "power": 65
-    },
-    {
       "id": 1011398,
       "name": "Romulus",
       "description": "",
@@ -7398,34 +4906,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/2/f0/5260363fc40f2.jpg",
       "power": 42
-    },
-    {
-      "id": 1011117,
-      "name": "Roughhouse",
-      "description": "",
-      "thumbnail": "/",
-      "power": 33
-    },
-    {
-      "id": 1009549,
-      "name": "Roulette",
-      "description": "",
-      "thumbnail": "/",
-      "power": 54
-    },
-    {
-      "id": 1009595,
-      "name": "Roxanne Simpson",
-      "description": "",
-      "thumbnail": "/",
-      "power": 85
-    },
-    {
-      "id": 1009311,
-      "name": "Rumiko Fujikawa",
-      "description": "",
-      "thumbnail": "/",
-      "power": 78
     },
     {
       "id": 1010747,
@@ -7447,13 +4927,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/6/20/51097abb8e306.jpg",
       "power": 53
-    },
-    {
-      "id": 1009553,
-      "name": "Sabra",
-      "description": "Ruth Bat-Seraph is an Israeli national who, along with her family, was taken to a special community by the Israeli government when her genetic mutation manifested.",
-      "thumbnail": "/",
-      "power": 58
     },
     {
       "id": 1009554,
@@ -7491,13 +4964,6 @@
       "power": 42
     },
     {
-      "id": 1011325,
-      "name": "Salem's Seven (Ultimate)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 22
-    },
-    {
       "id": 1011126,
       "name": "Sally Floyd",
       "description": "",
@@ -7510,34 +4976,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/9/80/4c002f4ee689c.jpg",
       "power": 92
-    },
-    {
-      "id": 1009558,
-      "name": "Sandman",
-      "description": "",
-      "thumbnail": "/",
-      "power": 74
-    },
-    {
-      "id": 1010711,
-      "name": "Santa Claus",
-      "description": "",
-      "thumbnail": "/",
-      "power": 73
-    },
-    {
-      "id": 1009559,
-      "name": "Saracen (Muzzafar Lambert)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 7
-    },
-    {
-      "id": 1009560,
-      "name": "Sasquatch (Walter Langkowski)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 71
     },
     {
       "id": 1011035,
@@ -7559,13 +4997,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/9/10/4ce5a473b81b3.jpg",
       "power": 70
-    },
-    {
-      "id": 1010861,
-      "name": "Scarecrow (Ebenezer Laughton)",
-      "description": "Realizing the criminal potential of his abilities, Umberto stole a flock of trained birds from a fellow performer to assist him in his new costumed criminal guise as the Scarecrow.",
-      "thumbnail": "/",
-      "power": 45
     },
     {
       "id": 1011197,
@@ -7617,39 +5048,11 @@
       "power": 59
     },
     {
-      "id": 1011079,
-      "name": "Scorpion (Ultimate)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 55
-    },
-    {
-      "id": 1009565,
-      "name": "Scourge",
-      "description": "",
-      "thumbnail": "/",
-      "power": 90
-    },
-    {
       "id": 1011230,
       "name": "Scrambler",
       "description": "Korean national Kim Il Sung was the youngest member of the Marauders, the superhuman assassins responsible for massacring the underground mutant community known as the Morlocks.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/2/a0/4c002f076451c.jpg",
       "power": 41
-    },
-    {
-      "id": 1009566,
-      "name": "Scream (Donna Diego)",
-      "description": "Out of the five alien symbiotes that were forcefully extracted from Venom (while bonded with Eddie Brock) by the Life Foundation, Donna's is the only one still active today that is not bonded to Hybrid.",
-      "thumbnail": "/",
-      "power": 9
-    },
-    {
-      "id": 1011242,
-      "name": "Screwball",
-      "description": "Trained in parkour, Screwball, fairly new to the New York City superhuman criminal community, specializes in recording he crimes and broadcasting them live over the internet.",
-      "thumbnail": "/",
-      "power": 94
     },
     {
       "id": 1009581,
@@ -7699,13 +5102,6 @@
       "description": "Empowered by the enigmatic Professor's secret formula, high school student Robert Reynolds became a superhuman.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/f/03/52695b1392c78.jpg",
       "power": 68
-    },
-    {
-      "id": 1011167,
-      "name": "Ser Duncan",
-      "description": "",
-      "thumbnail": "/",
-      "power": 19
     },
     {
       "id": 1009572,
@@ -7764,20 +5160,6 @@
       "power": 32
     },
     {
-      "id": 1009575,
-      "name": "Shalla-bal",
-      "description": "",
-      "thumbnail": "/",
-      "power": 74
-    },
-    {
-      "id": 1009576,
-      "name": "Shaman",
-      "description": "Dr. Michael Twoyoungmen was a surgeon who found that modern science was insufficient to accomplish everything he wished to do, and so he turned to mysticism that his grandfather told him about.",
-      "thumbnail": "/",
-      "power": 41
-    },
-    {
       "id": 1014979,
       "name": "Shane Yamada-Jones",
       "description": "",
@@ -7790,13 +5172,6 @@
       "description": "Shang-Chi is the son of an internationally-renowned and powerful criminal mastermind whose childhood was a lonely one, full of constant training in rigorous mental and martial arts, with only limited contact with his parents.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/3/20/535ff3b116209.jpg",
       "power": 94
-    },
-    {
-      "id": 1015001,
-      "name": "Shang-Chi (Ultimate)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 14
     },
     {
       "id": 1009578,
@@ -7825,13 +5200,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/6/d0/4ce59f2323b88.jpg",
       "power": 53
-    },
-    {
-      "id": 1010895,
-      "name": "Sharon Ventura",
-      "description": "",
-      "thumbnail": "/",
-      "power": 68
     },
     {
       "id": 1009580,
@@ -7883,25 +5251,11 @@
       "power": 57
     },
     {
-      "id": 1011168,
-      "name": "Sheva Callister",
-      "description": "",
-      "thumbnail": "/",
-      "power": 16
-    },
-    {
       "id": 1011093,
       "name": "Shi'Ar",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/8/00/53a1c0e5a1f00.jpg",
       "power": 37
-    },
-    {
-      "id": 1011381,
-      "name": "Shinko Yamashiro",
-      "description": "",
-      "thumbnail": "/",
-      "power": 96
     },
     {
       "id": 1009582,
@@ -7911,46 +5265,11 @@
       "power": 46
     },
     {
-      "id": 1009584,
-      "name": "Shiva",
-      "description": "",
-      "thumbnail": "/",
-      "power": 63
-    },
-    {
-      "id": 1011394,
-      "name": "Shiver Man",
-      "description": "The Shiver Man is an undead bounty hunter who has worked with Nick Fury and Wolverine.",
-      "thumbnail": "/",
-      "power": 35
-    },
-    {
-      "id": 1009585,
-      "name": "Shocker (Herman Schultz)",
-      "description": "Herman Schultz is a career criminal who, after several prison terms for robbery, built a battle suit that sent out shock waves to quickly open safes as well as give him a significant advantage over the New York police.",
-      "thumbnail": "/",
-      "power": 40
-    },
-    {
       "id": 1010858,
       "name": "Shockwave",
       "description": "Lancaster Sneed was a secret agent working for the United Kingdom’s MI:6, but no one esteemed him as highly as himself, and despite his pride, he was wounded in an explosion on his first field assignment and forced to undergo a radical surgery that grafted metal plates and cybernetic systems to his body.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/5/c0/4c0035c193fc3.jpg",
       "power": 41
-    },
-    {
-      "id": 1010824,
-      "name": "Shooting Star",
-      "description": "",
-      "thumbnail": "/",
-      "power": 12
-    },
-    {
-      "id": 1009586,
-      "name": "Shotgun",
-      "description": "",
-      "thumbnail": "/",
-      "power": 7
     },
     {
       "id": 1009587,
@@ -7965,27 +5284,6 @@
       "description": "Sif was born a second generation goddess of Asgard and eventually became Thor's lover.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/c/50/527bb6fc4ec43.jpg",
       "power": 52
-    },
-    {
-      "id": 1010848,
-      "name": "Silhouette",
-      "description": "Silhouette Chord is a descendant of the Dragon's Breadth cult, which spent centuries trying to master the Well of All Things, a hidden interdimensional mystic energy breach in Cambodia.",
-      "thumbnail": "/",
-      "power": 31
-    },
-    {
-      "id": 1010856,
-      "name": "Silk Fever",
-      "description": "",
-      "thumbnail": "/",
-      "power": 70
-    },
-    {
-      "id": 1010339,
-      "name": "Silver Centurion",
-      "description": "",
-      "thumbnail": "/",
-      "power": 65
     },
     {
       "id": 1009589,
@@ -8058,13 +5356,6 @@
       "power": 86
     },
     {
-      "id": 1010834,
-      "name": "Siren (Earth-93060)",
-      "description": "Jennifer Pearson appeared on the Ultra hero scene as Siren after being held hostage by her fathers foe known as Mannequin.",
-      "thumbnail": "/",
-      "power": 94
-    },
-    {
       "id": 1010745,
       "name": "Sister Grimm",
       "description": "",
@@ -8107,13 +5398,6 @@
       "power": 65
     },
     {
-      "id": 1015002,
-      "name": "Skrulls (Ultimate)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 21
-    },
-    {
       "id": 1009600,
       "name": "Skullbuster (Cylla Markham)",
       "description": "",
@@ -8128,32 +5412,11 @@
       "power": 37
     },
     {
-      "id": 1011070,
-      "name": "Slayback",
-      "description": "Ten years ago, Slayback was killed by Deadpool before returning from the dead to break into Department K, from which he stole the Weapon X Program files of Kane and Deadpool.",
-      "thumbnail": "/",
-      "power": 21
-    },
-    {
-      "id": 1009601,
-      "name": "Sleeper",
-      "description": "",
-      "thumbnail": "/",
-      "power": 38
-    },
-    {
       "id": 1010761,
       "name": "Sleepwalker",
       "description": "Sleepwalkers are guardians of the Mindscape -- they apprehended beings that invade the sleeping minds of humans.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/f/30/4c0037640501a.jpg",
       "power": 43
-    },
-    {
-      "id": 1009602,
-      "name": "Slipstream",
-      "description": "Australian mutant siblings Heather and Davis Cameron were sent to live in Surfer's Paradise by their father in an effort to spare them from his life as Viceroy, godfather of Australian organized crime.",
-      "thumbnail": "/",
-      "power": 24
     },
     {
       "id": 1010874,
@@ -8168,13 +5431,6 @@
       "description": "Smasher is a member of the Imperial Guard, a multi-ethnic group of super-powered alien beings who act as enforcers of the laws of the Shi'ar Empire.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/5/d0/4c003ae66139c.jpg",
       "power": 26
-    },
-    {
-      "id": 1010845,
-      "name": "Smiling Tiger",
-      "description": "",
-      "thumbnail": "/",
-      "power": 97
     },
     {
       "id": 1009606,
@@ -8196,20 +5452,6 @@
       "description": "Melissa Gold grew up on the streets, adopting her mother's name \"Mimi\" as part of a hard, cold persona she developed as a survival mechanism.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/3/10/4c0038da16738.jpg",
       "power": 53
-    },
-    {
-      "id": 1011373,
-      "name": "Sons of the Tiger",
-      "description": "",
-      "thumbnail": "/",
-      "power": 47
-    },
-    {
-      "id": 1009607,
-      "name": "Spacker Dave",
-      "description": "",
-      "thumbnail": "/",
-      "power": 100
     },
     {
       "id": 1010705,
@@ -8240,27 +5482,6 @@
       "power": 80
     },
     {
-      "id": 1009605,
-      "name": "Spencer Smythe",
-      "description": "",
-      "thumbnail": "/",
-      "power": 63
-    },
-    {
-      "id": 1011366,
-      "name": "Sphinx (Anath-Na Mut)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 39
-    },
-    {
-      "id": 1010727,
-      "name": "Spider-dok",
-      "description": "",
-      "thumbnail": "/",
-      "power": 4
-    },
-    {
       "id": 1009157,
       "name": "Spider-Girl (Anya Corazon)",
       "description": " ",
@@ -8273,13 +5494,6 @@
       "description": "May \"Mayday\" Parker is the daughter of Spider-Man and Mary Jane Watson-Parker. Born with all her fatherï¿½s powers-and the same silly sense of humor-sheï¿½s grown up to become one of Earthï¿½s most trusted heroes and a fitting tribute to her proud papa.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/1/70/4c003adccbe4f.jpg",
       "power": 50
-    },
-    {
-      "id": 1011347,
-      "name": "Spider-Ham (Larval Earth)",
-      "description": "As Spider-Ham Peter faced such nefarious foes as Ductor Doom, Bull-Frog, Raven the Hunter, Hogzilla, the Buzzard and the King-Pig!",
-      "thumbnail": "/",
-      "power": 27
     },
     {
       "id": 1009610,
@@ -8422,27 +5636,6 @@
       "power": 72
     },
     {
-      "id": 1011180,
-      "name": "Sprite",
-      "description": "Sprite is a mischievous Eternal who maintains a perpetual youthful appearance.",
-      "thumbnail": "/",
-      "power": 100
-    },
-    {
-      "id": 1009617,
-      "name": "Spyke",
-      "description": "",
-      "thumbnail": "/",
-      "power": 2
-    },
-    {
-      "id": 1014905,
-      "name": "Squadron Sinister",
-      "description": "",
-      "thumbnail": "/",
-      "power": 96
-    },
-    {
       "id": 1010814,
       "name": "Squadron Supreme (Earth-712)",
       "description": "",
@@ -8455,27 +5648,6 @@
       "description": "Escaping the taunts of her fellow school students regarding her physical mutation, Los-Angeles born Doreen Green fled into the nearby woods where she quickly discovered her affinity for squirrels.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/8/60/4c0035beb0c55.jpg",
       "power": 67
-    },
-    {
-      "id": 1009618,
-      "name": "Stacy X",
-      "description": "",
-      "thumbnail": "/",
-      "power": 38
-    },
-    {
-      "id": 1015003,
-      "name": "Stacy X (Ultimate)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 99
-    },
-    {
-      "id": 1011307,
-      "name": "Star Brand",
-      "description": "",
-      "thumbnail": "/",
-      "power": 12
     },
     {
       "id": 1010733,
@@ -8492,13 +5664,6 @@
       "power": 56
     },
     {
-      "id": 1010764,
-      "name": "Stardust",
-      "description": "As Herald for the world devourer, Galactus, Stardust found suitable worlds for her master to consume.",
-      "thumbnail": "/",
-      "power": 79
-    },
-    {
       "id": 1011084,
       "name": "Starfox",
       "description": "The youngest son of Mentor and Sui-San, Eros had the natural ability to excite pleasure in others, but his power had no effect upon his mutant older brother, Thanos, who worshiped the cosmic embodiment of Death and led an army against Titan.",
@@ -8506,25 +5671,11 @@
       "power": 42
     },
     {
-      "id": 1011341,
-      "name": "Starhawk (Stakar Ogord)",
-      "description": "Though best known as a 31st century hero in the alternate Reality-691 timeline, the enigmatic, space-faring Starhawk originated a millennium earlier.",
-      "thumbnail": "/",
-      "power": 41
-    },
-    {
       "id": 1011078,
       "name": "Starjammers",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/9/60/537f74ae55a3a.jpg",
       "power": 54
-    },
-    {
-      "id": 1009622,
-      "name": "Stark Industries",
-      "description": "",
-      "thumbnail": "/",
-      "power": 29
     },
     {
       "id": 1010828,
@@ -8555,34 +5706,6 @@
       "power": 64
     },
     {
-      "id": 1009615,
-      "name": "Stephanie de la Spiroza",
-      "description": "",
-      "thumbnail": "/",
-      "power": 63
-    },
-    {
-      "id": 1010901,
-      "name": "Stephen Strange",
-      "description": "",
-      "thumbnail": "/",
-      "power": 13
-    },
-    {
-      "id": 1010326,
-      "name": "Steve Rogers",
-      "description": "",
-      "thumbnail": "/",
-      "power": 22
-    },
-    {
-      "id": 1009626,
-      "name": "Stick",
-      "description": "Stick, who trained both Daredevil and Elektra in the martial arts, is the leader of the warrior order called The Chaste, and has fought alongside the clan's other members against The Hand for years.",
-      "thumbnail": "/",
-      "power": 26
-    },
-    {
       "id": 1009627,
       "name": "Stilt-Man (Wibur Day)",
       "description": "Wilbur Day was a scientist at Kaxton Labs who stole designs for a hydraulic ramming device from his company out of frustration of his position in his job.",
@@ -8595,13 +5718,6 @@
       "description": "Creating the Stingray costume, Newell succeeded in capturing the Sub-Mariner, although Namor soon escaped and Newell, while initially defeating him a second time, allowed his friend to go.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/5/d0/4c003ac5e5195.jpg",
       "power": 77
-    },
-    {
-      "id": 1010327,
-      "name": "Stone Men",
-      "description": "",
-      "thumbnail": "/",
-      "power": 11
     },
     {
       "id": 1009629,
@@ -8653,13 +5769,6 @@
       "power": 85
     },
     {
-      "id": 1011225,
-      "name": "Stryfe (Ultimate)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 55
-    },
-    {
       "id": 1010791,
       "name": "Sub-Mariner",
       "description": "Prince Namor is the half-human/half-Atlantean ruler of Atlantis.",
@@ -8679,13 +5788,6 @@
       "description": "The Sugar Man was in charge of the Seattle Core, a slave camp that helped power North America during the Age of Apocalypse.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/f/d0/527413a2480b5.jpg",
       "power": 30
-    },
-    {
-      "id": 1009635,
-      "name": "Sumo",
-      "description": "",
-      "thumbnail": "/",
-      "power": 72
     },
     {
       "id": 1009636,
@@ -8714,13 +5816,6 @@
       "description": "Growing up in a wealthy Brazilian family, Roberto da Costa was forging a career as a skilled soccer player until his mutant nature manifested during a match.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/b/50/4c003ab716add.jpg",
       "power": 89
-    },
-    {
-      "id": 1015280,
-      "name": "Super Hero Squad",
-      "description": "",
-      "thumbnail": "/",
-      "power": 8
     },
     {
       "id": 1011022,
@@ -8758,13 +5853,6 @@
       "power": 25
     },
     {
-      "id": 1011172,
-      "name": "Susan Delgado",
-      "description": "",
-      "thumbnail": "/",
-      "power": 85
-    },
-    {
       "id": 1011075,
       "name": "Swarm",
       "description": "Fritz von Meyer was once a Nazi scientist, the details of which remain unrevealed, although it is known he had access to looted gold from countless European capitals to fund his research.",
@@ -8779,13 +5867,6 @@
       "power": 26
     },
     {
-      "id": 1009640,
-      "name": "Switch",
-      "description": "",
-      "thumbnail": "/",
-      "power": 42
-    },
-    {
       "id": 1009641,
       "name": "Swordsman",
       "description": "Andreas reappeared as the Swordsman in the latest incarnation of the Thunderbolts, though his true identity was kept secret for some time.",
@@ -8793,60 +5874,11 @@
       "power": 40
     },
     {
-      "id": 1010982,
-      "name": "Swordsman (Jaques Duquesne)",
-      "description": "When Clint Barton came to the Carson Carnival of Traveling Wonders, the Swordsman became one of his mentors.",
-      "thumbnail": "/",
-      "power": 60
-    },
-    {
-      "id": 1009642,
-      "name": "Sym",
-      "description": "",
-      "thumbnail": "/",
-      "power": 11
-    },
-    {
       "id": 1009643,
       "name": "Synch",
       "description": "Everett Thomas was a founding member of Generation X.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/f/60/4c002e0305708.gif",
       "power": 71
-    },
-    {
-      "id": 1009644,
-      "name": "T'Challa",
-      "description": "",
-      "thumbnail": "/",
-      "power": 49
-    },
-    {
-      "id": 1011042,
-      "name": "Tag",
-      "description": "",
-      "thumbnail": "/",
-      "power": 40
-    },
-    {
-      "id": 1009646,
-      "name": "Talisman (Elizabeth Twoyoungmen)",
-      "description": "Elizabeth Twoyoungmen was born in Calgary, Alberta, Canada, the daughter of Michael Twoyoungman (Shaman) of the Canadian superhero team Alpha Flight.",
-      "thumbnail": "/",
-      "power": 46
-    },
-    {
-      "id": 1010753,
-      "name": "Talkback (Chase Stein)",
-      "description": "Chase Stein is the son of mad scientists Victor and Janet Stein and is the tech genius of the Runaways.",
-      "thumbnail": "/",
-      "power": 23
-    },
-    {
-      "id": 1011395,
-      "name": "Talon (Fraternity of Raptors)",
-      "description": "Falling to Earth wrapped in a ball of flame, Talon crash landed next to the home of Chris Powell, the young hero known as Darkhawk.",
-      "thumbnail": "/",
-      "power": 30
     },
     {
       "id": 1011161,
@@ -8863,20 +5895,6 @@
       "power": 4
     },
     {
-      "id": 1010713,
-      "name": "Tarantula (Luis Alvarez)",
-      "description": "Alvarez replaced the original Tarantula after his death by the dictatorship Delvadian government.",
-      "thumbnail": "/",
-      "power": 37
-    },
-    {
-      "id": 1009647,
-      "name": "Tarot",
-      "description": "",
-      "thumbnail": "/",
-      "power": 7
-    },
-    {
       "id": 1009648,
       "name": "Taskmaster",
       "description": "Taskmaster first exhibited his unusual ability, called \"photographic reflexes,\" which allowed him to mimic the motion of anyone he saw, when he was a young boy.",
@@ -8884,39 +5902,11 @@
       "power": 29
     },
     {
-      "id": 1011115,
-      "name": "Tattoo",
-      "description": "",
-      "thumbnail": "/",
-      "power": 19
-    },
-    {
-      "id": 1011000,
-      "name": "Ted Forrester",
-      "description": "",
-      "thumbnail": "/",
-      "power": 74
-    },
-    {
-      "id": 1009650,
-      "name": "Tempest",
-      "description": "",
-      "thumbnail": "/",
-      "power": 25
-    },
-    {
       "id": 1011162,
       "name": "Tenebrous",
       "description": "Tenebrous has existed in this universe since its infancy, and was imprisoned in the planet Kyln after a battle with Galactus.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/2/f0/4c002f3b92276.jpg",
       "power": 86
-    },
-    {
-      "id": 1009651,
-      "name": "Terrax",
-      "description": "Tyros was once the dictator of the city Lanlak on the planet Birj, where his superhuman ability to command rocks and earth enabled him to overcome all resistance, but his rule of Lanlak came to an end when he was sought by the world-devouring Galactus to serve as his latest Herald.",
-      "thumbnail": "/",
-      "power": 63
     },
     {
       "id": 1011034,
@@ -8933,13 +5923,6 @@
       "power": 26
     },
     {
-      "id": 1011003,
-      "name": "Thaddeus Ross",
-      "description": "",
-      "thumbnail": "/",
-      "power": 10
-    },
-    {
       "id": 1009652,
       "name": "Thanos",
       "description": "The Mad Titan Thanos, a melancholy, brooding individual, consumed with the concept of death, sought out personal power and increased strength, endowing himself with cybernetic implants until he became more powerful than any of his brethren.",
@@ -8954,13 +5937,6 @@
       "power": 32
     },
     {
-      "id": 1011083,
-      "name": "The 198",
-      "description": "",
-      "thumbnail": "/",
-      "power": 61
-    },
-    {
       "id": 1009653,
       "name": "The Anarchist",
       "description": "",
@@ -8968,39 +5944,11 @@
       "power": 82
     },
     {
-      "id": 1009654,
-      "name": "The Call",
-      "description": "",
-      "thumbnail": "/",
-      "power": 27
-    },
-    {
-      "id": 1010714,
-      "name": "The Captain",
-      "description": "",
-      "thumbnail": "/",
-      "power": 67
-    },
-    {
-      "id": 1011294,
-      "name": "The Enforcers",
-      "description": "",
-      "thumbnail": "/",
-      "power": 88
-    },
-    {
       "id": 1010728,
       "name": "The Executioner",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/e/d0/4ce5a2ab860be.jpg",
       "power": 47
-    },
-    {
-      "id": 1009655,
-      "name": "The Fallen",
-      "description": "",
-      "thumbnail": "/",
-      "power": 33
     },
     {
       "id": 1011219,
@@ -9052,67 +6000,11 @@
       "power": 52
     },
     {
-      "id": 1011216,
-      "name": "The Liberteens",
-      "description": "",
-      "thumbnail": "/",
-      "power": 39
-    },
-    {
-      "id": 1011215,
-      "name": "The Liberty Legion",
-      "description": "",
-      "thumbnail": "/",
-      "power": 61
-    },
-    {
-      "id": 1011018,
-      "name": "The Order",
-      "description": "",
-      "thumbnail": "/",
-      "power": 15
-    },
-    {
-      "id": 1009656,
-      "name": "The Phantom",
-      "description": "",
-      "thumbnail": "/",
-      "power": 2
-    },
-    {
-      "id": 1009657,
-      "name": "The Professor",
-      "description": "",
-      "thumbnail": "/",
-      "power": 39
-    },
-    {
-      "id": 1011211,
-      "name": "The Renegades",
-      "description": "",
-      "thumbnail": "/",
-      "power": 71
-    },
-    {
-      "id": 1011110,
-      "name": "The Santerians",
-      "description": "",
-      "thumbnail": "/",
-      "power": 83
-    },
-    {
       "id": 1009658,
       "name": "The Shiver Man",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/b/90/4c003aaa26ee9.jpg",
       "power": 6
-    },
-    {
-      "id": 1009659,
-      "name": "The Spike",
-      "description": "",
-      "thumbnail": "/",
-      "power": 63
     },
     {
       "id": 1009660,
@@ -9127,13 +6019,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/1/e0/4ce5a4acdfe22.jpg",
       "power": 82
-    },
-    {
-      "id": 1009661,
-      "name": "The Watchers",
-      "description": "",
-      "thumbnail": "/",
-      "power": 63
     },
     {
       "id": 1011181,
@@ -9220,13 +6105,6 @@
       "power": 55
     },
     {
-      "id": 1010885,
-      "name": "Thunderball",
-      "description": "Dr. Eliot Franklin was a genius-level physicist who was forced to turn to crime and helped form the Wrecking Crew alongside the Wrecker, Bulldozer and Piledriver.",
-      "thumbnail": "/",
-      "power": 45
-    },
-    {
       "id": 1009666,
       "name": "Thunderbird (John Proudstar)",
       "description": "An exceptionally strong and vigorous athlete in his youth, John Proudstar&rsquo;s mutant abilities first manifested when he wrestled a charging bison to save a young girl.",
@@ -9239,13 +6117,6 @@
       "description": "Coming from an affluent family and the son of a Calcuttan police chief, Indian national Neal Shaara has not been a follower of Charles Xavier's philosophies for long, but appears to be one of their most dedicated supporters, nonetheless.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/b/c0/4c003aa0d9cf9.jpg",
       "power": 68
-    },
-    {
-      "id": 1009668,
-      "name": "Thunderbolt (Bill Carver)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 40
     },
     {
       "id": 1014812,
@@ -9290,25 +6161,11 @@
       "power": 72
     },
     {
-      "id": 1010857,
-      "name": "Timeslip",
-      "description": "As a young child, Rina Patel experienced visions of her future, though she eventually learned to control this, triggering visions of specific times, and she realized she was swapping her consciousness across time.",
-      "thumbnail": "/",
-      "power": 19
-    },
-    {
       "id": 1011345,
       "name": "Tinkerer",
       "description": "The Tinkerer is an ordinary man who has an extraordinary talent for anything mechanical.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/b/60/4c002e3aaf52e.jpg",
       "power": 39
-    },
-    {
-      "id": 1011960,
-      "name": "Tippy Toe",
-      "description": "After the senseless murder of Squirrel Girl’s first partner Monkey Joe, Tippy Toe remained by Squirrel Girl’s side and became her new partner.",
-      "thumbnail": "/",
-      "power": 64
     },
     {
       "id": 1010669,
@@ -9332,39 +6189,11 @@
       "power": 25
     },
     {
-      "id": 1009674,
-      "name": "Toad Men",
-      "description": "",
-      "thumbnail": "/",
-      "power": 37
-    },
-    {
-      "id": 1011166,
-      "name": "Tomas",
-      "description": "",
-      "thumbnail": "/",
-      "power": 52
-    },
-    {
       "id": 1009675,
       "name": "Tombstone",
       "description": "Known as Tombstone, Lonnie Lincoln filed his teeth to points to add to his already intimidating image and honed his fighting skills in numerous street fights.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/3/40/4c003a981c496.jpg",
       "power": 29
-    },
-    {
-      "id": 1010328,
-      "name": "Tomorrow Man",
-      "description": "",
-      "thumbnail": "/",
-      "power": 32
-    },
-    {
-      "id": 1009624,
-      "name": "Tony Stark",
-      "description": "",
-      "thumbnail": "/",
-      "power": 66
     },
     {
       "id": 1011309,
@@ -9402,25 +6231,11 @@
       "power": 47
     },
     {
-      "id": 1009671,
-      "name": "Trish Tilby",
-      "description": "",
-      "thumbnail": "/",
-      "power": 20
-    },
-    {
       "id": 1010335,
       "name": "Triton",
       "description": "Triton is a member of the Inhumans.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/6/90/528d367108dfb.jpg",
       "power": 79
-    },
-    {
-      "id": 1011352,
-      "name": "True Believers",
-      "description": "",
-      "thumbnail": "/",
-      "power": 47
     },
     {
       "id": 1011047,
@@ -9430,13 +6245,6 @@
       "power": 23
     },
     {
-      "id": 1009678,
-      "name": "Tusk",
-      "description": "",
-      "thumbnail": "/",
-      "power": 66
-    },
-    {
       "id": 1010852,
       "name": "Two-Gun Kid",
       "description": "",
@@ -9444,25 +6252,11 @@
       "power": 11
     },
     {
-      "id": 1009679,
-      "name": "Tyger Tiger",
-      "description": "",
-      "thumbnail": "/",
-      "power": 88
-    },
-    {
       "id": 1010369,
       "name": "Typhoid Mary",
       "description": "Typhoid Mary, an enemy and former lover of Daredevil with psionic powers, including telekinesis, is also truly gravely mentally ill and not entirely responsible for her actions.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/1/f0/4c00390aa2403.jpg",
       "power": 15
-    },
-    {
-      "id": 1009680,
-      "name": "Tyrannus",
-      "description": "",
-      "thumbnail": "/",
-      "power": 9
     },
     {
       "id": 1011315,
@@ -9514,25 +6308,11 @@
       "power": 66
     },
     {
-      "id": 1009684,
-      "name": "Ultimatum",
-      "description": "",
-      "thumbnail": "/",
-      "power": 67
-    },
-    {
       "id": 1011311,
       "name": "Ultimo",
       "description": "Ultimo was a robotic construct that was developed several thousand years ago on an unknown world, which the Mandarin eventually discovered and claimed as his own creation.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/5/50/4c002e5d2432b.jpg",
       "power": 16
-    },
-    {
-      "id": 1011125,
-      "name": "Ultra-Adaptoid",
-      "description": "",
-      "thumbnail": "/",
-      "power": 74
     },
     {
       "id": 1010847,
@@ -9549,24 +6329,10 @@
       "power": 12
     },
     {
-      "id": 1009686,
-      "name": "Umar",
-      "description": "Umar and her sibling Dormammu gathered matter to themselves to increase their power, a practice anathema to their fellow Faltine who consider energy to be superior to matter.",
-      "thumbnail": "/",
-      "power": 28
-    },
-    {
       "id": 1010862,
       "name": "Unicorn",
       "description": "Milos Masaryk, a Soviet intelligence agent assigned as a security guard for Anton Vanko, a Soviet inventor who developed the Crimson Dynamo armor, was tasked by the Soviet government to retrieve Vanko after he defected to the United States.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/b/40/4c0035bc1dcf1.jpg",
-      "power": 87
-    },
-    {
-      "id": 1010985,
-      "name": "Union Jack (Brian Falsworth)",
-      "description": "Imprisoned in Germany during WWII, Brian Falsworth shared a cell with a German scientist who had tried to recreate the super-soldier serum, but didn't want it to fall into Nazi hands, so he gave his only sample to Brian, who gained enhanced strength, speed, stamina and reflexes.",
-      "thumbnail": "/",
       "power": 87
     },
     {
@@ -9596,13 +6362,6 @@
       "description": "Unus worked for Apocalypse and was sent into Old New York City to search for any remaining humans there and to kill them.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/6/c0/536165c7d94ae.jpg",
       "power": 38
-    },
-    {
-      "id": 1010988,
-      "name": "Unus (House of M)",
-      "description": "Unus is an agent for the House of M royal family.",
-      "thumbnail": "/",
-      "power": 17
     },
     {
       "id": 1010986,
@@ -9640,34 +6399,6 @@
       "power": 32
     },
     {
-      "id": 1011342,
-      "name": "Vance Astro",
-      "description": "",
-      "thumbnail": "/",
-      "power": 70
-    },
-    {
-      "id": 1010989,
-      "name": "Vanisher (Age of Apocalypse)",
-      "description": "Vanisher worked for Apocalypse.",
-      "thumbnail": "/",
-      "power": 55
-    },
-    {
-      "id": 1011365,
-      "name": "Vanisher (Telford Porter)",
-      "description": "Nothing is known about the Vanisher's past before he embarked on a one-man crime wave of spectacular thefts using his power of self-teleportation.",
-      "thumbnail": "/",
-      "power": 11
-    },
-    {
-      "id": 1009689,
-      "name": "Vanisher (Ultimate)",
-      "description": "Vanisher is a mutant with the power to teleport himself and possibly others across an undefined amount of distance who was recruited by Magneto into his Brotherhood of Mutants.",
-      "thumbnail": "/",
-      "power": 57
-    },
-    {
       "id": 1011316,
       "name": "Vapor",
       "description": "Vapor, along with her brother, was among the small group led by Simon Utrecht to simulate the crash that gave the Fantastic Four their powers, and has remained with the U-Foes ever since.",
@@ -9687,13 +6418,6 @@
       "description": "Simon Utrecht wanted superhuman powers in order to persue personal power and gain, and commissioned a project that would ultimately simulate the crash that gave the Fantastic Four their powers; he has remained with the U-Foes ever since.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/8/80/4c0035a7dd04d.jpg",
       "power": 6
-    },
-    {
-      "id": 1011231,
-      "name": "Veda",
-      "description": "Magdalena Marie Neuntauben became an accomplished martial artist, then a model, and later an actress, from which she donated all of her proceeds to her charity, which made her a prime candidate for recruitment into the Order.",
-      "thumbnail": "/",
-      "power": 92
     },
     {
       "id": 1009691,
@@ -9731,25 +6455,11 @@
       "power": 22
     },
     {
-      "id": 1009693,
-      "name": "Venus Dee Milo",
-      "description": "When Dee Milo was a teenager, her mutant powers manifested, transforming her into a being of energy and seemingly killing her entire family in the resultant explosion, after which she was found by Professor Charles Xavier, mutant mentor and researcher, and Xavier designed a special containment suit that helped her regain some level of humanity.",
-      "thumbnail": "/",
-      "power": 85
-    },
-    {
       "id": 1010353,
       "name": "Vermin (Edward Whelan)",
       "description": "Edward Whelan was found roaming the streets of New York by Baron Helmut Zemo, who subjected Whelan to Zemo's genetic experiments, which granted him superhuman strength, but, in the process of the mutation, he manifested a rat-like physical appearance, and was called Vermin.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/3/b0/528d3638185cb.jpg",
       "power": 78
-    },
-    {
-      "id": 1009694,
-      "name": "Vertigo (Savage Land Mutate)",
-      "description": "Vertigo was a native of the Savage Land and mutated by the mutant known as Magneto, granting her the power to alter the perceptions of others.",
-      "thumbnail": "/",
-      "power": 84
     },
     {
       "id": 1011066,
@@ -9759,20 +6469,6 @@
       "power": 41
     },
     {
-      "id": 1010324,
-      "name": "Victor Von Doom",
-      "description": "",
-      "thumbnail": "/",
-      "power": 55
-    },
-    {
-      "id": 1011261,
-      "name": "Vin Gonzales",
-      "description": "",
-      "thumbnail": "/",
-      "power": 89
-    },
-    {
       "id": 1009695,
       "name": "Vindicator",
       "description": "Heather McNeil-Hudson married James Hudson, founder of Canadian super-team, Alpha Flight, and donned a version of his Vindicator armor after his death.",
@@ -9780,39 +6476,11 @@
       "power": 24
     },
     {
-      "id": 1010666,
-      "name": "Violations",
-      "description": "",
-      "thumbnail": "/",
-      "power": 60
-    },
-    {
-      "id": 1009696,
-      "name": "Viper",
-      "description": "After the apparent death of Baron von Strucker, Viper took the name Madame Hydra and took control of the New York-based faction of Hydra.",
-      "thumbnail": "/",
-      "power": 38
-    },
-    {
-      "id": 1010697,
-      "name": "Virginia Dare",
-      "description": "",
-      "thumbnail": "/",
-      "power": 19
-    },
-    {
       "id": 1009697,
       "name": "Vision",
       "description": "The metal monstrosity called Ultron created the synthetic humanoid known as the Vision from the remains of the original android Human Torch of the 1940s to serve as a vehicle of vengeance against the Avengers.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/9/d0/5111527040594.jpg",
       "power": 1
-    },
-    {
-      "id": 1009698,
-      "name": "Vivisector",
-      "description": "",
-      "thumbnail": "/",
-      "power": 74
     },
     {
       "id": 1011011,
@@ -9836,32 +6504,11 @@
       "power": 87
     },
     {
-      "id": 1010849,
-      "name": "Wallflower",
-      "description": "Laurie Collins began to involuntarily manipulate anyone around her once her genetic mutation manifested, unable to control its effects.",
-      "thumbnail": "/",
-      "power": 26
-    },
-    {
       "id": 1011267,
       "name": "Wallop",
       "description": "Walter was born, presumably in the decade of 1910s, into the ClanDestine-- his father, the immortal Adam Destine and his mother a magical genie.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/8/c0/4c002ef63d1e4.jpg",
       "power": 97
-    },
-    {
-      "id": 1009700,
-      "name": "Wallow",
-      "description": "Max Pressman murdered his wife and attempted to murder his two children Michael and Melinda, but after police officer shot him before he could so, Pressman returned as a ghost-like entity, with only the face of Melinda's doll as his own.",
-      "thumbnail": "/",
-      "power": 91
-    },
-    {
-      "id": 1009701,
-      "name": "War (Abraham Kieros)",
-      "description": "A young veteran wounded during the Vietnam War, Abraham Kieros was selected by Apocalypse to become the Horseman War.",
-      "thumbnail": "/",
-      "power": 86
     },
     {
       "id": 1017322,
@@ -9892,32 +6539,11 @@
       "power": 99
     },
     {
-      "id": 1009703,
-      "name": "Warbird",
-      "description": "",
-      "thumbnail": "/",
-      "power": 33
-    },
-    {
       "id": 1011121,
       "name": "Warbound",
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/2/f0/53628de09a012.jpg",
       "power": 25
-    },
-    {
-      "id": 1010372,
-      "name": "Warhawk (Mitchell Tanner)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 91
-    },
-    {
-      "id": 1009704,
-      "name": "Warlock (Janie Chin)",
-      "description": "College design student Janie Chin was transformed by Adam Warlock into a female version of him, who then tried to cure the planet.",
-      "thumbnail": "/",
-      "power": 32
     },
     {
       "id": 1011287,
@@ -9932,13 +6558,6 @@
       "description": "James Proudstar was once a member of Professor X's New Mutants and is currently a member of the X-Men black ops team, X-Force.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/2/e0/526035de08b23.jpg",
       "power": 33
-    },
-    {
-      "id": 1010668,
-      "name": "Warren Worthington III",
-      "description": "",
-      "thumbnail": "/",
-      "power": 47
     },
     {
       "id": 1009706,
@@ -9969,20 +6588,6 @@
       "power": 27
     },
     {
-      "id": 1009709,
-      "name": "Weapon X",
-      "description": "",
-      "thumbnail": "/",
-      "power": 44
-    },
-    {
-      "id": 1011402,
-      "name": "Wendell Rand",
-      "description": "",
-      "thumbnail": "/",
-      "power": 83
-    },
-    {
       "id": 1010742,
       "name": "Wendell Vaughn",
       "description": "",
@@ -10004,13 +6609,6 @@
       "power": 58
     },
     {
-      "id": 1009711,
-      "name": "Whiplash (Mark Scarlotti)",
-      "description": "Filled with dreams of grandeur, Mark Scarlotti was a brilliant young man with a bright future who graduated with top honors from college and immediately had a promising job at Stark International, but it all went south, however, when he became friends with the wrong people who wanted him to develop weapons, which Scarlotti used to become the first Whiplash.",
-      "thumbnail": "/",
-      "power": 37
-    },
-    {
       "id": 1010348,
       "name": "Whirlwind",
       "description": "David Cannon was always a bully, so his mutant abilities naturally led him to a life of crime and petty thievery, until his constant defeat at the hands of the Hank Pym and the Wasp led him to create the Whirlwind identity.",
@@ -10018,39 +6616,11 @@
       "power": 65
     },
     {
-      "id": 1010342,
-      "name": "Whistler",
-      "description": "",
-      "thumbnail": "/",
-      "power": 26
-    },
-    {
-      "id": 1009712,
-      "name": "White Queen (Adrienne Frost)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 72
-    },
-    {
-      "id": 1010853,
-      "name": "White Tiger (Angela Del Toro)",
-      "description": "Federal agent Angela Del Toro is the heir to a heroic legacy that began with the Jade Tiger, a long-lost enchanted statue from the fabled kingdom of K'un-Lun, and had been last held by her uncle, Hector Ayala, who fought alongside such heroes as Daredevil and Spider-Man.",
-      "thumbnail": "/",
-      "power": 26
-    },
-    {
       "id": 1016838,
       "name": "White Tiger (USM)",
       "description": "White Tiger takes everything very seriously. A constant overachiever, she wants to be better and wants the group to be better. With less flashy powers, she feels like she has to work the hardest. \r\n \r\nA skilled acrobatic fighter with feline senses and claws. Ava wears a small Tiger amulet on her belt that gives her supernatural powers.\r\n\r\nIn the field, sheâ€™s constantly frustrated with Spider-Man and his irreverent attitude. But the longer the two fight side by side, the more they will understand one another.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/d/c0/52321764379a9.jpg",
       "power": 34
-    },
-    {
-      "id": 1011425,
-      "name": "Whizzer (Stanley Stewart)",
-      "description": "Stanley Stewart is a native of the alternate Earth (Earth-S) on which the organization of the superhuman champions known as the Squadron Supreme arose.",
-      "thumbnail": "/",
-      "power": 92
     },
     {
       "id": 1009714,
@@ -10081,25 +6651,11 @@
       "power": 85
     },
     {
-      "id": 1009716,
-      "name": "Wildside",
-      "description": "",
-      "thumbnail": "/",
-      "power": 47
-    },
-    {
       "id": 1009633,
       "name": "William Stryker",
       "description": "William Stryker became convinced that Satan had a plot to corrupt humankind by taking over their souls while still in the womb, resulting in their mutations.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/b/90/4c003abcc72e7.jpg",
       "power": 45
-    },
-    {
-      "id": 1010680,
-      "name": "Wilson Fisk",
-      "description": "",
-      "thumbnail": "/",
-      "power": 84
     },
     {
       "id": 1011009,
@@ -10123,20 +6679,6 @@
       "power": 2
     },
     {
-      "id": 1011290,
-      "name": "Wolf Cub",
-      "description": "Nicholas Gleason enrolled at the Xavier Institute after being saved from a pair of mutant-haters by X-Men members Cyclops and Chamber.",
-      "thumbnail": "/",
-      "power": 82
-    },
-    {
-      "id": 1011281,
-      "name": "Wolfpack",
-      "description": "",
-      "thumbnail": "/",
-      "power": 28
-    },
-    {
       "id": 1009717,
       "name": "Wolfsbane",
       "description": "Rahne Sinclair was an orphan in Scotland, raised by Reverend Craig, who, when her powers manifested, attempted to perform an exorcism to cast out what he perceived was the devil, after which Rahne was rescued by Doctor Moira MacTaggert who legally adopted her, and was introduced to Charles Xavier and enrolled as part of his New Mutants training team.",
@@ -10149,13 +6691,6 @@
       "description": "An only child, Rahne Sinclair's mutant powers emerged during the culling of Scotland by the Apocalypse's Horseman Mikhail when her parents attempted to hide her, but failed, and Rahne was discovered by Mikhail's hounds and brought before him alongside her parents whom Mikhail made Rahne beg for their lives, making her pledge allegiance to Apocalypse.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/3/20/528d3602d37e0.jpg",
       "power": 50
-    },
-    {
-      "id": 1010729,
-      "name": "Wolver-dok",
-      "description": "",
-      "thumbnail": "/",
-      "power": 93
     },
     {
       "id": 1009718,
@@ -10207,27 +6742,6 @@
       "power": 3
     },
     {
-      "id": 1015005,
-      "name": "Wong (Ultimate)",
-      "description": "",
-      "thumbnail": "/",
-      "power": 54
-    },
-    {
-      "id": 1010737,
-      "name": "Wraith",
-      "description": "",
-      "thumbnail": "/",
-      "power": 12
-    },
-    {
-      "id": 1010884,
-      "name": "Wrecker",
-      "description": "Dirk Garthwaite, the son of a construction worker and abusive father and husband, grew up filled with resentment and anger toward his father, who abandoned the family, and quickly turned to crime, in which he used a crowbar as a reminder of his father, destroying each place he robbed.",
-      "thumbnail": "/",
-      "power": 20
-    },
-    {
       "id": 1010883,
       "name": "Wrecking Crew",
       "description": "",
@@ -10254,13 +6768,6 @@
       "description": "",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/6/10/4c002e198a6f3.jpg",
       "power": 47
-    },
-    {
-      "id": 1009723,
-      "name": "X-Cutioner",
-      "description": "",
-      "thumbnail": "/",
-      "power": 93
     },
     {
       "id": 1010738,
@@ -10319,13 +6826,6 @@
       "power": 53
     },
     {
-      "id": 1009732,
-      "name": "X.S.E.",
-      "description": "",
-      "thumbnail": "/",
-      "power": 38
-    },
-    {
       "id": 1011094,
       "name": "Xavin",
       "description": "",
@@ -10338,13 +6838,6 @@
       "description": "Xorn, whose mutation manifested as a tiny, powerful star inside his head, was brainwashed into believing he was the reincarnation of Magneto.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/d/60/4c00394059727.jpg",
       "power": 3
-    },
-    {
-      "id": 1009736,
-      "name": "Yellow Claw",
-      "description": "The Yellow Claw is Plan Tzu, the 19th Century descendant of and rightful successor to the legendary warlord Temujin, a.k.a. Genghis Khan.",
-      "thumbnail": "/",
-      "power": 29
     },
     {
       "id": 1010996,
@@ -10361,34 +6854,6 @@
       "power": 59
     },
     {
-      "id": 1011277,
-      "name": "Young X-Men",
-      "description": "",
-      "thumbnail": "/",
-      "power": 56
-    },
-    {
-      "id": 1009738,
-      "name": "Zaladane",
-      "description": "",
-      "thumbnail": "/",
-      "power": 97
-    },
-    {
-      "id": 1010841,
-      "name": "Zaran",
-      "description": "",
-      "thumbnail": "/",
-      "power": 32
-    },
-    {
-      "id": 1010716,
-      "name": "Zarda",
-      "description": "",
-      "thumbnail": "/",
-      "power": 35
-    },
-    {
       "id": 1011163,
       "name": "Zarek",
       "description": "Zarek is a member of the Kree race with no superhuman abilities or specialized weaponry, but as a blue Kree, he has enhanced strength, stamina and durability.",
@@ -10396,39 +6861,11 @@
       "power": 18
     },
     {
-      "id": 1009739,
-      "name": "Zeigeist",
-      "description": "",
-      "thumbnail": "/",
-      "power": 88
-    },
-    {
-      "id": 1010780,
-      "name": "Zemo",
-      "description": "",
-      "thumbnail": "/",
-      "power": 9
-    },
-    {
-      "id": 1011127,
-      "name": "Zodiak",
-      "description": "Twelve demons merged with Norman Harrison, who, soon after, adopted the guise of Zodiac and used his abilities to harness powers based on the astrological Zodiac.",
-      "thumbnail": "/",
-      "power": 29
-    },
-    {
       "id": 1009741,
       "name": "Zombie (Simon Garth)",
       "description": "War hero Simon Garth was turned into a zombie by his secretary, Layla, who was also a voodoo priestess, after being killed by his gardener, Gyps.",
       "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/6/10/4c003937c9ba4.jpg",
       "power": 78
-    },
-    {
-      "id": 1011183,
-      "name": "Zuras",
-      "description": "Zuras was once the leader of the Eternals.",
-      "thumbnail": "/",
-      "power": 45
     },
     {
       "id": 1009742,
