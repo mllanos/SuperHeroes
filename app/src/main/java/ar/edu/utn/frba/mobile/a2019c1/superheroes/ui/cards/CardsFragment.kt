@@ -2,7 +2,6 @@ package ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.cards
 
 import android.app.Activity
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -46,6 +45,7 @@ class CardsFragment : Fragment() {
 		getUserTeam()
 		onCreateTeamButtonClick()
 		handleElementsVisibility()
+		refreshCardsSelection()
 	}
 
 	private fun handleElementsVisibility() {
@@ -145,11 +145,13 @@ class CardsFragment : Fragment() {
 		for (i in 0 until recyclerview_cards_available.childCount) {
 			val holder = recyclerview_cards_available
 				.getChildViewHolder(recyclerview_cards_available.getChildAt(i))
-			holder.itemView.linearlayout_card.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
+			holder.itemView.view_card_selectedoverlay.visibility = INVISIBLE
 		}
 		selectedCards.clear()
 		button.text = getString(R.string.btn_create_team)
 	}
+
+	private fun refreshCardsSelection() = selectedCards.clear()
 
 	private fun handleUserNotLogged() {
 		println("Failed to get logged user in cards fragment")
