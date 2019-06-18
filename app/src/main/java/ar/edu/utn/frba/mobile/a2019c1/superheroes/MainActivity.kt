@@ -7,6 +7,8 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.User
+import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.ApiService
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.SessionsService
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.bundle.BundleFragment
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.cards.CardsFragment
@@ -22,6 +24,7 @@ class MainActivity : AppCompatActivity() {
 	private val fragmentFight = FightFragment.newInstance()
 
 	private val sessionService by lazy { SessionsService(this) }
+	private val apiService by lazy { ApiService(this) }
 
 	private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
 		return@OnNavigationItemSelectedListener when (item.itemId) {
@@ -56,9 +59,20 @@ class MainActivity : AppCompatActivity() {
 
 		this.setDefaultFragment()
 
-		sessionService.getLoggedUser()?.let { user ->
-			this.title = getString(R.string.welcome, user.nickname)
+		this.title = "" // sino muestra MainActivity mientras hace el get a la api
+		sessionService.getLoggedUser()?.also { user ->
+			sessionService.getLoggedUserTeamId()?.also { id ->
+				apiService.getTeam(id, { team ->
+					this.title = getString(R.string.welcome, user.nickname, team.totalPower)
+				}, { error ->
+					defaultTitle(user)
+				})
+			} ?: defaultTitle(user)
 		} ?: handleUserNotLogged()
+	}
+
+	private fun defaultTitle(user: User) {
+		this.title = getString(R.string.welcome, user.nickname, 0)
 	}
 
 	override fun onCreateOptionsMenu(menu: Menu): Boolean {

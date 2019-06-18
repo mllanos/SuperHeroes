@@ -17,6 +17,7 @@ import ar.edu.utn.frba.mobile.a2019c1.superheroes.R
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.adapters.CardsAdapter
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.adapters.UserTeamAdapter
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.Card
+import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.User
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.ApiService
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.SessionsService
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.registration.RegistrationActivity
@@ -129,6 +130,7 @@ class CardsFragment : Fragment() {
 				apiService.createTeam(user, selectedCards, { teamId ->
 					sessionService.storeLoggedUserTeamId(teamId)
 					userTeamAdapter.addTeamCards(selectedCards.toList())
+					updateTeamPower(user, selectedCards.toList().sumBy { it.power })
 					resetTeamCreationButton(btn_cards_createteam)
 					spinner.visibility = GONE
 				}, { error ->
@@ -152,6 +154,10 @@ class CardsFragment : Fragment() {
 	}
 
 	private fun refreshCardsSelection() = selectedCards.clear()
+
+	private fun updateTeamPower(user: User, power: Int) {
+		activity!!.title = getString(R.string.welcome, user.nickname, power)
+	}
 
 	private fun handleUserNotLogged() {
 		println("Failed to get logged user in cards fragment")

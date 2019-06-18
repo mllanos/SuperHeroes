@@ -7,7 +7,7 @@
     <string name="empty_nickname">Nickname must not be empty</string>
     <string name="registration_failed">Registration failed</string>
     <!--main-->
-    <string name="welcome">%1$s</string>
+    <string name="welcome">%1$s | Power: %2$d</string>
     <string name="title_activity_main">MainActivity</string>
     <!--cards-->
     <string name="title_cards">My Cards</string>
