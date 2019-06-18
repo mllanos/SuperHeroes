@@ -6,12 +6,12 @@ import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.GONE
-import android.view.View.VISIBLE
+import android.view.View.*
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.R
@@ -58,6 +58,7 @@ class CardsFragment : Fragment() {
 
 	private fun getUserAvailableCards() {
 		recyclerview_cards_available.layoutManager = GridLayoutManager(context, 3)
+		recyclerview_cards_available.itemAnimator = DefaultItemAnimator()
 		recyclerview_cards_available.adapter = cardsAdapter
 		val spinner = progressbar_cards_spinner.apply { visibility = View.VISIBLE }
 		sessionService.getLoggedUser()?.let { loggedUser ->
@@ -96,11 +97,11 @@ class CardsFragment : Fragment() {
 	private fun onLongCardClick(card: Card, view: View): Boolean {
 		selectedCards.find { it.id == card.id }?.also {
 			selectedCards.remove(card)
-			view.linearlayout_card.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
+			view.view_card_selectedoverlay.visibility = INVISIBLE
 		} ?: run {
 			if (selectedCards.size < 4) {
 				selectedCards.add(card)
-				view.linearlayout_card.setBackgroundColor(Color.parseColor("#D81B60"))
+				view.view_card_selectedoverlay.visibility = VISIBLE
 			}
 		}
 		if (selectedCards.size <= 4) {

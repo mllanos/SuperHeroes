@@ -31,10 +31,10 @@ class CardsAdapter(
 		val powerTextView = holder.containerView.textview_card_power
 		Picasso.get()
 			.load(card.thumbnail)
-			.resize(200, 200)
-			.centerCrop()
 			.placeholder(drawable.ic_superhero)
-			.error(drawable.ic_superhero_notfound)
+			.error(drawable.ic_superhero)
+			.resize(300, 300)
+			.centerCrop()
 			.into(imageView)
 		nameTextView.text = card.name
 		powerTextView.text = holder.containerView.context.getString(R.string.text_card_power, card.power)

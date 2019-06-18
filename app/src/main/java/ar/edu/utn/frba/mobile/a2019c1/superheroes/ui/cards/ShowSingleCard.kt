@@ -46,7 +46,7 @@ class ShowSingleCard : AppCompatActivity() {
 			.resize(200, 200)
 			.centerCrop()
 			.placeholder(R.drawable.ic_superhero)
-			.error(R.drawable.ic_superhero_notfound)
+			.error(R.drawable.ic_superhero)
 			.into(imageViewPhoto)
 	}
 
