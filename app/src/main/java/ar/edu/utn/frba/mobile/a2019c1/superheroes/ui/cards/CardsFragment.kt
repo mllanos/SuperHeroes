@@ -32,10 +32,11 @@ class CardsFragment : Fragment() {
 	private val apiService by lazy { ApiService(context!!) }
 	private val sessionService by lazy { SessionsService(context!!) }
 	private var cardsAdapter = CardsAdapter(
-		{ card -> onCardClick(card) },
+		{ card, view -> if (selectedCards.isNotEmpty()) onLongCardClick(card, view) else onCardClick(card) },
 		{ card, view -> onLongCardClick(card, view) })
 	private var userTeamAdapter = UserTeamAdapter()
 	private var selectedCards = mutableListOf<Card>()
+	private var isSelectingTeam = false
 
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
 		inflater.inflate(R.layout.fragment_cards, container, false)
@@ -61,7 +62,7 @@ class CardsFragment : Fragment() {
 		recyclerview_cards_available.layoutManager = GridLayoutManager(context, 3)
 		recyclerview_cards_available.itemAnimator = DefaultItemAnimator()
 		recyclerview_cards_available.adapter = cardsAdapter
-		val spinner = progressbar_cards_spinner.apply { visibility = View.VISIBLE }
+		val spinner = progressbar_cards_spinner.apply { visibility = VISIBLE }
 		sessionService.getLoggedUser()?.let { loggedUser ->
 			apiService.getUserAvailableCards(loggedUser, { cards ->
 				cardsAdapter.replaceItems(cards)
@@ -84,7 +85,7 @@ class CardsFragment : Fragment() {
 			}
 		recyclerview_cards_userteam.adapter = userTeamAdapter
 		sessionService.getLoggedUserTeamId()?.also { id ->
-			val spinner = progressbar_cards_spinner.apply { visibility = View.VISIBLE }
+			val spinner = progressbar_cards_spinner.apply { visibility = VISIBLE }
 			apiService.getTeam(id, { team ->
 				userTeamAdapter.addTeamCards(team.superheroes)
 				spinner.visibility = GONE
@@ -96,6 +97,7 @@ class CardsFragment : Fragment() {
 	}
 
 	private fun onLongCardClick(card: Card, view: View): Boolean {
+		isSelectingTeam = true
 		selectedCards.find { it.id == card.id }?.also {
 			selectedCards.remove(card)
 			view.view_card_selectedoverlay.visibility = INVISIBLE
@@ -108,6 +110,7 @@ class CardsFragment : Fragment() {
 		if (selectedCards.size <= 4) {
 			btn_cards_createteam.text = getString(R.string.btn_create_team_counter, selectedCards.size)
 		}
+
 		return true
 	}
 
@@ -125,7 +128,7 @@ class CardsFragment : Fragment() {
 	private fun onCreateTeamButtonClick() {
 		btn_cards_createteam.setOnClickListener {
 			if (selectedCards.size == 4) {
-				val spinner = progressbar_cards_spinner.apply { visibility = View.VISIBLE }
+				val spinner = progressbar_cards_spinner.apply { visibility = VISIBLE }
 				val user = sessionService.getLoggedUser()!!
 				apiService.createTeam(user, selectedCards, { teamId ->
 					sessionService.storeLoggedUserTeamId(teamId)
