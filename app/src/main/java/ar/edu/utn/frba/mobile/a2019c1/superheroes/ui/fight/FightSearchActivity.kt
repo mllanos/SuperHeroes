@@ -1,5 +1,6 @@
 package ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.fight
 
+import android.annotation.SuppressLint
 import android.app.Dialog
 import android.os.Bundle
 import android.os.Handler
@@ -36,16 +37,17 @@ class FightSearchActivity : AppCompatActivity(){
 		super.onBackPressed()
 	}
 
+	@SuppressLint("StringFormatMatches")
 	override fun onCreate(savedInstanceState: Bundle?){
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_fight_search)
 
 		this.setDefaultFragment()
 
-		handler.postDelayed({ showFightResult() }, 5000)
+		//handler.postDelayed({ showFightResult() }, 5000)
 
 		sessionService.getLoggedUser()?.let { user ->
-			this.title = this.getString(R.string.welcome, user.nickname)
+			//this.title = this.getString(R.string.welcome, user.nickname)
 		}
 	}
 

@@ -1,6 +1,7 @@
 package ar.edu.utn.frba.mobile.a2019c1.superheroes.services
 
 import android.content.Context
+import android.location.Location
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.Card
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.Team
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.User
@@ -12,6 +13,7 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.google.gson.Gson
 import org.json.JSONArray
 import org.json.JSONObject
+import java.sql.Timestamp
 
 private const val API_BASE_URL = "https://superheroes-mobile-api.herokuapp.com/superheroes"
 
@@ -74,6 +76,33 @@ class ApiService(private val context: Context) {
 				val team = Team(id, resource.superheroes, resource.total_power)
 				responseHandler(team)
 			}, errorHandler
+		)
+	}
+
+	fun startFight(
+		userId: Int,
+		location: Location?,
+		timestamp: Timestamp,
+		responseHandler: (Int) -> Unit,
+		errorHandler: (VolleyError) -> Unit
+	) {
+		val json = JSONObject().put("user_id", userId)
+
+		json.put(
+			"geolocation",
+			{
+				"latitude";location?.let { location.latitude } ?: 0.0;"amplitude";location?.let { location.longitude } ?: 0.0
+			})
+
+
+		json.put("timestamp", timestamp)
+
+		post(
+			"/fight", json, { response ->
+				val id = response.getInt("id")
+				responseHandler(id)
+			},
+			errorHandler
 		)
 	}
 

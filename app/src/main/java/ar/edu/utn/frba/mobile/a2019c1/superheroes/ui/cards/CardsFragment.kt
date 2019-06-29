@@ -75,6 +75,7 @@ class CardsFragment : Fragment() {
 				gerErrorMessage("Failed to get user cards", error)
 				spinner.visibility = GONE
 			})
+
 		} ?: handleUserNotLogged()
 	}
 
