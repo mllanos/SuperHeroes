@@ -12,6 +12,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.R
@@ -27,38 +28,37 @@ import java.sql.Timestamp
 class FightSearchFragment : Fragment() {
 	private val apiService by lazy { ApiService(context!!) }
 	private val sessionService by lazy { SessionsService(context!!) }
-	private lateinit var fusedLocationClient: FusedLocationProviderClient
-
-	private var mFusedLocationClient: FusedLocationProviderClient? = null
-
-		protected var mLastLocation: Location? = null
-
 
 	@SuppressLint("MissingPermission")
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
 		var view = inflater.inflate(R.layout.fragment_fight_search, container, false)
-		mFusedLocationClient = LocationServices.getFusedLocationProviderClient(activity!!)
-		getLastLocation()
+		LocationServices.getFusedLocationProviderClient(activity!!)
+			.lastLocation.addOnSuccessListener { location: Location? ->
 			sessionService.getLoggedUser()?.let { user ->
-
-				apiService.startFight(user.id, mLastLocation, Timestamp(System.currentTimeMillis())
-					, { startActivity(Intent(context!!, FightVictoryFragment::class.java)) },
-					{ error -> gerErrorMessage("Failed to start fight", error) })
+				apiService.startFight(user.id, location, System.currentTimeMillis(),
+					{ id ->
+						Toast.makeText(context!!, id.toString(), Toast.LENGTH_LONG).show()
+						startActivity(Intent(context!!, FightVictoryFragment::class.java))
+					},
+					{ error ->
+						Toast.makeText(context!!, String(error.networkResponse.data, Charsets.UTF_8), Toast.LENGTH_LONG)
+							.show()
+						gerErrorMessage("Failed to start fight", error)
+					})
 			}
+		}
 
 
 
 		return view
 	}
 
-	public override fun onStart() {
+	override fun onStart() {
 		super.onStart()
 
 		if (!checkPermissions()) {
 			requestPermissions()
-		} else {
-			getLastLocation()
 		}
 	}
 
@@ -68,20 +68,6 @@ class FightSearchFragment : Fragment() {
 			Manifest.permission.ACCESS_COARSE_LOCATION
 		)
 		return permissionState == PackageManager.PERMISSION_GRANTED
-	}
-
-	@SuppressLint("MissingPermission")
-	private fun getLastLocation() {
-		mFusedLocationClient!!.lastLocation
-			.addOnCompleteListener(activity!!) { task ->
-				if (task.isSuccessful && task.result != null) {
-					mLastLocation = task.result
-
-				} else {
-					Log.w("Error location", "getLastLocation:exception", task.exception)
-
-				}
-			}
 	}
 
 	private fun startLocationPermissionRequest() {
@@ -102,9 +88,6 @@ class FightSearchFragment : Fragment() {
 		// request previously, but didn't check the "Don't ask again" checkbox.
 		if (shouldProvideRationale) {
 			Log.i("Location", "Displaying Manifest.permission rationale to provide additional context.")
-
-
-
 		} else {
 			Log.i("Location", "Requesting Manifest.permission")
 			// Request permission. It's possible this can be auto answered if device policy
@@ -123,8 +106,9 @@ class FightSearchFragment : Fragment() {
 	private fun gerErrorMessage(message: String, error: VolleyError) {
 		val statusCode = error.networkResponse.statusCode
 		val data = String(error.networkResponse.data, Charsets.UTF_8)
-		println("$message - statusCode: $statusCode - data: $data")
+		val message = "$message - statusCode: $statusCode - data: $data"
+		println(message)
+		message
 	}
 
 }
-
