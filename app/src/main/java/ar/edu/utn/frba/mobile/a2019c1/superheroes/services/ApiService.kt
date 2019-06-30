@@ -1,7 +1,9 @@
 package ar.edu.utn.frba.mobile.a2019c1.superheroes.services
 
 import android.content.Context
+import android.location.Location
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.Card
+import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.Fight
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.Team
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.User
 import com.android.volley.Request.Method.GET
@@ -77,24 +79,54 @@ class ApiService(private val context: Context) {
 		)
 	}
 
+	fun startFight(
+		userId: Int,
+		location: Location?,
+		timestamp: Long,
+		responseHandler: (Fight) -> Unit,
+		errorHandler: (VolleyError) -> Unit
+	) {
+		val json = JSONObject()
+			.put("user_id", userId)
+			.put(
+				"geolocation", JSONObject()
+					.put("latitude", location?.latitude ?: 0.0)
+					.put("longitude", location?.longitude ?: 0.0)
+			)
+			.put("timestamp", timestamp)
+		post(
+			"/fight", json, { response ->
+				val resource = gson.fromJson(response.toString(), Fight::class.java)
+				responseHandler(resource)
+			},
+			errorHandler,
+			30000
+		)
+	}
+
 	private fun post(
 		uri: String,
 		body: JSONObject,
 		responseHandler: (JSONObject) -> Unit,
-		errorHandler: (VolleyError) -> Unit
+		errorHandler: (VolleyError) -> Unit,
+		initialTimeoutMs: Int? = null
 	) {
 		val request = JsonObjectRequest(POST, "$API_BASE_URL$uri", body,
 			Response.Listener { response -> responseHandler(response) },
 			Response.ErrorListener { error -> errorHandler(error) })
-		VolleySingleton.getInstance(context).addToRequestQueue(request)
-
+		VolleySingleton.getInstance(context).addToRequestQueue(request, initialTimeoutMs)
 	}
 
-	private fun get(uri: String, responseHandler: (JSONObject) -> Unit, errorHandler: (VolleyError) -> Unit) {
+	private fun get(
+		uri: String,
+		responseHandler: (JSONObject) -> Unit,
+		errorHandler: (VolleyError) -> Unit,
+		initialTimeoutMs: Int? = null
+	) {
 		val request = JsonObjectRequest(GET, "$API_BASE_URL$uri", null,
 			Response.Listener { response -> responseHandler(response) },
 			Response.ErrorListener { error -> errorHandler(error) })
-		VolleySingleton.getInstance(context).addToRequestQueue(request)
+		VolleySingleton.getInstance(context).addToRequestQueue(request, initialTimeoutMs)
 	}
 
 	data class CardsResponseResource(val cards: List<Card>)

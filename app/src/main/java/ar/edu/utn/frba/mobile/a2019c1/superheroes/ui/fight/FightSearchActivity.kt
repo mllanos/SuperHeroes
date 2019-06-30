@@ -1,62 +1,117 @@
 package ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.fight
 
-import android.app.Dialog
+import android.annotation.SuppressLint
+import android.content.Intent
+import android.location.Location
 import android.os.Bundle
-import android.os.Handler
 import android.view.View
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.R
+import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.Fight
+import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.ApiService
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.SessionsService
-import ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.cards.CardsFragment
+import com.android.volley.VolleyError
+import com.google.android.gms.location.LocationServices
 import kotlinx.android.synthetic.main.activity_fight_search.*
+import java.lang.System.currentTimeMillis
+import java.lang.Thread.sleep
 
-class FightSearchActivity : AppCompatActivity(){
+class FightSearchActivity : AppCompatActivity() {
 
 	private val sessionService by lazy { SessionsService(this) }
+	private val apiService by lazy { ApiService(this) }
 
-	private val fragmentFightSearch = FightSearchFragment.newInstance()
-
-	private val fragmentFightVictory = FightVictoryFragment.newInstance()
-
-	private val handler = Handler()
-
-	override fun onResume(){
-		super.onResume()
-		/*val openDialog = Dialog(this)
-		openDialog.setContentView(R.layout.activity_fight_search)
-		openDialog.setCancelable(false)
-		btn_go_back.setOnClickListener{
-			this.goBack()
-		}*/
-	}
-
-	private fun goBack(){
-		super.onBackPressed()
-	}
-
-	override fun onCreate(savedInstanceState: Bundle?){
+	@SuppressLint("StringFormatMatches", "MissingPermission")
+	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_fight_search)
 
-		this.setDefaultFragment()
-
-		handler.postDelayed({ showFightResult() }, 5000)
-
-		sessionService.getLoggedUser()?.let { user ->
-			this.title = this.getString(R.string.welcome, user.nickname)
+		LocationServices
+			.getFusedLocationProviderClient(this)
+			.lastLocation.addOnSuccessListener { location: Location? ->
+			sessionService.getLoggedUser()?.let { user ->
+				apiService.startFight(user.id, location, currentTimeMillis(), { response ->
+					processResult(response)
+					finish()
+				}, { error ->
+					gerErrorMessage("Failed to start fight", error)
+					handleOpponentNotFound()
+				})
+			}
 		}
 	}
 
-	private fun setDefaultFragment() = this.replaceFragment(fragmentFightSearch)
+	private fun processResult(result: Fight) {
+		val intent = Intent(this, FightResultActivity::class.java)
+		intent.putExtra("fightResult", result)
+		startActivity(intent)
+	}
 
-	private fun replaceFragment(destFragment: Fragment) = this.supportFragmentManager
-		.beginTransaction()
-		.replace(R.id.fragment_fight_container, destFragment)
-		.commit()
+	private fun handleOpponentNotFound() {
+		title_search_fight.text = getString(R.string.title_fight_notfound)
+		loading_figth_icon.visibility = View.INVISIBLE
+		sleep(5000)
+		finish()
+	}
 
-	private fun showFightResult() = this.replaceFragment(fragmentFightVictory)
+/*
+	override fun onStart() {
+		super.onStart()
 
+		if (!checkPermissions()) {
+			requestPermissions()
+		}
+	}
+
+	private fun checkPermissions(): Boolean {
+		val permissionState = ActivityCompat.checkSelfPermission(
+			activity!!,
+			Manifest.permission.ACCESS_COARSE_LOCATION
+		)
+		return permissionState == PackageManager.PERMISSION_GRANTED
+	}
+
+	private fun startLocationPermissionRequest() {
+		ActivityCompat.requestPermissions(
+			activity!!,
+			arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION),
+			34
+		)
+	}
+
+	private fun requestPermissions() {
+		val shouldProvideRationale = ActivityCompat.shouldShowRequestPermissionRationale(
+			activity!!,
+			Manifest.permission.ACCESS_COARSE_LOCATION
+		)
+
+		// Provide an additional rationale to the user. This would happen if the user denied the
+		// request previously, but didn't check the "Don't ask again" checkbox.
+		if (shouldProvideRationale) {
+			Log.i("Location", "Displaying Manifest.permission rationale to provide additional context.")
+		} else {
+			Log.i("Location", "Requesting Manifest.permission")
+			// Request permission. It's possible this can be auto answered if device policy
+			// sets the permission in a given state or the user denied the permission
+			// previously and checked "Never ask again".
+			startLocationPermissionRequest()
+		}
+	}
+
+
+	companion object {
+		@JvmStatic
+		fun newInstance() = FightSearchFragment()
+	}
+
+
+
+*/
+
+	private fun gerErrorMessage(message: String, error: VolleyError) {
+		val statusCode = error.networkResponse.statusCode
+		val data = String(error.networkResponse.data, Charsets.UTF_8)
+		println("$message - statusCode: $statusCode - data: $data")
+	}
 
 }
