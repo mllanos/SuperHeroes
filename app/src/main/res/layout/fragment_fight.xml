@@ -11,7 +11,7 @@
     <TextView
             android:text="@string/fight_text"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/btn_fight"
+            android:layout_height="wrap_content" android:id="@+id/text_fight"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="340dp" android:layout_marginStart="84dp" android:textSize="36sp"
             android:textColor="@android:color/white" android:layout_marginBottom="8dp"
