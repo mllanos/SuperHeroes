@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.location.Location
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -28,11 +29,30 @@ class FightSearchActivity : AppCompatActivity(){
 			.lastLocation.addOnSuccessListener { location: Location? ->
 			sessionService.getLoggedUser()?.let { user ->
 				apiService.startFight(user.id, location, System.currentTimeMillis(),
-					{ id ->
-						Toast.makeText(this, id.toString(), Toast.LENGTH_LONG).show()
+					{ response ->
+						val opponent = response.getJSONObject("opponent")
+						val winner = response.getString("winner")
+						val opponentTeamId = opponent.getInt("team_id")
+						val opponentName = opponent.getString("nickname")
+						Log.d("WINNER", winner)
+						Log.d("OPPONENT_NAME", opponentName)
+						sessionService.getLoggedUserTeamId()?.let { id ->
+							apiService.getTeam(id, { team ->
+								Log.d("MY_TEAM", team.toString())
+								apiService.getTeam(opponentTeamId, { opponentTeam ->
+									// TODO show teams
+									Log.d("OPPONENT_TEAM", opponentTeam.toString())
+								}, { error ->
+									Toast.makeText(this, error.toString(), Toast.LENGTH_LONG).show()
+								})
+							}, { error ->
+								Toast.makeText(this, error.toString(), Toast.LENGTH_LONG).show()
+							})
+						}
 						this.processResult()
 					},
 					{ error ->
+						Log.e("FIGHT_ERROR", error.toString())
 						this.oponentNotFound()
 					})
 			}

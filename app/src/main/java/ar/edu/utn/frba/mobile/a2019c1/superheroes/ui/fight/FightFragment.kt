@@ -2,12 +2,14 @@ package ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.fight
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.R
 import kotlinx.android.synthetic.main.fragment_fight.*
+import kotlinx.android.synthetic.main.fragment_fight.view.*
 
 class FightFragment : Fragment(){
 
@@ -15,7 +17,7 @@ class FightFragment : Fragment(){
 
 		val view= inflater.inflate(R.layout.fragment_fight, container, false)
 
-		btn_fight.setOnClickListener {
+		view.btn_fight.setOnClickListener {
 			this.searchFight()
 		}
 
