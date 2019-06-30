@@ -42,6 +42,8 @@ class FightSearchActivity : AppCompatActivity(){
 								apiService.getTeam(opponentTeamId, { opponentTeam ->
 									// TODO show teams
 									Log.d("OPPONENT_TEAM", opponentTeam.toString())
+									this.processResult()
+									finish()
 								}, { error ->
 									Toast.makeText(this, error.toString(), Toast.LENGTH_LONG).show()
 								})
@@ -49,7 +51,6 @@ class FightSearchActivity : AppCompatActivity(){
 								Toast.makeText(this, error.toString(), Toast.LENGTH_LONG).show()
 							})
 						}
-						this.processResult()
 					},
 					{ error ->
 						Log.e("FIGHT_ERROR", error.toString())
