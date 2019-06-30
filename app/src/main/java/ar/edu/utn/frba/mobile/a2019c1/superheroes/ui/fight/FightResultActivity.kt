@@ -16,8 +16,8 @@ class FightResultActivity : AppCompatActivity() {
 
 	private val sessionService by lazy { SessionsService(this) }
 	private val apiService by lazy { ApiService(this) }
-	private lateinit var cardsAdapterUser: CardsAdapter
-	private lateinit var cardsAdapterOpponent: CardsAdapter
+	private var cardsAdapterUser = CardsAdapter()
+	private var cardsAdapterOpponent = CardsAdapter()
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
