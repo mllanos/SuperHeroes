@@ -37,8 +37,8 @@ class FightSearchFragment : Fragment() {
 			.lastLocation.addOnSuccessListener { location: Location? ->
 			sessionService.getLoggedUser()?.let { user ->
 				apiService.startFight(user.id, location, System.currentTimeMillis(),
-					{ winnerId ->
-						if (winnerId == user.id) {
+					{ winnerNickname ->
+						if (winnerNickname == user.nickname) {
 							Toast.makeText(context!!, "You win!", Toast.LENGTH_LONG).show()
 						} else {
 							Toast.makeText(context!!, "You lose.", Toast.LENGTH_LONG).show()

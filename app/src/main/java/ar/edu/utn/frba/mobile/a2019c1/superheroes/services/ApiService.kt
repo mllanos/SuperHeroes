@@ -85,7 +85,7 @@ class ApiService(private val context: Context) {
 		userId: Int,
 		location: Location?,
 		timestamp: Long,
-		responseHandler: (Int) -> Unit,
+		responseHandler: (String) -> Unit,
 		errorHandler: (VolleyError) -> Unit
 	) {
 		val json = JSONObject().put("user_id", userId)
@@ -100,8 +100,8 @@ class ApiService(private val context: Context) {
 		post(
 			"/fight", json, { response ->
 				Log.d("RESPONSE", response.toString())
-				val id = response.getInt("id")
-				responseHandler(id)
+				val winnerNickname = response.getString("winner")
+				responseHandler(winnerNickname)
 			},
 			errorHandler,
 			30000
