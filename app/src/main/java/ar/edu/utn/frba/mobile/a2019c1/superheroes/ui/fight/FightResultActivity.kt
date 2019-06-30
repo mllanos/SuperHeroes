@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.R
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.adapters.CardsAdapter
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.Fight
@@ -22,6 +23,12 @@ class FightResultActivity : AppCompatActivity() {
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_fight_result)
+
+		recycleview_fight_user.layoutManager = LinearLayoutManager(this)
+		recycleview_fight_user.adapter = cardsAdapterUser
+
+		recycleview_fight_opponent.layoutManager = LinearLayoutManager(this)
+		recycleview_fight_opponent.adapter = cardsAdapterOpponent
 
 		val fight = intent.getSerializableExtra("fightResult") as Fight
 		sessionService.getLoggedUserTeamId()?.let { id ->
@@ -42,10 +49,7 @@ class FightResultActivity : AppCompatActivity() {
 		textview_fight_user.text = sessionService.getLoggedUser()?.nickname
 		textview_fight_opponent.text = fight.opponent.nickname
 
-		recycleview_fight_user.adapter = cardsAdapterUser
 		cardsAdapterUser.replaceItems(myTeam.superheroes)
-
-		recycleview_fight_opponent.adapter = cardsAdapterOpponent
 		cardsAdapterOpponent.replaceItems(opponentTeam.superheroes)
 
 		btn_fight_dofight.setOnClickListener {
@@ -58,6 +62,7 @@ class FightResultActivity : AppCompatActivity() {
 		btn_fight_dofight.visibility = View.INVISIBLE
 		textview_fight_info.visibility = View.VISIBLE
 		textview_fight_info.text = getString(R.string.title_fight_loser)
+		btn_fight_close.visibility = View.VISIBLE
 
 		if (sessionService.getLoggedUser()?.nickname == winner) {
 			textview_fight_info.text = getString(R.string.title_fight_winner)
