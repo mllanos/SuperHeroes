@@ -142,7 +142,7 @@ class CardsFragment : Fragment() {
 					spinner.visibility = GONE
 				})
 			} else {
-				Toast.makeText(context, "You must select 4 cards", Toast.LENGTH_SHORT).show()
+				Toast.makeText(context, R.string.msg_select_4_cards, Toast.LENGTH_SHORT).show()
 			}
 		}
 	}

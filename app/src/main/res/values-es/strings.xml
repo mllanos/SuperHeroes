@@ -20,6 +20,7 @@
     <string name="btn_show_single_card_back">Listo</string>
     <string name="btn_create_team_no_counter">Crear Equipo</string>
     <string name="btn_create_team_counter">Crear Equipo (%1$d/4)</string>
+    <string name="msg_select_4_cards">Debes elegir 4 cartas</string>
     <!--bundle-->
     <string name="title_bundle">Abrir Sobre</string>
     <!--fight-->
@@ -32,4 +33,5 @@
     <!--logout-->
     <string name="title_logout">Cerrar Sesión</string>
     <string name="get_card">Abrir</string>
+    <string name="fight_text">Sacude para pelear!</string>
 </resources>

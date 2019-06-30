@@ -20,6 +20,7 @@
     <string name="btn_show_single_card_back">Back</string>
     <string name="btn_create_team_no_counter">Create Team</string>
     <string name="btn_create_team_counter">Create Team (%1$d/4)</string>
+    <string name="msg_select_4_cards">You must select 4 cards</string>
     <!--bundle-->
     <string name="title_bundle">Open Bundle</string>
     <!--fight-->
