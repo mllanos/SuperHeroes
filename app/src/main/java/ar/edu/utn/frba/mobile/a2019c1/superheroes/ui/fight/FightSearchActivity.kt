@@ -30,42 +30,24 @@ class FightSearchActivity : AppCompatActivity(){
 			sessionService.getLoggedUser()?.let { user ->
 				apiService.startFight(user.id, location, System.currentTimeMillis(),
 					{ response ->
-						val opponent = response.getJSONObject("opponent")
-						val winner = response.getString("winner")
-						val opponentTeamId = opponent.getInt("team_id")
-						val opponentName = opponent.getString("nickname")
-						Log.d("WINNER", winner)
-						Log.d("OPPONENT_NAME", opponentName)
-						sessionService.getLoggedUserTeamId()?.let { id ->
-							apiService.getTeam(id, { team ->
-								Log.d("MY_TEAM", team.toString())
-								apiService.getTeam(opponentTeamId, { opponentTeam ->
-									// TODO show teams
-									Log.d("OPPONENT_TEAM", opponentTeam.toString())
-									this.processResult()
-									finish()
-								}, { error ->
-									Toast.makeText(this, error.toString(), Toast.LENGTH_LONG).show()
-								})
-							}, { error ->
-								Toast.makeText(this, error.toString(), Toast.LENGTH_LONG).show()
-							})
-						}
+						this.processResult(response)
+						finish()
 					},
 					{ error ->
 						Log.e("FIGHT_ERROR", error.toString())
-						this.oponentNotFound()
+						this.opponentNotFound()
 					})
 			}
 		}
 	}
 
-	fun processResult(){
+	private fun processResult(response: ApiService.FightResponseResource){
 		val intent = Intent(this, FightResultActivity::class.java)
+		intent.putExtra("fightResult", response)
 		startActivity(intent)
 	}
 
-	fun oponentNotFound(){
+	private fun opponentNotFound(){
 		title_search_fight.text = "No se han encontrado oponentes"
 		loading_figth_icon.visibility = View.INVISIBLE
 		sleep(5000)
