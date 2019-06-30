@@ -6,7 +6,6 @@ import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.Card
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.Fight
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.Team
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.User
-import com.android.volley.DefaultRetryPolicy
 import com.android.volley.Request.Method.GET
 import com.android.volley.Request.Method.POST
 import com.android.volley.Response
@@ -99,7 +98,8 @@ class ApiService(private val context: Context) {
 			"/fight", json, { response ->
 				val resource = gson.fromJson(response.toString(), Fight::class.java)
 				responseHandler(resource)
-			}, errorHandler,
+			},
+			errorHandler,
 			30000
 		)
 	}
@@ -114,15 +114,7 @@ class ApiService(private val context: Context) {
 		val request = JsonObjectRequest(POST, "$API_BASE_URL$uri", body,
 			Response.Listener { response -> responseHandler(response) },
 			Response.ErrorListener { error -> errorHandler(error) })
-		VolleySingleton.getInstance(context).addToRequestQueue(request)
-
-		if (initialTimeoutMs != null) {
-			request.retryPolicy = DefaultRetryPolicy(
-				initialTimeoutMs,
-				DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-				DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
-			)
-		}
+		VolleySingleton.getInstance(context).addToRequestQueue(request, initialTimeoutMs)
 	}
 
 	private fun get(
@@ -134,16 +126,7 @@ class ApiService(private val context: Context) {
 		val request = JsonObjectRequest(GET, "$API_BASE_URL$uri", null,
 			Response.Listener { response -> responseHandler(response) },
 			Response.ErrorListener { error -> errorHandler(error) })
-
-		if (initialTimeoutMs != null) {
-			request.retryPolicy = DefaultRetryPolicy(
-				initialTimeoutMs,
-				DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-				DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
-			)
-		}
-
-		VolleySingleton.getInstance(context).addToRequestQueue(request)
+		VolleySingleton.getInstance(context).addToRequestQueue(request, initialTimeoutMs)
 	}
 
 	data class CardsResponseResource(val cards: List<Card>)

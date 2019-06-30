@@ -17,7 +17,6 @@ class FightResultActivity : AppCompatActivity() {
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_fight_result)
-
 		val fight = intent.getSerializableExtra("fightResult") as Fight
 		val opponent = fight.opponent
 		val winner = fight.winner

@@ -35,7 +35,7 @@ class FightSearchActivity : AppCompatActivity() {
 					finish()
 				}, { error ->
 					gerErrorMessage("Failed to start fight", error)
-					opponentNotFound()
+					handleOpponentNotFound()
 				})
 			}
 		}
@@ -47,7 +47,7 @@ class FightSearchActivity : AppCompatActivity() {
 		startActivity(intent)
 	}
 
-	private fun opponentNotFound() {
+	private fun handleOpponentNotFound() {
 		title_search_fight.text = getString(R.string.title_fight_notfound)
 		loading_figth_icon.visibility = View.INVISIBLE
 		sleep(5000)
