@@ -6,19 +6,21 @@ import android.location.Location
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.R
+import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.FightResult
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.ApiService
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.SessionsService
 import com.google.android.gms.location.LocationServices
 import kotlinx.android.synthetic.main.activity_fight_search.*
 import java.lang.Thread.sleep
+import com.google.gson.Gson
 
 class FightSearchActivity : AppCompatActivity(){
 
 	private val sessionService by lazy { SessionsService(this) }
 	private val apiService by lazy { ApiService(this) }
+	private val gson = Gson()
 
 	@SuppressLint("StringFormatMatches", "MissingPermission")
 	override fun onCreate(savedInstanceState: Bundle?){
@@ -30,7 +32,8 @@ class FightSearchActivity : AppCompatActivity(){
 			sessionService.getLoggedUser()?.let { user ->
 				apiService.startFight(user.id, location, System.currentTimeMillis(),
 					{ response ->
-						this.processResult(response)
+						val result = gson.fromJson(response.toString(), FightResult::class.java)
+						this.processResult(result)
 						finish()
 					},
 					{ error ->
@@ -41,9 +44,9 @@ class FightSearchActivity : AppCompatActivity(){
 		}
 	}
 
-	private fun processResult(response: ApiService.FightResponseResource){
+	private fun processResult(result: FightResult){
 		val intent = Intent(this, FightResultActivity::class.java)
-		intent.putExtra("fightResult", response)
+		intent.putExtra("fightResult", result)
 		startActivity(intent)
 	}
 

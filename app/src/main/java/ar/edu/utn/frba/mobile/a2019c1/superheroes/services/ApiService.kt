@@ -2,9 +2,9 @@ package ar.edu.utn.frba.mobile.a2019c1.superheroes.services
 
 import android.content.Context
 import android.location.Location
-import android.os.Parcelable
 import android.util.Log
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.Card
+import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.FightResult
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.Team
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.User
 import com.android.volley.Request.Method.GET
@@ -16,7 +16,6 @@ import com.google.gson.Gson
 import org.json.JSONArray
 import org.json.JSONObject
 import com.android.volley.DefaultRetryPolicy
-import kotlinx.android.parcel.Parcelize
 
 
 private const val API_BASE_URL = "https://superheroes-mobile-api.herokuapp.com/superheroes"
@@ -87,7 +86,7 @@ class ApiService(private val context: Context) {
 		userId: Int,
 		location: Location?,
 		timestamp: Long,
-		responseHandler: (FightResponseResource) -> Unit,
+		responseHandler: (JSONObject) -> Unit,
 		errorHandler: (VolleyError) -> Unit
 	) {
 		val json = JSONObject().put("user_id", userId)
@@ -101,9 +100,8 @@ class ApiService(private val context: Context) {
 
 		post(
 			"/fight", json, { response ->
-				Log.d("RESPONSE", response.toString())
-				val resource = gson.fromJson(response.toString(), FightResponseResource::class.java)
-				responseHandler(resource)
+				Log.d("RESULT", response.toString())
+				responseHandler(response)
 			},
 			errorHandler,
 			30000
@@ -155,10 +153,4 @@ class ApiService(private val context: Context) {
 	data class CardsResponseResource(val cards: List<Card>)
 
 	data class TeamResponseResource(val superheroes: List<Card>, val total_power: Int)
-
-	@Parcelize
-	data class FightResponseResource(val id: Int, val winner: String, val opponent: Opponent) : Parcelable
-
-	@Parcelize
-	data class Opponent(val id :Int, val nickname: String, val team_id: Int) : Parcelable
 }

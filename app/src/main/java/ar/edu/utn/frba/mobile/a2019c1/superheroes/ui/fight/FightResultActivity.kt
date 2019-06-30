@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.R
+import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.FightResult
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.ApiService
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.SessionsService
 import com.google.gson.Gson
@@ -20,10 +21,10 @@ class FightResultActivity : AppCompatActivity() {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_fight_result)
 
-		val response = intent.getParcelableExtra<ApiService.FightResponseResource>("fightResult")
+		val result = intent.getParcelableExtra<FightResult>("fightResult")
 
-		val opponent = response.opponent
-		val winner = response.winner
+		val opponent = result.opponent
+		val winner = result.winner
 		val opponentTeamId = opponent.team_id
 		val opponentName = opponent.nickname
 		Log.d("WINNER", winner)
