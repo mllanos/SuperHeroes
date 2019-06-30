@@ -37,9 +37,12 @@ class FightSearchFragment : Fragment() {
 			.lastLocation.addOnSuccessListener { location: Location? ->
 			sessionService.getLoggedUser()?.let { user ->
 				apiService.startFight(user.id, location, System.currentTimeMillis(),
-					{ id ->
-						Toast.makeText(context!!, id.toString(), Toast.LENGTH_LONG).show()
-						startActivity(Intent(context!!, FightVictoryFragment::class.java))
+					{ winnerId ->
+						if (winnerId == user.id) {
+							Toast.makeText(context!!, "You win!", Toast.LENGTH_LONG).show()
+						} else {
+							Toast.makeText(context!!, "You lose.", Toast.LENGTH_LONG).show()
+						}
 					},
 					{ error ->
 						Toast.makeText(context!!, String(error.networkResponse.data, Charsets.UTF_8), Toast.LENGTH_LONG)
