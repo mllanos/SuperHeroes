@@ -10,7 +10,7 @@
     <Button
             android:text="Pelear"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/button_fight"/>
+            android:layout_height="wrap_content" android:id="@+id/btn_fight"/>
     <TextView
             android:id="@+id/fightText"
             android:layout_width="match_parent"

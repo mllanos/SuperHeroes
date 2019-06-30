@@ -4,10 +4,20 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <RelativeLayout
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/fragment_fight_container"
+    <pl.droidsonroids.gif.GifImageView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="240dp"
+            android:src="@drawable/loading"
+            android:id="@+id/loading_figth_icon"
+            android:layout_marginTop="60dp"/>
+
+    <TextView
+            android:id="@+id/title_search_fight"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:text="@string/title_search_figth"
+            android:layout_marginTop="20dp"/>
+
+
 </LinearLayout>
