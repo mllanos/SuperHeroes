@@ -14,6 +14,7 @@ import ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.bundle.BundleFragment
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.cards.CardsFragment
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.fight.FightFragment
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.registration.RegistrationActivity
+import com.android.volley.VolleyError
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -65,6 +66,7 @@ class MainActivity : AppCompatActivity() {
 				apiService.getTeam(id, { team ->
 					this.title = getString(R.string.welcome, user.nickname, team.totalPower)
 				}, { error ->
+					gerErrorMessage("Failed to get user cards", error)
 					defaultTitle(user)
 				})
 			} ?: defaultTitle(user)
@@ -101,6 +103,12 @@ class MainActivity : AppCompatActivity() {
 		startActivity(intent)
 		setResult(Activity.RESULT_OK)
 		finish()
+	}
+
+	private fun gerErrorMessage(message: String, error: VolleyError) {
+		val statusCode = error.networkResponse.statusCode
+		val data = String(error.networkResponse.data, Charsets.UTF_8)
+		println("$message - statusCode: $statusCode - data: $data")
 	}
 
 }
