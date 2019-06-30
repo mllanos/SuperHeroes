@@ -17,7 +17,7 @@ class ShakeEventManager : SensorEventListener {
 	private var firstMovTime: Long = 0
 	private var listener: ShakeListener? = null
 
-	fun setListener(listener: ShakeListener) {
+	fun setListener(listener: ShakeListener?) {
 		this.listener = listener
 	}
 
