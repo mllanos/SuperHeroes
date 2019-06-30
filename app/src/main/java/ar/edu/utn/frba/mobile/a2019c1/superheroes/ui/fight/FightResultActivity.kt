@@ -44,7 +44,7 @@ class FightResultActivity : AppCompatActivity() {
 		}
 	}
 
-	fun showTeams(fight: Fight, myTeam: Team, opponentTeam: Team) {
+	private fun showTeams(fight: Fight, myTeam: Team, opponentTeam: Team) {
 
 		textview_fight_user.text = sessionService.getLoggedUser()?.nickname
 		textview_fight_opponent.text = fight.opponent.nickname

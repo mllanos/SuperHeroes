@@ -7,12 +7,16 @@ import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.R
+import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.Fight
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.Geolocation
+import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.SessionsService
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.VolleySingleton
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.utils.Permissions
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -26,6 +30,7 @@ class FightFragment : Fragment(), ShakeEventManager.ShakeListener {
 	private var shakeEnabled = false
 	private var locationPermissionGranted = false
 	private lateinit var fusedLocationClient: FusedLocationProviderClient
+	private val sessionService by lazy { SessionsService(context!!) }
 
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 		val view = inflater.inflate(R.layout.fragment_fight, container, false)
@@ -38,9 +43,7 @@ class FightFragment : Fragment(), ShakeEventManager.ShakeListener {
 		super.onResume()
 		shakeEventManager.setListener(this)
 		shakeEventManager.init(context!!)
-		handler.postDelayed({
-			shakeEnabled = true
-		}, 500)
+		enableShake()
 		VolleySingleton.getInstance(context!!).cancelAll()
 	}
 
@@ -52,11 +55,18 @@ class FightFragment : Fragment(), ShakeEventManager.ShakeListener {
 	override fun onShake() {
 		if (shakeEnabled) {
 			shakeEnabled = false
+
+			if (sessionService.getLoggedUserTeamId() === null) {
+				enableShake()
+				return Toast.makeText(context!!, "You need to select a team first.", Toast.LENGTH_LONG).show()
+			}
+
 			if (locationPermissionGranted) {
 				searchFight()
 			} else {
 				checkForLocationPermissions()
 			}
+
 		}
 	}
 
@@ -96,6 +106,12 @@ class FightFragment : Fragment(), ShakeEventManager.ShakeListener {
 					locationPermissionGranted = true
 				}
 			})
+	}
+
+	private fun enableShake() {
+		handler.postDelayed({
+			shakeEnabled = true
+		}, 1500)
 	}
 
 	companion object {
