@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Superheros</string>
+    <!--registration-->
+    <string name="prompt_nickname">Elija un Nombre de Usuario</string>
+    <string name="action_create_user">Crear usuario</string>
+    <string name="invalid_nickname">El nombre de usuario debe tener al menos 5 caracteres</string>
+    <string name="empty_nickname">El nombre de usuario no puede estar vacío</string>
+    <string name="registration_failed">El registro falló</string>
+    <!--main-->
+    <string name="welcome">%1$s | Poder: %2$d</string>
+    <string name="title_activity_main">MainActivity</string>
+    <!--cards-->
+    <string name="title_cards">Mis Cartas</string>
+    <string name="text_card_power">Poder: %1$d</string>
+    <string name="text_team">Mi Equipo</string>
+    <string name="text_others">Mis Cartas</string>
+    <string name="text_nocards_firstline">Todavía no tienes cartas.</string>
+    <string name="text_nocards_secondline">Empecemos abriendo un sobre!</string>
+    <string name="btn_create_team">Crear Equipo</string>
+    <string name="btn_show_single_card_back">Listo</string>
+    <string name="btn_create_team_no_counter">Crear Equipo</string>
+    <string name="btn_create_team_counter">Crear Equipo (%1$d/4)</string>
+    <!--bundle-->
+    <string name="title_bundle">Abrir Sobre</string>
+    <!--fight-->
+    <string name="title_fight">Pelea</string>
+    <string name="title_return_fight">Buscar otra vez</string>
+    <string name="title_search_figth">Buscando oponente</string>
+    <string name="title_fight_notfound">No se ha encontrado oponente</string>
+    <string name="title_fight_winner">Felicidades !! Ganaste</string>
+    <string name="title_fight_loser">Has perdido !!</string>
+    <!--logout-->
+    <string name="title_logout">Cerrar Sesión</string>
+    <string name="get_card">Abrir</string>
+</resources>
