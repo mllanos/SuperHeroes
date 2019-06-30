@@ -2,6 +2,7 @@ package ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.fight
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,9 +16,9 @@ class FightFragment : Fragment(){
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
 		val view= inflater.inflate(R.layout.fragment_fight, container, false)
-		val button_fight = view!!.btn_fight
 
-		button_fight.setOnClickListener {
+		view.btn_fight.setOnClickListener {
+
 			this.searchFight()
 		}
 
