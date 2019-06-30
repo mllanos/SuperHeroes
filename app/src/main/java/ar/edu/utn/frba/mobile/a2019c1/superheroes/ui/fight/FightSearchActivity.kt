@@ -68,7 +68,7 @@ class FightSearchActivity : AppCompatActivity(){
 	fun oponentNotFound(){
 		title_search_fight.text = "No se han encontrado oponentes"
 		loading_figth_icon.visibility = View.INVISIBLE
-		sleep(1500)
+		sleep(5000)
 		finish()
 	}
 

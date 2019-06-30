@@ -14,7 +14,10 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
-        <activity android:name=".ui.fight.FightResultActivity">
+        <activity
+                android:name=".ui.fight.FightResultActivity"
+                android:label="FightResultActivity"
+                android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         </activity>
         <activity android:name=".ui.cards.ShowSingleCard">
         </activity>

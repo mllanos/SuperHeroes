@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
+             android:orientation="vertical"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
@@ -8,14 +8,8 @@
              tools:context=".ui.fight.FightFragment">
 
     <Button
-            android:text="Pelear"
+            android:text="@string/title_fight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/btn_fight"/>
-    <TextView
-            android:id="@+id/fightText"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:text="Shake to Fight"/>
 
 </LinearLayout>

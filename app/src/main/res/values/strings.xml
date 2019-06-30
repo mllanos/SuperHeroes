@@ -23,7 +23,7 @@
     <!--bundle-->
     <string name="title_bundle">Open Bundle</string>
     <!--fight-->
-    <string name="title_fight">Fight</string>
+    <string name="title_fight">Pelea</string>
     <string name="title_return_fight">Volver a buscar Oponente</string>
     <string name="title_search_figth">Buscando Oponente</string>
     <string name="title_not_found_oponent">Buscando Oponente</string>

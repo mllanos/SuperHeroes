@@ -18,6 +18,7 @@ class FightFragment : Fragment(){
 		val view= inflater.inflate(R.layout.fragment_fight, container, false)
 
 		view.btn_fight.setOnClickListener {
+
 			this.searchFight()
 		}
 
@@ -29,7 +30,7 @@ class FightFragment : Fragment(){
 		fun newInstance() = FightFragment()
 	}
 
-	fun searchFight(){
+	private fun searchFight(){
 		val intent = Intent(context!!, FightSearchActivity::class.java)
 		startActivity(intent)
 	}
