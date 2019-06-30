@@ -23,7 +23,7 @@ class FightSearchActivity : AppCompatActivity(){
 	override fun onCreate(savedInstanceState: Bundle?){
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_fight_search)
-
+/*
 		LocationServices.getFusedLocationProviderClient(this)
 			.lastLocation.addOnSuccessListener { location: Location? ->
 			sessionService.getLoggedUser()?.let { user ->
@@ -36,7 +36,7 @@ class FightSearchActivity : AppCompatActivity(){
 						this.oponentNotFound()
 					})
 			}
-		}
+		}*/
 	}
 
 	fun processResult(){

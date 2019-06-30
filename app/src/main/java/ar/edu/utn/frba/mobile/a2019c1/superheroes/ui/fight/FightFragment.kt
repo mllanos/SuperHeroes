@@ -8,14 +8,16 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.R
 import kotlinx.android.synthetic.main.fragment_fight.*
+import kotlinx.android.synthetic.main.fragment_fight.view.*
 
 class FightFragment : Fragment(){
 
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
 		val view= inflater.inflate(R.layout.fragment_fight, container, false)
+		val button_fight = view!!.btn_fight
 
-		btn_fight.setOnClickListener {
+		button_fight.setOnClickListener {
 			this.searchFight()
 		}
 
@@ -27,7 +29,7 @@ class FightFragment : Fragment(){
 		fun newInstance() = FightFragment()
 	}
 
-	fun searchFight(){
+	private fun searchFight(){
 		val intent = Intent(context!!, FightSearchActivity::class.java)
 		startActivity(intent)
 	}
