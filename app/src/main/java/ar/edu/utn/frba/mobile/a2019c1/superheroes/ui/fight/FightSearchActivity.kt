@@ -41,9 +41,9 @@ class FightSearchActivity : AppCompatActivity() {
 		}
 	}
 
-	private fun processResult(response: Fight) {
+	private fun processResult(result: Fight) {
 		val intent = Intent(this, FightResultActivity::class.java)
-		intent.putExtra("fightResult", response)
+		intent.putExtra("fightResult", result)
 		startActivity(intent)
 	}
 
