@@ -1,11 +1,7 @@
 package ar.edu.utn.frba.mobile.a2019c1.superheroes.services
 
 import android.content.Context
-import android.location.Location
-import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.Card
-import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.Fight
-import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.Team
-import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.User
+import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.*
 import com.android.volley.Request.Method.GET
 import com.android.volley.Request.Method.POST
 import com.android.volley.Response
@@ -81,8 +77,7 @@ class ApiService(private val context: Context) {
 
 	fun startFight(
 		userId: Int,
-		location: Location?,
-		timestamp: Long,
+		geolocation: Geolocation,
 		responseHandler: (Fight) -> Unit,
 		errorHandler: (VolleyError) -> Unit
 	) {
@@ -90,10 +85,10 @@ class ApiService(private val context: Context) {
 			.put("user_id", userId)
 			.put(
 				"geolocation", JSONObject()
-					.put("latitude", location?.latitude ?: 0.0)
-					.put("longitude", location?.longitude ?: 0.0)
+					.put("latitude", geolocation.latitude ?: 0.0)
+					.put("longitude", geolocation.longitude ?: 0.0)
 			)
-			.put("timestamp", timestamp)
+			.put("timestamp", geolocation.timestamp)
 		post(
 			"/fight", json, { response ->
 				val resource = gson.fromJson(response.toString(), Fight::class.java)

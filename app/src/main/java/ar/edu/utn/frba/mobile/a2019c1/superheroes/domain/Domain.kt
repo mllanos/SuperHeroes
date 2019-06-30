@@ -11,3 +11,5 @@ data class Team(val id: Int, val superheroes: List<Card>, val totalPower: Int)
 data class Fight(val id: Int, val winner: String, val opponent: Opponent) : Serializable {
 	data class Opponent(val id: Int, val nickname: String, val team_id: Int) : Serializable
 }
+
+data class Geolocation(val latitude: Double?, val longitude: Double?, val timestamp: Long) : Serializable

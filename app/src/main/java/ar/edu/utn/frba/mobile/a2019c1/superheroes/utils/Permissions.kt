@@ -1,62 +1,48 @@
 package ar.edu.utn.frba.mobile.a2019c1.superheroes.utils
 
-import android.app.Activity
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AlertDialog
-import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 
 object Permissions {
-	val ACCESS_COARSE_LOCATION = 1
 
-	private fun hasPermissions(activity: Activity, permissionCode: String): Boolean {
-		return ContextCompat.checkSelfPermission(activity, permissionCode) == PackageManager.PERMISSION_GRANTED
-	}
+	const val ACCESS_COARSE_LOCATION = 1
 
-	fun checkForPermissions(activity: Activity, permissionCode: String, reason: String, callback: Callback) {
-		if (!hasPermissions(activity, permissionCode)) {
-			if (ActivityCompat.shouldShowRequestPermissionRationale(activity, permissionCode)) {
-				showStoragePermissionExplanation(
-					activity,
-					permissionCode,
-					reason
-				)
+	fun checkForPermissions(fragment: Fragment, permission: String, reason: String, callback: Callback) {
+		if (!hasPermissions(fragment, permission)) {
+			if (fragment.shouldShowRequestPermissionRationale(permission)) {
+				showStoragePermissionExplanation(fragment, permission, reason)
 			} else {
-				dispatchStoragePermissionRequest(
-					activity,
-					permissionCode
-				)
+				dispatchStoragePermissionRequest(fragment, permission)
 			}
-			callback.onRequestSent()
 		} else {
 			callback.onPermissionAlreadyGranted()
 		}
 	}
 
-	private fun dispatchStoragePermissionRequest(activity: Activity, permissionCode: String) {
-		ActivityCompat.requestPermissions(
-			activity, arrayOf(permissionCode),
-			ACCESS_COARSE_LOCATION
-		)
-	}
+	private fun hasPermissions(fragment: Fragment, permissionCode: String) =
+		ContextCompat.checkSelfPermission(fragment.context!!, permissionCode) == PackageManager.PERMISSION_GRANTED
 
-	private fun showStoragePermissionExplanation(activity: Activity, permissionCode: String, reason: String) {
-		val builder = AlertDialog.Builder(activity)
+	private fun dispatchStoragePermissionRequest(fragment: Fragment, permission: String) =
+		fragment.requestPermissions(arrayOf(permission), mapPermissionToCode(permission))
+
+	private fun showStoragePermissionExplanation(fragment: Fragment, permissionCode: String, reason: String) {
+		val builder = AlertDialog.Builder(fragment.context!!)
 		builder.setTitle("Permission is required")
 		builder.setCancelable(true)
 		builder.setMessage(reason)
-		builder.setPositiveButton("Accept") { dialogInterface, i ->
-			dispatchStoragePermissionRequest(
-				activity,
-				permissionCode
-			)
+		builder.setPositiveButton("Accept") { _, _ ->
+			dispatchStoragePermissionRequest(fragment, permissionCode)
 		}
 		builder.show()
 	}
 
+	private fun mapPermissionToCode(permission: String) =
+		mapOf(android.Manifest.permission.ACCESS_COARSE_LOCATION to ACCESS_COARSE_LOCATION).getValue(permission)
+
 	interface Callback {
 		fun onPermissionAlreadyGranted()
-		fun onRequestSent()
 	}
 
 }
