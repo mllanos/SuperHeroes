@@ -32,4 +32,5 @@
     <!--logout-->
     <string name="title_logout">Logout</string>
     <string name="get_card">GO</string>
+    <string name="fight_text">Shake to Fight!</string>
 </resources>

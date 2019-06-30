@@ -18,11 +18,7 @@ class FightFragment : Fragment(), ShakeEventManager.ShakeListener {
 	private val handler = Handler()
 	private var shakeEnabled = false
 
-	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-		val view = inflater.inflate(R.layout.fragment_fight, container, false)
-		view.btn_fight.setOnClickListener { searchFight() }
-		return view
-	}
+	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? = inflater.inflate(R.layout.fragment_fight, container, false)
 
 	override fun onResume() {
 		super.onResume()
