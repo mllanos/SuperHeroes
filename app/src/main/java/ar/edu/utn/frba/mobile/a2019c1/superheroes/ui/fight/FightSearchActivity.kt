@@ -4,12 +4,14 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.location.Location
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.R
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.Fight
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.ApiService
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.SessionsService
+import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.VolleySingleton
 import com.android.volley.VolleyError
 import com.google.android.gms.location.LocationServices
 import kotlinx.android.synthetic.main.activity_fight_search.*

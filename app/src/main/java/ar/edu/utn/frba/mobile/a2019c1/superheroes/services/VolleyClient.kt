@@ -29,4 +29,8 @@ class VolleySingleton constructor(context: Context) {
 		requestQueue.add(request)
 	}
 
+	fun cancelAll() {
+		requestQueue.cancelAll { true }
+	}
+
 }
