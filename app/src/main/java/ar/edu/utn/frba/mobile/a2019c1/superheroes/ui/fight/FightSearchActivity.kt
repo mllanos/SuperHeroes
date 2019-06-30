@@ -12,6 +12,7 @@ import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.ApiService
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.SessionsService
 import com.google.android.gms.location.LocationServices
 import kotlinx.android.synthetic.main.activity_fight_search.*
+import java.lang.Thread.sleep
 
 class FightSearchActivity : AppCompatActivity(){
 
@@ -29,15 +30,27 @@ class FightSearchActivity : AppCompatActivity(){
 				apiService.startFight(user.id, location, System.currentTimeMillis(),
 					{ id ->
 						Toast.makeText(this, id.toString(), Toast.LENGTH_LONG).show()
-						startActivity(Intent(this, FightVictoryFragment::class.java))
+						this.processResult()
 					},
 					{ error ->
-						title_search_fight.text = "No se han encontrado oponentes"
-						loading_figth_icon.visibility = View.INVISIBLE
+						this.oponentNotFound()
 					})
 			}
 		}
 	}
+
+	fun processResult(){
+		val intent = Intent(this, FightResultActivity::class.java)
+		startActivity(intent)
+	}
+
+	fun oponentNotFound(){
+		title_search_fight.text = "No se han encontrado oponentes"
+		loading_figth_icon.visibility = View.INVISIBLE
+		sleep(1500)
+		finish()
+	}
+
 /*
 	override fun onStart() {
 		super.onStart()
