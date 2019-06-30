@@ -26,7 +26,7 @@
     <string name="title_fight">Pelea</string>
     <string name="title_return_fight">Volver a buscar Oponente</string>
     <string name="title_search_figth">Buscando Oponente</string>
-    <string name="title_not_found_oponent">Buscando Oponente</string>
+    <string name="title_fight_notfound">Opponent not found</string>
     <!--logout-->
     <string name="title_logout">Logout</string>
     <string name="get_card">GO</string>

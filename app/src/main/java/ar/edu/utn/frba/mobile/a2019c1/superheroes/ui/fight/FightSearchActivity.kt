@@ -4,51 +4,51 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.location.Location
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.R
+import ar.edu.utn.frba.mobile.a2019c1.superheroes.domain.Fight
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.ApiService
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.SessionsService
+import com.android.volley.VolleyError
 import com.google.android.gms.location.LocationServices
 import kotlinx.android.synthetic.main.activity_fight_search.*
+import java.lang.System.currentTimeMillis
 import java.lang.Thread.sleep
 
-class FightSearchActivity : AppCompatActivity(){
+class FightSearchActivity : AppCompatActivity() {
 
 	private val sessionService by lazy { SessionsService(this) }
 	private val apiService by lazy { ApiService(this) }
 
 	@SuppressLint("StringFormatMatches", "MissingPermission")
-	override fun onCreate(savedInstanceState: Bundle?){
+	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_fight_search)
 
-		LocationServices.getFusedLocationProviderClient(this)
+		LocationServices
+			.getFusedLocationProviderClient(this)
 			.lastLocation.addOnSuccessListener { location: Location? ->
 			sessionService.getLoggedUser()?.let { user ->
-				apiService.startFight(user.id, location, System.currentTimeMillis(),
-					{ response ->
-						this.processResult(response)
-						finish()
-					},
-					{ error ->
-						Log.e("FIGHT_ERROR", error.toString())
-						this.opponentNotFound()
-					})
+				apiService.startFight(user.id, location, currentTimeMillis(), { response ->
+					processResult(response)
+					finish()
+				}, { error ->
+					gerErrorMessage("Failed to start fight", error)
+					opponentNotFound()
+				})
 			}
 		}
 	}
 
-	private fun processResult(response: ApiService.FightResponseResource){
+	private fun processResult(response: Fight) {
 		val intent = Intent(this, FightResultActivity::class.java)
 		intent.putExtra("fightResult", response)
 		startActivity(intent)
 	}
 
-	private fun opponentNotFound(){
-		title_search_fight.text = "No se han encontrado oponentes"
+	private fun opponentNotFound() {
+		title_search_fight.text = getString(R.string.title_fight_notfound)
 		loading_figth_icon.visibility = View.INVISIBLE
 		sleep(5000)
 		finish()
@@ -104,14 +104,14 @@ class FightSearchActivity : AppCompatActivity(){
 		fun newInstance() = FightSearchFragment()
 	}
 
+
+
+*/
+
 	private fun gerErrorMessage(message: String, error: VolleyError) {
 		val statusCode = error.networkResponse.statusCode
 		val data = String(error.networkResponse.data, Charsets.UTF_8)
-		val message = "$message - statusCode: $statusCode - data: $data"
-		println(message)
-		message
+		println("$message - statusCode: $statusCode - data: $data")
 	}
-
-*/
 
 }
