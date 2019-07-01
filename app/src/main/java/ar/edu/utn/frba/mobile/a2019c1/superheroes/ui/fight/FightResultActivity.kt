@@ -45,20 +45,23 @@ class FightResultActivity : AppCompatActivity() {
 	}
 
 	private fun showTeams(fight: Fight, myTeam: Team, opponentTeam: Team) {
-		textview_fight_user.text =
-			getString(R.string.title_fight_hero_info, sessionService.getLoggedUser()?.nickname, myTeam.totalPower)
-		textview_fight_opponent.text =
-			getString(R.string.title_fight_hero_info, fight.opponent.nickname, opponentTeam.totalPower)
+		textview_fight_user.text = sessionService.getLoggedUser()?.nickname
+		textview_fight_opponent.text = fight.opponent.nickname
 
 		cardsAdapterUser.replaceItems(myTeam.superheroes)
 		cardsAdapterOpponent.replaceItems(opponentTeam.superheroes)
 
 		btn_fight_dofight.setOnClickListener {
-			fight(fight.winner)
+			fight(fight.winner, myTeam, opponentTeam, fight)
 		}
 	}
 
-	fun fight(winner: String) {
+	fun fight(winner: String, myTeam: Team, opponentTeam: Team, fight: Fight) {
+		textview_fight_user.text =
+			getString(R.string.title_fight_hero_info, sessionService.getLoggedUser()?.nickname, myTeam.totalPower)
+		textview_fight_opponent.text =
+			getString(R.string.title_fight_hero_info, fight.opponent.nickname, opponentTeam.totalPower)
+
 		btn_fight_dofight.visibility = View.INVISIBLE
 		textview_fight_info.visibility = View.VISIBLE
 		textview_fight_info.text = getString(R.string.title_fight_loser)
