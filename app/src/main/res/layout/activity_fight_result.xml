@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
+              xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
-              android:weightSum="3">
+              android:weightSum="3" android:background="#3a6d99">
 
     <Button
             android:id="@+id/btn_fight_close"
@@ -13,15 +13,15 @@
             android:gravity="center_vertical"
             android:visibility="invisible"
             android:background="@drawable/ic_arrow_back_black_24dp"
-    />
-
+            android:textColor="#FFFFFF"/>
     <LinearLayout android:layout_width="match_parent"
                   android:layout_height="match_parent"
                   android:orientation="horizontal"
-                  android:weightSum="3">
+                  android:layout_weight="2"
+                  android:weightSum="3" android:baselineAligned="false">
 
         <RelativeLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:layout_weight="1">
@@ -29,14 +29,14 @@
             <TextView
                     android:id="@+id/textview_fight_user"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-
+                    android:layout_height="wrap_content" android:padding="10dp" android:textColor="#FFFFFFFF"
+                    android:textStyle="bold" android:textSize="18sp" android:textAlignment="center"/>
             <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycleview_fight_user"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_width="match_parent"
                     android:layout_below="@+id/textview_fight_user"
-            />
+                    android:padding="10dp"/>
         </RelativeLayout>
 
         <RelativeLayout
@@ -45,12 +45,14 @@
                 android:orientation="vertical"
                 android:layout_weight="1">
 
+
             <TextView
                     android:id="@+id/textview_fight_info"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:visibility="invisible"/>
+                    android:visibility="invisible" android:textColor="#FFFFFF" android:textSize="18sp"
+                    android:textAlignment="center"/>
 
             <Button
                     android:id="@+id/btn_fight_dofight"
@@ -71,14 +73,15 @@
             <TextView
                     android:id="@+id/textview_fight_opponent"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content" android:padding="10dp" android:textColor="#FFFFFF"
+                    android:textAlignment="center" android:textSize="18sp" android:textStyle="bold"/>
 
             <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycleview_fight_opponent"
                     android:layout_height="match_parent"
                     android:layout_width="match_parent"
                     android:layout_below="@+id/textview_fight_opponent"
-            />
+                    android:padding="10dp"/>
         </RelativeLayout>
 
     </LinearLayout>
