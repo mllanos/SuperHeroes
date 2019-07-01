@@ -23,6 +23,9 @@
     <string name="msg_select_4_cards">Debes elegir 4 cartas</string>
     <!--bundle-->
     <string name="title_bundle">Abrir Sobre</string>
+    <string name="text_open_bundle">Tienes un sobre disponible!</string>
+    <string name="text_open_bundle_unavailable">Próximo sobre disponible en: </string>
+
     <!--fight-->
     <string name="title_fight">Pelea</string>
     <string name="title_return_fight">Buscar otra vez</string>
