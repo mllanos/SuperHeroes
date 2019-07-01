@@ -4,15 +4,13 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#C0C0C0"
                 tools:context=".ui.bundle.BundleFragment">
 
     <Button
             android:id="@+id/btn_get_card"
             android:layout_width="161dp"
             android:layout_height="161dp"
-            android:background="@drawable/round_button"
-            android:text="@string/get_card"
+            android:background="@drawable/ic_email_black_24dp"
             android:textSize="30sp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"/>
