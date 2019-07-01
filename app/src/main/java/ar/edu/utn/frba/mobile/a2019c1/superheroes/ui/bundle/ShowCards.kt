@@ -28,7 +28,7 @@ class ShowCards : AppCompatActivity() {
 	}
 
 	private fun buttonClose() {
-		btn_close_show_cards.setOnClickListener{
+		btn_close_show_cards.setOnClickListener {
 			finish()
 		}
 	}

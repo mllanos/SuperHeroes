@@ -37,7 +37,7 @@ class BundleFragment : Fragment() {
 		val remainingTime = currTimer - now
 		val buttonText = view.txt_bundle//context!!.getString(R.string.get_card)
 		val tickText = resources.getString(R.string.text_open_bundle_unavailable)
-		val finishText =  resources.getString(R.string.text_open_bundle)
+		val finishText = resources.getString(R.string.text_open_bundle)
 
 		button.setOnClickListener {
 			val newTime = Date().time + TIMER_LENGTH
@@ -80,12 +80,18 @@ class BundleFragment : Fragment() {
 		countdownTimer?.cancel()
 	}
 
-	private fun startCountdown(length: Long, imageButton: ImageButton, textView:TextView, tickText: String, finishText: String) {
+	private fun startCountdown(
+		length: Long,
+		imageButton: ImageButton,
+		textView: TextView,
+		tickText: String,
+		finishText: String
+	) {
 		imageButton.isEnabled = false
 		imageButton.setImageResource(R.drawable.sobre_bn)
 		countdownTimer = object : CountDownTimer(length, COUNTDOWN_INTERVAL) {
 			override fun onTick(millisUntilFinished: Long) {
-				textView.text =  "$tickText ${millisUntilFinished / COUNTDOWN_INTERVAL} s"
+				textView.text = "$tickText ${millisUntilFinished / COUNTDOWN_INTERVAL} s"
 			}
 
 			override fun onFinish() {

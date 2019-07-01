@@ -23,14 +23,18 @@ internal class NotificationHelper
 
 	init {
 
-		val chan1 = NotificationChannel(PRIMARY_CHANNEL,
-			getString(R.string.noti_channel_default), NotificationManager.IMPORTANCE_DEFAULT)
+		val chan1 = NotificationChannel(
+			PRIMARY_CHANNEL,
+			getString(R.string.noti_channel_default), NotificationManager.IMPORTANCE_DEFAULT
+		)
 		chan1.lightColor = Color.GREEN
 		chan1.lockscreenVisibility = Notification.VISIBILITY_PRIVATE
 		manager.createNotificationChannel(chan1)
 
-		val chan2 = NotificationChannel(SECONDARY_CHANNEL,
-			getString(R.string.noti_channel_second), NotificationManager.IMPORTANCE_HIGH)
+		val chan2 = NotificationChannel(
+			SECONDARY_CHANNEL,
+			getString(R.string.noti_channel_second), NotificationManager.IMPORTANCE_HIGH
+		)
 		chan2.lightColor = Color.BLUE
 		chan2.lockscreenVisibility = Notification.VISIBILITY_PUBLIC
 		manager.createNotificationChannel(chan2)
