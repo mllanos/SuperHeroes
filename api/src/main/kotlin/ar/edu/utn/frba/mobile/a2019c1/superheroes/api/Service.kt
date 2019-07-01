@@ -86,7 +86,7 @@ class FightService(private val marvelService: MarvelService,
 				winner = winner.nickname,
 				players = listOf(
 						Player(user.id, user.nickname, team.id, teamTotalPower),
-						Player(opponent.id, opponent.nickname, opponentTeam.id, opponentTeamTotalPower)))
+						Player(opponent.id, opponent.nickname, opponentTeam.id, opponentTeamTotalPower, true)))
 		storageService.storeFight(fightResult)
 		return fightResult
 	}
