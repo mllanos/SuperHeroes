@@ -1,5 +1,6 @@
 package ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.bundle
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -13,6 +14,7 @@ import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.SessionsService
 import kotlinx.android.synthetic.main.fragment_bundle.view.*
 import java.util.*
 import android.graphics.LightingColorFilter
+import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.NotificationHelper
 
 private const val TIMER_LENGTH = 30000L
 private const val COUNTDOWN_INTERVAL = 1000L
@@ -23,6 +25,9 @@ class BundleFragment : Fragment() {
 	private val greenColorFilter = LightingColorFilter(-0x000, 0x0000FF00)
 	private val redColorFilter = LightingColorFilter(-0x000, 0x00FF0000)
 
+	//needed to send notificationa
+	private lateinit var helper: NotificationHelper
+
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 		val view = inflater.inflate(R.layout.fragment_bundle, container, false)
 		val button = view!!.btn_get_card
@@ -30,6 +35,12 @@ class BundleFragment : Fragment() {
 		val currTimer = sessionService.getCurrentTimer()
 		val remainingTime = currTimer - now
 		val buttonText = context!!.getString(R.string.get_card)
+
+		//Send a notification
+		val notificationId = 1
+		helper = NotificationHelper(this.requireContext())
+		helper.notify(
+			notificationId, helper.getNotification1("Title of notification", "This is a test"))
 
 		button.setOnClickListener {
 			sessionService.storeTimer(Date().time + TIMER_LENGTH)
