@@ -124,6 +124,19 @@ class StorageService(private val memcachedClient: MemcachedClient, private val g
 				} ?: addNewFight(fightResult)
 	}
 
+	fun getFightsOf(user: User): FightInfo? {
+		return memcachedClient.get(FIGHTS_KEY)?.let { it as String }
+				?.let { jsonString ->
+					val fights = gson.fromJson(jsonString, FightDto::class.java).fights
+					val userFights = fights.filter { f -> f.players.map { p -> p.id }.contains(user.id) }
+					val fightIds = userFights.map { it.id }
+					val win = userFights.filter { it.winner == user.nickname }.size
+					val loss = userFights.filter { it.winner != user.nickname }.size
+					val tournaments = FightInfo.Tournaments(win, loss)
+					return@let FightInfo(fightIds, tournaments)
+				}
+	}
+
 	private fun updateFights(fights: MutableList<FightResult>, fightResult: FightResult) {
 		fights.add(fightResult)
 		val fightDto = FightDto(fights)

@@ -33,6 +33,14 @@ class UsersController(private val usersService: UsersService) {
 				.asResource()
 	}
 
+	@GetMapping("/users/{id}/fights")
+	fun getFights(@PathVariable id: String): FightInfoResponseResource {
+		val userId = id.toInt()
+		return usersService
+				.getFightsInfo(userId)
+				.asResource()
+	}
+
 }
 
 @RestController
