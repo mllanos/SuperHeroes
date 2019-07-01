@@ -22,7 +22,7 @@ data class CardsData(val userId: Int? = null, var quantity: Int? = null) {
 data class UserTeamData(val userId: Int, val superheroes: List<Int>)
 
 data class FightData(val user_id: Int, val geolocation: Geolocation, val timestamp: Long) {
-	data class Geolocation(val latitude: Int, val amplitude: Int)
+	data class Geolocation(val latitude: Int, val longitude: Int)
 }
 
 data class UserTeamResource(val superheroes: List<Int>? = null)
@@ -56,7 +56,7 @@ fun Team.asResource() = UserTeamResourceResponse(id)
 fun List<Card>.asCardsResource() = TeamResponseResource(superheroes = this, total_power = this.sumBy { it.power })
 
 fun FightResult.asResource(): FightResponseResource {
-	val player = players.first { p -> p.nickname != winner }
+	val player = players.first { it.isOpponent }
 	val opponent = Opponent(player.id, player.nickname, player.teamId)
 	return FightResponseResource(id, winner, opponent)
 }

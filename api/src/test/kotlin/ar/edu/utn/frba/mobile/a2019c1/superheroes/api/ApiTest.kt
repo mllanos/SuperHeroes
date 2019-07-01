@@ -230,29 +230,29 @@ class FightControllerTest(@Autowired val mockMvc: MockMvc) {
 
 	@Test
 	fun testFight() {
-		val id = 123
-		val geolocation = Geolocation(amplitude = 222222, latitude = 333333)
+		val fightId = 654321
+		val geolocation = Geolocation(latitude = 222222, longitude = 333333)
 		val timestamp = 15000000123
-		val fightData = FightData(id, geolocation, timestamp)
+		val fightData = FightData(1, geolocation, timestamp)
 		val body = JSONObject()
-				.put("user_id", id)
+				.put("user_id", 1)
 				.put("geolocation", JSONObject()
-						.put("amplitude", geolocation.amplitude)
-						.put("latitude", geolocation.latitude))
+						.put("latitude", geolocation.latitude)
+						.put("longitude", geolocation.longitude))
 				.put("timestamp", timestamp)
 		val fightResult = FightResult(
-				id = 123,
+				id = fightId,
 				winner = "goku",
 				players = listOf(
 						FightResult.Player(1, "goku", 301, 500),
-						FightResult.Player(2, "vegeta", 405, 498)))
+						FightResult.Player(2, "vegeta", 405, 498, true)))
 		whenever(fightService.fight(fightData)).thenReturn(fightResult)
 		mockMvc.perform(post("/superheroes/fight")
 				.content(body.toString())
 				.contentType(APPLICATION_JSON))
 				.andExpect(status().isOk)
 				.andExpect(content().contentType(APPLICATION_JSON_UTF8))
-				.andExpect(jsonPath("\$.id").value(id))
+				.andExpect(jsonPath("\$.id").value(fightId))
 				.andExpect(jsonPath("\$.winner").value("goku"))
 				.andExpect(jsonPath("\$.opponent.id").value(2))
 				.andExpect(jsonPath("\$.opponent.nickname").value("vegeta"))
