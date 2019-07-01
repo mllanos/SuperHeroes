@@ -97,12 +97,12 @@ class StorageServiceTest {
 		val team = Team(45, listOf(1, 2, 3, 4))
 		storageService.storeUserTeam(userId, team)
 		memcachedClient.get("users:123456:team").let { it as String }
-				.let {
+				.also {
 					val userDto = gson.fromJson(it, Team::class.java)
 					assertThat(userDto).isEqualToComparingFieldByField(team)
 				}
 		memcachedClient.get("teams:45").let { it as String }
-				.let {
+				.also {
 					val userDto = gson.fromJson(it, Team::class.java)
 					assertThat(userDto).isEqualToComparingFieldByField(team)
 				}
@@ -120,6 +120,12 @@ class StorageServiceTest {
 				.findAnOpponentFor(userId)
 				.also { found ->
 					assertThat(found).isEqualTo(opponentId)
+					storageService.removeOpponentFromList(listOf(userId, opponentId))
+					memcachedClient.get("fights:users").let { it as String }
+							.also {
+								val opponentsDto = gson.fromJson(it, OpponentsDto::class.java)
+								assertThat(opponentsDto.opponents.containsAll(listOf(userId, opponentId))).isFalse()
+							}
 				}
 	}
 

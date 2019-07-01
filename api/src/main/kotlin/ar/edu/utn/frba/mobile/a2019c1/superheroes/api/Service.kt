@@ -74,6 +74,7 @@ class FightService(private val marvelService: MarvelService,
 		val opponent = storageService.findAnOpponentFor(user.id)
 				?.let { id -> usersService.getUser(id) }
 				?: throw OpponentNotFoundException("could not find an opponent for user: ${user.id}")
+		storageService.removeOpponentFromList(listOf(user.id, opponent.id))
 		val opponentTeam = storageService.findUserTeam(opponent.id)?.let { it }
 				?: throw TeamNotFoundException("opponent ${opponent.id} cannot fight without a team")
 		val teamTotalPower = team.superheroes.stream().map { marvelService.getCardOf(it) }.toList().sumBy { it.power }
