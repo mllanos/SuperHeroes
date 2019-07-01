@@ -4,9 +4,17 @@
                                                    xmlns:tools="http://schemas.android.com/tools"
                                                    android:layout_width="match_parent"
                                                    android:layout_height="match_parent"
+                                                   android:orientation="vertical"
                                                    android:background="#3a6d99"
                                                    tools:context=".ui.fight.FightFragment"
                                                    android:id="@+id/linearLayout">
+
+    <pl.droidsonroids.gif.GifImageView
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:src="@drawable/phone_shake"
+            android:id="@+id/gifimageView_figth_phone_shake"
+            android:layout_marginTop="60dp"/>
 
     <TextView
             android:text="@string/fight_text"
