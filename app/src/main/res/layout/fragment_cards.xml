@@ -9,15 +9,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:baselineAligned="false">
+            android:baselineAligned="false" android:background="#3A996D">
 
         <TextView
                 android:id="@+id/textview_myteam"
                 android:text="@string/text_team"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textAlignment="center"/>
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textAlignment="center" android:background="#266946" android:textColor="#FFFFFF"
+                android:autoText="true"/>
 
         <RelativeLayout
                 android:layout_width="wrap_content"
@@ -29,7 +30,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     tools:context=".ui.cards.CardsFragment"
-                    tools:listitem="@layout/linearlayout_teamcard">
+                    tools:listitem="@layout/linearlayout_teamcard" android:background="#266946"
+                    android:paddingTop="10dp">
             </androidx.recyclerview.widget.RecyclerView>
         </RelativeLayout>
 
@@ -46,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textAlignment="center"
-                android:paddingBottom="10dp"/>
+                android:paddingBottom="10dp" android:textColor="#FFFFFF" android:textSize="30sp"/>
 
         <RelativeLayout
                 android:layout_width="wrap_content"
@@ -97,7 +99,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
                 android:textAlignment="center"
-                android:text="@string/text_no_cards_first_line"/>
+                android:text="@string/text_no_cards_first_line" android:textColor="#FFFFFFFF"/>
 
         <TextView
                 android:id="@+id/textview_cards_nocards_secondline"
@@ -105,7 +107,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
                 android:textAlignment="center"
-                android:text="@string/text_no_cards_second_line"/>
+                android:text="@string/text_no_cards_second_line" android:textColor="#FFFFFFFF"/>
     </LinearLayout>
 
 

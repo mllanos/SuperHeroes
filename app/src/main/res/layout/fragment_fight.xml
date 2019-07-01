@@ -14,7 +14,8 @@
             android:layout_height="240dp"
             android:src="@drawable/phone_shake"
             android:id="@+id/gifimageView_figth_phone_shake"
-            android:layout_marginTop="60dp"/>
+            tools:layout_editor_absoluteX="0dp" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="100dp"/>
 
     <TextView
             android:text="@string/fight_text"
