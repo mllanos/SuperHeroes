@@ -27,7 +27,7 @@
     <!--bundle-->
     <string name="title_bundle">Abrir Sobre</string>
     <string name="text_open_bundle">Tienes un sobre disponible!</string>
-    <string name="text_open_bundle_unavailable">Próximo sobre disponible en: </string>
+    <string name="text_open_bundle_unavailable">Próximo sobre disponible en:</string>
 
     <!--fight-->
     <string name="title_fight">Pelea</string>
@@ -36,6 +36,7 @@
     <string name="title_fight_not_found">No se ha encontrado oponente</string>
     <string name="title_fight_winner">Felicidades !! Ganaste</string>
     <string name="title_fight_loser">Has perdido !!</string>
+    <string name="title_fight_hero_info">%1$s(%2$d)</string>
     <string name="item_fight_win">Victorias: %1$d</string>
     <string name="item_fight_loss">Derrotas: %1$d</string>
     <!--logout-->
@@ -45,7 +46,7 @@
 
     <!--Notifications-->
     <string name="btn1_description">Start foreground service</string>
-    <string name="btn1_title" >Start</string>
+    <string name="btn1_title">Start</string>
     <string name="simple_service_title">Simple Service</string>
     <string name="simple_service_desc">Simple Service from the OTest app</string>
 

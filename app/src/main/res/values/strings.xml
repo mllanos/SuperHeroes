@@ -36,6 +36,7 @@
     <string name="title_fight_not_found">Opponent not found</string>
     <string name="title_fight_winner">Congratulations !! You Win</string>
     <string name="title_fight_loser">You have lost !!</string>
+    <string name="title_fight_hero_info">%1$s(%2$d)</string>
     <string name="item_fight_win">Win: %1$d</string>
     <string name="item_fight_loss">Loss: %1$d</string>
     <!--logout-->
@@ -45,7 +46,7 @@
 
     <!--Notifications-->
     <string name="btn1_description">Start foreground service</string>
-    <string name="btn1_title" >Start</string>
+    <string name="btn1_title">Start</string>
     <string name="simple_service_title">Simple Service</string>
     <string name="simple_service_desc">Simple Service from the OTest app</string>
 
