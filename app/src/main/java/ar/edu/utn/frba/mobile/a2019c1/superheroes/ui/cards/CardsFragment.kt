@@ -67,7 +67,7 @@ class CardsFragment : Fragment() {
 			apiService.getUserAvailableCards(loggedUser, { cards ->
 				cardsAdapter.replaceItems(cards)
 				spinner.visibility = GONE
-				if (cardsAdapter.hasCards()) {
+				if (cardsAdapter.hasCards() && linearlayout_cards_nocards !== null) {
 					linearlayout_cards_nocards.visibility = GONE
 					btn_cards_createteam.visibility = VISIBLE
 				}
