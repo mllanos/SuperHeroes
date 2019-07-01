@@ -31,6 +31,10 @@ data class FightResponseResource(val id: Int, val winner: String, val opponent: 
 	data class Opponent(val id: Int, val nickname: String, val team_id: Int)
 }
 
+data class FightInfoResponseResource(val fight_ids: List<Int>, val tournaments: Tournaments) {
+	data class Tournaments(val win: Int, val loss: Int)
+}
+
 data class UserResponseResource(val id: Int)
 
 data class CardsResponseResource(val cards: List<Card>)
@@ -60,3 +64,9 @@ fun FightResult.asResource(): FightResponseResource {
 	val opponent = Opponent(player.id, player.nickname, player.teamId)
 	return FightResponseResource(id, winner, opponent)
 }
+
+fun FightInfo.asResource() = FightInfoResponseResource(
+		fight_ids = fights,
+		tournaments = FightInfoResponseResource.Tournaments(
+				win = tournaments.win,
+				loss = tournaments.loss))

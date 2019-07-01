@@ -9,3 +9,7 @@ data class Team(val id: Int, val superheroes: List<Int>)
 data class FightResult(val id: Int, val winner: String, val players: List<Player>) {
 	data class Player(val id: Int, val nickname: String, val teamId: Int, val score: Int, val isOpponent: Boolean = false)
 }
+
+data class FightInfo(val fights: List<Int>, val tournaments: Tournaments) {
+	data class Tournaments(val win: Int, val loss: Int)
+}

@@ -35,6 +35,13 @@ class UsersService(private val randomService: RandomService, private val storage
 				return@let team
 			}
 
+	fun getFightsInfo(id: Int): FightInfo {
+		return storageService.findUser(id)?.let { user ->
+			storageService.getFightsOf(user)?.let { it }
+					?: throw  FightsNotFoundException("no fights initialized yet")
+		} ?: throw UserNotFoundException("user $id not found")
+	}
+
 }
 
 @Service
