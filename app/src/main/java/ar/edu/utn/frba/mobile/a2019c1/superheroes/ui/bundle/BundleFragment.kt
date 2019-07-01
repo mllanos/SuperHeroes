@@ -6,13 +6,14 @@ import android.os.CountDownTimer
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.R
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.SessionsService
 import kotlinx.android.synthetic.main.fragment_bundle.view.*
 import java.util.*
 import android.graphics.LightingColorFilter
+import android.widget.ImageButton
+import android.widget.TextView
 
 private const val TIMER_LENGTH = 30000L
 private const val COUNTDOWN_INTERVAL = 1000L
@@ -26,40 +27,42 @@ class BundleFragment : Fragment() {
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 		val view = inflater.inflate(R.layout.fragment_bundle, container, false)
 		val button = view!!.btn_get_card
+		val text = view!!.txt_bundle
 		val now = Date().time
 		val currTimer = sessionService.getCurrentTimer()
 		val remainingTime = currTimer - now
-		val buttonText = context!!.getString(R.string.get_card)
 
 		button.setOnClickListener {
 			sessionService.storeTimer(Date().time + TIMER_LENGTH)
 			this.getCards()
-			startCountdown(TIMER_LENGTH, button, buttonText)
+			startCountdown(TIMER_LENGTH, button,text, R.string.text_open_bundle)
 		}
 
 		if (remainingTime > 0) {
 			button.isEnabled = false
-			startCountdown(remainingTime, button, buttonText)
-			button.background.colorFilter = redColorFilter
+			startCountdown(remainingTime, button,text, R.string.text_open_bundle_unavailable)
+			button.setImageResource(R.drawable.sobre_bn)
 		} else {
-			button.background.colorFilter = greenColorFilter
+			button.setImageResource(R.drawable.sobre)
+			text.setText(R.string.text_open_bundle)
 		}
 
 		return view
 	}
 
-	private fun startCountdown(length: Long, button: Button, onFinishText: String) {
+	private fun startCountdown(length: Long, button: ImageButton, text:TextView, onFinishText: Int) {
 		button.isEnabled = false
-		button.background.colorFilter = redColorFilter
+		button.setImageResource(R.drawable.sobre_bn)
 		object : CountDownTimer(length, COUNTDOWN_INTERVAL) {
 			override fun onTick(millisUntilFinished: Long) {
-				button.text = "${millisUntilFinished / COUNTDOWN_INTERVAL}"
+				text.setText(getResources().getString(R.string.text_open_bundle_unavailable )+"${millisUntilFinished / COUNTDOWN_INTERVAL} s")
+
 			}
 
 			override fun onFinish() {
 				button.isEnabled = true
-				button.text = onFinishText
-				button.background.colorFilter = greenColorFilter
+				text.setText(onFinishText)
+				button.setImageResource(R.drawable.sobre)
 			}
 		}.start()
 	}

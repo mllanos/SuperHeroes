@@ -23,6 +23,8 @@
     <string name="msg_select_4_cards">You must select 4 cards</string>
     <!--bundle-->
     <string name="title_bundle">Open Bundle</string>
+    <string name="text_open_bundle">You have 1 bundle!</string>
+    <string name="text_open_bundle_unavailable">Next bundle available in: "</string>
     <!--fight-->
     <string name="title_fight">Fight</string>
     <string name="title_return_fight">Search again</string>
