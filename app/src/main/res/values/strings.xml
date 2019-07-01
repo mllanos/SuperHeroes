@@ -21,6 +21,10 @@
     <string name="btn_create_team_no_counter">Create Team</string>
     <string name="btn_create_team_counter">Create Team (%1$d/4)</string>
     <string name="msg_select_4_cards">You must select 4 cards</string>
+    <string name="text_show_single_card_name">Name</string>
+    <string name="text_show_single_card_power">Power</string>
+    <string name="text_show_single_card_description">Description</string>
+
     <!--bundle-->
     <string name="title_bundle">Open Bundle</string>
     <string name="text_open_bundle">You have 1 bundle!</string>

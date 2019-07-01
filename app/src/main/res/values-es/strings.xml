@@ -21,6 +21,9 @@
     <string name="btn_create_team_no_counter">Crear Equipo</string>
     <string name="btn_create_team_counter">Crear Equipo (%1$d/4)</string>
     <string name="msg_select_4_cards">Debes elegir 4 cartas</string>
+    <string name="text_show_single_card_name">Nombre</string>
+    <string name="text_show_single_card_power">Poder</string>
+    <string name="text_show_single_card_description">Descripción</string>
     <!--bundle-->
     <string name="title_bundle">Abrir Sobre</string>
     <string name="text_open_bundle">Tienes un sobre disponible!</string>

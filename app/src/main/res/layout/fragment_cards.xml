@@ -9,7 +9,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:baselineAligned="false" android:background="#3A996D">
+            android:baselineAligned="false" android:background="#3a6d99">
 
         <TextView
                 android:id="@+id/textview_myteam"
@@ -17,7 +17,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:textAlignment="center" android:background="#266946" android:textColor="#FFFFFF"
+                android:textAlignment="center" android:background="#315C81" android:textColor="#FFFFFF"
                 android:autoText="true"/>
 
         <RelativeLayout
@@ -30,7 +30,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     tools:context=".ui.cards.CardsFragment"
-                    tools:listitem="@layout/linearlayout_teamcard" android:background="#266946"
+                    tools:listitem="@layout/linearlayout_teamcard" android:background="#315C81"
                     android:paddingTop="10dp">
             </androidx.recyclerview.widget.RecyclerView>
         </RelativeLayout>

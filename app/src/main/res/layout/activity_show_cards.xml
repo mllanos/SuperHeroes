@@ -5,7 +5,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".ui.bundle.ShowCards" android:background="#7C2D82">
+        tools:context=".ui.bundle.ShowCards" android:background="#315C81">
 
     <Button
             android:id="@+id/btn_close_show_cards"

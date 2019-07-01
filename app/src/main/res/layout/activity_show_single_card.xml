@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+                xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:background="#315C81">
 
+
+    <Button
+            android:id="@+id/button_showsinglecard_back"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:background="@drawable/ic_arrow_back_black_24dp"
+    />
     <ImageView
             android:layout_width="match_parent"
             android:layout_height="280dp"
@@ -12,29 +19,31 @@
             tools:srcCompat="@tools:sample/avatars"
             android:id="@+id/imageview_showsinglecard_photo"
             android:layout_marginTop="20dp" android:layout_marginStart="20dp" android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"/>
+            android:layout_marginBottom="20dp" android:contentDescription="Character Image"/>
     <TextView
-            android:text="Name"
+            android:text="@string/text_show_single_card_name"
             android:layout_width="match_parent"
             android:layout_below="@id/imageview_showsinglecard_photo"
             android:layout_height="34dp" android:id="@+id/textView_showsinglecard_name" android:layout_marginTop="10dp"
             android:layout_marginStart="10dp" android:layout_marginEnd="10dp" android:layout_marginBottom="10dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2" android:textSize="24sp"/>
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" android:textSize="24sp"
+            android:textColor="#FFFFFF"/>
     <TextView
-            android:text="Power"
+            android:text="@string/text_show_single_card_power"
             android:layout_width="match_parent"
             android:layout_height="39dp"
             android:layout_below="@id/textView_showsinglecard_name"
             android:id="@+id/textView_showsinglecard_power"
             android:layout_marginStart="10dp" android:layout_marginEnd="10dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" android:textSize="18sp"/>
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" android:textSize="18sp"
+            android:textColor="#FFFFFF"/>
     <TextView
-            android:text="Description"
+            android:text="@string/text_show_single_card_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/textView1"
             android:layout_alignBottom="@id/textView_showsinglecard_power" android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp" android:layout_marginBottom="-31dp" android:layout_marginTop="11dp"
-            android:layout_below="@+id/textView_showsinglecard_power"/>
+            android:layout_below="@+id/textView_showsinglecard_power" android:textColor="#FFFFFF"/>
     <View
             android:id="@+id/divider"
             android:layout_width="match_parent"
@@ -43,18 +52,13 @@
             android:background="?android:attr/listDivider"
             android:layout_marginTop="31dp"/>
     <TextView
-            android:text="Description"
-            android:layout_width="392dp"
-            android:layout_height="235dp"
+            android:text="@string/btn1_description"
+            android:layout_width="396dp"
+            android:layout_height="255dp"
             android:layout_below="@id/divider"
             android:id="@+id/textView_showsinglecard_description"
             android:layout_marginStart="10dp" android:layout_marginEnd="10dp"
-            android:textSize="18sp" android:layout_above="@+id/button_showsinglecard_back"
-            android:layout_marginBottom="3dp" android:layout_marginTop="1dp"/>
-    <Button
-            android:text="@string/btn_show_single_card_back"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:id="@+id/button_showsinglecard_back" style="@style/Widget.AppCompat.Button.Colored"/>
+            android:textSize="18sp"
+            android:layout_marginBottom="30dp" android:layout_marginTop="1dp" android:textColor="#FFFFFF"
+            android:layout_alignParentBottom="true"/>
 </RelativeLayout>

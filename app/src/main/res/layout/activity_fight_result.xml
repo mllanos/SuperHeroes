@@ -45,7 +45,6 @@
                 android:orientation="vertical"
                 android:layout_weight="1">
 
-
             <TextView
                     android:id="@+id/textview_fight_info"
                     android:layout_width="match_parent"
@@ -61,7 +60,7 @@
                     android:layout_height="50dp"
                     android:gravity="center_vertical"
                     android:layout_centerVertical="true"
-            />
+                    android:textAlignment="center"/>
 
         </RelativeLayout>
 

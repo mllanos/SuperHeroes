@@ -4,7 +4,7 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              tools:context=".ui.bundle.BundleFragment" android:background="#641C6C">
+              tools:context=".ui.bundle.BundleFragment" android:background="#3a6d99">
 
     <ImageButton
             android:id="@+id/btn_get_card"
@@ -15,7 +15,7 @@
             android:layout_height="437dp"
             android:textSize="30sp"
             android:scaleType="fitCenter"
-            android:padding="20dp" android:background="#7C2D82"/>
+            android:padding="20dp" android:background="#3a6d99"/>
     <TextView
             android:text="@string/text_open_bundle"
             android:id="@+id/txt_bundle"
