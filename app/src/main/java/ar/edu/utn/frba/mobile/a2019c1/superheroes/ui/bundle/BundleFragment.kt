@@ -14,7 +14,13 @@ import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.SessionsService
 import kotlinx.android.synthetic.main.fragment_bundle.view.*
 import java.util.*
 import android.graphics.LightingColorFilter
+import androidx.work.Data
 import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.NotificationHelper
+import ar.edu.utn.frba.mobile.a2019c1.superheroes.services.NotifyWorker
+import androidx.work.OneTimeWorkRequest
+import androidx.work.WorkManager
+import java.util.concurrent.TimeUnit
+
 
 private const val TIMER_LENGTH = 30000L
 private const val COUNTDOWN_INTERVAL = 1000L
@@ -25,9 +31,6 @@ class BundleFragment : Fragment() {
 	private val greenColorFilter = LightingColorFilter(-0x000, 0x0000FF00)
 	private val redColorFilter = LightingColorFilter(-0x000, 0x00FF0000)
 
-	//needed to send notificationa
-	private lateinit var helper: NotificationHelper
-
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 		val view = inflater.inflate(R.layout.fragment_bundle, container, false)
 		val button = view!!.btn_get_card
@@ -36,16 +39,28 @@ class BundleFragment : Fragment() {
 		val remainingTime = currTimer - now
 		val buttonText = context!!.getString(R.string.get_card)
 
-		//Send a notification
-		val notificationId = 1
-		helper = NotificationHelper(this.requireContext())
-		helper.notify(
-			notificationId, helper.getNotification1("Title of notification", "This is a test"))
-
 		button.setOnClickListener {
-			sessionService.storeTimer(Date().time + TIMER_LENGTH)
+			val newTime = Date().time + TIMER_LENGTH
+			sessionService.storeTimer(newTime)
 			this.getCards()
 			startCountdown(TIMER_LENGTH, button, buttonText)
+
+
+			//we set a tag to be able to cancel all work of this type if needed
+			val workTag = "notificationWork"
+
+			//store DBEventID to pass it to the PendingIntent and open the appropriate event page on notification click
+			val inputData = Data.Builder().putInt(workTag, 1).build()
+			// we then retrieve it inside the NotifyWorker with:
+			// final int DBEventID = getInputData().getInt(DBEventIDTag, ERROR_VALUE);
+
+			val notificationWork = OneTimeWorkRequest.Builder(NotifyWorker::class.java)
+				.setInitialDelay(TIMER_LENGTH, TimeUnit.MILLISECONDS)
+				.setInputData(inputData)
+				.addTag(workTag)
+				.build()
+
+			WorkManager.getInstance().enqueue(notificationWork)
 		}
 
 		if (remainingTime > 0) {
