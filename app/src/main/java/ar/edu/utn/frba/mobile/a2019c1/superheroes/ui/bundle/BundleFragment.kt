@@ -1,6 +1,5 @@
 package ar.edu.utn.frba.mobile.a2019c1.superheroes.ui.bundle
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -37,12 +36,14 @@ class BundleFragment : Fragment() {
 		val currTimer = sessionService.getCurrentTimer()
 		val remainingTime = currTimer - now
 		val buttonText = view.txt_bundle//context!!.getString(R.string.get_card)
+		val tickText = resources.getString(R.string.text_open_bundle_unavailable)
+		val finishText =  resources.getString(R.string.text_open_bundle)
 
 		button.setOnClickListener {
 			val newTime = Date().time + TIMER_LENGTH
 			sessionService.storeTimer(newTime)
 			this.getCards()
-			startCountdown(TIMER_LENGTH, button, buttonText, 1)
+			startCountdown(TIMER_LENGTH, button, buttonText, tickText, finishText)
 
 
 			//we set a tag to be able to cancel all work of this type if needed
@@ -64,11 +65,11 @@ class BundleFragment : Fragment() {
 
 		if (remainingTime > 0) {
 			button.isEnabled = false
-			startCountdown(remainingTime, button,text, R.string.text_open_bundle_unavailable)
+			startCountdown(remainingTime, button, text, tickText, finishText)
 			button.setImageResource(R.drawable.sobre_bn)
 		} else {
 			button.setImageResource(R.drawable.sobre)
-			text.setText(R.string.text_open_bundle)
+			text.text = finishText
 		}
 
 		return view
@@ -79,18 +80,18 @@ class BundleFragment : Fragment() {
 		countdownTimer?.cancel()
 	}
 
-	private fun startCountdown(length: Long, button: ImageButton, text:TextView, onFinishText: Int) {
-		button.isEnabled = false
-		button.setImageResource(R.drawable.sobre_bn)
+	private fun startCountdown(length: Long, imageButton: ImageButton, textView:TextView, tickText: String, finishText: String) {
+		imageButton.isEnabled = false
+		imageButton.setImageResource(R.drawable.sobre_bn)
 		countdownTimer = object : CountDownTimer(length, COUNTDOWN_INTERVAL) {
 			override fun onTick(millisUntilFinished: Long) {
-				text.text = resources.getString(R.string.text_open_bundle_unavailable )+"${millisUntilFinished / COUNTDOWN_INTERVAL} s"
+				textView.text =  "$tickText ${millisUntilFinished / COUNTDOWN_INTERVAL} s"
 			}
 
 			override fun onFinish() {
-				button.isEnabled = true
-				text.setText(onFinishText)
-				button.setImageResource(R.drawable.sobre)
+				imageButton.isEnabled = true
+				textView.text = finishText
+				imageButton.setImageResource(R.drawable.sobre)
 			}
 		}.start()
 	}
