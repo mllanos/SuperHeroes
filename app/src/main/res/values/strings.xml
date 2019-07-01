@@ -14,8 +14,8 @@
     <string name="text_card_power">Power: %1$d</string>
     <string name="text_team">My Team</string>
     <string name="text_others">My Cards</string>
-    <string name="text_nocards_firstline">You don\'t have cards yet.</string>
-    <string name="text_nocards_secondline">Let\'s start opening a bundle!</string>
+    <string name="text_no_cards_first_line">You don\'t have cards yet.</string>
+    <string name="text_no_cards_second_line">Let\'s start opening a bundle!</string>
     <string name="btn_create_team">Create Team</string>
     <string name="btn_show_single_card_back">Back</string>
     <string name="btn_create_team_no_counter">Create Team</string>
@@ -23,15 +23,45 @@
     <string name="msg_select_4_cards">You must select 4 cards</string>
     <!--bundle-->
     <string name="title_bundle">Open Bundle</string>
+    <string name="text_open_bundle">You have 1 bundle!</string>
+    <string name="text_open_bundle_unavailable">Next bundle available in: "</string>
     <!--fight-->
     <string name="title_fight">Fight</string>
     <string name="title_return_fight">Search again</string>
-    <string name="title_search_figth">Looking for an opponent</string>
-    <string name="title_fight_notfound">Opponent not found</string>
+    <string name="title_search_fight">Looking for an opponent</string>
+    <string name="title_fight_not_found">Opponent not found</string>
     <string name="title_fight_winner">Congratulations !! You Win</string>
     <string name="title_fight_loser">You have lost !!</string>
     <!--logout-->
     <string name="title_logout">Logout</string>
     <string name="get_card">GO</string>
     <string name="fight_text">Shake to Fight!</string>
+
+    <!--Notifications-->
+    <string name="btn1_description">Start foreground service</string>
+    <string name="btn1_title" >Start</string>
+    <string name="simple_service_title">Simple Service</string>
+    <string name="simple_service_desc">Simple Service from the OTest app</string>
+
+    <string name="main_create_noti2_btn">Send</string>
+
+    <string name="btnA_title">Go to Settings</string>
+    <string name="noti_channel_default">Primary Channel</string>
+    <string name="noti1_title">Notification 1 Title</string>
+    <string name="primary1_body">The content</string>
+    <string name="noti2_title">Second notification</string>
+    <string name="secondary1_body">Notification body text.</string>
+    <string name="noti_channel_second">Secondary Channel</string>
+
+    <string name="main_primary_title">Primary Channel</string>
+    <string name="main_primary_send1">Send 1</string>
+    <string name="main_primary_send2">Send 2</string>
+    <string name="main_primary_config">Go to primary settings</string>
+
+    <string name="main_secondary_title">Secondary Channel</string>
+    <string name="main_secondary_send1">Send 1</string>
+    <string name="main_secondary_send2">Send 2</string>
+    <string name="main_secondary_config">Go to secondary settings</string>
+    <string name="primary2_body">Second Notification for Primary Channel</string>
+    <string name="secondary2_body">Second Notification for Secondary Channel</string>
 </resources>

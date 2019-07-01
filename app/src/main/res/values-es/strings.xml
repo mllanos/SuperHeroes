@@ -14,8 +14,8 @@
     <string name="text_card_power">Poder: %1$d</string>
     <string name="text_team">Mi Equipo</string>
     <string name="text_others">Mis Cartas</string>
-    <string name="text_nocards_firstline">Todavía no tienes cartas.</string>
-    <string name="text_nocards_secondline">Empecemos abriendo un sobre!</string>
+    <string name="text_no_cards_first_line">Todavía no tienes cartas.</string>
+    <string name="text_no_cards_second_line">Empecemos abriendo un sobre!</string>
     <string name="btn_create_team">Crear Equipo</string>
     <string name="btn_show_single_card_back">Listo</string>
     <string name="btn_create_team_no_counter">Crear Equipo</string>
@@ -23,15 +23,46 @@
     <string name="msg_select_4_cards">Debes elegir 4 cartas</string>
     <!--bundle-->
     <string name="title_bundle">Abrir Sobre</string>
+    <string name="text_open_bundle">Tienes un sobre disponible!</string>
+    <string name="text_open_bundle_unavailable">Próximo sobre disponible en: </string>
+
     <!--fight-->
     <string name="title_fight">Pelea</string>
     <string name="title_return_fight">Buscar otra vez</string>
-    <string name="title_search_figth">Buscando oponente</string>
-    <string name="title_fight_notfound">No se ha encontrado oponente</string>
+    <string name="title_search_fight">Buscando oponente</string>
+    <string name="title_fight_not_found">No se ha encontrado oponente</string>
     <string name="title_fight_winner">Felicidades !! Ganaste</string>
     <string name="title_fight_loser">Has perdido !!</string>
     <!--logout-->
     <string name="title_logout">Cerrar Sesión</string>
     <string name="get_card">Abrir</string>
     <string name="fight_text">Sacude para pelear!</string>
+
+    <!--Notifications-->
+    <string name="btn1_description">Start foreground service</string>
+    <string name="btn1_title" >Start</string>
+    <string name="simple_service_title">Simple Service</string>
+    <string name="simple_service_desc">Simple Service from the OTest app</string>
+
+    <string name="main_create_noti2_btn">Send</string>
+
+    <string name="btnA_title">Go to Settings</string>
+    <string name="noti_channel_default">Primary Channel</string>
+    <string name="noti1_title">Notification 1 Title</string>
+    <string name="primary1_body">The content</string>
+    <string name="noti2_title">Second notification</string>
+    <string name="secondary1_body">Notification body text.</string>
+    <string name="noti_channel_second">Secondary Channel</string>
+
+    <string name="main_primary_title">Primary Channel</string>
+    <string name="main_primary_send1">Send 1</string>
+    <string name="main_primary_send2">Send 2</string>
+    <string name="main_primary_config">Go to primary settings</string>
+
+    <string name="main_secondary_title">Secondary Channel</string>
+    <string name="main_secondary_send1">Send 1</string>
+    <string name="main_secondary_send2">Send 2</string>
+    <string name="main_secondary_config">Go to secondary settings</string>
+    <string name="primary2_body">Second Notification for Primary Channel</string>
+    <string name="secondary2_body">Second Notification for Secondary Channel</string>
 </resources>
