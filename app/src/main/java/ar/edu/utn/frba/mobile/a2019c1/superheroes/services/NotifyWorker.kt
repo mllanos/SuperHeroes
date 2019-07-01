@@ -20,7 +20,7 @@ class NotifyWorker(context: Context, params: WorkerParameters) : Worker(context,
 
 		helper = NotificationHelper(applicationContext)
 		helper.notify(
-			notificationId, helper.getNotification1("Title of notification", "This is a test"))
+			notificationId, helper.getNotification1("Next Bundle Available!", "Get your new bundle now."))
 
 		return Result.success()
 		// (Returning RETRY tells WorkManager to try this task again

@@ -27,7 +27,7 @@ private const val COUNTDOWN_INTERVAL = 1000L
 class BundleFragment : Fragment() {
 
 	private val sessionService by lazy { SessionsService(context!!) }
-
+	private var countdownTimer: CountDownTimer? = null
 
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 		val view = inflater.inflate(R.layout.fragment_bundle, container, false)
@@ -74,10 +74,15 @@ class BundleFragment : Fragment() {
 		return view
 	}
 
+	override fun onDestroy() {
+		super.onDestroy()
+		countdownTimer?.cancel()
+	}
+
 	private fun startCountdown(length: Long, button: ImageButton, text:TextView, onFinishText: Int) {
 		button.isEnabled = false
 		button.setImageResource(R.drawable.sobre_bn)
-		object : CountDownTimer(length, COUNTDOWN_INTERVAL) {
+		countdownTimer = object : CountDownTimer(length, COUNTDOWN_INTERVAL) {
 			override fun onTick(millisUntilFinished: Long) {
 				text.text = resources.getString(R.string.text_open_bundle_unavailable )+"${millisUntilFinished / COUNTDOWN_INTERVAL} s"
 			}
