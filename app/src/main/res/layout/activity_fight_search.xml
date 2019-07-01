@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent" android:background="#3a6d99">
+              android:layout_height="match_parent"
+              android:background="#3a6d99">
 
     <pl.droidsonroids.gif.GifImageView
             android:layout_width="match_parent"
@@ -17,11 +19,13 @@
             android:layout_height="45dp"
             android:layout_gravity="center"
             android:text="@string/title_search_fight"
-            android:layout_marginTop="20dp" android:textColor="#FFFFFF" android:textSize="24sp"/>
+            android:layout_marginTop="20dp"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"/>
     <ImageView
+            android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="431dp" app:srcCompat="@drawable/waiting_fight" android:id="@+id/imageView"
+            android:layout_height="431dp"
+            app:srcCompat="@drawable/waiting_fight"
             android:contentDescription="fight"/>
-
-
 </LinearLayout>
