@@ -59,18 +59,16 @@ class FightFragment : Fragment(), ShakeEventManager.ShakeListener {
 	override fun onShake() {
 		if (shakeEnabled) {
 			shakeEnabled = false
-
-			if (sessionService.getLoggedUserTeamId() === null) {
+			sessionService.getLoggedUserTeamId()?.let {
+				if (locationPermissionGranted) {
+					searchFight()
+				} else {
+					checkForLocationPermissions()
+				}
+			} ?: run {
 				enableShake()
-				return Toast.makeText(context!!, "You need to select a team first.", Toast.LENGTH_LONG).show()
+				Toast.makeText(context!!, "You need to select a team first.", Toast.LENGTH_LONG).show()
 			}
-
-			if (locationPermissionGranted) {
-				searchFight()
-			} else {
-				checkForLocationPermissions()
-			}
-
 		}
 	}
 
@@ -96,13 +94,15 @@ class FightFragment : Fragment(), ShakeEventManager.ShakeListener {
 
 	@SuppressLint("MissingPermission")
 	private fun searchFight() {
-		fusedLocationClient.lastLocation
-			.addOnSuccessListener { location: Location? ->
-				val geolocation = Geolocation(location?.latitude, location?.altitude, currentTimeMillis())
-				val intent = Intent(context!!, FightSearchActivity::class.java)
-				intent.putExtra("geolocation", geolocation)
-				startActivity(intent)
-			}
+		sessionService.getLoggedUserTeamId()?.let {
+			fusedLocationClient.lastLocation
+				.addOnSuccessListener { location: Location? ->
+					val geolocation = Geolocation(location?.latitude, location?.altitude, currentTimeMillis())
+					val intent = Intent(context!!, FightSearchActivity::class.java)
+					intent.putExtra("geolocation", geolocation)
+					startActivity(intent)
+				}
+		}
 	}
 
 	private fun checkForLocationPermissions() {
