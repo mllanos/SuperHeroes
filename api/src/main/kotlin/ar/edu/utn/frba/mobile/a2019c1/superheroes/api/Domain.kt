@@ -7,5 +7,5 @@ data class Card(val id: Int, val name: String, val description: String, val thum
 data class Team(val id: Int, val superheroes: List<Int>)
 
 data class FightResult(val id: Int, val winner: String, val players: List<Player>) {
-	data class Player(val id: Int, val nickname: String, val teamId: Int, val score: Int)
+	data class Player(val id: Int, val nickname: String, val teamId: Int, val score: Int, val isOpponent: Boolean = false)
 }

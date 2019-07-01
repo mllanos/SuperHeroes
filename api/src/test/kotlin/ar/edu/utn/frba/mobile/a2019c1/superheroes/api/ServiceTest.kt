@@ -188,7 +188,7 @@ class FightServiceTest {
 	@Test
 	fun testFight() {
 		val fightService = FightService(marvelService, usersService, storageService, randomService)
-		val geolocation = Geolocation(latitude = 1231231, amplitude = 53234)
+		val geolocation = Geolocation(latitude = 1231231, longitude = 53234)
 		val userId = 123456
 		val opponentId = 100000
 		val data = FightData(user_id = userId, geolocation = geolocation, timestamp = 1500000034)
@@ -222,7 +222,7 @@ class FightServiceTest {
 					assertThat(fightResult.id).isEqualTo(1)
 					assertThat(fightResult.winner).isEqualTo("goku")
 					assertThat(fightResult.players[0]).isEqualTo(Player(userId, "vegeta", 23, 215))
-					assertThat(fightResult.players[1]).isEqualTo(Player(opponentId, "goku", 45, 257))
+					assertThat(fightResult.players[1]).isEqualTo(Player(opponentId, "goku", 45, 257, true))
 					verify(usersService).getUser(userId)
 					verify(usersService).getUser(opponentId)
 					verify(storageService).findAnOpponentFor(userId)
