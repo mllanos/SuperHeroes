@@ -79,6 +79,17 @@ class MainActivity : AppCompatActivity() {
 
 	override fun onCreateOptionsMenu(menu: Menu): Boolean {
 		menuInflater.inflate(R.menu.top_nav_menu, menu)
+		sessionService.getLoggedUser()?.also { user ->
+			apiService.getUserFightsInfo(user, { fightInfo ->
+				val cupsItem = menu.findItem(R.id.item_cup_icon)
+				val winItem = cupsItem.subMenu.findItem(R.id.item_fight_wincounter)
+				val lossItem = cupsItem.subMenu.findItem(R.id.item_fight_losscounter)
+				winItem.title = getString(R.string.item_fight_win, fightInfo.tournaments.win)
+				lossItem.title = getString(R.string.item_fight_loss, fightInfo.tournaments.loss)
+			}, { error ->
+				gerErrorMessage("Failed to get user fights info", error)
+			})
+		} ?: handleUserNotLogged()
 		return true
 	}
 

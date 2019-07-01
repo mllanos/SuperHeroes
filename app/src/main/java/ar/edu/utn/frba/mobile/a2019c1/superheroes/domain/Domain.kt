@@ -13,3 +13,7 @@ data class Fight(val id: Int, val winner: String, val opponent: Opponent) : Seri
 }
 
 data class Geolocation(val latitude: Double?, val longitude: Double?, val timestamp: Long) : Serializable
+
+data class FightInfo(val fights: List<Int>, val tournaments: Tournaments) {
+	data class Tournaments(val win: Int, val loss: Int)
+}

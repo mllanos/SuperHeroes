@@ -99,6 +99,23 @@ class ApiService(private val context: Context) {
 		)
 	}
 
+	fun getUserFightsInfo(
+		user: User, responseHandler: (FightInfo) -> Unit,
+		errorHandler: (VolleyError) -> Unit
+	) {
+		get("/users/${user.id}/fights", { response ->
+			val resource = gson.fromJson(response.toString(), FightInfoResponseResource::class.java)
+			val fightInfo = FightInfo(
+				fights = resource.fight_ids,
+				tournaments = FightInfo.Tournaments(
+					win = resource.tournaments.win,
+					loss = resource.tournaments.loss
+				)
+			)
+			responseHandler(fightInfo)
+		}, errorHandler)
+	}
+
 	private fun post(
 		uri: String,
 		body: JSONObject,
@@ -127,5 +144,9 @@ class ApiService(private val context: Context) {
 	data class CardsResponseResource(val cards: List<Card>)
 
 	data class TeamResponseResource(val superheroes: List<Card>, val total_power: Int)
+
+	data class FightInfoResponseResource(val fight_ids: List<Int>, val tournaments: Tournaments) {
+		data class Tournaments(val win: Int, val loss: Int)
+	}
 
 }

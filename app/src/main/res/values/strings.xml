@@ -32,6 +32,8 @@
     <string name="title_fight_not_found">Opponent not found</string>
     <string name="title_fight_winner">Congratulations !! You Win</string>
     <string name="title_fight_loser">You have lost !!</string>
+    <string name="item_fight_win">Win: %1$d</string>
+    <string name="item_fight_loss">Loss: %1$d</string>
     <!--logout-->
     <string name="title_logout">Logout</string>
     <string name="get_card">GO</string>
