@@ -51,7 +51,7 @@ class ShowSingleCard : AppCompatActivity() {
 	}
 
 	private fun buttonClose() {
-		button_showsinglecard_back.setOnClickListener{
+		button_showsinglecard_back.setOnClickListener {
 			finish()
 		}
 	}

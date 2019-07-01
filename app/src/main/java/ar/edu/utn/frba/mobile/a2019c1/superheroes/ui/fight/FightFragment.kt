@@ -41,12 +41,14 @@ class FightFragment : Fragment(), ShakeEventManager.ShakeListener {
 	}
 
 	override fun onResume() {
+		val winString = getString(R.string.item_fight_win)
+		val lossString = getString(R.string.item_fight_loss)
 		super.onResume()
 		shakeEventManager.setListener(this)
 		shakeEventManager.init(context!!)
 		enableShake()
 		VolleySingleton.getInstance(context!!).cancelAll()
-		updateUserCupsCounter()
+		updateUserCupsCounter(winString, lossString)
 	}
 
 	override fun onStop() {
@@ -121,15 +123,15 @@ class FightFragment : Fragment(), ShakeEventManager.ShakeListener {
 		}, 1500)
 	}
 
-	private fun updateUserCupsCounter() {
+	private fun updateUserCupsCounter(winString: String, lossString: String) {
 		if (menu != null) {
 			sessionService.getLoggedUser()?.also { user ->
 				apiService.getUserFightsInfo(user, { fightInfo ->
 					val cupsItem = menu!!.findItem(R.id.item_cup_icon)
 					val winItem = cupsItem.subMenu.findItem(R.id.item_fight_wincounter)
 					val lossItem = cupsItem.subMenu.findItem(R.id.item_fight_losscounter)
-					winItem.title = getString(R.string.item_fight_win, fightInfo.tournaments.win)
-					lossItem.title = getString(R.string.item_fight_loss, fightInfo.tournaments.loss)
+					winItem.title = String.format(winString, fightInfo.tournaments.win)
+					lossItem.title = String.format(lossString, fightInfo.tournaments.loss)
 				}, { error ->
 					gerErrorMessage("Failed to get user fights info", error)
 				})

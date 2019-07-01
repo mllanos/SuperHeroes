@@ -30,20 +30,19 @@ class BundleFragment : Fragment() {
 
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 		val view = inflater.inflate(R.layout.fragment_bundle, container, false)
-		val button = view!!.btn_get_card
-		val text = view!!.txt_bundle
 		val now = Date().time
 		val currTimer = sessionService.getCurrentTimer()
 		val remainingTime = currTimer - now
-		val buttonText = view.txt_bundle//context!!.getString(R.string.get_card)
+		val buttonText = view.txt_bundle
+		val imageButton = view!!.btn_get_card
 		val tickText = resources.getString(R.string.text_open_bundle_unavailable)
-		val finishText =  resources.getString(R.string.text_open_bundle)
+		val finishText = resources.getString(R.string.text_open_bundle)
 
-		button.setOnClickListener {
+		imageButton.setOnClickListener {
 			val newTime = Date().time + TIMER_LENGTH
 			sessionService.storeTimer(newTime)
 			this.getCards()
-			startCountdown(TIMER_LENGTH, button, buttonText, tickText, finishText)
+			startCountdown(TIMER_LENGTH, imageButton, buttonText, tickText, finishText)
 
 
 			//we set a tag to be able to cancel all work of this type if needed
@@ -64,12 +63,12 @@ class BundleFragment : Fragment() {
 		}
 
 		if (remainingTime > 0) {
-			button.isEnabled = false
-			startCountdown(remainingTime, button, text, tickText, finishText)
-			button.setImageResource(R.drawable.sobre_bn)
+			imageButton.isEnabled = false
+			startCountdown(remainingTime, imageButton, buttonText, tickText, finishText)
+			imageButton.setImageResource(R.drawable.sobre_bn)
 		} else {
-			button.setImageResource(R.drawable.sobre)
-			text.text = finishText
+			imageButton.setImageResource(R.drawable.sobre)
+			buttonText.text = finishText
 		}
 
 		return view
@@ -80,12 +79,18 @@ class BundleFragment : Fragment() {
 		countdownTimer?.cancel()
 	}
 
-	private fun startCountdown(length: Long, imageButton: ImageButton, textView:TextView, tickText: String, finishText: String) {
+	private fun startCountdown(
+		length: Long,
+		imageButton: ImageButton,
+		textView: TextView,
+		tickText: String,
+		finishText: String
+	) {
 		imageButton.isEnabled = false
 		imageButton.setImageResource(R.drawable.sobre_bn)
 		countdownTimer = object : CountDownTimer(length, COUNTDOWN_INTERVAL) {
 			override fun onTick(millisUntilFinished: Long) {
-				textView.text =  "$tickText ${millisUntilFinished / COUNTDOWN_INTERVAL} s"
+				textView.text = "$tickText ${millisUntilFinished / COUNTDOWN_INTERVAL} s"
 			}
 
 			override fun onFinish() {
