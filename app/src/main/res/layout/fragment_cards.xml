@@ -9,7 +9,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:baselineAligned="false" android:background="#3a6d99">
+            android:baselineAligned="false"
+            android:background="#3a6d99">
 
         <TextView
                 android:id="@+id/textview_myteam"
@@ -17,8 +18,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:textAlignment="center" android:background="#315C81" android:textColor="#FFFFFF"
-                android:autoText="true"/>
+                android:textAlignment="center"
+                android:background="#315C81"
+                android:textColor="#FFFFFF"/>
 
         <RelativeLayout
                 android:layout_width="wrap_content"
@@ -30,7 +32,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     tools:context=".ui.cards.CardsFragment"
-                    tools:listitem="@layout/linearlayout_teamcard" android:background="#315C81"
+                    tools:listitem="@layout/linearlayout_teamcard"
+                    android:background="#315C81"
                     android:paddingTop="10dp">
             </androidx.recyclerview.widget.RecyclerView>
         </RelativeLayout>
@@ -48,7 +51,9 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textAlignment="center"
-                android:paddingBottom="10dp" android:textColor="#FFFFFF" android:textSize="30sp"/>
+                android:paddingBottom="10dp"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp"/>
 
         <RelativeLayout
                 android:layout_width="wrap_content"
@@ -99,7 +104,8 @@
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
                 android:textAlignment="center"
-                android:text="@string/text_no_cards_first_line" android:textColor="#FFFFFFFF"/>
+                android:text="@string/text_no_cards_first_line"
+                android:textColor="#FFFFFFFF"/>
 
         <TextView
                 android:id="@+id/textview_cards_nocards_secondline"
@@ -107,7 +113,8 @@
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
                 android:textAlignment="center"
-                android:text="@string/text_no_cards_second_line" android:textColor="#FFFFFFFF"/>
+                android:text="@string/text_no_cards_second_line"
+                android:textColor="#FFFFFFFF"/>
     </LinearLayout>
 
 
