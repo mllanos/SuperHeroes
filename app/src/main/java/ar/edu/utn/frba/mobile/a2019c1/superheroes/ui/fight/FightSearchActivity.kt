@@ -48,7 +48,7 @@ class FightSearchActivity : AppCompatActivity() {
 	}
 
 	private fun handleOpponentNotFound() {
-		title_search_fight.text = getString(R.string.title_fight_notfound)
+		title_search_fight.text = getString(R.string.title_fight_not_found)
 		loading_figth_icon.visibility = View.INVISIBLE
 		sleep(5000)
 		finish()
