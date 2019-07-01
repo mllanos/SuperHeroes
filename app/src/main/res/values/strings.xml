@@ -14,8 +14,8 @@
     <string name="text_card_power">Power: %1$d</string>
     <string name="text_team">My Team</string>
     <string name="text_others">My Cards</string>
-    <string name="text_nocards_firstline">You don\'t have cards yet.</string>
-    <string name="text_nocards_secondline">Let\'s start opening a bundle!</string>
+    <string name="text_no_cards_first_line">You don\'t have cards yet.</string>
+    <string name="text_no_cards_second_line">Let\'s start opening a bundle!</string>
     <string name="btn_create_team">Create Team</string>
     <string name="btn_show_single_card_back">Back</string>
     <string name="btn_create_team_no_counter">Create Team</string>
@@ -26,8 +26,8 @@
     <!--fight-->
     <string name="title_fight">Fight</string>
     <string name="title_return_fight">Search again</string>
-    <string name="title_search_figth">Looking for an opponent</string>
-    <string name="title_fight_notfound">Opponent not found</string>
+    <string name="title_search_fight">Looking for an opponent</string>
+    <string name="title_fight_not_found">Opponent not found</string>
     <string name="title_fight_winner">Congratulations !! You Win</string>
     <string name="title_fight_loser">You have lost !!</string>
     <!--logout-->

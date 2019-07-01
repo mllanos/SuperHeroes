@@ -97,7 +97,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
                 android:textAlignment="center"
-                android:text="@string/text_nocards_firstline"/>
+                android:text="@string/text_no_cards_first_line"/>
 
         <TextView
                 android:id="@+id/textview_cards_nocards_secondline"
@@ -105,7 +105,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
                 android:textAlignment="center"
-                android:text="@string/text_nocards_secondline"/>
+                android:text="@string/text_no_cards_second_line"/>
     </LinearLayout>
 
 
